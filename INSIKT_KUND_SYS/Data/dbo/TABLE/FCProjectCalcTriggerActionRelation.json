@@ -1,0 +1,20 @@
+[
+  {
+    "ID": 1,
+    "FCProjectCalcTriggerID": 1,
+    "FCProjectCalcTriggerActionID": 1,
+    "SortOrder": 1
+  },
+  {
+    "ID": 2,
+    "FCProjectCalcTriggerID": 2,
+    "FCProjectCalcTriggerActionID": 1,
+    "SortOrder": 1
+  },
+  {
+    "ID": 3,
+    "FCProjectCalcTriggerID": 3,
+    "FCProjectCalcTriggerActionID": 1,
+    "SortOrder": 1
+  }
+]

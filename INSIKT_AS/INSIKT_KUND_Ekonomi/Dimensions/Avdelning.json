@@ -1,0 +1,1536 @@
+{
+  "id": "Avdelning",
+  "name": "Avdelning",
+  "description": "",
+  "type": "Regular",
+  "storageMode": "Molap",
+  "unknownMember": "None",
+  "unknownMemberName": "Unknown",
+  "attributes": [
+    {
+      "id": "Avdelning - L0 ID",
+      "name": "Avdelning - L0 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Avdelning - L0 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Avdelning",
+            "columnId": "L0_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Avdelning",
+            "tableType": "Table",
+            "friendlyName": "dim_Avdelning",
+            "qualifiedObjectName": "dw.dim_Avdelning"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Avdelning",
+          "columnId": "L0_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Avdelning",
+          "tableType": "Table",
+          "friendlyName": "dim_Avdelning",
+          "qualifiedObjectName": "dw.dim_Avdelning"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Avdelning - L0 Sort",
+          "relatedAttributeName": "Avdelning - L0 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Avdelning - L0 Sort",
+      "name": "Avdelning - L0 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Avdelning",
+            "columnId": "L0_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Avdelning",
+            "tableType": "Table",
+            "friendlyName": "dim_Avdelning",
+            "qualifiedObjectName": "dw.dim_Avdelning"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Avdelning",
+          "columnId": "L0_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Avdelning",
+          "tableType": "Table",
+          "friendlyName": "dim_Avdelning",
+          "qualifiedObjectName": "dw.dim_Avdelning"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Avdelning - L1 ID",
+      "name": "Avdelning - L1 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Avdelning - L1 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Avdelning",
+            "columnId": "L1_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Avdelning",
+            "tableType": "Table",
+            "friendlyName": "dim_Avdelning",
+            "qualifiedObjectName": "dw.dim_Avdelning"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Avdelning",
+          "columnId": "L1_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Avdelning",
+          "tableType": "Table",
+          "friendlyName": "dim_Avdelning",
+          "qualifiedObjectName": "dw.dim_Avdelning"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Avdelning - L0 ID",
+          "relatedAttributeName": "Avdelning - L0 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Avdelning - L1 Sort",
+          "relatedAttributeName": "Avdelning - L1 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Avdelning - L1 Sort",
+      "name": "Avdelning - L1 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Avdelning",
+            "columnId": "L1_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Avdelning",
+            "tableType": "Table",
+            "friendlyName": "dim_Avdelning",
+            "qualifiedObjectName": "dw.dim_Avdelning"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Avdelning",
+          "columnId": "L1_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Avdelning",
+          "tableType": "Table",
+          "friendlyName": "dim_Avdelning",
+          "qualifiedObjectName": "dw.dim_Avdelning"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Avdelning - L2 ID",
+      "name": "Avdelning - L2 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Avdelning - L2 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Avdelning",
+            "columnId": "L2_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Avdelning",
+            "tableType": "Table",
+            "friendlyName": "dim_Avdelning",
+            "qualifiedObjectName": "dw.dim_Avdelning"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Avdelning",
+          "columnId": "L2_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Avdelning",
+          "tableType": "Table",
+          "friendlyName": "dim_Avdelning",
+          "qualifiedObjectName": "dw.dim_Avdelning"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Avdelning - L1 ID",
+          "relatedAttributeName": "Avdelning - L1 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Avdelning - L2 Sort",
+          "relatedAttributeName": "Avdelning - L2 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Avdelning - L2 Sort",
+      "name": "Avdelning - L2 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Avdelning",
+            "columnId": "L2_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Avdelning",
+            "tableType": "Table",
+            "friendlyName": "dim_Avdelning",
+            "qualifiedObjectName": "dw.dim_Avdelning"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Avdelning",
+          "columnId": "L2_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Avdelning",
+          "tableType": "Table",
+          "friendlyName": "dim_Avdelning",
+          "qualifiedObjectName": "dw.dim_Avdelning"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Avdelning - L3 ID",
+      "name": "Avdelning - L3 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Avdelning - L3 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Avdelning",
+            "columnId": "L3_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Avdelning",
+            "tableType": "Table",
+            "friendlyName": "dim_Avdelning",
+            "qualifiedObjectName": "dw.dim_Avdelning"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Avdelning",
+          "columnId": "L3_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Avdelning",
+          "tableType": "Table",
+          "friendlyName": "dim_Avdelning",
+          "qualifiedObjectName": "dw.dim_Avdelning"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Avdelning - L2 ID",
+          "relatedAttributeName": "Avdelning - L2 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Avdelning - L3 Sort",
+          "relatedAttributeName": "Avdelning - L3 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Avdelning - L3 Sort",
+      "name": "Avdelning - L3 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Avdelning",
+            "columnId": "L3_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Avdelning",
+            "tableType": "Table",
+            "friendlyName": "dim_Avdelning",
+            "qualifiedObjectName": "dw.dim_Avdelning"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Avdelning",
+          "columnId": "L3_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Avdelning",
+          "tableType": "Table",
+          "friendlyName": "dim_Avdelning",
+          "qualifiedObjectName": "dw.dim_Avdelning"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Avdelning - L4 ID",
+      "name": "Avdelning - L4 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Avdelning - L4 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Avdelning",
+            "columnId": "L4_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Avdelning",
+            "tableType": "Table",
+            "friendlyName": "dim_Avdelning",
+            "qualifiedObjectName": "dw.dim_Avdelning"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Avdelning",
+          "columnId": "L4_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Avdelning",
+          "tableType": "Table",
+          "friendlyName": "dim_Avdelning",
+          "qualifiedObjectName": "dw.dim_Avdelning"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Avdelning - L3 ID",
+          "relatedAttributeName": "Avdelning - L3 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Avdelning - L4 Sort",
+          "relatedAttributeName": "Avdelning - L4 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Avdelning - L4 Sort",
+      "name": "Avdelning - L4 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Avdelning",
+            "columnId": "L4_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Avdelning",
+            "tableType": "Table",
+            "friendlyName": "dim_Avdelning",
+            "qualifiedObjectName": "dw.dim_Avdelning"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Avdelning",
+          "columnId": "L4_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Avdelning",
+          "tableType": "Table",
+          "friendlyName": "dim_Avdelning",
+          "qualifiedObjectName": "dw.dim_Avdelning"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Avdelning ID",
+      "name": "Avdelning ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Key",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Avdelning Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Avdelning",
+            "columnId": "AvdelningID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Avdelning",
+            "tableType": "Table",
+            "friendlyName": "dim_Avdelning",
+            "qualifiedObjectName": "dw.dim_Avdelning"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Avdelning",
+          "columnId": "Avdelning_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Avdelning",
+          "tableType": "Table",
+          "friendlyName": "dim_Avdelning",
+          "qualifiedObjectName": "dw.dim_Avdelning"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Huvudenhet - L5 ID",
+          "relatedAttributeName": "Huvudenhet - L5 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Avdelning - L4 ID",
+          "relatedAttributeName": "Avdelning - L4 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Avdelning Sort",
+          "relatedAttributeName": "Avdelning Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Avdelning Sort",
+      "name": "Avdelning Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "WChar",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Avdelning",
+            "columnId": "Avdelning_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Avdelning",
+            "tableType": "Table",
+            "friendlyName": "dim_Avdelning",
+            "qualifiedObjectName": "dw.dim_Avdelning"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Avdelning",
+          "columnId": "Avdelning_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Avdelning",
+          "tableType": "Table",
+          "friendlyName": "dim_Avdelning",
+          "qualifiedObjectName": "dw.dim_Avdelning"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Huvudenhet - L0 ID",
+      "name": "Huvudenhet - L0 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Huvudenhet - L0 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Avdelning_NormalizedMainPC",
+            "columnId": "L0_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Avdelning_NormalizedMainPC",
+            "tableType": "Table",
+            "friendlyName": "dim_Avdelning_NormalizedMainPC",
+            "qualifiedObjectName": "dw.dim_Avdelning_NormalizedMainPC"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Avdelning_NormalizedMainPC",
+          "columnId": "L0_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Avdelning_NormalizedMainPC",
+          "tableType": "Table",
+          "friendlyName": "dim_Avdelning_NormalizedMainPC",
+          "qualifiedObjectName": "dw.dim_Avdelning_NormalizedMainPC"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Huvudenhet - L0 Sort",
+          "relatedAttributeName": "Huvudenhet - L0 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Huvudenhet - L0 Sort",
+      "name": "Huvudenhet - L0 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Avdelning_NormalizedMainPC",
+            "columnId": "L0_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Avdelning_NormalizedMainPC",
+            "tableType": "Table",
+            "friendlyName": "dim_Avdelning_NormalizedMainPC",
+            "qualifiedObjectName": "dw.dim_Avdelning_NormalizedMainPC"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Avdelning_NormalizedMainPC",
+          "columnId": "L0_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Avdelning_NormalizedMainPC",
+          "tableType": "Table",
+          "friendlyName": "dim_Avdelning_NormalizedMainPC",
+          "qualifiedObjectName": "dw.dim_Avdelning_NormalizedMainPC"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Huvudenhet - L1 ID",
+      "name": "Huvudenhet - L1 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Huvudenhet - L1 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Avdelning_NormalizedMainPC",
+            "columnId": "L1_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Avdelning_NormalizedMainPC",
+            "tableType": "Table",
+            "friendlyName": "dim_Avdelning_NormalizedMainPC",
+            "qualifiedObjectName": "dw.dim_Avdelning_NormalizedMainPC"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Avdelning_NormalizedMainPC",
+          "columnId": "L1_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Avdelning_NormalizedMainPC",
+          "tableType": "Table",
+          "friendlyName": "dim_Avdelning_NormalizedMainPC",
+          "qualifiedObjectName": "dw.dim_Avdelning_NormalizedMainPC"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Huvudenhet - L0 ID",
+          "relatedAttributeName": "Huvudenhet - L0 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Huvudenhet - L1 Sort",
+          "relatedAttributeName": "Huvudenhet - L1 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Huvudenhet - L1 Sort",
+      "name": "Huvudenhet - L1 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Avdelning_NormalizedMainPC",
+            "columnId": "L1_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Avdelning_NormalizedMainPC",
+            "tableType": "Table",
+            "friendlyName": "dim_Avdelning_NormalizedMainPC",
+            "qualifiedObjectName": "dw.dim_Avdelning_NormalizedMainPC"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Avdelning_NormalizedMainPC",
+          "columnId": "L1_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Avdelning_NormalizedMainPC",
+          "tableType": "Table",
+          "friendlyName": "dim_Avdelning_NormalizedMainPC",
+          "qualifiedObjectName": "dw.dim_Avdelning_NormalizedMainPC"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Huvudenhet - L2 ID",
+      "name": "Huvudenhet - L2 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Huvudenhet - L2 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Avdelning_NormalizedMainPC",
+            "columnId": "L2_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Avdelning_NormalizedMainPC",
+            "tableType": "Table",
+            "friendlyName": "dim_Avdelning_NormalizedMainPC",
+            "qualifiedObjectName": "dw.dim_Avdelning_NormalizedMainPC"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Avdelning_NormalizedMainPC",
+          "columnId": "L2_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Avdelning_NormalizedMainPC",
+          "tableType": "Table",
+          "friendlyName": "dim_Avdelning_NormalizedMainPC",
+          "qualifiedObjectName": "dw.dim_Avdelning_NormalizedMainPC"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Huvudenhet - L1 ID",
+          "relatedAttributeName": "Huvudenhet - L1 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Huvudenhet - L2 Sort",
+          "relatedAttributeName": "Huvudenhet - L2 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Huvudenhet - L2 Sort",
+      "name": "Huvudenhet - L2 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Avdelning_NormalizedMainPC",
+            "columnId": "L2_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Avdelning_NormalizedMainPC",
+            "tableType": "Table",
+            "friendlyName": "dim_Avdelning_NormalizedMainPC",
+            "qualifiedObjectName": "dw.dim_Avdelning_NormalizedMainPC"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Avdelning_NormalizedMainPC",
+          "columnId": "L2_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Avdelning_NormalizedMainPC",
+          "tableType": "Table",
+          "friendlyName": "dim_Avdelning_NormalizedMainPC",
+          "qualifiedObjectName": "dw.dim_Avdelning_NormalizedMainPC"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Huvudenhet - L3 ID",
+      "name": "Huvudenhet - L3 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Huvudenhet - L3 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Avdelning_NormalizedMainPC",
+            "columnId": "L3_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Avdelning_NormalizedMainPC",
+            "tableType": "Table",
+            "friendlyName": "dim_Avdelning_NormalizedMainPC",
+            "qualifiedObjectName": "dw.dim_Avdelning_NormalizedMainPC"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Avdelning_NormalizedMainPC",
+          "columnId": "L3_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Avdelning_NormalizedMainPC",
+          "tableType": "Table",
+          "friendlyName": "dim_Avdelning_NormalizedMainPC",
+          "qualifiedObjectName": "dw.dim_Avdelning_NormalizedMainPC"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Huvudenhet - L2 ID",
+          "relatedAttributeName": "Huvudenhet - L2 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Huvudenhet - L3 Sort",
+          "relatedAttributeName": "Huvudenhet - L3 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Huvudenhet - L3 Sort",
+      "name": "Huvudenhet - L3 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Avdelning_NormalizedMainPC",
+            "columnId": "L3_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Avdelning_NormalizedMainPC",
+            "tableType": "Table",
+            "friendlyName": "dim_Avdelning_NormalizedMainPC",
+            "qualifiedObjectName": "dw.dim_Avdelning_NormalizedMainPC"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Avdelning_NormalizedMainPC",
+          "columnId": "L3_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Avdelning_NormalizedMainPC",
+          "tableType": "Table",
+          "friendlyName": "dim_Avdelning_NormalizedMainPC",
+          "qualifiedObjectName": "dw.dim_Avdelning_NormalizedMainPC"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Huvudenhet - L4 ID",
+      "name": "Huvudenhet - L4 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Huvudenhet - L4 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Avdelning_NormalizedMainPC",
+            "columnId": "L4_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Avdelning_NormalizedMainPC",
+            "tableType": "Table",
+            "friendlyName": "dim_Avdelning_NormalizedMainPC",
+            "qualifiedObjectName": "dw.dim_Avdelning_NormalizedMainPC"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Avdelning_NormalizedMainPC",
+          "columnId": "L4_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Avdelning_NormalizedMainPC",
+          "tableType": "Table",
+          "friendlyName": "dim_Avdelning_NormalizedMainPC",
+          "qualifiedObjectName": "dw.dim_Avdelning_NormalizedMainPC"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Huvudenhet - L3 ID",
+          "relatedAttributeName": "Huvudenhet - L3 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Huvudenhet - L4 Sort",
+          "relatedAttributeName": "Huvudenhet - L4 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Huvudenhet - L4 Sort",
+      "name": "Huvudenhet - L4 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Avdelning_NormalizedMainPC",
+            "columnId": "L4_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Avdelning_NormalizedMainPC",
+            "tableType": "Table",
+            "friendlyName": "dim_Avdelning_NormalizedMainPC",
+            "qualifiedObjectName": "dw.dim_Avdelning_NormalizedMainPC"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Avdelning_NormalizedMainPC",
+          "columnId": "L4_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Avdelning_NormalizedMainPC",
+          "tableType": "Table",
+          "friendlyName": "dim_Avdelning_NormalizedMainPC",
+          "qualifiedObjectName": "dw.dim_Avdelning_NormalizedMainPC"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Huvudenhet - L5 ID",
+      "name": "Huvudenhet - L5 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Huvudenhet - L5 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Avdelning_NormalizedMainPC",
+            "columnId": "L5_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Avdelning_NormalizedMainPC",
+            "tableType": "Table",
+            "friendlyName": "dim_Avdelning_NormalizedMainPC",
+            "qualifiedObjectName": "dw.dim_Avdelning_NormalizedMainPC"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Avdelning_NormalizedMainPC",
+          "columnId": "L5_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Avdelning_NormalizedMainPC",
+          "tableType": "Table",
+          "friendlyName": "dim_Avdelning_NormalizedMainPC",
+          "qualifiedObjectName": "dw.dim_Avdelning_NormalizedMainPC"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Huvudenhet - L4 ID",
+          "relatedAttributeName": "Huvudenhet - L4 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Huvudenhet - L5 Sort",
+          "relatedAttributeName": "Huvudenhet - L5 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Huvudenhet - L5 Sort",
+      "name": "Huvudenhet - L5 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Avdelning_NormalizedMainPC",
+            "columnId": "L5_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Avdelning_NormalizedMainPC",
+            "tableType": "Table",
+            "friendlyName": "dim_Avdelning_NormalizedMainPC",
+            "qualifiedObjectName": "dw.dim_Avdelning_NormalizedMainPC"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Avdelning_NormalizedMainPC",
+          "columnId": "L5_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Avdelning_NormalizedMainPC",
+          "tableType": "Table",
+          "friendlyName": "dim_Avdelning_NormalizedMainPC",
+          "qualifiedObjectName": "dw.dim_Avdelning_NormalizedMainPC"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    }
+  ],
+  "hierarchies": [
+    {
+      "id": "Hierarki",
+      "name": "Hierarki",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Alla Avdelningar",
+      "visible": true,
+      "levels": [
+        {
+          "id": "Nivå 4",
+          "name": "Nivå 4",
+          "ordinal": 0,
+          "sourceAttributeId": "Avdelning - L3 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        },
+        {
+          "id": "Nivå 5",
+          "name": "Nivå 5",
+          "ordinal": 0,
+          "sourceAttributeId": "Avdelning - L4 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        },
+        {
+          "id": "Nivå 3",
+          "name": "Nivå 3",
+          "ordinal": 0,
+          "sourceAttributeId": "Avdelning - L2 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        },
+        {
+          "id": "Nivå 1",
+          "name": "Nivå 1",
+          "ordinal": 0,
+          "sourceAttributeId": "Avdelning - L0 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        },
+        {
+          "id": "Nivå 2",
+          "name": "Nivå 2",
+          "ordinal": 0,
+          "sourceAttributeId": "Avdelning - L1 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        }
+      ]
+    },
+    {
+      "id": "Lista",
+      "name": "Lista",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Alla Avdelningar",
+      "visible": true,
+      "levels": [
+        {
+          "id": "Avdelning",
+          "name": "Avdelning",
+          "ordinal": 0,
+          "sourceAttributeId": "Avdelning ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        }
+      ]
+    },
+    {
+      "id": "Per huvudgruppering",
+      "name": "Per huvudgruppering",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Alla Avdelningar",
+      "visible": true,
+      "levels": [
+        {
+          "id": "Nivå 4",
+          "name": "Nivå 4",
+          "ordinal": 0,
+          "sourceAttributeId": "Huvudenhet - L3 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        },
+        {
+          "id": "Nivå 5",
+          "name": "Nivå 5",
+          "ordinal": 0,
+          "sourceAttributeId": "Huvudenhet - L4 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        },
+        {
+          "id": "Nivå 6",
+          "name": "Nivå 6",
+          "ordinal": 0,
+          "sourceAttributeId": "Huvudenhet - L5 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        },
+        {
+          "id": "Nivå 1",
+          "name": "Nivå 1",
+          "ordinal": 0,
+          "sourceAttributeId": "Huvudenhet - L0 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        },
+        {
+          "id": "Nivå 2",
+          "name": "Nivå 2",
+          "ordinal": 0,
+          "sourceAttributeId": "Huvudenhet - L1 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        },
+        {
+          "id": "Nivå 3",
+          "name": "Nivå 3",
+          "ordinal": 0,
+          "sourceAttributeId": "Huvudenhet - L2 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        }
+      ]
+    }
+  ]
+}

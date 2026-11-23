@@ -1,0 +1,757 @@
+{
+  "DatabaseServer": "base-template",
+  "DatabaseName": "INSIKT_KUND_DW",
+  "IncUpdate_EventConfiguration": [
+    {
+      "JobID": 1,
+      "AgentJobName": "INSIKT_KUND - Inkrementella bakgrundsjobb",
+      "Description": "Bakgrundsjobb för att hantera event",
+      "WaitTime": "00:00:02",
+      "Events": [
+        {
+          "EventID": 1,
+          "JobID": 1,
+          "Name": "Förändring i Resultat_Planning",
+          "Description": "Nya rader i fact_Resultat_Planning med IncUpdate = 1",
+          "EventTriggerTypeID": "IncUpdate",
+          "TriggerTable": "[dw].[fact_Resultat_Planning]",
+          "EventOrder": 0,
+          "EventPrio": 1,
+          "IsDisabled": false,
+          "ProcessEvents": [
+            {
+              "EventID": 1,
+              "Name": "Ekonomi_Resultat_Planning",
+              "Description": "Processa planeringspartition med förändrade rader (och ExistsInWriteTable = 0).",
+              "LinkedServer": "INSIKT_KUND_AS",
+              "CubeDatabaseID": "INSIKT_KUND_Ekonomi",
+              "DataSourceID": "INSIKT_DW",
+              "CubeID": "Ekonomi",
+              "MeasureGroupID": "Resultat - Planering - INSIKT",
+              "PartitionID": "fact_Resultat_Planning",
+              "WriteEnabledMeasureGroup": true,
+              "ProcessOrder": 0,
+              "IsDisabled": false
+            },
+            {
+              "EventID": 1,
+              "Name": "Ekonomi_Resultat_Planning_Analysis",
+              "Description": "Processa analyspartition med förändrade rader.",
+              "LinkedServer": "INSIKT_KUND_AS",
+              "CubeDatabaseID": "INSIKT_KUND_Ekonomi",
+              "DataSourceID": "INSIKT_DW",
+              "CubeID": "Ekonomi",
+              "MeasureGroupID": "Resultat - Planering",
+              "PartitionID": "fact_Resultat_Planning_Analysis",
+              "WriteEnabledMeasureGroup": false,
+              "CustomSourceTable": "[dw].[fact_Resultat_Planning_Analysis]",
+              "ProcessOrder": 0,
+              "IsDisabled": false
+            }
+          ],
+          "TriggeredByEvent": [
+            
+          ],
+          "TriggersEvent": [
+            
+          ]
+        }
+      ]
+    },
+    {
+      "JobID": 2,
+      "AgentJobName": "INSIKT_KUND - Inkrementella bakgrundsjobb projekt",
+      "Description": "Jobb fÃ¶r att processa IncUpdate-event fÃ¶r INSIKT Projekt",
+      "WaitTime": "00:00:01",
+      "Events": [
+        {
+          "EventID": 2,
+          "JobID": 2,
+          "Name": "Projektkalkyl",
+          "Description": "Initiering eller inmatning av kalkylrader",
+          "EventTriggerTypeID": "IncUpdate",
+          "TriggerTable": "[dw].[fact_Projekt_Planning]",
+          "TriggerIdColumnName": "ID",
+          "EventOrder": 10,
+          "EventPrio": 1,
+          "IsDisabled": false,
+          "ProcessEvents": [
+            {
+              "EventID": 2,
+              "Name": "Projektkalkyl",
+              "LinkedServer": "INSIKT_KUND_AS",
+              "CubeDatabaseID": "INSIKT_KUND_Projekt",
+              "DataSourceID": "INSIKT_DW",
+              "CubeID": "Projektplanering",
+              "MeasureGroupID": "Fact Projekt Planning",
+              "PartitionID": "Fact Projekt Planning",
+              "WriteEnabledMeasureGroup": true,
+              "ProcessOrder": 10,
+              "IsDisabled": false
+            },
+            {
+              "EventID": 2,
+              "Name": "Projektkalkyl analysis",
+              "LinkedServer": "INSIKT_KUND_AS",
+              "CubeDatabaseID": "INSIKT_KUND_Projekt",
+              "DataSourceID": "INSIKT_DW",
+              "CubeID": "Projektanalys",
+              "MeasureGroupID": "Fact Projekt Planning Analysis",
+              "PartitionID": "Fact Projekt Planning Analysis",
+              "WriteEnabledMeasureGroup": false,
+              "CustomSourceTable": "[dw].[fact_Projekt_Planning_Analysis]",
+              "ProcessOrder": 10,
+              "IsDisabled": true
+            }
+          ],
+          "TriggeredByEvent": [
+            
+          ],
+          "TriggersEvent": [
+            {
+              "EventID": 17,
+              "JobID": 2,
+              "Name": "ETL_Fact_Projekt_Periodisering_Calc",
+              "Description": "Beräknar och periodiserar resten av projektkostnader ",
+              "EventTriggerTypeID": "TriggerOnEvent",
+              "CalculateProcedure": "[dbo].[ETL_Fact_Projekt_Periodisering_Calc]",
+              "EventOrder": 10,
+              "EventPrio": 1,
+              "IsDisabled": false
+            }
+          ]
+        },
+        {
+          "EventID": 3,
+          "JobID": 2,
+          "Name": "Periodisering",
+          "Description": "Incupdate-rader i dw.fact_Projekt_Periodisering_Planning",
+          "EventTriggerTypeID": "IncUpdate",
+          "TriggerTable": "[dw].[fact_Projekt_Periodisering_Planning]",
+          "TriggerIdColumnName": "ID",
+          "EventOrder": 10,
+          "EventPrio": 1,
+          "IsDisabled": false,
+          "ProcessEvents": [
+            {
+              "EventID": 3,
+              "Name": "Periodisering",
+              "LinkedServer": "INSIKT_KUND_AS",
+              "CubeDatabaseID": "INSIKT_KUND_Projekt",
+              "DataSourceID": "INSIKT_DW",
+              "CubeID": "Projektplanering",
+              "MeasureGroupID": "Fact Projekt Periodisering Planning",
+              "PartitionID": "Fact Projekt Periodisering Planning",
+              "WriteEnabledMeasureGroup": true,
+              "ProcessOrder": 10,
+              "IsDisabled": false
+            }
+          ],
+          "TriggeredByEvent": [
+            
+          ],
+          "TriggersEvent": [
+            {
+              "EventID": 17,
+              "JobID": 2,
+              "Name": "ETL_Fact_Projekt_Periodisering_Calc",
+              "Description": "Beräknar och periodiserar resten av projektkostnader ",
+              "EventTriggerTypeID": "TriggerOnEvent",
+              "CalculateProcedure": "[dbo].[ETL_Fact_Projekt_Periodisering_Calc]",
+              "EventOrder": 10,
+              "EventPrio": 1,
+              "IsDisabled": false
+            }
+          ]
+        },
+        {
+          "EventID": 4,
+          "JobID": 2,
+          "Name": "Periodisering Calc",
+          "Description": "Beräknade periodiseringsrader",
+          "EventTriggerTypeID": "RowsExists",
+          "TriggerTable": "[dw].[fact_Projekt_Periodisering_Planning_Calc_FactCDC]",
+          "TriggerIdColumnName": "CDC_ID",
+          "EventOrder": 10,
+          "EventPrio": 1,
+          "IsDisabled": false,
+          "ProcessEvents": [
+            {
+              "EventID": 4,
+              "Name": "Periodisering Calc",
+              "LinkedServer": "INSIKT_KUND_AS",
+              "CubeDatabaseID": "INSIKT_KUND_Projekt",
+              "DataSourceID": "INSIKT_DW",
+              "CubeID": "Projektplanering",
+              "MeasureGroupID": "Fact Projekt Periodisering Planning Calc",
+              "PartitionID": "Fact Projekt Periodisering Planning Calc",
+              "WriteEnabledMeasureGroup": false,
+              "ProcessOrder": 10,
+              "IsDisabled": false
+            }
+          ],
+          "TriggeredByEvent": [
+            
+          ],
+          "TriggersEvent": [
+            {
+              "EventID": 18,
+              "JobID": 2,
+              "Name": "ETL_Fact_Projekt_Analysis",
+              "EventTriggerTypeID": "TriggerOnEvent",
+              "CalculateProcedure": "[dbo].[ETL_Fact_Projekt_Analysis]",
+              "EventOrder": 30,
+              "EventPrio": 1,
+              "IsDisabled": false
+            }
+          ]
+        },
+        {
+          "EventID": 5,
+          "JobID": 2,
+          "Name": "Utfall",
+          "Description": "Processning av Utfall",
+          "EventTriggerTypeID": "RowsExists",
+          "TriggerTable": "[dw].[fact_Projekt_Utfall_FactCDC]",
+          "TriggerIdColumnName": "CDC_ID",
+          "EventOrder": 10,
+          "EventPrio": 1,
+          "IsDisabled": false,
+          "ProcessEvents": [
+            {
+              "EventID": 5,
+              "Name": "Utfall",
+              "LinkedServer": "INSIKT_KUND_AS",
+              "CubeDatabaseID": "INSIKT_KUND_Projekt",
+              "DataSourceID": "INSIKT_DW",
+              "CubeID": "Projektplanering",
+              "MeasureGroupID": "Fact Projekt Utfall",
+              "PartitionID": "Fact Projekt Utfall",
+              "WriteEnabledMeasureGroup": false,
+              "ProcessOrder": 10,
+              "IsDisabled": false
+            },
+            {
+              "EventID": 5,
+              "Name": "Utfall Analysis",
+              "LinkedServer": "INSIKT_KUND_AS",
+              "CubeDatabaseID": "INSIKT_KUND_Projekt",
+              "DataSourceID": "INSIKT_DW",
+              "CubeID": "Projektanalys",
+              "MeasureGroupID": "Fact Projekt Utfall Analysis",
+              "PartitionID": "Fact Projekt Utfall Analysis",
+              "WriteEnabledMeasureGroup": false,
+              "CustomSourceTable": "[dw].[fact_Projekt_Utfall_Analysis_FactCDC]",
+              "ProcessOrder": 10,
+              "IsDisabled": false
+            }
+          ],
+          "TriggeredByEvent": [
+            
+          ],
+          "TriggersEvent": [
+            
+          ]
+        },
+        {
+          "EventID": 6,
+          "JobID": 2,
+          "Name": "Utfall fryst",
+          "Description": "Processning av Utfall fryst",
+          "EventTriggerTypeID": "RowsExists",
+          "TriggerTable": "[dw].[fact_Projekt_Utfall_Fryst_FactCDC]",
+          "TriggerIdColumnName": "CDC_ID",
+          "EventOrder": 10,
+          "EventPrio": 1,
+          "IsDisabled": false,
+          "ProcessEvents": [
+            {
+              "EventID": 6,
+              "Name": "Utfall Fryst",
+              "LinkedServer": "INSIKT_KUND_AS",
+              "CubeDatabaseID": "INSIKT_KUND_Projekt",
+              "DataSourceID": "INSIKT_DW",
+              "CubeID": "Projektplanering",
+              "MeasureGroupID": "Fact Projekt Utfall Fryst",
+              "PartitionID": "Fact Projekt Utfall Fryst",
+              "WriteEnabledMeasureGroup": false,
+              "ProcessOrder": 10,
+              "IsDisabled": false
+            }
+          ],
+          "TriggeredByEvent": [
+            
+          ],
+          "TriggersEvent": [
+            {
+              "EventID": 16,
+              "JobID": 2,
+              "Name": "ETL_Fact_Projekt_Utilities",
+              "EventTriggerTypeID": "TriggerOnEvent",
+              "CalculateProcedure": "[dbo].[ETL_Fact_Projekt_Utilities]",
+              "EventOrder": 12,
+              "EventPrio": 1,
+              "IsDisabled": false
+            },
+            {
+              "EventID": 17,
+              "JobID": 2,
+              "Name": "ETL_Fact_Projekt_Periodisering_Calc",
+              "Description": "Beräknar och periodiserar resten av projektkostnader ",
+              "EventTriggerTypeID": "TriggerOnEvent",
+              "CalculateProcedure": "[dbo].[ETL_Fact_Projekt_Periodisering_Calc]",
+              "EventOrder": 10,
+              "EventPrio": 1,
+              "IsDisabled": false
+            }
+          ]
+        },
+        {
+          "EventID": 7,
+          "JobID": 2,
+          "Name": "Utilities",
+          "Description": "Processning av Utilities",
+          "EventTriggerTypeID": "RowsExists",
+          "TriggerTable": "[dw].[fact_Projekt_Utilities_FactCDC]",
+          "TriggerIdColumnName": "CDC_ID",
+          "EventOrder": 10,
+          "EventPrio": 1,
+          "IsDisabled": false,
+          "ProcessEvents": [
+            {
+              "EventID": 7,
+              "Name": "Utilities",
+              "LinkedServer": "INSIKT_KUND_AS",
+              "CubeDatabaseID": "INSIKT_KUND_Projekt",
+              "DataSourceID": "INSIKT_DW",
+              "CubeID": "Projektplanering",
+              "MeasureGroupID": "Fact Projekt Utilities",
+              "PartitionID": "Fact Projekt Utilities",
+              "WriteEnabledMeasureGroup": false,
+              "ProcessOrder": 10,
+              "IsDisabled": false
+            },
+            {
+              "EventID": 7,
+              "Name": "Utilities Analysis",
+              "LinkedServer": "INSIKT_KUND_AS",
+              "CubeDatabaseID": "INSIKT_KUND_Projekt",
+              "DataSourceID": "INSIKT_DW",
+              "CubeID": "Projektanalys",
+              "MeasureGroupID": "Fact Projekt Utilities Analysis",
+              "PartitionID": "Fact Projekt Utilities Analysis",
+              "WriteEnabledMeasureGroup": false,
+              "CustomSourceTable": "[dw].[fact_Projekt_Utilities_Analysis_FactCDC]",
+              "ProcessOrder": 10,
+              "IsDisabled": true
+            }
+          ],
+          "TriggeredByEvent": [
+            
+          ],
+          "TriggersEvent": [
+            {
+              "EventID": 17,
+              "JobID": 2,
+              "Name": "ETL_Fact_Projekt_Periodisering_Calc",
+              "Description": "Beräknar och periodiserar resten av projektkostnader ",
+              "EventTriggerTypeID": "TriggerOnEvent",
+              "CalculateProcedure": "[dbo].[ETL_Fact_Projekt_Periodisering_Calc]",
+              "EventOrder": 10,
+              "EventPrio": 1,
+              "IsDisabled": false
+            }
+          ]
+        },
+        {
+          "EventID": 9,
+          "JobID": 2,
+          "Name": "TriggerEvent_INSIKTProjekt",
+          "Description": "Triggad processning av INSIKT Projekt i analys",
+          "EventTriggerTypeID": "RowsExists",
+          "TriggerTable": "[dbo].[FCProject_TriggerIncUpdateEvent_TriggerEvent_INSIKTProjekt]",
+          "EventOrder": 10,
+          "EventPrio": 1,
+          "IsDisabled": false,
+          "ProcessEvents": [
+            {
+              "EventID": 9,
+              "Name": "INSIKTProjekt",
+              "LinkedServer": "INSIKT_KUND_AS",
+              "CubeDatabaseID": "INSIKT_KUND_Projekt",
+              "DataSourceID": "INSIKT_DW",
+              "CustomDimensionID": "INSIKT Projekt",
+              "CustomProcedure": "[app].[IncUpdate_Process_Dimension_Update]",
+              "ProcessOrder": 5,
+              "IsDisabled": false
+            }
+          ],
+          "TriggeredByEvent": [
+            
+          ],
+          "TriggersEvent": [
+            
+          ]
+        },
+        {
+          "EventID": 10,
+          "JobID": 2,
+          "Name": "TriggerEvent_Periodisering",
+          "Description": "Via triggertabell",
+          "EventTriggerTypeID": "RowsExists",
+          "TriggerTable": "[dbo].[FCProject_TriggerIncUpdateEvent_TriggerEvent_Periodisering]",
+          "EventOrder": 10,
+          "EventPrio": 1,
+          "IsDisabled": false,
+          "ProcessEvents": [
+            
+          ],
+          "TriggeredByEvent": [
+            
+          ],
+          "TriggersEvent": [
+            {
+              "EventID": 17,
+              "JobID": 2,
+              "Name": "ETL_Fact_Projekt_Periodisering_Calc",
+              "Description": "Beräknar och periodiserar resten av projektkostnader ",
+              "EventTriggerTypeID": "TriggerOnEvent",
+              "CalculateProcedure": "[dbo].[ETL_Fact_Projekt_Periodisering_Calc]",
+              "EventOrder": 10,
+              "EventPrio": 1,
+              "IsDisabled": false
+            }
+          ]
+        },
+        {
+          "EventID": 11,
+          "JobID": 2,
+          "Name": "TriggerEvent_Utfall",
+          "Description": "Via triggertabell",
+          "EventTriggerTypeID": "RowsExists",
+          "TriggerTable": "[dbo].[FCProject_TriggerIncUpdateEvent_TriggerEvent_Utfall]",
+          "EventOrder": 10,
+          "EventPrio": 1,
+          "IsDisabled": false,
+          "ProcessEvents": [
+            
+          ],
+          "TriggeredByEvent": [
+            
+          ],
+          "TriggersEvent": [
+            {
+              "EventID": 14,
+              "JobID": 2,
+              "Name": "ETL_Fact_Projekt_Utfall",
+              "EventTriggerTypeID": "TriggerOnEvent",
+              "CalculateProcedure": "[dbo].[ETL_Fact_Projekt_Utfall]",
+              "EventOrder": 10,
+              "EventPrio": 1,
+              "IsDisabled": false
+            },
+            {
+              "EventID": 15,
+              "JobID": 2,
+              "Name": "ETL_Fact_Projekt_Utfall_Fryst",
+              "EventTriggerTypeID": "TriggerOnEvent",
+              "CalculateProcedure": "[dbo].[ETL_Fact_Projekt_Utfall_Fryst]",
+              "EventOrder": 11,
+              "EventPrio": 1,
+              "IsDisabled": false
+            }
+          ]
+        },
+        {
+          "EventID": 12,
+          "JobID": 2,
+          "Name": "TriggerEvent_Utilities",
+          "Description": "Via triggertabell",
+          "EventTriggerTypeID": "RowsExists",
+          "TriggerTable": "[dbo].[FCProject_TriggerIncUpdateEvent_TriggerEvent_Utilities]",
+          "EventOrder": 10,
+          "EventPrio": 1,
+          "IsDisabled": false,
+          "ProcessEvents": [
+            
+          ],
+          "TriggeredByEvent": [
+            
+          ],
+          "TriggersEvent": [
+            {
+              "EventID": 16,
+              "JobID": 2,
+              "Name": "ETL_Fact_Projekt_Utilities",
+              "EventTriggerTypeID": "TriggerOnEvent",
+              "CalculateProcedure": "[dbo].[ETL_Fact_Projekt_Utilities]",
+              "EventOrder": 12,
+              "EventPrio": 1,
+              "IsDisabled": false
+            }
+          ]
+        },
+        {
+          "EventID": 13,
+          "JobID": 2,
+          "Name": "WaitForEvents",
+          "Description": "Används för att skapa upp ett faktiskt event som oncubeupdated kan vänta på om vi behöver vänta på att en TriggerOnEvent ska bli klar innan INSIKT läser från kuben",
+          "EventTriggerTypeID": "RowsExists",
+          "TriggerTable": "[dbo].[FCProject_TriggerIncUpdateEvent_WaitForEvents]",
+          "EventOrder": 10,
+          "EventPrio": 1,
+          "IsDisabled": false,
+          "ProcessEvents": [
+            
+          ],
+          "TriggeredByEvent": [
+            
+          ],
+          "TriggersEvent": [
+            
+          ]
+        },
+        {
+          "EventID": 8,
+          "JobID": 2,
+          "Name": "Uppföljning",
+          "Description": "Projektanalys - Uppföljning",
+          "EventTriggerTypeID": "RowsExists",
+          "TriggerTable": "[dw].[fact_Projekt_Analysis_FactCDC]",
+          "TriggerIdColumnName": "CDC_ID",
+          "EventOrder": 10,
+          "EventPrio": -10,
+          "IsDisabled": false,
+          "ProcessEvents": [
+            {
+              "EventID": 8,
+              "Name": "Uppföljning",
+              "LinkedServer": "INSIKT_KUND_AS",
+              "CubeDatabaseID": "INSIKT_KUND_Projekt",
+              "DataSourceID": "INSIKT_DW",
+              "CubeID": "Projektanalys",
+              "MeasureGroupID": "Fact Projekt Analysis",
+              "PartitionID": "Fact Projekt Analysis",
+              "WriteEnabledMeasureGroup": false,
+              "ProcessOrder": 10,
+              "IsDisabled": false
+            }
+          ],
+          "TriggeredByEvent": [
+            
+          ],
+          "TriggersEvent": [
+            
+          ]
+        },
+        {
+          "EventID": 14,
+          "JobID": 2,
+          "Name": "ETL_Fact_Projekt_Utfall",
+          "EventTriggerTypeID": "TriggerOnEvent",
+          "CalculateProcedure": "[dbo].[ETL_Fact_Projekt_Utfall]",
+          "EventOrder": 10,
+          "EventPrio": 1,
+          "IsDisabled": false,
+          "ProcessEvents": [
+            
+          ],
+          "TriggeredByEvent": [
+            {
+              "EventID": 11,
+              "JobID": 2,
+              "EventName": "TriggerEvent_Utfall",
+              "EventDescription": "Via triggertabell",
+              "EventTriggerTypeID": "RowsExists",
+              "TriggerTable": "[dbo].[FCProject_TriggerIncUpdateEvent_TriggerEvent_Utfall]",
+              "EventOrder": 10,
+              "EventPrio": 1,
+              "IsDisabled": false
+            }
+          ],
+          "TriggersEvent": [
+            
+          ]
+        },
+        {
+          "EventID": 17,
+          "JobID": 2,
+          "Name": "ETL_Fact_Projekt_Periodisering_Calc",
+          "Description": "Beräknar och periodiserar resten av projektkostnader ",
+          "EventTriggerTypeID": "TriggerOnEvent",
+          "CalculateProcedure": "[dbo].[ETL_Fact_Projekt_Periodisering_Calc]",
+          "EventOrder": 10,
+          "EventPrio": 1,
+          "IsDisabled": false,
+          "ProcessEvents": [
+            
+          ],
+          "TriggeredByEvent": [
+            {
+              "EventID": 2,
+              "JobID": 2,
+              "EventName": "Projektkalkyl",
+              "EventDescription": "Initiering eller inmatning av kalkylrader",
+              "EventTriggerTypeID": "IncUpdate",
+              "TriggerTable": "[dw].[fact_Projekt_Planning]",
+              "TriggerIdColumnName": "ID",
+              "EventOrder": 10,
+              "EventPrio": 1,
+              "IsDisabled": false
+            },
+            {
+              "EventID": 3,
+              "JobID": 2,
+              "EventName": "Periodisering",
+              "EventDescription": "Incupdate-rader i dw.fact_Projekt_Periodisering_Planning",
+              "EventTriggerTypeID": "IncUpdate",
+              "TriggerTable": "[dw].[fact_Projekt_Periodisering_Planning]",
+              "TriggerIdColumnName": "ID",
+              "EventOrder": 10,
+              "EventPrio": 1,
+              "IsDisabled": false
+            },
+            {
+              "EventID": 6,
+              "JobID": 2,
+              "EventName": "Utfall fryst",
+              "EventDescription": "Processning av Utfall fryst",
+              "EventTriggerTypeID": "RowsExists",
+              "TriggerTable": "[dw].[fact_Projekt_Utfall_Fryst_FactCDC]",
+              "TriggerIdColumnName": "CDC_ID",
+              "EventOrder": 10,
+              "EventPrio": 1,
+              "IsDisabled": false
+            },
+            {
+              "EventID": 7,
+              "JobID": 2,
+              "EventName": "Utilities",
+              "EventDescription": "Processning av Utilities",
+              "EventTriggerTypeID": "RowsExists",
+              "TriggerTable": "[dw].[fact_Projekt_Utilities_FactCDC]",
+              "TriggerIdColumnName": "CDC_ID",
+              "EventOrder": 10,
+              "EventPrio": 1,
+              "IsDisabled": false
+            },
+            {
+              "EventID": 10,
+              "JobID": 2,
+              "EventName": "TriggerEvent_Periodisering",
+              "EventDescription": "Via triggertabell",
+              "EventTriggerTypeID": "RowsExists",
+              "TriggerTable": "[dbo].[FCProject_TriggerIncUpdateEvent_TriggerEvent_Periodisering]",
+              "EventOrder": 10,
+              "EventPrio": 1,
+              "IsDisabled": false
+            }
+          ],
+          "TriggersEvent": [
+            
+          ]
+        },
+        {
+          "EventID": 15,
+          "JobID": 2,
+          "Name": "ETL_Fact_Projekt_Utfall_Fryst",
+          "EventTriggerTypeID": "TriggerOnEvent",
+          "CalculateProcedure": "[dbo].[ETL_Fact_Projekt_Utfall_Fryst]",
+          "EventOrder": 11,
+          "EventPrio": 1,
+          "IsDisabled": false,
+          "ProcessEvents": [
+            
+          ],
+          "TriggeredByEvent": [
+            {
+              "EventID": 11,
+              "JobID": 2,
+              "EventName": "TriggerEvent_Utfall",
+              "EventDescription": "Via triggertabell",
+              "EventTriggerTypeID": "RowsExists",
+              "TriggerTable": "[dbo].[FCProject_TriggerIncUpdateEvent_TriggerEvent_Utfall]",
+              "EventOrder": 10,
+              "EventPrio": 1,
+              "IsDisabled": false
+            }
+          ],
+          "TriggersEvent": [
+            
+          ]
+        },
+        {
+          "EventID": 16,
+          "JobID": 2,
+          "Name": "ETL_Fact_Projekt_Utilities",
+          "EventTriggerTypeID": "TriggerOnEvent",
+          "CalculateProcedure": "[dbo].[ETL_Fact_Projekt_Utilities]",
+          "EventOrder": 12,
+          "EventPrio": 1,
+          "IsDisabled": false,
+          "ProcessEvents": [
+            
+          ],
+          "TriggeredByEvent": [
+            {
+              "EventID": 6,
+              "JobID": 2,
+              "EventName": "Utfall fryst",
+              "EventDescription": "Processning av Utfall fryst",
+              "EventTriggerTypeID": "RowsExists",
+              "TriggerTable": "[dw].[fact_Projekt_Utfall_Fryst_FactCDC]",
+              "TriggerIdColumnName": "CDC_ID",
+              "EventOrder": 10,
+              "EventPrio": 1,
+              "IsDisabled": false
+            },
+            {
+              "EventID": 12,
+              "JobID": 2,
+              "EventName": "TriggerEvent_Utilities",
+              "EventDescription": "Via triggertabell",
+              "EventTriggerTypeID": "RowsExists",
+              "TriggerTable": "[dbo].[FCProject_TriggerIncUpdateEvent_TriggerEvent_Utilities]",
+              "EventOrder": 10,
+              "EventPrio": 1,
+              "IsDisabled": false
+            }
+          ],
+          "TriggersEvent": [
+            
+          ]
+        },
+        {
+          "EventID": 18,
+          "JobID": 2,
+          "Name": "ETL_Fact_Projekt_Analysis",
+          "EventTriggerTypeID": "TriggerOnEvent",
+          "CalculateProcedure": "[dbo].[ETL_Fact_Projekt_Analysis]",
+          "EventOrder": 30,
+          "EventPrio": 1,
+          "IsDisabled": false,
+          "ProcessEvents": [
+            
+          ],
+          "TriggeredByEvent": [
+            {
+              "EventID": 4,
+              "JobID": 2,
+              "EventName": "Periodisering Calc",
+              "EventDescription": "Beräknade periodiseringsrader",
+              "EventTriggerTypeID": "RowsExists",
+              "TriggerTable": "[dw].[fact_Projekt_Periodisering_Planning_Calc_FactCDC]",
+              "TriggerIdColumnName": "CDC_ID",
+              "EventOrder": 10,
+              "EventPrio": 1,
+              "IsDisabled": false
+            }
+          ],
+          "TriggersEvent": [
+            
+          ]
+        }
+      ]
+    }
+  ]
+}

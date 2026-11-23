@@ -1,0 +1,102 @@
+[
+  {
+    "FCColumnID": 1,
+    "FCVersionTypeID": 1
+  },
+  {
+    "FCColumnID": 2,
+    "FCVersionTypeID": 1
+  },
+  {
+    "FCColumnID": 3,
+    "FCVersionTypeID": 1
+  },
+  {
+    "FCColumnID": 4,
+    "FCVersionTypeID": 1
+  },
+  {
+    "FCColumnID": 5,
+    "FCVersionTypeID": 1
+  },
+  {
+    "FCColumnID": 6,
+    "FCVersionTypeID": 1
+  },
+  {
+    "FCColumnID": 7,
+    "FCVersionTypeID": 2
+  },
+  {
+    "FCColumnID": 8,
+    "FCVersionTypeID": 2
+  },
+  {
+    "FCColumnID": 9,
+    "FCVersionTypeID": 2
+  },
+  {
+    "FCColumnID": 10,
+    "FCVersionTypeID": 2
+  },
+  {
+    "FCColumnID": 11,
+    "FCVersionTypeID": 2
+  },
+  {
+    "FCColumnID": 12,
+    "FCVersionTypeID": 2
+  },
+  {
+    "FCColumnID": 13,
+    "FCVersionTypeID": 3000
+  },
+  {
+    "FCColumnID": 15,
+    "FCVersionTypeID": 3000
+  },
+  {
+    "FCColumnID": 16,
+    "FCVersionTypeID": 2000
+  },
+  {
+    "FCColumnID": 17,
+    "FCVersionTypeID": 1000
+  },
+  {
+    "FCColumnID": 18,
+    "FCVersionTypeID": 2000
+  },
+  {
+    "FCColumnID": 19,
+    "FCVersionTypeID": 3000
+  },
+  {
+    "FCColumnID": 20,
+    "FCVersionTypeID": 3000
+  },
+  {
+    "FCColumnID": 21,
+    "FCVersionTypeID": 3000
+  },
+  {
+    "FCColumnID": 22,
+    "FCVersionTypeID": 2000
+  },
+  {
+    "FCColumnID": 23,
+    "FCVersionTypeID": 3000
+  },
+  {
+    "FCColumnID": 24,
+    "FCVersionTypeID": 1000
+  },
+  {
+    "FCColumnID": 25,
+    "FCVersionTypeID": 2000
+  },
+  {
+    "FCColumnID": 26,
+    "FCVersionTypeID": 3000
+  }
+]

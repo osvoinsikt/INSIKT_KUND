@@ -1,0 +1,7 @@
+{
+  "id": "INSIKT_DW",
+  "name": "INSIKT_DW",
+  "description": "",
+  "impersonationMode": "ImpersonateAccount",
+  "connectionString": "Provider=MSOLEDBSQL.1;Data Source=localhost;Integrated Security=SSPI;Initial Catalog=INSIKT_KUND_DW"
+}

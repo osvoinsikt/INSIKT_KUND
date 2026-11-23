@@ -1,0 +1,122 @@
+[
+  {
+    "ID": 1,
+    "Name": "Inställningar",
+    "Description": "Inställningar",
+    "isDimension": false,
+    "CompanyID": 1,
+    "DataSourceID": null
+  },
+  {
+    "ID": 2,
+    "Name": "Resultatkonto",
+    "Description": null,
+    "isDimension": true,
+    "CompanyID": 1,
+    "DataSourceID": 1
+  },
+  {
+    "ID": 3,
+    "Name": "Organisation",
+    "Description": null,
+    "isDimension": true,
+    "CompanyID": 1,
+    "DataSourceID": 1
+  },
+  {
+    "ID": 4,
+    "Name": "Datum",
+    "Description": null,
+    "isDimension": true,
+    "CompanyID": 1,
+    "DataSourceID": 1
+  },
+  {
+    "ID": 5,
+    "Name": "Planeringsversion",
+    "Description": null,
+    "isDimension": true,
+    "CompanyID": 1,
+    "DataSourceID": 1
+  },
+  {
+    "ID": 6,
+    "Name": "Measures",
+    "Description": null,
+    "isDimension": true,
+    "CompanyID": 1,
+    "DataSourceID": 1
+  },
+  {
+    "ID": 7,
+    "Name": "Kampanj",
+    "Description": null,
+    "isDimension": true,
+    "CompanyID": 1,
+    "DataSourceID": 1
+  },
+  {
+    "ID": 8,
+    "Name": "Projekt",
+    "Description": null,
+    "isDimension": true,
+    "CompanyID": 1,
+    "DataSourceID": 1
+  },
+  {
+    "ID": 9,
+    "Name": "Varugrupp",
+    "Description": null,
+    "isDimension": true,
+    "CompanyID": 1,
+    "DataSourceID": 1
+  },
+  {
+    "ID": 30,
+    "Name": "Datum",
+    "Description": null,
+    "isDimension": true,
+    "CompanyID": 1,
+    "DataSourceID": 3
+  },
+  {
+    "ID": 31,
+    "Name": "Planeringsversion",
+    "Description": null,
+    "isDimension": true,
+    "CompanyID": 1,
+    "DataSourceID": 3
+  },
+  {
+    "ID": 32,
+    "Name": "INSIKT Planeringsprojekt",
+    "Description": null,
+    "isDimension": true,
+    "CompanyID": 1,
+    "DataSourceID": 3
+  },
+  {
+    "ID": 33,
+    "Name": "Measures",
+    "Description": null,
+    "isDimension": true,
+    "CompanyID": 1,
+    "DataSourceID": 3
+  },
+  {
+    "ID": 34,
+    "Name": "Konto",
+    "Description": null,
+    "isDimension": true,
+    "CompanyID": 1,
+    "DataSourceID": 3
+  },
+  {
+    "ID": 35,
+    "Name": "Planeringsperiod",
+    "Description": null,
+    "isDimension": true,
+    "CompanyID": 1,
+    "DataSourceID": 3
+  }
+]

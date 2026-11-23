@@ -1,0 +1,17 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dw].[fact_InvoiceLink](
+	[SA_SourceSystemID] [int] NOT NULL,
+	[InvoiceDocumentID] [int] NOT NULL,
+	[InvoiceLinkUrl] [nvarchar](max) NULL,
+	[InvoiceLinkConfigurationID] [int] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[SA_SourceSystemID] ASC,
+	[InvoiceDocumentID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO

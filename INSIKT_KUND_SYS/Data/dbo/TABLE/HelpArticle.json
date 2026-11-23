@@ -1,0 +1,1082 @@
+[
+  {
+    "ControlName": "Admin",
+    "ParentControlName": null,
+    "SortOrder": 8,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Admin.Analysis",
+    "ParentControlName": "Admin",
+    "SortOrder": 3,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Admin.Analysis.Ai",
+    "ParentControlName": "Admin.General",
+    "SortOrder": 7,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Admin.Analysis.CommentTypes",
+    "ParentControlName": "Admin.Analysis",
+    "SortOrder": 3,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Admin.Analysis.Groups",
+    "ParentControlName": "Admin.Analysis",
+    "SortOrder": 1,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Admin.Analysis.ScheduleSnapshots",
+    "ParentControlName": "Admin.Analysis",
+    "SortOrder": 2,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Admin.DataUpdate",
+    "ParentControlName": "Admin.General",
+    "SortOrder": 2,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Admin.General",
+    "ParentControlName": "Admin",
+    "SortOrder": 1,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Admin.General.Colors",
+    "ParentControlName": "Admin.General",
+    "SortOrder": 6,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Admin.General.DimensionEditor",
+    "ParentControlName": "Admin.General",
+    "SortOrder": 3,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Admin.General.FileUpload",
+    "ParentControlName": "Admin.General",
+    "SortOrder": 4,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Admin.General.Maintenance",
+    "ParentControlName": "Admin.General",
+    "SortOrder": 5,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Admin.General.UserOrganisationRelation",
+    "ParentControlName": "Admin",
+    "SortOrder": 2,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Admin.Planning",
+    "ParentControlName": "Admin",
+    "SortOrder": 4,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Admin.Planning.AutomaticDistributions",
+    "ParentControlName": "Admin.Planning",
+    "SortOrder": 4,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Admin.Planning.Instructions",
+    "ParentControlName": "Admin.Planning",
+    "SortOrder": 7,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Admin.Planning.PeriodicDistribution",
+    "ParentControlName": "Admin.Planning",
+    "SortOrder": 2,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Admin.Planning.PlanningVersions.New",
+    "ParentControlName": "Admin.Planning",
+    "SortOrder": 6,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Admin.Planning.Settings",
+    "ParentControlName": "Admin.Planning",
+    "SortOrder": 1,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Admin.Planning.View",
+    "ParentControlName": "Admin.Planning",
+    "SortOrder": 3,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Admin.Project",
+    "ParentControlName": "Admin",
+    "SortOrder": 5,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Admin.Project.Indicator",
+    "ParentControlName": "Admin.Project",
+    "SortOrder": 5,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Admin.Project.ListGroupings",
+    "ParentControlName": "Admin.Project",
+    "SortOrder": 4,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Admin.Project.ProjectCards",
+    "ParentControlName": "Admin.Project",
+    "SortOrder": 3,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Admin.Project.ProjectProcesses",
+    "ParentControlName": "Admin.Project",
+    "SortOrder": 1,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Admin.Project.ProjectProcesses.DocumentTemplates",
+    "ParentControlName": "Admin.Project.ProjectProcesses",
+    "SortOrder": 1,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Admin.Project.ProjectProperties",
+    "ParentControlName": "Admin.Project",
+    "SortOrder": 2,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Admin.Scorecard",
+    "ParentControlName": "Admin",
+    "SortOrder": 6,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Admin.Scorecard.KPIs",
+    "ParentControlName": "Admin.Scorecard",
+    "SortOrder": 3,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Admin.Scorecard.Organisation",
+    "ParentControlName": "Admin.Scorecard",
+    "SortOrder": 5,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Admin.Scorecard.ScorecardModels",
+    "ParentControlName": "Admin.Scorecard",
+    "SortOrder": 2,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Admin.Scorecard.Versions",
+    "ParentControlName": "Admin.Scorecard",
+    "SortOrder": 4,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Admin.Scorecard.Vision",
+    "ParentControlName": "Admin.Scorecard",
+    "SortOrder": 1,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Admin.Users",
+    "ParentControlName": "Admin.General",
+    "SortOrder": 1,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Ai",
+    "ParentControlName": null,
+    "SortOrder": 2,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis",
+    "ParentControlName": null,
+    "SortOrder": 3,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.AdvancedReportTitle",
+    "ParentControlName": "Analysis",
+    "SortOrder": 18,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.AdvancedSelection",
+    "ParentControlName": "Analysis",
+    "SortOrder": 4,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.AdvancedSelection.RelativeSelections",
+    "ParentControlName": "Analysis.AdvancedSelection",
+    "SortOrder": 2,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.AdvancedSelection.SpecificSelections",
+    "ParentControlName": "Analysis.AdvancedSelection",
+    "SortOrder": 1,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.AI",
+    "ParentControlName": "Analysis",
+    "SortOrder": 20,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Calculations",
+    "ParentControlName": "Analysis",
+    "SortOrder": 8,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Calculations.CreateCalculation",
+    "ParentControlName": "Analysis.Calculations",
+    "SortOrder": 2,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Calculations.VisualTotal",
+    "ParentControlName": "Analysis.Calculations",
+    "SortOrder": 1,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Comments",
+    "ParentControlName": "Analysis",
+    "SortOrder": 14,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Dtd",
+    "ParentControlName": "Analysis",
+    "SortOrder": 3,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Export",
+    "ParentControlName": "Analysis",
+    "SortOrder": 16,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.FilterAndSort",
+    "ParentControlName": "Analysis",
+    "SortOrder": 5,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.ManageReports",
+    "ParentControlName": "Analysis",
+    "SortOrder": 9,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.ManageReports.ChangeName",
+    "ParentControlName": "Analysis.ManageReports",
+    "SortOrder": 3,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.ManageReports.Delete",
+    "ParentControlName": "Analysis.ManageReports",
+    "SortOrder": 4,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.ManageReports.Move",
+    "ParentControlName": "Analysis.ManageReports",
+    "SortOrder": 2,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.ManageReports.Save",
+    "ParentControlName": "Analysis.ManageReports",
+    "SortOrder": 1,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.OpenReports",
+    "ParentControlName": "Analysis",
+    "SortOrder": 1,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.OpenReports.Favorites",
+    "ParentControlName": "Analysis.OpenReports",
+    "SortOrder": 2,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.OpenReports.Recent",
+    "ParentControlName": "Analysis.OpenReports",
+    "SortOrder": 4,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.OpenReports.ReportGuide",
+    "ParentControlName": "Analysis.OpenReports",
+    "SortOrder": 3,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.OpenReports.ReportTree",
+    "ParentControlName": "Analysis.OpenReports",
+    "SortOrder": 1,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Permissions",
+    "ParentControlName": "Analysis",
+    "SortOrder": 17,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Permissions.DataRestrictions",
+    "ParentControlName": "Analysis.Permissions",
+    "SortOrder": 2,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Permissions.Preview",
+    "ParentControlName": "Analysis.Permissions",
+    "SortOrder": 1,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Report.CreateReport",
+    "ParentControlName": "Analysis",
+    "SortOrder": 6,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Report.CreateReport.AI.Summary",
+    "ParentControlName": "Analysis.Report.CreateReport",
+    "SortOrder": 13,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Report.CreateReport.CompactRows",
+    "ParentControlName": "Analysis.Report.CreateReport",
+    "SortOrder": 9,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Report.CreateReport.Diagram",
+    "ParentControlName": "Analysis.Report.CreateReport",
+    "SortOrder": 2,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Report.CreateReport.Diagram.Drill",
+    "ParentControlName": "Analysis.Report.CreateReport.Diagram",
+    "SortOrder": 3,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Report.CreateReport.Diagram.UseUnderlyingColors",
+    "ParentControlName": "Analysis.Report.CreateReport.Diagram",
+    "SortOrder": 1,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Report.CreateReport.Diagram.Waterfall",
+    "ParentControlName": "Analysis.Report.CreateReport.Diagram",
+    "SortOrder": 2,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Report.CreateReport.Formatting",
+    "ParentControlName": "Analysis.Report.CreateReport",
+    "SortOrder": 7,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Report.CreateReport.Formatting.AdditionalInformation",
+    "ParentControlName": "Analysis.Report.CreateReport.Formatting",
+    "SortOrder": 2,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Report.CreateReport.Formatting.AdvConnection",
+    "ParentControlName": "Analysis.Report.CreateReport.Formatting",
+    "SortOrder": 7,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Report.CreateReport.Formatting.ChangeCaption",
+    "ParentControlName": "Analysis.Report.CreateReport.Formatting",
+    "SortOrder": 5,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Report.CreateReport.Formatting.ColumnWidth",
+    "ParentControlName": "Analysis.Report.CreateReport.Formatting",
+    "SortOrder": 8,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Report.CreateReport.Formatting.Conditional",
+    "ParentControlName": "Analysis.Report.CreateReport.Formatting",
+    "SortOrder": 1,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Report.CreateReport.Formatting.NumberFormatting",
+    "ParentControlName": "Analysis.Report.CreateReport.Formatting",
+    "SortOrder": 3,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Report.CreateReport.Formatting.ShowAll",
+    "ParentControlName": "Analysis.Report.CreateReport.Formatting",
+    "SortOrder": 4,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Report.CreateReport.Formatting.Std",
+    "ParentControlName": "Analysis.Report.CreateReport.Formatting",
+    "SortOrder": 6,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Report.CreateReport.Formatting.Zebra",
+    "ParentControlName": "Analysis.Report.CreateReport.Formatting",
+    "SortOrder": 9,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Report.CreateReport.Gauge",
+    "ParentControlName": "Analysis.Report.CreateReport",
+    "SortOrder": 3,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Report.CreateReport.ImportFromExisting",
+    "ParentControlName": "Analysis.Report.CreateReport",
+    "SortOrder": 8,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Report.CreateReport.Map",
+    "ParentControlName": "Analysis.Report.CreateReport",
+    "SortOrder": 4,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Report.CreateReport.MultiReports",
+    "ParentControlName": "Analysis.Report.CreateReport",
+    "SortOrder": 10,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Report.CreateReport.MultiReports.ConnectSelection",
+    "ParentControlName": "Analysis.Report.CreateReport.MultiReports",
+    "SortOrder": 2,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Report.CreateReport.MultiReports.LayoutMode",
+    "ParentControlName": "Analysis.Report.CreateReport.MultiReports",
+    "SortOrder": 1,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Report.CreateReport.ProjectIndicatorReport",
+    "ParentControlName": "Analysis.Report.CreateReport",
+    "SortOrder": 12,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Report.CreateReport.ReportPackages",
+    "ParentControlName": "Analysis.Report.CreateReport",
+    "SortOrder": 11,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Report.CreateReport.ScorecardKPIWidget",
+    "ParentControlName": "Analysis.Report.CreateReport",
+    "SortOrder": 6,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Report.CreateReport.Table",
+    "ParentControlName": "Analysis.Report.CreateReport",
+    "SortOrder": 1,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Report.CreateReport.TextReport",
+    "ParentControlName": "Analysis.Report.CreateReport",
+    "SortOrder": 5,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.ReportGuide",
+    "ParentControlName": "Analysis",
+    "SortOrder": 10,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.ReportLinks",
+    "ParentControlName": "Analysis",
+    "SortOrder": 12,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.ReportSettings",
+    "ParentControlName": "Analysis",
+    "SortOrder": 7,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.ReportUsage",
+    "ParentControlName": "Analysis",
+    "SortOrder": 19,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Selection",
+    "ParentControlName": "Analysis",
+    "SortOrder": 2,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Selection.DrillOperations",
+    "ParentControlName": "Analysis.Selection",
+    "SortOrder": 2,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Selection.HideEmpty",
+    "ParentControlName": "Analysis.Selection",
+    "SortOrder": 4,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Selection.Panels",
+    "ParentControlName": "Analysis.Selection",
+    "SortOrder": 1,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Selection.Undo",
+    "ParentControlName": "Analysis.Selection",
+    "SortOrder": 3,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Share",
+    "ParentControlName": "Analysis",
+    "SortOrder": 15,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Snapshots",
+    "ParentControlName": "Analysis",
+    "SortOrder": 13,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Analysis.Subscriptions",
+    "ParentControlName": "Analysis",
+    "SortOrder": 11,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Contact",
+    "ParentControlName": null,
+    "SortOrder": 13,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Feedback",
+    "ParentControlName": null,
+    "SortOrder": 11,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "General",
+    "ParentControlName": null,
+    "SortOrder": 1,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "General.Access",
+    "ParentControlName": "General",
+    "SortOrder": 1,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "General.AutomaticalyOpenDownloadedFiles",
+    "ParentControlName": "General",
+    "SortOrder": 7,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "General.Concepts",
+    "ParentControlName": "General",
+    "SortOrder": 3,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "General.IntrusionInfo",
+    "ParentControlName": "General",
+    "SortOrder": 6,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "General.Logging",
+    "ParentControlName": "General",
+    "SortOrder": 9,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "General.Notification",
+    "ParentControlName": "General",
+    "SortOrder": 8,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "General.StartPage",
+    "ParentControlName": "General",
+    "SortOrder": 4,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "General.Tabs",
+    "ParentControlName": "General",
+    "SortOrder": 2,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "General.UserSurvey",
+    "ParentControlName": "General",
+    "SortOrder": 10,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "General.Zoom",
+    "ParentControlName": "General",
+    "SortOrder": 5,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Modules",
+    "ParentControlName": null,
+    "SortOrder": 9,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "News",
+    "ParentControlName": null,
+    "SortOrder": 10,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "PersonalInformation",
+    "ParentControlName": null,
+    "SortOrder": 12,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Planning",
+    "ParentControlName": null,
+    "SortOrder": 4,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Planning.AI",
+    "ParentControlName": "Planning",
+    "SortOrder": 8,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Planning.Analysis",
+    "ParentControlName": "Planning",
+    "SortOrder": 7,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Planning.Concepts",
+    "ParentControlName": "Planning",
+    "SortOrder": 1,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Planning.InfoTab",
+    "ParentControlName": "Planning",
+    "SortOrder": 3,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Planning.Input",
+    "ParentControlName": "Planning",
+    "SortOrder": 6,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Planning.Input.Comments",
+    "ParentControlName": "Planning.Input",
+    "SortOrder": 2,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Planning.Input.DetailInputMode",
+    "ParentControlName": "Planning.Input",
+    "SortOrder": 8,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Planning.Input.Distributions",
+    "ParentControlName": "Planning.Input",
+    "SortOrder": 6,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Planning.Input.Export",
+    "ParentControlName": "Planning.Input",
+    "SortOrder": 5,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Planning.Input.ExtraDimension",
+    "ParentControlName": "Planning.Input",
+    "SortOrder": 4,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Planning.Input.General",
+    "ParentControlName": "Planning.Input",
+    "SortOrder": 1,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Planning.Input.HelpFunctions",
+    "ParentControlName": "Planning.Input",
+    "SortOrder": 7,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Planning.Input.PeriodicDistribution",
+    "ParentControlName": "Planning.Input",
+    "SortOrder": 3,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Planning.Input.PeriodicDistribution.Predefined",
+    "ParentControlName": "Planning.Input.PeriodicDistribution",
+    "SortOrder": 1,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Planning.Input.SwitchedView",
+    "ParentControlName": "Planning.Input",
+    "SortOrder": 9,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Planning.LeftPanel",
+    "ParentControlName": "Planning",
+    "SortOrder": 2,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Planning.Process",
+    "ParentControlName": "Planning",
+    "SortOrder": 4,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Planning.ProcessOverview",
+    "ParentControlName": "Planning",
+    "SortOrder": 5,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Plugin",
+    "ParentControlName": null,
+    "SortOrder": 7,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Plugin.Export",
+    "ParentControlName": "Plugin",
+    "SortOrder": 1,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Plugin.LinkedFCObjects",
+    "ParentControlName": "Plugin",
+    "SortOrder": 2,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Project",
+    "ParentControlName": null,
+    "SortOrder": 5,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Project.AI",
+    "ParentControlName": "Project",
+    "SortOrder": 10,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Project.Concepts",
+    "ParentControlName": "Project",
+    "SortOrder": 1,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Project.CreateProject",
+    "ParentControlName": "Project.InfoTab",
+    "SortOrder": 2,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Project.Documents",
+    "ParentControlName": "Project",
+    "SortOrder": 8,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Project.EditProject",
+    "ParentControlName": "Project.InfoTab",
+    "SortOrder": 3,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Project.InfoTab",
+    "ParentControlName": "Project",
+    "SortOrder": 3,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Project.InfoTab.ActionLog",
+    "ParentControlName": "Project.InfoTab",
+    "SortOrder": 5,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Project.InfoTab.Actions",
+    "ParentControlName": "Project.InfoTab",
+    "SortOrder": 9,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Project.InfoTab.Export",
+    "ParentControlName": "Project.InfoTab",
+    "SortOrder": 6,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Project.InfoTab.Indicators",
+    "ParentControlName": "Project.InfoTab",
+    "SortOrder": 7,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Project.InfoTab.Roles",
+    "ParentControlName": "Project",
+    "SortOrder": 4,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Project.InfoTab.SubProjects",
+    "ParentControlName": "Project.InfoTab",
+    "SortOrder": 8,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Project.Input",
+    "ParentControlName": "Project",
+    "SortOrder": 5,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Project.LeftPanel",
+    "ParentControlName": "Project",
+    "SortOrder": 2,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Project.MyPages",
+    "ParentControlName": "Project",
+    "SortOrder": 6,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Project.Portfolio",
+    "ParentControlName": "Project",
+    "SortOrder": 9,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Project.ProjectCard",
+    "ParentControlName": "Project.InfoTab",
+    "SortOrder": 1,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Project.ProjectProcesses",
+    "ParentControlName": "Project",
+    "SortOrder": 7,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Project.ProjectProcesses.TemplateRevisionsSimple",
+    "ParentControlName": "Project.ProjectProcesses",
+    "SortOrder": 1,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Project.Versions",
+    "ParentControlName": "Project.InfoTab",
+    "SortOrder": 4,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Scorecard",
+    "ParentControlName": null,
+    "SortOrder": 6,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Scorecard.ActivitiesTab",
+    "ParentControlName": "Scorecard.Tabs",
+    "SortOrder": 4,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Scorecard.AnalysisModuleIntegration",
+    "ParentControlName": "Scorecard",
+    "SortOrder": 8,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Scorecard.Concepts",
+    "ParentControlName": "Scorecard",
+    "SortOrder": 1,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Scorecard.CreateKPI",
+    "ParentControlName": "Scorecard",
+    "SortOrder": 5,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Scorecard.FollowUp",
+    "ParentControlName": "Scorecard",
+    "SortOrder": 6,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Scorecard.FollowUpTab",
+    "ParentControlName": "Scorecard.Tabs",
+    "SortOrder": 3,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Scorecard.GoalLevels",
+    "ParentControlName": "Scorecard.Concepts",
+    "SortOrder": 3,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Scorecard.GoalsKPIsActivities",
+    "ParentControlName": "Scorecard.Concepts",
+    "SortOrder": 1,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Scorecard.InfoTab",
+    "ParentControlName": "Scorecard.Tabs",
+    "SortOrder": 1,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Scorecard.KPIInput",
+    "ParentControlName": "Scorecard",
+    "SortOrder": 9,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Scorecard.KPITab",
+    "ParentControlName": "Scorecard.Tabs",
+    "SortOrder": 5,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Scorecard.LeftPanel",
+    "ParentControlName": "Scorecard",
+    "SortOrder": 2,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Scorecard.Permissions",
+    "ParentControlName": "Scorecard",
+    "SortOrder": 7,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Scorecard.Planning",
+    "ParentControlName": "Scorecard",
+    "SortOrder": 4,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Scorecard.PlanTab",
+    "ParentControlName": "Scorecard.Tabs",
+    "SortOrder": 2,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Scorecard.PlanTab.Export",
+    "ParentControlName": "Scorecard.PlanTab",
+    "SortOrder": 1,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Scorecard.ScorecardModel",
+    "ParentControlName": "Scorecard.Concepts",
+    "SortOrder": 2,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Scorecard.Tabs",
+    "ParentControlName": "Scorecard",
+    "SortOrder": 3,
+    "IsSystemArticle": true
+  },
+  {
+    "ControlName": "Scorecard.Versions",
+    "ParentControlName": "Scorecard.Concepts",
+    "SortOrder": 4,
+    "IsSystemArticle": true
+  }
+]

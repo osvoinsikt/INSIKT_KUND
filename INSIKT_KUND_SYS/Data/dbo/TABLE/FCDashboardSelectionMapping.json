@@ -1,0 +1,15 @@
+[
+  {
+    "ID": 1,
+    "SourceDashboardPresentationObjectID": 1,
+    "SourceDataSourceHierarchyID": 8,
+    "SourceFCObjectPropertyID": null,
+    "TargetDashboardPresentationObjectID": 2,
+    "TargetDataSourceHierarchyID": 8,
+    "TargetFCObjectPropertyID": null,
+    "DataSourceDimensionHierarchySelectionGeneratorID": null,
+    "IsEnabled": true,
+    "Description": "",
+    "IsHierarchyTreeFilter": false
+  }
+]

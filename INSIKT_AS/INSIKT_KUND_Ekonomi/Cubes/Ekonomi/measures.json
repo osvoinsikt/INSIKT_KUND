@@ -1,0 +1,600 @@
+{
+  "cubeId": "Ekonomi",
+  "cubeName": "Ekonomi",
+  "measureGroups": [
+    {
+      "id": "Balans",
+      "name": "Balans",
+      "description": "",
+      "storageMode": "Molap",
+      "processingMode": "LazyAggregations",
+      "ignoreUnrelatedDimensions": true,
+      "sourceReference": [
+        {
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dsvId": "",
+          "sourceType": "TableBinding",
+          "tableId": "",
+          "schemaName": "",
+          "queryHash": null,
+          "dbSchemaName": "dw",
+          "dbTableName": "fact_Balans",
+          "qualifiedObjectName": "dw.fact_Balans",
+          "sourceObjectType": "Table"
+        }
+      ],
+      "partitions": [
+        {
+          "id": "fact_Balans",
+          "name": "fact_Balans",
+          "storageMode": "Molap",
+          "processingMode": "Regular",
+          "source": {
+            "sourceType": "TableBinding",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "fact_Balans",
+            "qualifiedObjectName": "dw.fact_Balans"
+          }
+        }
+      ],
+      "measures": [
+        {
+          "id": "Årets ingående balans",
+          "name": "Årets ingående balans",
+          "uniqueName": "[Measures].[Årets ingående balans]",
+          "description": "Årets ingående balans på huvudbokens balanskonton",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": false,
+          "displayFolder": "Balans",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_Balans",
+              "columnId": "Amount_YearOpeningBalance",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Balans",
+              "tableType": "Table",
+              "friendlyName": "fact_Balans",
+              "qualifiedObjectName": "dw.fact_Balans"
+            }
+          }
+        },
+        {
+          "id": "Periodens förändring",
+          "name": "Periodens förändring",
+          "uniqueName": "[Measures].[Periodens förändring]",
+          "description": "Periodens utfall på huvudbokens balanskonton",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Balans",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_Balans",
+              "columnId": "Amount",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Balans",
+              "tableType": "Table",
+              "friendlyName": "fact_Balans",
+              "qualifiedObjectName": "dw.fact_Balans"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "Resultat",
+      "name": "Resultat",
+      "description": "",
+      "storageMode": "Molap",
+      "processingMode": "LazyAggregations",
+      "ignoreUnrelatedDimensions": true,
+      "sourceReference": [
+        {
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dsvId": "",
+          "sourceType": "TableBinding",
+          "tableId": "",
+          "schemaName": "",
+          "queryHash": null,
+          "dbSchemaName": "dw",
+          "dbTableName": "fact_Resultat",
+          "qualifiedObjectName": "dw.fact_Resultat",
+          "sourceObjectType": "Table"
+        }
+      ],
+      "partitions": [
+        {
+          "id": "fact_Resultat",
+          "name": "fact_Resultat",
+          "storageMode": "Molap",
+          "processingMode": "Regular",
+          "source": {
+            "sourceType": "TableBinding",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "fact_Resultat",
+            "qualifiedObjectName": "dw.fact_Resultat"
+          }
+        }
+      ],
+      "measures": [
+        {
+          "id": "Antal",
+          "name": "Antal",
+          "uniqueName": "[Measures].[Antal]",
+          "description": "Antalsutfall från huvudbokens resultatkonton",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Resultat\\Antal",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_Resultat",
+              "columnId": "Number",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Resultat",
+              "tableType": "Table",
+              "friendlyName": "fact_Resultat",
+              "qualifiedObjectName": "dw.fact_Resultat"
+            }
+          }
+        },
+        {
+          "id": "Utfall",
+          "name": "Utfall",
+          "uniqueName": "[Measures].[Utfall]",
+          "description": "Resultat från huvudbokens resultatkonton",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Resultat\\Utfall",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_Resultat",
+              "columnId": "Amount",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Resultat",
+              "tableType": "Table",
+              "friendlyName": "fact_Resultat",
+              "qualifiedObjectName": "dw.fact_Resultat"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "Resultat - Planering",
+      "name": "Resultat - Planering",
+      "description": "",
+      "storageMode": "Molap",
+      "processingMode": "LazyAggregations",
+      "ignoreUnrelatedDimensions": true,
+      "sourceReference": [
+        {
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dsvId": "",
+          "sourceType": "TableBinding",
+          "tableId": "",
+          "schemaName": "",
+          "queryHash": null,
+          "dbSchemaName": "dw",
+          "dbTableName": "fact_Resultat_Planning_Analysis_Partition_Main",
+          "qualifiedObjectName": "dw.fact_Resultat_Planning_Analysis_Partition_Main",
+          "sourceObjectType": "Table"
+        }
+      ],
+      "partitions": [
+        {
+          "id": "fact_Resultat_Planning_Analysis",
+          "name": "fact_Resultat_Planning_Analysis",
+          "storageMode": "Molap",
+          "processingMode": "Regular",
+          "source": {
+            "sourceType": "TableBinding",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "fact_Resultat_Planning_Analysis_Partition_Main",
+            "qualifiedObjectName": "dw.fact_Resultat_Planning_Analysis_Partition_Main"
+          }
+        }
+      ],
+      "measures": [
+        {
+          "id": "Budget",
+          "name": "Budget",
+          "uniqueName": "[Measures].[Budget]",
+          "description": "Budgeterat belopp enligt budgetering i INSIKT",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Planering\\Budget\\Budget",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_Resultat_Planning_Analysis",
+              "columnId": "BudgetAmount",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Resultat_Planning_Analysis",
+              "tableType": "Table",
+              "friendlyName": "fact_Resultat_Planning_Analysis",
+              "qualifiedObjectName": "dw.fact_Resultat_Planning_Analysis"
+            }
+          }
+        },
+        {
+          "id": "Budget antal",
+          "name": "Budget antal",
+          "uniqueName": "[Measures].[Budget antal]",
+          "description": "Budgeterat antal enligt budgetering i INSIKT",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Planering\\Budget\\Budget antal",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_Resultat_Planning_Analysis",
+              "columnId": "BudgetQuantity",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Resultat_Planning_Analysis",
+              "tableType": "Table",
+              "friendlyName": "fact_Resultat_Planning_Analysis",
+              "qualifiedObjectName": "dw.fact_Resultat_Planning_Analysis"
+            }
+          }
+        },
+        {
+          "id": "Planering",
+          "name": "Planering",
+          "uniqueName": "[Measures].[Planering]",
+          "description": "Planerat belopp enligt planering i INSIKT",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Planering\\Planeringsversion",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_Resultat_Planning_Analysis",
+              "columnId": "PlanningAmount",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Resultat_Planning_Analysis",
+              "tableType": "Table",
+              "friendlyName": "fact_Resultat_Planning_Analysis",
+              "qualifiedObjectName": "dw.fact_Resultat_Planning_Analysis"
+            }
+          }
+        },
+        {
+          "id": "Planering antal",
+          "name": "Planering antal",
+          "uniqueName": "[Measures].[Planering antal]",
+          "description": "Planerat antal enligt planering i INSIKT",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Planering\\Planeringsversion",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_Resultat_Planning_Analysis",
+              "columnId": "PlanningQuantity",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Resultat_Planning_Analysis",
+              "tableType": "Table",
+              "friendlyName": "fact_Resultat_Planning_Analysis",
+              "qualifiedObjectName": "dw.fact_Resultat_Planning_Analysis"
+            }
+          }
+        },
+        {
+          "id": "Prognos",
+          "name": "Prognos",
+          "uniqueName": "[Measures].[Prognos]",
+          "description": "Prognostiserat belopp enligt prognos i INSIKT",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Planering\\Prognos\\Prognos",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_Resultat_Planning_Analysis",
+              "columnId": "PrognosAmount",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Resultat_Planning_Analysis",
+              "tableType": "Table",
+              "friendlyName": "fact_Resultat_Planning_Analysis",
+              "qualifiedObjectName": "dw.fact_Resultat_Planning_Analysis"
+            }
+          }
+        },
+        {
+          "id": "Prognos antal",
+          "name": "Prognos antal",
+          "uniqueName": "[Measures].[Prognos antal]",
+          "description": "Prognostiserat antal enligt prognos i INSIKT",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Planering\\Prognos\\Prognos antal",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_Resultat_Planning_Analysis",
+              "columnId": "PrognosQuantity",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Resultat_Planning_Analysis",
+              "tableType": "Table",
+              "friendlyName": "fact_Resultat_Planning_Analysis",
+              "qualifiedObjectName": "dw.fact_Resultat_Planning_Analysis"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "Resultat - Planering - INSIKT",
+      "name": "Resultat - Planering - INSIKT",
+      "description": "",
+      "storageMode": "Molap",
+      "processingMode": "LazyAggregations",
+      "ignoreUnrelatedDimensions": true,
+      "sourceReference": [
+        {
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dsvId": "",
+          "sourceType": "TableBinding",
+          "tableId": "",
+          "schemaName": "",
+          "queryHash": null,
+          "dbTableName": "WriteTable_fact_Resultat_Planning_WithTrigger",
+          "qualifiedObjectName": "WriteTable_fact_Resultat_Planning_WithTrigger",
+          "sourceObjectType": "Table"
+        },
+        {
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dsvId": "",
+          "sourceType": "TableBinding",
+          "tableId": "",
+          "schemaName": "",
+          "queryHash": null,
+          "dbSchemaName": "dw",
+          "dbTableName": "fact_Resultat_Planning_Partition_Main",
+          "qualifiedObjectName": "dw.fact_Resultat_Planning_Partition_Main",
+          "sourceObjectType": "Table"
+        }
+      ],
+      "partitions": [
+        {
+          "id": "fact_Resultat_Planning",
+          "name": "fact_Resultat_Planning",
+          "storageMode": "Molap",
+          "processingMode": "Regular",
+          "source": {
+            "sourceType": "TableBinding",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "fact_Resultat_Planning_Partition_Main",
+            "qualifiedObjectName": "dw.fact_Resultat_Planning_Partition_Main"
+          }
+        },
+        {
+          "id": "WriteTable_fact_Resultat_Planning_WithTrigger",
+          "name": "WriteTable_fact_Resultat_Planning_WithTrigger",
+          "storageMode": "Molap",
+          "processingMode": "Regular",
+          "source": {
+            "sourceType": "TableBinding",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbTableName": "WriteTable_fact_Resultat_Planning_WithTrigger",
+            "qualifiedObjectName": "WriteTable_fact_Resultat_Planning_WithTrigger"
+          }
+        }
+      ],
+      "measures": [
+        {
+          "id": "INSIKTPlanering Planering",
+          "name": "INSIKTPlanering Planering",
+          "uniqueName": "[Measures].[INSIKTPlanering Planering]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": false,
+          "displayFolder": "Planering\\Planeringsversion",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_Resultat_Planning",
+              "columnId": "PlanningAmount",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Resultat_Planning",
+              "tableType": "Table",
+              "friendlyName": "fact_Resultat_Planning",
+              "qualifiedObjectName": "dw.fact_Resultat_Planning"
+            }
+          }
+        },
+        {
+          "id": "INSIKTPlanering Planering Antal",
+          "name": "INSIKTPlanering Planering Antal",
+          "uniqueName": "[Measures].[INSIKTPlanering Planering Antal]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": false,
+          "displayFolder": "Planering\\Planeringsversion",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_Resultat_Planning",
+              "columnId": "PlanningQuantity",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Resultat_Planning",
+              "tableType": "Table",
+              "friendlyName": "fact_Resultat_Planning",
+              "qualifiedObjectName": "dw.fact_Resultat_Planning"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "SecurityMemberAccess_Organisation",
+      "name": "SecurityMemberAccess_Organisation",
+      "description": "",
+      "storageMode": "Molap",
+      "processingMode": "LazyAggregations",
+      "ignoreUnrelatedDimensions": true,
+      "sourceReference": [
+        {
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dsvId": "",
+          "sourceType": "TableBinding",
+          "tableId": "",
+          "schemaName": "",
+          "queryHash": null,
+          "dbSchemaName": "dw",
+          "dbTableName": "fact_SecurityMemberAccess_Ekonomi_Organisation",
+          "qualifiedObjectName": "dw.fact_SecurityMemberAccess_Ekonomi_Organisation",
+          "sourceObjectType": "Table"
+        }
+      ],
+      "partitions": [
+        {
+          "id": "fact_SecurityMemberAccess_Ekonomi_Organisation",
+          "name": "fact_SecurityMemberAccess_Ekonomi_Organisation",
+          "storageMode": "Molap",
+          "processingMode": "Regular",
+          "source": {
+            "sourceType": "TableBinding",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "fact_SecurityMemberAccess_Ekonomi_Organisation",
+            "qualifiedObjectName": "dw.fact_SecurityMemberAccess_Ekonomi_Organisation"
+          }
+        }
+      ],
+      "measures": [
+        {
+          "id": "OrgAccess",
+          "name": "OrgAccess",
+          "uniqueName": "[Measures].[OrgAccess]",
+          "description": "Mätvärde som styr vilka användare som ser vilka delar av organisationsdimensionen.",
+          "dataType": "Integer",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": false,
+          "displayFolder": "Security",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Integer",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_SecurityMemberAccess_Ekonomi_Organisation",
+              "columnId": "HasOrgAccess",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_SecurityMemberAccess_Ekonomi_Organisation",
+              "tableType": "Table",
+              "friendlyName": "fact_SecurityMemberAccess_Ekonomi_Organisation",
+              "qualifiedObjectName": "dw.fact_SecurityMemberAccess_Ekonomi_Organisation"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

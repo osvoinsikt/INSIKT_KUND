@@ -1,0 +1,58 @@
+[
+  {
+    "ID": 1,
+    "DataSourceID": 1,
+    "MeasureGroup": "Resultat",
+    "DTDQuery": "EXEC [INSIKT_KUND_DW].insikt.[DTD_Ekonomi_Resultat] @measureUniqueName = @CurrentMeasureUniqueName, @userID = @UserID",
+    "DTDMethodID": 3
+  },
+  {
+    "ID": 2,
+    "DataSourceID": 1,
+    "MeasureGroup": "Resultat - Planering - INSIKT",
+    "DTDQuery": null,
+    "DTDMethodID": 1
+  },
+  {
+    "ID": 3,
+    "DataSourceID": 1,
+    "MeasureGroup": "Resultat - Planering",
+    "DTDQuery": "EXEC [INSIKT_KUND_DW].insikt.[DTD_Ekonomi_Resultat - Planering] @measureUniqueName = @CurrentMeasureUniqueName, @userID = @UserID",
+    "DTDMethodID": 3
+  },
+  {
+    "ID": 4,
+    "DataSourceID": 1,
+    "MeasureGroup": "Balans",
+    "DTDQuery": "EXEC [INSIKT_KUND_DW].insikt.[DTD_Ekonomi_Balans] @measureUniqueName = @CurrentMeasureUniqueName, @userID = @UserID",
+    "DTDMethodID": 3
+  },
+  {
+    "ID": 5,
+    "DataSourceID": 1,
+    "MeasureGroup": "SecurityMemberAccess_Organisation",
+    "DTDQuery": null,
+    "DTDMethodID": 1
+  },
+  {
+    "ID": 6,
+    "DataSourceID": 2,
+    "MeasureGroup": "Order",
+    "DTDQuery": "EXEC [INSIKT_KUND_DW].insikt.[DTD_Logistik_Order] @measureUniqueName = @CurrentMeasureUniqueName, @userID = @UserID",
+    "DTDMethodID": 3
+  },
+  {
+    "ID": 7,
+    "DataSourceID": 2,
+    "MeasureGroup": "Fakturerat",
+    "DTDQuery": "EXEC [INSIKT_KUND_DW].insikt.[DTD_Logistik_Fakturerat] @measureUniqueName = @CurrentMeasureUniqueName, @userID = @UserID",
+    "DTDMethodID": 3
+  },
+  {
+    "ID": 8,
+    "DataSourceID": 4,
+    "MeasureGroup": "Utfall",
+    "DTDQuery": "EXEC [INSIKT_KUND_DW].insikt.[DTD_Projektanalys_Utfall] @measureUniqueName = @CurrentMeasureUniqueName, @userID = @UserID",
+    "DTDMethodID": 3
+  }
+]

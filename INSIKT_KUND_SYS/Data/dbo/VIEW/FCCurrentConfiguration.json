@@ -1,0 +1,1492 @@
+[
+  {
+    "ID": 5,
+    "Name": "ViewDimension",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Resultatkonto",
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 5,
+    "Name": "ViewDimension",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Kampanj",
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 5,
+    "Name": "ViewDimension",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Projekt",
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 5,
+    "Name": "ViewDimension",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Varugrupp",
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 5,
+    "Name": "ViewDimension",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Konto",
+    "FCTypeID": 2,
+    "CompanyID": 1
+  },
+  {
+    "ID": 5,
+    "Name": "ViewDimension",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Konto",
+    "FCTypeID": 3,
+    "CompanyID": 1
+  },
+  {
+    "ID": 5,
+    "Name": "ViewDimension",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Konto",
+    "FCTypeID": 4,
+    "CompanyID": 1
+  },
+  {
+    "ID": 5,
+    "Name": "ViewDimension",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Planeringsperiod",
+    "FCTypeID": 4,
+    "CompanyID": 1
+  },
+  {
+    "ID": 6,
+    "Name": "On column",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Measures",
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 6,
+    "Name": "On column",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Measures",
+    "FCTypeID": 2,
+    "CompanyID": 1
+  },
+  {
+    "ID": 6,
+    "Name": "On column",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Measures",
+    "FCTypeID": 3,
+    "CompanyID": 1
+  },
+  {
+    "ID": 6,
+    "Name": "On column",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Measures",
+    "FCTypeID": 4,
+    "CompanyID": 1
+  },
+  {
+    "ID": 8,
+    "Name": "FCProcessDimension",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Organisation",
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 8,
+    "Name": "FCProcessDimension",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "INSIKT Planeringsprojekt",
+    "FCTypeID": 2,
+    "CompanyID": 1
+  },
+  {
+    "ID": 8,
+    "Name": "FCProcessDimension",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "INSIKT Planeringsprojekt",
+    "FCTypeID": 3,
+    "CompanyID": 1
+  },
+  {
+    "ID": 8,
+    "Name": "FCProcessDimension",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "INSIKT Planeringsprojekt",
+    "FCTypeID": 4,
+    "CompanyID": 1
+  },
+  {
+    "ID": 9,
+    "Name": "VersionDimension",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Planeringsversion",
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 9,
+    "Name": "VersionDimension",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Planeringsversion",
+    "FCTypeID": 2,
+    "CompanyID": 1
+  },
+  {
+    "ID": 9,
+    "Name": "VersionDimension",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Planeringsversion",
+    "FCTypeID": 3,
+    "CompanyID": 1
+  },
+  {
+    "ID": 9,
+    "Name": "VersionDimension",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Planeringsversion",
+    "FCTypeID": 4,
+    "CompanyID": 1
+  },
+  {
+    "ID": 10,
+    "Name": "DateDimension",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Datum",
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 10,
+    "Name": "DateDimension",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Datum",
+    "FCTypeID": 2,
+    "CompanyID": 1
+  },
+  {
+    "ID": 10,
+    "Name": "DateDimension",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Datum",
+    "FCTypeID": 3,
+    "CompanyID": 1
+  },
+  {
+    "ID": 10,
+    "Name": "DateDimension",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Datum",
+    "FCTypeID": 4,
+    "CompanyID": 1
+  },
+  {
+    "ID": 12,
+    "Name": "Hierarchy",
+    "FCElementID": 2,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Resultatuppställning",
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 12,
+    "Name": "Hierarchy",
+    "FCElementID": 3,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Hierarki",
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 12,
+    "Name": "Hierarchy",
+    "FCElementID": 4,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Redovisningsår-Period",
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 12,
+    "Name": "Hierarchy",
+    "FCElementID": 5,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Lista",
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 12,
+    "Name": "Hierarchy",
+    "FCElementID": 6,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Measures",
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 12,
+    "Name": "Hierarchy",
+    "FCElementID": 7,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Lista",
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 12,
+    "Name": "Hierarchy",
+    "FCElementID": 8,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Lista",
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 12,
+    "Name": "Hierarchy",
+    "FCElementID": 9,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Lista",
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 12,
+    "Name": "Hierarchy",
+    "FCElementID": 30,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "År - Månad",
+    "FCTypeID": 2,
+    "CompanyID": 1
+  },
+  {
+    "ID": 12,
+    "Name": "Hierarchy",
+    "FCElementID": 30,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "År - Månad",
+    "FCTypeID": 3,
+    "CompanyID": 1
+  },
+  {
+    "ID": 12,
+    "Name": "Hierarchy",
+    "FCElementID": 30,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "År - Månad",
+    "FCTypeID": 4,
+    "CompanyID": 1
+  },
+  {
+    "ID": 12,
+    "Name": "Hierarchy",
+    "FCElementID": 31,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Lista",
+    "FCTypeID": 2,
+    "CompanyID": 1
+  },
+  {
+    "ID": 12,
+    "Name": "Hierarchy",
+    "FCElementID": 31,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Lista",
+    "FCTypeID": 3,
+    "CompanyID": 1
+  },
+  {
+    "ID": 12,
+    "Name": "Hierarchy",
+    "FCElementID": 31,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Lista",
+    "FCTypeID": 4,
+    "CompanyID": 1
+  },
+  {
+    "ID": 12,
+    "Name": "Hierarchy",
+    "FCElementID": 32,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "FCProjectID",
+    "FCTypeID": 2,
+    "CompanyID": 1
+  },
+  {
+    "ID": 12,
+    "Name": "Hierarchy",
+    "FCElementID": 32,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "FCProjectID",
+    "FCTypeID": 3,
+    "CompanyID": 1
+  },
+  {
+    "ID": 12,
+    "Name": "Hierarchy",
+    "FCElementID": 32,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "FCProjectID",
+    "FCTypeID": 4,
+    "CompanyID": 1
+  },
+  {
+    "ID": 12,
+    "Name": "Hierarchy",
+    "FCElementID": 33,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Measures",
+    "FCTypeID": 2,
+    "CompanyID": 1
+  },
+  {
+    "ID": 12,
+    "Name": "Hierarchy",
+    "FCElementID": 33,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Measures",
+    "FCTypeID": 3,
+    "CompanyID": 1
+  },
+  {
+    "ID": 12,
+    "Name": "Hierarchy",
+    "FCElementID": 33,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Measures",
+    "FCTypeID": 4,
+    "CompanyID": 1
+  },
+  {
+    "ID": 12,
+    "Name": "Hierarchy",
+    "FCElementID": 34,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Hierarki",
+    "FCTypeID": 2,
+    "CompanyID": 1
+  },
+  {
+    "ID": 12,
+    "Name": "Hierarchy",
+    "FCElementID": 34,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Hierarki",
+    "FCTypeID": 3,
+    "CompanyID": 1
+  },
+  {
+    "ID": 12,
+    "Name": "Hierarchy",
+    "FCElementID": 34,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Hierarki",
+    "FCTypeID": 4,
+    "CompanyID": 1
+  },
+  {
+    "ID": 12,
+    "Name": "Hierarchy",
+    "FCElementID": 35,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "År - Månad",
+    "FCTypeID": 4,
+    "CompanyID": 1
+  },
+  {
+    "ID": 20,
+    "Name": "DefaultView",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 2,
+    "ValueString": null,
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 20,
+    "Name": "DefaultView",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 7,
+    "ValueString": null,
+    "FCTypeID": 2,
+    "CompanyID": 1
+  },
+  {
+    "ID": 20,
+    "Name": "DefaultView",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 8,
+    "ValueString": null,
+    "FCTypeID": 3,
+    "CompanyID": 1
+  },
+  {
+    "ID": 20,
+    "Name": "DefaultView",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 9,
+    "ValueString": null,
+    "FCTypeID": 4,
+    "CompanyID": 1
+  },
+  {
+    "ID": 31,
+    "Name": "OrganisationCaption",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Organisationen",
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 31,
+    "Name": "OrganisationCaption",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Organisation",
+    "FCTypeID": 2,
+    "CompanyID": 1
+  },
+  {
+    "ID": 31,
+    "Name": "OrganisationCaption",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Organisationen",
+    "FCTypeID": 3,
+    "CompanyID": null
+  },
+  {
+    "ID": 31,
+    "Name": "OrganisationCaption",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Organisationen",
+    "FCTypeID": 4,
+    "CompanyID": null
+  },
+  {
+    "ID": 32,
+    "Name": "MyDepartmentsCaption",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Mina k-ställen",
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 32,
+    "Name": "MyDepartmentsCaption",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Mina k-ställen",
+    "FCTypeID": 2,
+    "CompanyID": 1
+  },
+  {
+    "ID": 32,
+    "Name": "MyDepartmentsCaption",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Mina k-ställen",
+    "FCTypeID": 3,
+    "CompanyID": null
+  },
+  {
+    "ID": 32,
+    "Name": "MyDepartmentsCaption",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Mina k-ställen",
+    "FCTypeID": 4,
+    "CompanyID": null
+  },
+  {
+    "ID": 55,
+    "Name": "BookingDateString",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[Redovisningsår-Period].[Redovisningsår].&[¤¤¤¤]",
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 55,
+    "Name": "BookingDateString",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[År].&[¤¤¤¤]",
+    "FCTypeID": 2,
+    "CompanyID": 1
+  },
+  {
+    "ID": 55,
+    "Name": "BookingDateString",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[År].&[¤¤¤¤]",
+    "FCTypeID": 3,
+    "CompanyID": 1
+  },
+  {
+    "ID": 55,
+    "Name": "BookingDateString",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[År].&[¤¤¤¤]",
+    "FCTypeID": 4,
+    "CompanyID": 1
+  },
+  {
+    "ID": 69,
+    "Name": "AllMembersAreWritable",
+    "FCElementID": 2,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 1,
+    "ValueString": null,
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 69,
+    "Name": "AllMembersAreWritable",
+    "FCElementID": 34,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 0,
+    "ValueString": null,
+    "FCTypeID": 2,
+    "CompanyID": 1
+  },
+  {
+    "ID": 69,
+    "Name": "AllMembersAreWritable",
+    "FCElementID": 34,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 0,
+    "ValueString": null,
+    "FCTypeID": 3,
+    "CompanyID": 1
+  },
+  {
+    "ID": 69,
+    "Name": "AllMembersAreWritable",
+    "FCElementID": 34,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 0,
+    "ValueString": null,
+    "FCTypeID": 4,
+    "CompanyID": 1
+  },
+  {
+    "ID": 69,
+    "Name": "AllMembersAreWritable",
+    "FCElementID": 35,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 0,
+    "ValueString": null,
+    "FCTypeID": 4,
+    "CompanyID": 1
+  },
+  {
+    "ID": 85,
+    "Name": "FilterTimeDimensionOnQuery",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 1,
+    "ValueString": null,
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 85,
+    "Name": "FilterTimeDimensionOnQuery",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 0,
+    "ValueString": null,
+    "FCTypeID": 3,
+    "CompanyID": null
+  },
+  {
+    "ID": 85,
+    "Name": "FilterTimeDimensionOnQuery",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 0,
+    "ValueString": null,
+    "FCTypeID": 4,
+    "CompanyID": null
+  },
+  {
+    "ID": 151,
+    "Name": "fc_DistPeriod1",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[Redovisningsår-Period].[Dag].&[¤¤¤¤0101]",
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 151,
+    "Name": "fc_DistPeriod1",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤0101]",
+    "FCTypeID": 2,
+    "CompanyID": 1
+  },
+  {
+    "ID": 151,
+    "Name": "fc_DistPeriod1",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤0101]",
+    "FCTypeID": 3,
+    "CompanyID": 1
+  },
+  {
+    "ID": 151,
+    "Name": "fc_DistPeriod1",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤0101]",
+    "FCTypeID": 4,
+    "CompanyID": 1
+  },
+  {
+    "ID": 152,
+    "Name": "fc_DistPeriod2",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[Redovisningsår-Period].[Dag].&[¤¤¤¤0201]",
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 152,
+    "Name": "fc_DistPeriod2",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤0201]",
+    "FCTypeID": 2,
+    "CompanyID": 1
+  },
+  {
+    "ID": 152,
+    "Name": "fc_DistPeriod2",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤0201]",
+    "FCTypeID": 3,
+    "CompanyID": 1
+  },
+  {
+    "ID": 152,
+    "Name": "fc_DistPeriod2",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤0201]",
+    "FCTypeID": 4,
+    "CompanyID": 1
+  },
+  {
+    "ID": 153,
+    "Name": "fc_DistPeriod3",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[Redovisningsår-Period].[Dag].&[¤¤¤¤0301]",
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 153,
+    "Name": "fc_DistPeriod3",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤0301]",
+    "FCTypeID": 2,
+    "CompanyID": 1
+  },
+  {
+    "ID": 153,
+    "Name": "fc_DistPeriod3",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤0301]",
+    "FCTypeID": 3,
+    "CompanyID": 1
+  },
+  {
+    "ID": 153,
+    "Name": "fc_DistPeriod3",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤0301]",
+    "FCTypeID": 4,
+    "CompanyID": 1
+  },
+  {
+    "ID": 154,
+    "Name": "fc_DistPeriod4",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[Redovisningsår-Period].[Dag].&[¤¤¤¤0401]",
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 154,
+    "Name": "fc_DistPeriod4",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤0401]",
+    "FCTypeID": 2,
+    "CompanyID": 1
+  },
+  {
+    "ID": 154,
+    "Name": "fc_DistPeriod4",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤0401]",
+    "FCTypeID": 3,
+    "CompanyID": 1
+  },
+  {
+    "ID": 154,
+    "Name": "fc_DistPeriod4",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤0401]",
+    "FCTypeID": 4,
+    "CompanyID": 1
+  },
+  {
+    "ID": 155,
+    "Name": "fc_DistPeriod5",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[Redovisningsår-Period].[Dag].&[¤¤¤¤0501]",
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 155,
+    "Name": "fc_DistPeriod5",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤0501]",
+    "FCTypeID": 2,
+    "CompanyID": 1
+  },
+  {
+    "ID": 155,
+    "Name": "fc_DistPeriod5",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤0501]",
+    "FCTypeID": 3,
+    "CompanyID": 1
+  },
+  {
+    "ID": 155,
+    "Name": "fc_DistPeriod5",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤0501]",
+    "FCTypeID": 4,
+    "CompanyID": 1
+  },
+  {
+    "ID": 156,
+    "Name": "fc_DistPeriod6",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[Redovisningsår-Period].[Dag].&[¤¤¤¤0601]",
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 156,
+    "Name": "fc_DistPeriod6",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤0601]",
+    "FCTypeID": 2,
+    "CompanyID": 1
+  },
+  {
+    "ID": 156,
+    "Name": "fc_DistPeriod6",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤0601]",
+    "FCTypeID": 3,
+    "CompanyID": 1
+  },
+  {
+    "ID": 156,
+    "Name": "fc_DistPeriod6",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤0601]",
+    "FCTypeID": 4,
+    "CompanyID": 1
+  },
+  {
+    "ID": 157,
+    "Name": "fc_DistPeriod7",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[Redovisningsår-Period].[Dag].&[¤¤¤¤0701]",
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 157,
+    "Name": "fc_DistPeriod7",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤0701]",
+    "FCTypeID": 2,
+    "CompanyID": 1
+  },
+  {
+    "ID": 157,
+    "Name": "fc_DistPeriod7",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤0701]",
+    "FCTypeID": 3,
+    "CompanyID": 1
+  },
+  {
+    "ID": 157,
+    "Name": "fc_DistPeriod7",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤0701]",
+    "FCTypeID": 4,
+    "CompanyID": 1
+  },
+  {
+    "ID": 158,
+    "Name": "fc_DistPeriod8",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[Redovisningsår-Period].[Dag].&[¤¤¤¤0801]",
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 158,
+    "Name": "fc_DistPeriod8",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤0801]",
+    "FCTypeID": 2,
+    "CompanyID": 1
+  },
+  {
+    "ID": 158,
+    "Name": "fc_DistPeriod8",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤0801]",
+    "FCTypeID": 3,
+    "CompanyID": 1
+  },
+  {
+    "ID": 158,
+    "Name": "fc_DistPeriod8",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤0801]",
+    "FCTypeID": 4,
+    "CompanyID": 1
+  },
+  {
+    "ID": 159,
+    "Name": "fc_DistPeriod9",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[Redovisningsår-Period].[Dag].&[¤¤¤¤0901]",
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 159,
+    "Name": "fc_DistPeriod9",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤0901]",
+    "FCTypeID": 2,
+    "CompanyID": 1
+  },
+  {
+    "ID": 159,
+    "Name": "fc_DistPeriod9",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤0901]",
+    "FCTypeID": 3,
+    "CompanyID": 1
+  },
+  {
+    "ID": 159,
+    "Name": "fc_DistPeriod9",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤0901]",
+    "FCTypeID": 4,
+    "CompanyID": 1
+  },
+  {
+    "ID": 160,
+    "Name": "fc_DistPeriod10",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[Redovisningsår-Period].[Dag].&[¤¤¤¤1001]",
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 160,
+    "Name": "fc_DistPeriod10",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤1001]",
+    "FCTypeID": 2,
+    "CompanyID": 1
+  },
+  {
+    "ID": 160,
+    "Name": "fc_DistPeriod10",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤1001]",
+    "FCTypeID": 3,
+    "CompanyID": 1
+  },
+  {
+    "ID": 160,
+    "Name": "fc_DistPeriod10",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤1001]",
+    "FCTypeID": 4,
+    "CompanyID": 1
+  },
+  {
+    "ID": 161,
+    "Name": "fc_DistPeriod11",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[Redovisningsår-Period].[Dag].&[¤¤¤¤1101]",
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 161,
+    "Name": "fc_DistPeriod11",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤1101]",
+    "FCTypeID": 2,
+    "CompanyID": 1
+  },
+  {
+    "ID": 161,
+    "Name": "fc_DistPeriod11",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤1101]",
+    "FCTypeID": 3,
+    "CompanyID": 1
+  },
+  {
+    "ID": 161,
+    "Name": "fc_DistPeriod11",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤1101]",
+    "FCTypeID": 4,
+    "CompanyID": 1
+  },
+  {
+    "ID": 162,
+    "Name": "fc_DistPeriod12",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[Redovisningsår-Period].[Dag].&[¤¤¤¤1201]",
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 162,
+    "Name": "fc_DistPeriod12",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤1201]",
+    "FCTypeID": 2,
+    "CompanyID": 1
+  },
+  {
+    "ID": 162,
+    "Name": "fc_DistPeriod12",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤1201]",
+    "FCTypeID": 3,
+    "CompanyID": 1
+  },
+  {
+    "ID": 162,
+    "Name": "fc_DistPeriod12",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "[Datum].[År - Månad].[Dag].&[¤¤¤¤1201]",
+    "FCTypeID": 4,
+    "CompanyID": 1
+  },
+  {
+    "ID": 173,
+    "Name": "ShowMyOrgsStructure",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 1,
+    "ValueString": null,
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 173,
+    "Name": "ShowMyOrgsStructure",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 1,
+    "ValueString": null,
+    "FCTypeID": 3,
+    "CompanyID": null
+  },
+  {
+    "ID": 173,
+    "Name": "ShowMyOrgsStructure",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 1,
+    "ValueString": null,
+    "FCTypeID": 4,
+    "CompanyID": null
+  },
+  {
+    "ID": 200,
+    "Name": "MyApproverDepartmentsCaption",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Att godkänna",
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 200,
+    "Name": "MyApproverDepartmentsCaption",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Att godkänna",
+    "FCTypeID": 2,
+    "CompanyID": 1
+  },
+  {
+    "ID": 200,
+    "Name": "MyApproverDepartmentsCaption",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Att godkänna",
+    "FCTypeID": 3,
+    "CompanyID": null
+  },
+  {
+    "ID": 200,
+    "Name": "MyApproverDepartmentsCaption",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "Att godkänna",
+    "FCTypeID": 4,
+    "CompanyID": null
+  },
+  {
+    "ID": 279,
+    "Name": "ProjectCalcStepIsEditableSQL",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": null,
+    "ValueString": "exec [INSIKT_KUND_DW].[insikt].[FCProject_ProjectCalcStepIsEditableSQL]\r\n        @FCTypeID = 2\r\n        ,@FCProjectID = @projectId\r\n        ,@FCVersionID = @versionId\r\n        ,@UserID = @userId\r\n        ,@StepID = @stepId\r\n        ,@StepTypeID = @stepTypeId\r\n        ,@Finish = @finish",
+    "FCTypeID": 2,
+    "CompanyID": 1
+  },
+  {
+    "ID": 318,
+    "Name": "UseBlockedMonthsForProjects",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 1,
+    "ValueString": null,
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 318,
+    "Name": "UseBlockedMonthsForProjects",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 1,
+    "ValueString": null,
+    "FCTypeID": 3,
+    "CompanyID": null
+  },
+  {
+    "ID": 318,
+    "Name": "UseBlockedMonthsForProjects",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 1,
+    "ValueString": null,
+    "FCTypeID": 4,
+    "CompanyID": null
+  },
+  {
+    "ID": 389,
+    "Name": "UseElementKeyForCommentDimensions",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 1,
+    "ValueString": null,
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 389,
+    "Name": "UseElementKeyForCommentDimensions",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 1,
+    "ValueString": null,
+    "FCTypeID": 3,
+    "CompanyID": null
+  },
+  {
+    "ID": 389,
+    "Name": "UseElementKeyForCommentDimensions",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 1,
+    "ValueString": null,
+    "FCTypeID": 4,
+    "CompanyID": null
+  },
+  {
+    "ID": 414,
+    "Name": "DisablePeriodicDistribution",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 1,
+    "ValueString": null,
+    "FCTypeID": 2,
+    "CompanyID": 1
+  },
+  {
+    "ID": 414,
+    "Name": "DisablePeriodicDistribution",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 1,
+    "ValueString": null,
+    "FCTypeID": 3,
+    "CompanyID": 1
+  },
+  {
+    "ID": 414,
+    "Name": "DisablePeriodicDistribution",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 1,
+    "ValueString": null,
+    "FCTypeID": 4,
+    "CompanyID": 1
+  },
+  {
+    "ID": 420,
+    "Name": "HideProjectProcessTab",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 0,
+    "ValueString": null,
+    "FCTypeID": 2,
+    "CompanyID": 1
+  },
+  {
+    "ID": 518,
+    "Name": "EnableProjectProcess",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 1,
+    "ValueString": null,
+    "FCTypeID": 2,
+    "CompanyID": 1
+  },
+  {
+    "ID": 538,
+    "Name": "AllLeavesAreWritable",
+    "FCElementID": 7,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 1,
+    "ValueString": null,
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 538,
+    "Name": "AllLeavesAreWritable",
+    "FCElementID": 8,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 1,
+    "ValueString": null,
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 538,
+    "Name": "AllLeavesAreWritable",
+    "FCElementID": 9,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 1,
+    "ValueString": null,
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 538,
+    "Name": "AllLeavesAreWritable",
+    "FCElementID": 34,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 1,
+    "ValueString": null,
+    "FCTypeID": 2,
+    "CompanyID": 1
+  },
+  {
+    "ID": 538,
+    "Name": "AllLeavesAreWritable",
+    "FCElementID": 34,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 1,
+    "ValueString": null,
+    "FCTypeID": 3,
+    "CompanyID": 1
+  },
+  {
+    "ID": 538,
+    "Name": "AllLeavesAreWritable",
+    "FCElementID": 34,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 1,
+    "ValueString": null,
+    "FCTypeID": 4,
+    "CompanyID": 1
+  },
+  {
+    "ID": 538,
+    "Name": "AllLeavesAreWritable",
+    "FCElementID": 35,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 1,
+    "ValueString": null,
+    "FCTypeID": 4,
+    "CompanyID": 1
+  },
+  {
+    "ID": 539,
+    "Name": "FCProjectCalcProcessListOrder",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 4,
+    "ValueString": null,
+    "FCTypeID": 2,
+    "CompanyID": 1
+  },
+  {
+    "ID": 539,
+    "Name": "FCProjectCalcProcessListOrder",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 4,
+    "ValueString": null,
+    "FCTypeID": 3,
+    "CompanyID": 1
+  },
+  {
+    "ID": 539,
+    "Name": "FCProjectCalcProcessListOrder",
+    "FCElementID": 1,
+    "ElementKey": "Inställningar",
+    "ValueNumeric": 4,
+    "ValueString": null,
+    "FCTypeID": 4,
+    "CompanyID": 1
+  }
+]

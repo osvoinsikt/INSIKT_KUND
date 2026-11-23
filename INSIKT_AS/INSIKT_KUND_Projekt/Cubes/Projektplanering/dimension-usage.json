@@ -1,0 +1,158 @@
+[
+  {
+    "measureGroupId": "Fact Projekt Periodisering Planning",
+    "measureGroupName": "Periodisering Planning",
+    "dimensions": [
+      {
+        "id": "Planeringsperiod",
+        "name": "Planeringsperiod",
+        "type": "Regular",
+        "granularity": "MonthID"
+      },
+      {
+        "id": "Konto",
+        "name": "Konto",
+        "type": "Regular",
+        "granularity": "KontoID"
+      },
+      {
+        "id": "INSIKT Planeringsprojekt",
+        "name": "INSIKT Planeringsprojekt",
+        "type": "Regular",
+        "granularity": "FCProjectID"
+      },
+      {
+        "id": "Planeringsversion",
+        "name": "Planeringsversion",
+        "type": "Regular",
+        "granularity": "FCVersionID"
+      }
+    ]
+  },
+  {
+    "measureGroupId": "Fact Projekt Periodisering Planning Calc",
+    "measureGroupName": "Periodisering Planning Calc",
+    "dimensions": [
+      {
+        "id": "Planeringsperiod",
+        "name": "Planeringsperiod",
+        "type": "Regular",
+        "granularity": "MonthID"
+      },
+      {
+        "id": "Konto",
+        "name": "Konto",
+        "type": "Regular",
+        "granularity": "KontoID"
+      },
+      {
+        "id": "INSIKT Planeringsprojekt",
+        "name": "INSIKT Planeringsprojekt",
+        "type": "Regular",
+        "granularity": "FCProjectID"
+      },
+      {
+        "id": "Planeringsversion",
+        "name": "Planeringsversion",
+        "type": "Regular",
+        "granularity": "FCVersionID"
+      }
+    ]
+  },
+  {
+    "measureGroupId": "Fact Projekt Planning",
+    "measureGroupName": "Projektkalkyl",
+    "dimensions": [
+      {
+        "id": "Konto",
+        "name": "Konto",
+        "type": "Regular",
+        "granularity": "KontoID"
+      },
+      {
+        "id": "INSIKT Planeringsprojekt",
+        "name": "INSIKT Planeringsprojekt",
+        "type": "Regular",
+        "granularity": "FCProjectID"
+      },
+      {
+        "id": "Planeringsversion",
+        "name": "Planeringsversion",
+        "type": "Regular",
+        "granularity": "FCVersionID"
+      }
+    ]
+  },
+  {
+    "measureGroupId": "Fact Projekt Utfall",
+    "measureGroupName": "Utfall",
+    "dimensions": [
+      {
+        "id": "Planeringsperiod",
+        "name": "Planeringsperiod",
+        "type": "Regular",
+        "granularity": "MonthID"
+      },
+      {
+        "id": "Konto",
+        "name": "Konto",
+        "type": "Regular",
+        "granularity": "KontoID"
+      },
+      {
+        "id": "INSIKT Planeringsprojekt",
+        "name": "INSIKT Planeringsprojekt",
+        "type": "Regular",
+        "granularity": "FCProjectID"
+      }
+    ]
+  },
+  {
+    "measureGroupId": "Fact Projekt Utfall Fryst",
+    "measureGroupName": "Utfall Fryst",
+    "dimensions": [
+      {
+        "id": "Planeringsperiod",
+        "name": "Planeringsperiod",
+        "type": "Regular",
+        "granularity": "MonthID"
+      },
+      {
+        "id": "Konto",
+        "name": "Konto",
+        "type": "Regular",
+        "granularity": "KontoID"
+      },
+      {
+        "id": "INSIKT Planeringsprojekt",
+        "name": "INSIKT Planeringsprojekt",
+        "type": "Regular",
+        "granularity": "FCProjectID"
+      },
+      {
+        "id": "Planeringsversion",
+        "name": "Planeringsversion",
+        "type": "Regular",
+        "granularity": "FCVersionID"
+      }
+    ]
+  },
+  {
+    "measureGroupId": "Fact Projekt Utilities",
+    "measureGroupName": "Utilities",
+    "dimensions": [
+      {
+        "id": "Planeringsversion",
+        "name": "Planeringsversion",
+        "type": "Regular",
+        "granularity": "FCVersionID"
+      },
+      {
+        "id": "INSIKT Planeringsprojekt",
+        "name": "INSIKT Planeringsprojekt",
+        "type": "Regular",
+        "granularity": "FCProjectID"
+      }
+    ]
+  }
+]

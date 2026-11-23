@@ -1,0 +1,449 @@
+{
+  "id": "INSIKT Projekt",
+  "name": "INSIKT Projekt",
+  "description": "",
+  "type": "Regular",
+  "storageMode": "Molap",
+  "unknownMember": "None",
+  "unknownMemberName": "Unknown",
+  "attributes": [
+    {
+      "id": "FC Project ID",
+      "name": "_Projekt",
+      "description": "",
+      "type": "Project",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Name",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dw_dim_INSIKTProjekt",
+            "columnId": "FCProjectID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_INSIKTProjekt",
+            "tableType": "View",
+            "friendlyName": "dim_INSIKTProjekt",
+            "qualifiedObjectName": "dw.dim_INSIKTProjekt"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dw_dim_INSIKTProjekt",
+          "columnId": "DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_INSIKTProjekt",
+          "tableType": "View",
+          "friendlyName": "dim_INSIKTProjekt",
+          "qualifiedObjectName": "dw.dim_INSIKTProjekt"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Projektfas",
+      "name": "_Projektfas",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Name",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "WChar",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dw_dim_INSIKTProjekt",
+            "columnId": "Projektfas",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_INSIKTProjekt",
+            "tableType": "View",
+            "friendlyName": "dim_INSIKTProjekt",
+            "qualifiedObjectName": "dw.dim_INSIKTProjekt"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dw_dim_INSIKTProjekt",
+          "columnId": "Projektfas",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_INSIKTProjekt",
+          "tableType": "View",
+          "friendlyName": "dim_INSIKTProjekt",
+          "qualifiedObjectName": "dw.dim_INSIKTProjekt"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Projektledare",
+      "name": "_Projektledare",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Name",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "WChar",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dw_dim_INSIKTProjekt",
+            "columnId": "Projektledare",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_INSIKTProjekt",
+            "tableType": "View",
+            "friendlyName": "dim_INSIKTProjekt",
+            "qualifiedObjectName": "dw.dim_INSIKTProjekt"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dw_dim_INSIKTProjekt",
+          "columnId": "Projektledare",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_INSIKTProjekt",
+          "tableType": "View",
+          "friendlyName": "dim_INSIKTProjekt",
+          "qualifiedObjectName": "dw.dim_INSIKTProjekt"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Projektstatus",
+      "name": "_Projektstatus",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Name",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "WChar",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dw_dim_INSIKTProjekt",
+            "columnId": "Projektstatus",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_INSIKTProjekt",
+            "tableType": "View",
+            "friendlyName": "dim_INSIKTProjekt",
+            "qualifiedObjectName": "dw.dim_INSIKTProjekt"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dw_dim_INSIKTProjekt",
+          "columnId": "Projektstatus",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_INSIKTProjekt",
+          "tableType": "View",
+          "friendlyName": "dim_INSIKTProjekt",
+          "qualifiedObjectName": "dw.dim_INSIKTProjekt"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Projekttyp",
+      "name": "_Projekttyp",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Name",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "WChar",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dw_dim_INSIKTProjekt",
+            "columnId": "Projekttyp",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_INSIKTProjekt",
+            "tableType": "View",
+            "friendlyName": "dim_INSIKTProjekt",
+            "qualifiedObjectName": "dw.dim_INSIKTProjekt"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dw_dim_INSIKTProjekt",
+          "columnId": "Projekttyp",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_INSIKTProjekt",
+          "tableType": "View",
+          "friendlyName": "dim_INSIKTProjekt",
+          "qualifiedObjectName": "dw.dim_INSIKTProjekt"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "FCProjectID",
+      "name": "FCProjectID",
+      "description": "",
+      "type": "Project",
+      "usage": "Key",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Name",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dw_dim_INSIKTProjekt",
+            "columnId": "FCProjectID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_INSIKTProjekt",
+            "tableType": "View",
+            "friendlyName": "dim_INSIKTProjekt",
+            "qualifiedObjectName": "dw.dim_INSIKTProjekt"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dw_dim_INSIKTProjekt",
+          "columnId": "DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_INSIKTProjekt",
+          "tableType": "View",
+          "friendlyName": "dim_INSIKTProjekt",
+          "qualifiedObjectName": "dw.dim_INSIKTProjekt"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Projekttyp",
+          "relatedAttributeName": "_Projekttyp",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Projektfas",
+          "relatedAttributeName": "_Projektfas",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "FC Project ID",
+          "relatedAttributeName": "_Projekt",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Projektledare",
+          "relatedAttributeName": "_Projektledare",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Projektstatus",
+          "relatedAttributeName": "_Projektstatus",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    }
+  ],
+  "hierarchies": [
+    {
+      "id": "Hierarchy",
+      "name": "Projekt",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Alla projekt",
+      "visible": true,
+      "levels": [
+        {
+          "id": "_Projekt",
+          "name": "Projekt",
+          "ordinal": 0,
+          "sourceAttributeId": "FC Project ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        }
+      ]
+    },
+    {
+      "id": "Hierarchy 1 2",
+      "name": "Projektfas",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Alla projektfaser",
+      "visible": true,
+      "levels": [
+        {
+          "id": "_Projektfas",
+          "name": "_Projektfas",
+          "ordinal": 0,
+          "sourceAttributeId": "Projektfas",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        }
+      ]
+    },
+    {
+      "id": "Hierarchy 1",
+      "name": "Projektledare",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Alla projektledare",
+      "visible": true,
+      "levels": [
+        {
+          "id": "Projektledare",
+          "name": "Projektledare",
+          "ordinal": 0,
+          "sourceAttributeId": "Projektledare",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        }
+      ]
+    },
+    {
+      "id": "Hierarchy 1 1",
+      "name": "Projektstatus",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Alla projektstatusar",
+      "visible": true,
+      "levels": [
+        {
+          "id": "Projektstatus",
+          "name": "Projektstatus",
+          "ordinal": 0,
+          "sourceAttributeId": "Projektstatus",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        }
+      ]
+    },
+    {
+      "id": "Hierarchy 2",
+      "name": "Projekttyp",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Alla projekttyper",
+      "visible": true,
+      "levels": [
+        {
+          "id": "_Projekttyp",
+          "name": "_Projekttyp",
+          "ordinal": 0,
+          "sourceAttributeId": "Projekttyp",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        }
+      ]
+    }
+  ]
+}

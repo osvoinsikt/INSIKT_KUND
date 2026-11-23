@@ -1,0 +1,28 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[FCMessage](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[FromUserID] [int] NOT NULL,
+	[Text] [nvarchar](max) NOT NULL,
+	[FCProcessID] [int] NOT NULL,
+	[MessageDate] [datetime] NOT NULL,
+	[MessageUpdatedDate] [datetime] NULL,
+ CONSTRAINT [PK_FCMessage] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+ALTER TABLE [dbo].[FCMessage]  WITH CHECK ADD  CONSTRAINT [FK_FCMessage_FCProcess] FOREIGN KEY([FCProcessID])
+REFERENCES [dbo].[FCProcess] ([ID])
+GO
+ALTER TABLE [dbo].[FCMessage] CHECK CONSTRAINT [FK_FCMessage_FCProcess]
+GO
+ALTER TABLE [dbo].[FCMessage]  WITH CHECK ADD  CONSTRAINT [FK_FCMessage_UserSecurityGroup] FOREIGN KEY([FromUserID])
+REFERENCES [dbo].[UserSecurityGroup] ([UserID])
+GO
+ALTER TABLE [dbo].[FCMessage] CHECK CONSTRAINT [FK_FCMessage_UserSecurityGroup]
+GO

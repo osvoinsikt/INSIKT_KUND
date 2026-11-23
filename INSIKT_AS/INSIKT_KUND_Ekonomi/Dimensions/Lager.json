@@ -1,0 +1,776 @@
+{
+  "id": "Lager",
+  "name": "Lager",
+  "description": "",
+  "type": "Regular",
+  "storageMode": "Molap",
+  "unknownMember": "None",
+  "unknownMemberName": "Unknown",
+  "attributes": [
+    {
+      "id": "Lager - L0 ID",
+      "name": "Lager - L0 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Lager - L0 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Lager",
+            "columnId": "L0_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Lager",
+            "tableType": "Table",
+            "friendlyName": "dim_Lager",
+            "qualifiedObjectName": "dw.dim_Lager"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Lager",
+          "columnId": "L0_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Lager",
+          "tableType": "Table",
+          "friendlyName": "dim_Lager",
+          "qualifiedObjectName": "dw.dim_Lager"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Lager - L0 Sort",
+          "relatedAttributeName": "Lager - L0 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Lager - L0 Sort",
+      "name": "Lager - L0 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Lager",
+            "columnId": "L0_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Lager",
+            "tableType": "Table",
+            "friendlyName": "dim_Lager",
+            "qualifiedObjectName": "dw.dim_Lager"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Lager",
+          "columnId": "L0_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Lager",
+          "tableType": "Table",
+          "friendlyName": "dim_Lager",
+          "qualifiedObjectName": "dw.dim_Lager"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Lager - L1 ID",
+      "name": "Lager - L1 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Lager - L1 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Lager",
+            "columnId": "L1_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Lager",
+            "tableType": "Table",
+            "friendlyName": "dim_Lager",
+            "qualifiedObjectName": "dw.dim_Lager"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Lager",
+          "columnId": "L1_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Lager",
+          "tableType": "Table",
+          "friendlyName": "dim_Lager",
+          "qualifiedObjectName": "dw.dim_Lager"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Lager - L0 ID",
+          "relatedAttributeName": "Lager - L0 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Lager - L1 Sort",
+          "relatedAttributeName": "Lager - L1 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Lager - L1 Sort",
+      "name": "Lager - L1 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Lager",
+            "columnId": "L1_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Lager",
+            "tableType": "Table",
+            "friendlyName": "dim_Lager",
+            "qualifiedObjectName": "dw.dim_Lager"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Lager",
+          "columnId": "L1_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Lager",
+          "tableType": "Table",
+          "friendlyName": "dim_Lager",
+          "qualifiedObjectName": "dw.dim_Lager"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Lager - L2 ID",
+      "name": "Lager - L2 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Lager - L2 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Lager",
+            "columnId": "L2_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Lager",
+            "tableType": "Table",
+            "friendlyName": "dim_Lager",
+            "qualifiedObjectName": "dw.dim_Lager"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Lager",
+          "columnId": "L2_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Lager",
+          "tableType": "Table",
+          "friendlyName": "dim_Lager",
+          "qualifiedObjectName": "dw.dim_Lager"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Lager - L1 ID",
+          "relatedAttributeName": "Lager - L1 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Lager - L2 Sort",
+          "relatedAttributeName": "Lager - L2 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Lager - L2 Sort",
+      "name": "Lager - L2 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Lager",
+            "columnId": "L2_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Lager",
+            "tableType": "Table",
+            "friendlyName": "dim_Lager",
+            "qualifiedObjectName": "dw.dim_Lager"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Lager",
+          "columnId": "L2_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Lager",
+          "tableType": "Table",
+          "friendlyName": "dim_Lager",
+          "qualifiedObjectName": "dw.dim_Lager"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Lager - L3 ID",
+      "name": "Lager - L3 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Lager - L3 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Lager",
+            "columnId": "L3_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Lager",
+            "tableType": "Table",
+            "friendlyName": "dim_Lager",
+            "qualifiedObjectName": "dw.dim_Lager"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Lager",
+          "columnId": "L3_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Lager",
+          "tableType": "Table",
+          "friendlyName": "dim_Lager",
+          "qualifiedObjectName": "dw.dim_Lager"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Lager - L2 ID",
+          "relatedAttributeName": "Lager - L2 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Lager - L3 Sort",
+          "relatedAttributeName": "Lager - L3 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Lager - L3 Sort",
+      "name": "Lager - L3 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Lager",
+            "columnId": "L3_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Lager",
+            "tableType": "Table",
+            "friendlyName": "dim_Lager",
+            "qualifiedObjectName": "dw.dim_Lager"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Lager",
+          "columnId": "L3_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Lager",
+          "tableType": "Table",
+          "friendlyName": "dim_Lager",
+          "qualifiedObjectName": "dw.dim_Lager"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Lager - L4 ID",
+      "name": "Lager - L4 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Lager - L4 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Lager",
+            "columnId": "L4_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Lager",
+            "tableType": "Table",
+            "friendlyName": "dim_Lager",
+            "qualifiedObjectName": "dw.dim_Lager"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Lager",
+          "columnId": "L4_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Lager",
+          "tableType": "Table",
+          "friendlyName": "dim_Lager",
+          "qualifiedObjectName": "dw.dim_Lager"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Lager - L3 ID",
+          "relatedAttributeName": "Lager - L3 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Lager - L4 Sort",
+          "relatedAttributeName": "Lager - L4 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Lager - L4 Sort",
+      "name": "Lager - L4 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Lager",
+            "columnId": "L4_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Lager",
+            "tableType": "Table",
+            "friendlyName": "dim_Lager",
+            "qualifiedObjectName": "dw.dim_Lager"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Lager",
+          "columnId": "L4_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Lager",
+          "tableType": "Table",
+          "friendlyName": "dim_Lager",
+          "qualifiedObjectName": "dw.dim_Lager"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Lager ID",
+      "name": "Lager ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Key",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Lager Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Lager",
+            "columnId": "LagerID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Lager",
+            "tableType": "Table",
+            "friendlyName": "dim_Lager",
+            "qualifiedObjectName": "dw.dim_Lager"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Lager",
+          "columnId": "Lager_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Lager",
+          "tableType": "Table",
+          "friendlyName": "dim_Lager",
+          "qualifiedObjectName": "dw.dim_Lager"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Lager - L4 ID",
+          "relatedAttributeName": "Lager - L4 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Lager Sort",
+          "relatedAttributeName": "Lager Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Lager Sort",
+      "name": "Lager Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "WChar",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Lager",
+            "columnId": "Lager_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Lager",
+            "tableType": "Table",
+            "friendlyName": "dim_Lager",
+            "qualifiedObjectName": "dw.dim_Lager"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Lager",
+          "columnId": "Lager_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Lager",
+          "tableType": "Table",
+          "friendlyName": "dim_Lager",
+          "qualifiedObjectName": "dw.dim_Lager"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    }
+  ],
+  "hierarchies": [
+    {
+      "id": "Hierarki",
+      "name": "Hierarki",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Alla Lager",
+      "visible": true,
+      "levels": [
+        {
+          "id": "Nivå 4",
+          "name": "Nivå 4",
+          "ordinal": 0,
+          "sourceAttributeId": "Lager - L3 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        },
+        {
+          "id": "Nivå 5",
+          "name": "Nivå 5",
+          "ordinal": 0,
+          "sourceAttributeId": "Lager - L4 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        },
+        {
+          "id": "Nivå 3",
+          "name": "Nivå 3",
+          "ordinal": 0,
+          "sourceAttributeId": "Lager - L2 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        },
+        {
+          "id": "Nivå 1",
+          "name": "Nivå 1",
+          "ordinal": 0,
+          "sourceAttributeId": "Lager - L0 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        },
+        {
+          "id": "Nivå 2",
+          "name": "Nivå 2",
+          "ordinal": 0,
+          "sourceAttributeId": "Lager - L1 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        }
+      ]
+    },
+    {
+      "id": "Lista",
+      "name": "Lista",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Alla Lager",
+      "visible": true,
+      "levels": [
+        {
+          "id": "Lager",
+          "name": "Lager",
+          "ordinal": 0,
+          "sourceAttributeId": "Lager ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        }
+      ]
+    }
+  ]
+}

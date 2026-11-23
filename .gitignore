@@ -1,0 +1,8 @@
+.vs/
+.vscode/
+/*.slnx
+/**/modify_date.txt
+/**/index.compact.jsonl
+/**/index.metadata.jsonl
+/**/LAST_SCHEMA_UPDATE.txt
+/**/index.json

@@ -1,0 +1,176 @@
+/*
+The CALCULATE command controls the aggregation of leaf cells in the cube.
+If the CALCULATE command is deleted or modified, the data within the cube is affected.
+You should edit this command only if you manually specify how the cube is aggregated.
+*/
+
+CALCULATE;
+
+--#########################################################################################################
+-- Periodisering
+--#########################################################################################################
+CREATE MEMBER CURRENTCUBE.[Measures].[Manuellt Periodiserat Belopp Writability Month]
+AS ( 
+    iif(
+        [Planeringsperiod].[År - Månad].currentmember.member_key*1.0 >= [Measures].[StartWritabilityMonthID]
+        and [Planeringsperiod].[År - Månad].currentmember.member_key*1.0 <= [Measures].[EndMonthID]
+        ,[Measures].[Periodiserat Belopp]
+        ,null
+    )
+), 
+FORMAT_STRING = "#,#", 
+DISPLAY_FOLDER = 'Periodisering',
+VISIBLE = 1;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[Manuellt Periodiserat Belopp]
+AS ( 
+    SUM(descendants([Planeringsperiod].[År - Månad].currentmember,,leaves),
+        [Measures].[Manuellt Periodiserat Belopp Writability Month])
+), 
+FORMAT_STRING = "#,#",
+DISPLAY_FOLDER = 'Periodisering',
+VISIBLE = 1;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[Total periodisering]
+AS 
+(
+    [Measures].[Manuellt Periodiserat Belopp]
+    + [Measures].[Utfall fryst] 
+    + [Measures].[Beräknat Periodiserat Belopp]
+
+), 
+FORMAT_STRING = "#,#",
+DISPLAY_FOLDER = 'Periodisering',
+VISIBLE = 1;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[PeriodiseringPlaneringsperiodIsWritable] AS
+(
+    IIF(
+        CDbl([Planeringsperiod].[År - Månad].CURRENTMEMBER.MEMBER_KEY) >= [Measures].[StartWritabilityMonthID]
+        AND CDbl([Planeringsperiod].[År - Månad].CURRENTMEMBER.MEMBER_KEY) <= [Measures].[EndMonthID]
+        OR abs([Measures].[Periodiserat Belopp]) > 0.001 
+        ,1
+        ,NULL
+    )
+),
+FORMAT_STRING = "#,#",
+DISPLAY_FOLDER = 'Periodisering',
+VISIBLE = 0;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[Periodiserat belopp filter]
+AS (
+
+    CASE WHEN [Measures].[Periodiserat Belopp] > 0 THEN 1
+        ELSE NULL
+
+    END 
+        
+), 
+FORMAT_STRING = "#,#",
+DISPLAY_FOLDER = 'Periodisering',
+VISIBLE = 1;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[PeriodiseringPlaneringsperiodLeafConditionFilter] AS
+(
+    IIF(
+        (CDbl([Planeringsperiod].[År - Månad].CURRENTMEMBER.MEMBER_KEY) >= [Measures].[StartMonthID]
+        AND CDbl([Planeringsperiod].[År - Månad].CURRENTMEMBER.MEMBER_KEY) <= [Measures].[EndMonthID])
+        OR [Measures].[Utfall]
+        OR abs([Measures].[Periodiserat Belopp]) > 0.001 
+        ,1
+        ,NULL
+    )
+),
+FORMAT_STRING = "#,#",
+DISPLAY_FOLDER = 'Periodisering',
+VISIBLE = 0;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[PeriodiseringPlaneringsperiodFilter] AS
+(
+    IIF(
+        [Planeringsperiod].[År - Månad].CURRENTMEMBER IS [Planeringsperiod].[År - Månad].[Total]
+        ,IIF(
+            COUNT(
+                FILTER(
+                    [Planeringsperiod].[År - Månad].[År].MEMBERS,
+                    [Measures].[PeriodiseringPlaneringsperiodFilter] = 1
+                )
+            ) > 0
+            ,1
+            ,NULL
+        )
+        ,IIF(
+            [Planeringsperiod].[År - Månad].CURRENTMEMBER.LEVEL IS [Planeringsperiod].[År - Månad].[År]
+            ,IIF(
+                COUNT(
+                    FILTER(
+                        [Planeringsperiod].[År - Månad].CURRENTMEMBER.CHILDREN
+                        ,[Measures].[PeriodiseringPlaneringsperiodLeafConditionFilter] = 1
+                    )
+                ) > 0
+                ,1
+                ,NULL
+            ),
+            [Measures].[PeriodiseringPlaneringsperiodLeafConditionFilter]
+        )
+    )
+),
+FORMAT_STRING = "#,#",
+DISPLAY_FOLDER = 'Periodisering',
+VISIBLE = 0;
+
+--#########################################################################################################
+-- Projektkalkyl
+--#########################################################################################################
+
+CREATE MEMBER CURRENTCUBE.[Measures].[Förkalkyl] AS
+(
+    [Planeringsversion].[FCVersionID].&[1001]
+    ,[Measures].[Kalkyl]
+),
+FORMAT_STRING = "#,#",
+DISPLAY_FOLDER = 'Projektkalkyl',
+VISIBLE = 1;
+ 
+CREATE MEMBER CURRENTCUBE.[Measures].[Beslutad budget] AS
+(
+    [Planeringsversion].[FCVersionID].&[2001]
+    ,[Measures].[Kalkyl]
+),
+FORMAT_STRING = "#,#",
+DISPLAY_FOLDER = 'Projektkalkyl',
+VISIBLE = 1;
+ 
+CREATE MEMBER CURRENTCUBE.[Measures].[Återstående budget] AS
+(
+    [Measures].[Beslutad budget] - [Measures].[Utfall fryst]
+),
+FORMAT_STRING = "#,#",
+DISPLAY_FOLDER = 'Projektkalkyl',
+VISIBLE = 1;
+ 
+CREATE MEMBER CURRENTCUBE.[Measures].[Återstående kalkyl] AS
+(
+    [Measures].[Kalkyl] - [Measures].[Utfall fryst]
+),
+FORMAT_STRING = "#,#",
+DISPLAY_FOLDER = 'Projektkalkyl',
+VISIBLE = 1;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[AvvikelseBelopp] AS
+(
+    [Measures].[Kalkyl] - [Measures].[Beslutad budget]
+),
+FORMAT_STRING = "#,#",
+CAPTION = 'Avvikelse belopp',
+DISPLAY_FOLDER = 'Projektkalkyl',
+VISIBLE = 1;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[AvvikelseProcent] AS
+(
+    divide([Measures].[AvvikelseBelopp], [Measures].[Beslutad budget])
+),
+FORMAT_STRING = "Percent",
+CAPTION = 'Avvikelse %',
+DISPLAY_FOLDER = 'Projektkalkyl',
+VISIBLE = 1;

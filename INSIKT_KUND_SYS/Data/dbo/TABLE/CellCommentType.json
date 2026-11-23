@@ -1,0 +1,35 @@
+[
+  {
+    "ID": 1,
+    "Name": "Uppföljning",
+    "Description": "Kommentarer som del av uppföljning av utfall, t ex månads- eller årsuppföljning per avdelning/ansvar/kostnadsställe",
+    "DataSourceID": 1,
+    "TextTemplate": null,
+    "IsReadOnly": false,
+    "IsDeleted": false,
+    "AllowAnyoneToEditComment": false,
+    "MemberAccessFCTypeID": null
+  },
+  {
+    "ID": 2,
+    "Name": "Budget",
+    "Description": "Kommentarer från budget",
+    "DataSourceID": 1,
+    "TextTemplate": null,
+    "IsReadOnly": true,
+    "IsDeleted": false,
+    "AllowAnyoneToEditComment": false,
+    "MemberAccessFCTypeID": null
+  },
+  {
+    "ID": 3,
+    "Name": "Prognos",
+    "Description": "Kommentarer från prognoser",
+    "DataSourceID": 1,
+    "TextTemplate": null,
+    "IsReadOnly": true,
+    "IsDeleted": false,
+    "AllowAnyoneToEditComment": false,
+    "MemberAccessFCTypeID": null
+  }
+]

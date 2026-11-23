@@ -1,0 +1,10 @@
+[
+  {
+    "SourceSystemProviderID": 1,
+    "Name": "SQL Server"
+  },
+  {
+    "SourceSystemProviderID": 2,
+    "Name": "Oracle"
+  }
+]

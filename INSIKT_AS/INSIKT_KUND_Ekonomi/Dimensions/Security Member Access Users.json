@@ -1,0 +1,66 @@
+{
+  "id": "Security Member Access Users",
+  "name": "Security Member Access Users",
+  "description": "",
+  "type": "Regular",
+  "storageMode": "Molap",
+  "unknownMember": "None",
+  "unknownMemberName": "Unknown",
+  "attributes": [
+    {
+      "id": "User Name",
+      "name": "User Name",
+      "description": "",
+      "type": "Regular",
+      "usage": "Key",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Name",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "WChar",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_SecurityMemberAccess_Users",
+            "columnId": "UserName",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_SecurityMemberAccess_Users",
+            "tableType": "Table",
+            "friendlyName": "dim_SecurityMemberAccess_Users",
+            "qualifiedObjectName": "dw.dim_SecurityMemberAccess_Users"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_SecurityMemberAccess_Users",
+          "columnId": "DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_SecurityMemberAccess_Users",
+          "tableType": "Table",
+          "friendlyName": "dim_SecurityMemberAccess_Users",
+          "qualifiedObjectName": "dw.dim_SecurityMemberAccess_Users"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    }
+  ],
+  "hierarchies": [
+    
+  ]
+}

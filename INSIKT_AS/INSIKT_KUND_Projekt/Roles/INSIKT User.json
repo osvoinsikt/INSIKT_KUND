@@ -1,0 +1,102 @@
+{
+  "id": "INSIKT User",
+  "name": "INSIKT User",
+  "description": "",
+  "members": [
+    "base-template\\INSIKT Konsult - Kund"
+  ],
+  "externalMembers": [
+    
+  ],
+  "permissions": {
+    "database": {
+      "read": "Allowed",
+      "write": "None",
+      "process": true,
+      "readDefinition": "Allowed",
+      "administer": false
+    },
+    "cubes": [
+      {
+        "read": "Allowed",
+        "write": "Allowed",
+        "process": false,
+        "readDefinition": "Allowed",
+        "readSourceData": "Allowed",
+        "cubeId": "Projektplanering",
+        "cubeName": "Projektplanering",
+        "cellPermissions": [
+          {
+            "access": "ReadWrite",
+            "expression": "true",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "read": "Allowed",
+        "write": "Allowed",
+        "process": false,
+        "readDefinition": "Basic",
+        "readSourceData": "Allowed",
+        "cubeId": "Projektanalys",
+        "cubeName": "Projektanalys",
+        "cellPermissions": [
+          {
+            "access": "ReadWrite",
+            "expression": "true",
+            "description": ""
+          }
+        ]
+      }
+    ],
+    "dimensions": [
+      {
+        "read": "Allowed",
+        "write": "None",
+        "process": false,
+        "readDefinition": "Allowed",
+        "dimensionId": "INSIKT Projekt",
+        "dimensionName": "INSIKT Projekt",
+        "allowedRowsExpression": ""
+      },
+      {
+        "read": "Allowed",
+        "write": "None",
+        "process": false,
+        "readDefinition": "Allowed",
+        "dimensionId": "Konto",
+        "dimensionName": "Konto",
+        "allowedRowsExpression": ""
+      },
+      {
+        "read": "Allowed",
+        "write": "None",
+        "process": false,
+        "readDefinition": "Allowed",
+        "dimensionId": "Datum",
+        "dimensionName": "Datum",
+        "allowedRowsExpression": ""
+      },
+      {
+        "read": "Allowed",
+        "write": "None",
+        "process": false,
+        "readDefinition": "Allowed",
+        "dimensionId": "Datum Calc",
+        "dimensionName": "Datum Calc",
+        "allowedRowsExpression": ""
+      }
+    ],
+    "dataSources": [
+      {
+        "read": "Allowed",
+        "write": "None",
+        "process": false,
+        "readDefinition": "None",
+        "dataSourceId": "INSIKT_DW",
+        "dataSourceName": "INSIKT_DW"
+      }
+    ]
+  }
+}

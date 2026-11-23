@@ -1,0 +1,18 @@
+[
+  {
+    "ID": -1,
+    "Name": "Importerade versioner"
+  },
+  {
+    "ID": 1000,
+    "Name": "Förkalkyl"
+  },
+  {
+    "ID": 2000,
+    "Name": "Projektbudget"
+  },
+  {
+    "ID": 3000,
+    "Name": "Projektprognos"
+  }
+]

@@ -1,0 +1,776 @@
+{
+  "id": "Anställd",
+  "name": "Anställd",
+  "description": "",
+  "type": "Regular",
+  "storageMode": "Molap",
+  "unknownMember": "None",
+  "unknownMemberName": "Unknown",
+  "attributes": [
+    {
+      "id": "Anställd - L0 ID",
+      "name": "Anställd - L0 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Anställd - L0 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Anställd",
+            "columnId": "L0_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Anställd",
+            "tableType": "Table",
+            "friendlyName": "dim_Anställd",
+            "qualifiedObjectName": "dw.dim_Anställd"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Anställd",
+          "columnId": "L0_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Anställd",
+          "tableType": "Table",
+          "friendlyName": "dim_Anställd",
+          "qualifiedObjectName": "dw.dim_Anställd"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Anställd - L0 Sort",
+          "relatedAttributeName": "Anställd - L0 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Anställd - L0 Sort",
+      "name": "Anställd - L0 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Anställd",
+            "columnId": "L0_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Anställd",
+            "tableType": "Table",
+            "friendlyName": "dim_Anställd",
+            "qualifiedObjectName": "dw.dim_Anställd"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Anställd",
+          "columnId": "L0_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Anställd",
+          "tableType": "Table",
+          "friendlyName": "dim_Anställd",
+          "qualifiedObjectName": "dw.dim_Anställd"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Anställd - L1 ID",
+      "name": "Anställd - L1 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Anställd - L1 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Anställd",
+            "columnId": "L1_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Anställd",
+            "tableType": "Table",
+            "friendlyName": "dim_Anställd",
+            "qualifiedObjectName": "dw.dim_Anställd"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Anställd",
+          "columnId": "L1_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Anställd",
+          "tableType": "Table",
+          "friendlyName": "dim_Anställd",
+          "qualifiedObjectName": "dw.dim_Anställd"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Anställd - L0 ID",
+          "relatedAttributeName": "Anställd - L0 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Anställd - L1 Sort",
+          "relatedAttributeName": "Anställd - L1 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Anställd - L1 Sort",
+      "name": "Anställd - L1 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Anställd",
+            "columnId": "L1_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Anställd",
+            "tableType": "Table",
+            "friendlyName": "dim_Anställd",
+            "qualifiedObjectName": "dw.dim_Anställd"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Anställd",
+          "columnId": "L1_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Anställd",
+          "tableType": "Table",
+          "friendlyName": "dim_Anställd",
+          "qualifiedObjectName": "dw.dim_Anställd"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Anställd - L2 ID",
+      "name": "Anställd - L2 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Anställd - L2 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Anställd",
+            "columnId": "L2_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Anställd",
+            "tableType": "Table",
+            "friendlyName": "dim_Anställd",
+            "qualifiedObjectName": "dw.dim_Anställd"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Anställd",
+          "columnId": "L2_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Anställd",
+          "tableType": "Table",
+          "friendlyName": "dim_Anställd",
+          "qualifiedObjectName": "dw.dim_Anställd"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Anställd - L1 ID",
+          "relatedAttributeName": "Anställd - L1 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Anställd - L2 Sort",
+          "relatedAttributeName": "Anställd - L2 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Anställd - L2 Sort",
+      "name": "Anställd - L2 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Anställd",
+            "columnId": "L2_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Anställd",
+            "tableType": "Table",
+            "friendlyName": "dim_Anställd",
+            "qualifiedObjectName": "dw.dim_Anställd"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Anställd",
+          "columnId": "L2_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Anställd",
+          "tableType": "Table",
+          "friendlyName": "dim_Anställd",
+          "qualifiedObjectName": "dw.dim_Anställd"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Anställd - L3 ID",
+      "name": "Anställd - L3 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Anställd - L3 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Anställd",
+            "columnId": "L3_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Anställd",
+            "tableType": "Table",
+            "friendlyName": "dim_Anställd",
+            "qualifiedObjectName": "dw.dim_Anställd"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Anställd",
+          "columnId": "L3_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Anställd",
+          "tableType": "Table",
+          "friendlyName": "dim_Anställd",
+          "qualifiedObjectName": "dw.dim_Anställd"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Anställd - L2 ID",
+          "relatedAttributeName": "Anställd - L2 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Anställd - L3 Sort",
+          "relatedAttributeName": "Anställd - L3 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Anställd - L3 Sort",
+      "name": "Anställd - L3 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Anställd",
+            "columnId": "L3_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Anställd",
+            "tableType": "Table",
+            "friendlyName": "dim_Anställd",
+            "qualifiedObjectName": "dw.dim_Anställd"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Anställd",
+          "columnId": "L3_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Anställd",
+          "tableType": "Table",
+          "friendlyName": "dim_Anställd",
+          "qualifiedObjectName": "dw.dim_Anställd"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Anställd - L4 ID",
+      "name": "Anställd - L4 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Anställd - L4 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Anställd",
+            "columnId": "L4_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Anställd",
+            "tableType": "Table",
+            "friendlyName": "dim_Anställd",
+            "qualifiedObjectName": "dw.dim_Anställd"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Anställd",
+          "columnId": "L4_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Anställd",
+          "tableType": "Table",
+          "friendlyName": "dim_Anställd",
+          "qualifiedObjectName": "dw.dim_Anställd"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Anställd - L3 ID",
+          "relatedAttributeName": "Anställd - L3 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Anställd - L4 Sort",
+          "relatedAttributeName": "Anställd - L4 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Anställd - L4 Sort",
+      "name": "Anställd - L4 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Anställd",
+            "columnId": "L4_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Anställd",
+            "tableType": "Table",
+            "friendlyName": "dim_Anställd",
+            "qualifiedObjectName": "dw.dim_Anställd"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Anställd",
+          "columnId": "L4_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Anställd",
+          "tableType": "Table",
+          "friendlyName": "dim_Anställd",
+          "qualifiedObjectName": "dw.dim_Anställd"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Anställd ID",
+      "name": "Anställd ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Key",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Anställd Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Anställd",
+            "columnId": "AnställdID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Anställd",
+            "tableType": "Table",
+            "friendlyName": "dim_Anställd",
+            "qualifiedObjectName": "dw.dim_Anställd"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Anställd",
+          "columnId": "Anställd_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Anställd",
+          "tableType": "Table",
+          "friendlyName": "dim_Anställd",
+          "qualifiedObjectName": "dw.dim_Anställd"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Anställd - L4 ID",
+          "relatedAttributeName": "Anställd - L4 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Anställd Sort",
+          "relatedAttributeName": "Anställd Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Anställd Sort",
+      "name": "Anställd Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "WChar",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Anställd",
+            "columnId": "Anställd_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Anställd",
+            "tableType": "Table",
+            "friendlyName": "dim_Anställd",
+            "qualifiedObjectName": "dw.dim_Anställd"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Anställd",
+          "columnId": "Anställd_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Anställd",
+          "tableType": "Table",
+          "friendlyName": "dim_Anställd",
+          "qualifiedObjectName": "dw.dim_Anställd"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    }
+  ],
+  "hierarchies": [
+    {
+      "id": "Hierarki",
+      "name": "Hierarki",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Alla Anställda",
+      "visible": true,
+      "levels": [
+        {
+          "id": "Nivå 4",
+          "name": "Nivå 4",
+          "ordinal": 0,
+          "sourceAttributeId": "Anställd - L3 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        },
+        {
+          "id": "Nivå 5",
+          "name": "Nivå 5",
+          "ordinal": 0,
+          "sourceAttributeId": "Anställd - L4 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        },
+        {
+          "id": "Nivå 3",
+          "name": "Nivå 3",
+          "ordinal": 0,
+          "sourceAttributeId": "Anställd - L2 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        },
+        {
+          "id": "Nivå 1",
+          "name": "Nivå 1",
+          "ordinal": 0,
+          "sourceAttributeId": "Anställd - L0 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        },
+        {
+          "id": "Nivå 2",
+          "name": "Nivå 2",
+          "ordinal": 0,
+          "sourceAttributeId": "Anställd - L1 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        }
+      ]
+    },
+    {
+      "id": "Lista",
+      "name": "Lista",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Alla Anställda",
+      "visible": true,
+      "levels": [
+        {
+          "id": "Anställd",
+          "name": "Anställd",
+          "ordinal": 0,
+          "sourceAttributeId": "Anställd ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[support_FixLoginINSIKTUSER]
+	
+AS
+BEGIN
+	
+	SET NOCOUNT ON;
+
+	EXEC sp_change_users_login 'update_one', 'INSIKT_USER', 'INSIKT_USER'
+END
+GO

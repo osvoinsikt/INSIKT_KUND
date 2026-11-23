@@ -1,0 +1,78 @@
+{
+  "id": "INSIKT User",
+  "name": "INSIKT User",
+  "description": "",
+  "members": [
+    
+  ],
+  "externalMembers": [
+    
+  ],
+  "permissions": {
+    "database": {
+      "read": "Allowed",
+      "write": "None",
+      "process": true,
+      "readDefinition": "Allowed",
+      "administer": false
+    },
+    "cubes": [
+      {
+        "read": "Allowed",
+        "write": "Allowed",
+        "process": false,
+        "readDefinition": "Allowed",
+        "readSourceData": "Allowed",
+        "cubeId": "Logistik",
+        "cubeName": "Logistik"
+      },
+      {
+        "read": "Allowed",
+        "write": "Allowed",
+        "process": false,
+        "readDefinition": "Allowed",
+        "readSourceData": "Allowed",
+        "cubeId": "Ekonomi",
+        "cubeName": "Ekonomi",
+        "cellPermissions": [
+          {
+            "access": "ReadWrite",
+            "expression": "true",
+            "description": ""
+          }
+        ]
+      }
+    ],
+    "dimensions": [
+      {
+        "read": "Allowed",
+        "write": "None",
+        "process": false,
+        "readDefinition": "None",
+        "dimensionId": "Organisation",
+        "dimensionName": "Organisation",
+        "allowedRowsExpression": "",
+        "attributePermissions": [
+          {
+            "attributeId": "Organisation Leaf ID",
+            "allowedSet": "nonempty\n(\n   [Organisation].[Organisation Leaf ID].[Organisation Leaf ID].members\n   ,\n   (\n      [Measures].[OrgAccess]\n      ,StrToMember('[Security Member Access Users].[User Name].&[' + CustomData() + ']')\n   )\n)",
+            "deniedSet": "",
+            "defaultMember": "",
+            "visualTotals": "1",
+            "description": ""
+          }
+        ]
+      }
+    ],
+    "dataSources": [
+      {
+        "read": "Allowed",
+        "write": "None",
+        "process": false,
+        "readDefinition": "None",
+        "dataSourceId": "INSIKT_DW",
+        "dataSourceName": "INSIKT_DW"
+      }
+    ]
+  }
+}

@@ -1,0 +1,134 @@
+[
+  {
+    "ID": 11,
+    "FCProjectCardID": 1,
+    "FCProjectPropertyID": null,
+    "FCProjectPropertyGroupID": null,
+    "Text": "Projektspecifikt",
+    "X": 0,
+    "Y": 4,
+    "Width": 2,
+    "Height": 1
+  },
+  {
+    "ID": 12,
+    "FCProjectCardID": 1,
+    "FCProjectPropertyID": 2,
+    "FCProjectPropertyGroupID": null,
+    "Text": "",
+    "X": 0,
+    "Y": 1,
+    "Width": 2,
+    "Height": 1
+  },
+  {
+    "ID": 13,
+    "FCProjectCardID": 1,
+    "FCProjectPropertyID": 3,
+    "FCProjectPropertyGroupID": null,
+    "Text": "",
+    "X": 2,
+    "Y": 1,
+    "Width": 2,
+    "Height": 1
+  },
+  {
+    "ID": 14,
+    "FCProjectCardID": 1,
+    "FCProjectPropertyID": 4,
+    "FCProjectPropertyGroupID": null,
+    "Text": "",
+    "X": 2,
+    "Y": 2,
+    "Width": 2,
+    "Height": 1
+  },
+  {
+    "ID": 15,
+    "FCProjectCardID": 1,
+    "FCProjectPropertyID": 6,
+    "FCProjectPropertyGroupID": null,
+    "Text": "",
+    "X": 0,
+    "Y": 5,
+    "Width": 2,
+    "Height": 1
+  },
+  {
+    "ID": 16,
+    "FCProjectCardID": 1,
+    "FCProjectPropertyID": 7,
+    "FCProjectPropertyGroupID": null,
+    "Text": "",
+    "X": 2,
+    "Y": 5,
+    "Width": 2,
+    "Height": 1
+  },
+  {
+    "ID": 18,
+    "FCProjectCardID": 1,
+    "FCProjectPropertyID": 5,
+    "FCProjectPropertyGroupID": null,
+    "Text": "",
+    "X": 0,
+    "Y": 7,
+    "Width": 2,
+    "Height": 1
+  },
+  {
+    "ID": 19,
+    "FCProjectCardID": 1,
+    "FCProjectPropertyID": 9,
+    "FCProjectPropertyGroupID": null,
+    "Text": "",
+    "X": 0,
+    "Y": 6,
+    "Width": 2,
+    "Height": 1
+  },
+  {
+    "ID": 20,
+    "FCProjectCardID": 1,
+    "FCProjectPropertyID": null,
+    "FCProjectPropertyGroupID": null,
+    "Text": "Projektdatum",
+    "X": 2,
+    "Y": 0,
+    "Width": 2,
+    "Height": 1
+  },
+  {
+    "ID": 21,
+    "FCProjectCardID": 1,
+    "FCProjectPropertyID": null,
+    "FCProjectPropertyGroupID": null,
+    "Text": "Projekt",
+    "X": 0,
+    "Y": 0,
+    "Width": 2,
+    "Height": 1
+  },
+  {
+    "ID": 23,
+    "FCProjectCardID": 1,
+    "FCProjectPropertyID": 8,
+    "FCProjectPropertyGroupID": null,
+    "Text": "",
+    "X": 0,
+    "Y": 2,
+    "Width": 2,
+    "Height": 1
+  },
+  {
+    "ID": 24,
+    "FCProjectCardID": 1,
+    "FCProjectPropertyID": null,
+    "FCProjectPropertyGroupID": null,
+    "Text": "Roller",
+    "X": 2,
+    "Y": 4,
+    "Width": 2,
+    "Height": 1
+  }
+]

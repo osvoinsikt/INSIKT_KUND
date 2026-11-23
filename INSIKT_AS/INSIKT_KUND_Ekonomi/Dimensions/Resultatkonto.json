@@ -1,0 +1,776 @@
+{
+  "id": "Resultatkonto",
+  "name": "Resultatkonto",
+  "description": "",
+  "type": "Regular",
+  "storageMode": "Molap",
+  "unknownMember": "None",
+  "unknownMemberName": "Unknown",
+  "attributes": [
+    {
+      "id": "Konto ID",
+      "name": "Konto ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Key",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Konto Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Resultatkonto",
+            "columnId": "KontoID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Resultatkonto",
+            "tableType": "Table",
+            "friendlyName": "dim_Resultatkonto",
+            "qualifiedObjectName": "dw.dim_Resultatkonto"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Resultatkonto",
+          "columnId": "Konto_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Resultatkonto",
+          "tableType": "Table",
+          "friendlyName": "dim_Resultatkonto",
+          "qualifiedObjectName": "dw.dim_Resultatkonto"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Resultatkonto - L4 ID",
+          "relatedAttributeName": "Resultatkonto - L4 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Konto Sort",
+          "relatedAttributeName": "Konto Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Konto Sort",
+      "name": "Konto Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "WChar",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Resultatkonto",
+            "columnId": "Konto_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Resultatkonto",
+            "tableType": "Table",
+            "friendlyName": "dim_Resultatkonto",
+            "qualifiedObjectName": "dw.dim_Resultatkonto"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Resultatkonto",
+          "columnId": "Konto_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Resultatkonto",
+          "tableType": "Table",
+          "friendlyName": "dim_Resultatkonto",
+          "qualifiedObjectName": "dw.dim_Resultatkonto"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Resultatkonto - L0 ID",
+      "name": "Resultatkonto - L0 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Resultatkonto - L0 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Resultatkonto",
+            "columnId": "L0_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Resultatkonto",
+            "tableType": "Table",
+            "friendlyName": "dim_Resultatkonto",
+            "qualifiedObjectName": "dw.dim_Resultatkonto"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Resultatkonto",
+          "columnId": "L0_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Resultatkonto",
+          "tableType": "Table",
+          "friendlyName": "dim_Resultatkonto",
+          "qualifiedObjectName": "dw.dim_Resultatkonto"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Resultatkonto - L0 Sort",
+          "relatedAttributeName": "Resultatkonto - L0 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Resultatkonto - L0 Sort",
+      "name": "Resultatkonto - L0 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Resultatkonto",
+            "columnId": "L0_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Resultatkonto",
+            "tableType": "Table",
+            "friendlyName": "dim_Resultatkonto",
+            "qualifiedObjectName": "dw.dim_Resultatkonto"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Resultatkonto",
+          "columnId": "L0_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Resultatkonto",
+          "tableType": "Table",
+          "friendlyName": "dim_Resultatkonto",
+          "qualifiedObjectName": "dw.dim_Resultatkonto"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Resultatkonto - L1 ID",
+      "name": "Resultatkonto - L1 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Resultatkonto - L1 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Resultatkonto",
+            "columnId": "L1_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Resultatkonto",
+            "tableType": "Table",
+            "friendlyName": "dim_Resultatkonto",
+            "qualifiedObjectName": "dw.dim_Resultatkonto"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Resultatkonto",
+          "columnId": "L1_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Resultatkonto",
+          "tableType": "Table",
+          "friendlyName": "dim_Resultatkonto",
+          "qualifiedObjectName": "dw.dim_Resultatkonto"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Resultatkonto - L0 ID",
+          "relatedAttributeName": "Resultatkonto - L0 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Resultatkonto - L1 Sort",
+          "relatedAttributeName": "Resultatkonto - L1 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Resultatkonto - L1 Sort",
+      "name": "Resultatkonto - L1 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Resultatkonto",
+            "columnId": "L1_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Resultatkonto",
+            "tableType": "Table",
+            "friendlyName": "dim_Resultatkonto",
+            "qualifiedObjectName": "dw.dim_Resultatkonto"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Resultatkonto",
+          "columnId": "L1_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Resultatkonto",
+          "tableType": "Table",
+          "friendlyName": "dim_Resultatkonto",
+          "qualifiedObjectName": "dw.dim_Resultatkonto"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Resultatkonto - L2 ID",
+      "name": "Resultatkonto - L2 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Resultatkonto - L2 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Resultatkonto",
+            "columnId": "L2_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Resultatkonto",
+            "tableType": "Table",
+            "friendlyName": "dim_Resultatkonto",
+            "qualifiedObjectName": "dw.dim_Resultatkonto"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Resultatkonto",
+          "columnId": "L2_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Resultatkonto",
+          "tableType": "Table",
+          "friendlyName": "dim_Resultatkonto",
+          "qualifiedObjectName": "dw.dim_Resultatkonto"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Resultatkonto - L1 ID",
+          "relatedAttributeName": "Resultatkonto - L1 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Resultatkonto - L2 Sort",
+          "relatedAttributeName": "Resultatkonto - L2 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Resultatkonto - L2 Sort",
+      "name": "Resultatkonto - L2 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Resultatkonto",
+            "columnId": "L2_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Resultatkonto",
+            "tableType": "Table",
+            "friendlyName": "dim_Resultatkonto",
+            "qualifiedObjectName": "dw.dim_Resultatkonto"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Resultatkonto",
+          "columnId": "L2_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Resultatkonto",
+          "tableType": "Table",
+          "friendlyName": "dim_Resultatkonto",
+          "qualifiedObjectName": "dw.dim_Resultatkonto"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Resultatkonto - L3 ID",
+      "name": "Resultatkonto - L3 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Resultatkonto - L3 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Resultatkonto",
+            "columnId": "L3_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Resultatkonto",
+            "tableType": "Table",
+            "friendlyName": "dim_Resultatkonto",
+            "qualifiedObjectName": "dw.dim_Resultatkonto"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Resultatkonto",
+          "columnId": "L3_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Resultatkonto",
+          "tableType": "Table",
+          "friendlyName": "dim_Resultatkonto",
+          "qualifiedObjectName": "dw.dim_Resultatkonto"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Resultatkonto - L2 ID",
+          "relatedAttributeName": "Resultatkonto - L2 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Resultatkonto - L3 Sort",
+          "relatedAttributeName": "Resultatkonto - L3 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Resultatkonto - L3 Sort",
+      "name": "Resultatkonto - L3 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Resultatkonto",
+            "columnId": "L3_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Resultatkonto",
+            "tableType": "Table",
+            "friendlyName": "dim_Resultatkonto",
+            "qualifiedObjectName": "dw.dim_Resultatkonto"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Resultatkonto",
+          "columnId": "L3_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Resultatkonto",
+          "tableType": "Table",
+          "friendlyName": "dim_Resultatkonto",
+          "qualifiedObjectName": "dw.dim_Resultatkonto"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Resultatkonto - L4 ID",
+      "name": "Resultatkonto - L4 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Resultatkonto - L4 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Resultatkonto",
+            "columnId": "L4_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Resultatkonto",
+            "tableType": "Table",
+            "friendlyName": "dim_Resultatkonto",
+            "qualifiedObjectName": "dw.dim_Resultatkonto"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Resultatkonto",
+          "columnId": "L4_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Resultatkonto",
+          "tableType": "Table",
+          "friendlyName": "dim_Resultatkonto",
+          "qualifiedObjectName": "dw.dim_Resultatkonto"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Resultatkonto - L3 ID",
+          "relatedAttributeName": "Resultatkonto - L3 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Resultatkonto - L4 Sort",
+          "relatedAttributeName": "Resultatkonto - L4 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Resultatkonto - L4 Sort",
+      "name": "Resultatkonto - L4 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Resultatkonto",
+            "columnId": "L4_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Resultatkonto",
+            "tableType": "Table",
+            "friendlyName": "dim_Resultatkonto",
+            "qualifiedObjectName": "dw.dim_Resultatkonto"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Resultatkonto",
+          "columnId": "L4_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Resultatkonto",
+          "tableType": "Table",
+          "friendlyName": "dim_Resultatkonto",
+          "qualifiedObjectName": "dw.dim_Resultatkonto"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    }
+  ],
+  "hierarchies": [
+    {
+      "id": "Lista",
+      "name": "Lista",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Alla Konton",
+      "visible": true,
+      "levels": [
+        {
+          "id": "Resultatkonto",
+          "name": "Resultatkonto",
+          "ordinal": 0,
+          "sourceAttributeId": "Konto ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        }
+      ]
+    },
+    {
+      "id": "Resultatuppställning",
+      "name": "Resultatuppställning",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Alla Konton",
+      "visible": true,
+      "levels": [
+        {
+          "id": "Nivå 4",
+          "name": "Nivå 4",
+          "ordinal": 0,
+          "sourceAttributeId": "Resultatkonto - L3 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        },
+        {
+          "id": "Nivå 5",
+          "name": "Nivå 5",
+          "ordinal": 0,
+          "sourceAttributeId": "Resultatkonto - L4 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        },
+        {
+          "id": "Nivå 3",
+          "name": "Nivå 3",
+          "ordinal": 0,
+          "sourceAttributeId": "Resultatkonto - L2 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        },
+        {
+          "id": "Nivå 1",
+          "name": "Nivå 1",
+          "ordinal": 0,
+          "sourceAttributeId": "Resultatkonto - L0 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        },
+        {
+          "id": "Nivå 2",
+          "name": "Nivå 2",
+          "ordinal": 0,
+          "sourceAttributeId": "Resultatkonto - L1 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        }
+      ]
+    }
+  ]
+}

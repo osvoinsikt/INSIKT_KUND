@@ -1,0 +1,350 @@
+{
+  "cubeId": "Projektanalys",
+  "cubeName": "Projektanalys",
+  "measureGroups": [
+    {
+      "id": "Fact Projekt Analysis",
+      "name": "Uppföljning",
+      "description": "",
+      "storageMode": "Molap",
+      "processingMode": "Regular",
+      "ignoreUnrelatedDimensions": true,
+      "sourceReference": [
+        {
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dsvId": "INSIKT_DW",
+          "sourceType": "DsvTableBinding",
+          "tableId": "dw_fact_Projekt_Analysis",
+          "schemaName": "",
+          "queryHash": null,
+          "dbSchemaName": "dw",
+          "dbTableName": "fact_Projekt_Analysis",
+          "qualifiedObjectName": "dw.fact_Projekt_Analysis",
+          "sourceObjectType": "Table",
+          "friendlyName": "fact_Projekt_Analysis"
+        }
+      ],
+      "partitions": [
+        {
+          "id": "Fact Projekt Analysis",
+          "name": "Fact Projekt Analysis",
+          "storageMode": "Molap",
+          "processingMode": "Regular",
+          "source": {
+            "sourceType": "DsvTableBinding",
+            "dsvId": "INSIKT_DW",
+            "tableId": "dw_fact_Projekt_Analysis",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "fact_Projekt_Analysis",
+            "tableType": "Table",
+            "friendlyName": "fact_Projekt_Analysis",
+            "qualifiedObjectName": "dw.fact_Projekt_Analysis"
+          }
+        }
+      ],
+      "measures": [
+        {
+          "id": "Aktuell Kalkyl",
+          "name": "Aktuell kalkyl",
+          "uniqueName": "[Measures].[Aktuell kalkyl]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Uppföljning",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "dw_fact_Projekt_Analysis",
+              "columnId": "AktuellKalkyl",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Projekt_Analysis",
+              "tableType": "Table",
+              "friendlyName": "fact_Projekt_Analysis",
+              "qualifiedObjectName": "dw.fact_Projekt_Analysis"
+            }
+          }
+        },
+        {
+          "id": "Budget",
+          "name": "Budget",
+          "uniqueName": "[Measures].[Budget]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Uppföljning",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "dw_fact_Projekt_Analysis",
+              "columnId": "Budget",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Projekt_Analysis",
+              "tableType": "Table",
+              "friendlyName": "fact_Projekt_Analysis",
+              "qualifiedObjectName": "dw.fact_Projekt_Analysis"
+            }
+          }
+        },
+        {
+          "id": "Prev Kalkyl",
+          "name": "Fg kalkyl",
+          "uniqueName": "[Measures].[Fg kalkyl]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Uppföljning",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "dw_fact_Projekt_Analysis",
+              "columnId": "PrevKalkyl",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Projekt_Analysis",
+              "tableType": "Table",
+              "friendlyName": "fact_Projekt_Analysis",
+              "qualifiedObjectName": "dw.fact_Projekt_Analysis"
+            }
+          }
+        },
+        {
+          "id": "Prev Prognos",
+          "name": "Fg prognos",
+          "uniqueName": "[Measures].[Fg prognos]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Uppföljning",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "dw_fact_Projekt_Analysis",
+              "columnId": "PrevPrognos",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Projekt_Analysis",
+              "tableType": "Table",
+              "friendlyName": "fact_Projekt_Analysis",
+              "qualifiedObjectName": "dw.fact_Projekt_Analysis"
+            }
+          }
+        },
+        {
+          "id": "Förkalkyl",
+          "name": "Förkalkyl",
+          "uniqueName": "[Measures].[Förkalkyl]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Uppföljning",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "dw_fact_Projekt_Analysis",
+              "columnId": "Förkalkyl",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Projekt_Analysis",
+              "tableType": "Table",
+              "friendlyName": "fact_Projekt_Analysis",
+              "qualifiedObjectName": "dw.fact_Projekt_Analysis"
+            }
+          }
+        },
+        {
+          "id": "Maximum Date ID 1",
+          "name": "MaxUppföljningDateID",
+          "uniqueName": "[Measures].[MaxUppföljningDateID]",
+          "description": "",
+          "dataType": "Integer",
+          "aggregateFunction": "Max",
+          "formatString": "",
+          "visible": false,
+          "displayFolder": "",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Integer",
+            "nullProcessing": "Automatic",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "dw_fact_Projekt_Analysis",
+              "columnId": "DateID",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Projekt_Analysis",
+              "tableType": "Table",
+              "friendlyName": "fact_Projekt_Analysis",
+              "qualifiedObjectName": "dw.fact_Projekt_Analysis"
+            }
+          }
+        },
+        {
+          "id": "Prognos",
+          "name": "Prognos",
+          "uniqueName": "[Measures].[Prognos]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Uppföljning",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "dw_fact_Projekt_Analysis",
+              "columnId": "Prognos",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Projekt_Analysis",
+              "tableType": "Table",
+              "friendlyName": "fact_Projekt_Analysis",
+              "qualifiedObjectName": "dw.fact_Projekt_Analysis"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "Fact Projekt Utfall Analysis",
+      "name": "Utfall",
+      "description": "",
+      "storageMode": "Molap",
+      "processingMode": "Regular",
+      "ignoreUnrelatedDimensions": true,
+      "sourceReference": [
+        {
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dsvId": "INSIKT_DW",
+          "sourceType": "DsvTableBinding",
+          "tableId": "dw_fact_Projekt_Utfall_Analysis",
+          "schemaName": "",
+          "queryHash": null,
+          "dbSchemaName": "dw",
+          "dbTableName": "fact_Projekt_Utfall_Analysis",
+          "qualifiedObjectName": "dw.fact_Projekt_Utfall_Analysis",
+          "sourceObjectType": "View",
+          "friendlyName": "fact_Projekt_Utfall_Analysis"
+        }
+      ],
+      "partitions": [
+        {
+          "id": "Fact Projekt Utfall Analysis",
+          "name": "Fact Projekt Utfall Analysis",
+          "storageMode": "Molap",
+          "processingMode": "Regular",
+          "source": {
+            "sourceType": "DsvTableBinding",
+            "dsvId": "INSIKT_DW",
+            "tableId": "dw_fact_Projekt_Utfall_Analysis",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "fact_Projekt_Utfall_Analysis",
+            "tableType": "View",
+            "friendlyName": "fact_Projekt_Utfall_Analysis",
+            "qualifiedObjectName": "dw.fact_Projekt_Utfall_Analysis"
+          }
+        }
+      ],
+      "measures": [
+        {
+          "id": "Date ID",
+          "name": "MaxUtfallDateID",
+          "uniqueName": "[Measures].[MaxUtfallDateID]",
+          "description": "",
+          "dataType": "Integer",
+          "aggregateFunction": "Max",
+          "formatString": "",
+          "visible": false,
+          "displayFolder": "",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Integer",
+            "nullProcessing": "Automatic",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "dw_fact_Projekt_Utfall_Analysis",
+              "columnId": "DateID",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Projekt_Utfall_Analysis",
+              "tableType": "View",
+              "friendlyName": "fact_Projekt_Utfall_Analysis",
+              "qualifiedObjectName": "dw.fact_Projekt_Utfall_Analysis"
+            }
+          }
+        },
+        {
+          "id": "Amount",
+          "name": "Utfall",
+          "uniqueName": "[Measures].[Utfall]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Utfall",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "dw_fact_Projekt_Utfall_Analysis",
+              "columnId": "Amount",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Projekt_Utfall_Analysis",
+              "tableType": "View",
+              "friendlyName": "fact_Projekt_Utfall_Analysis",
+              "qualifiedObjectName": "dw.fact_Projekt_Utfall_Analysis"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

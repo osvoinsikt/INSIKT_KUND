@@ -1,0 +1,776 @@
+{
+  "id": "Leverantör",
+  "name": "Leverantör",
+  "description": "",
+  "type": "Regular",
+  "storageMode": "Molap",
+  "unknownMember": "None",
+  "unknownMemberName": "Unknown",
+  "attributes": [
+    {
+      "id": "Leverantör - L0 ID",
+      "name": "Leverantör - L0 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Leverantör - L0 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Leverantör",
+            "columnId": "L0_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Leverantör",
+            "tableType": "Table",
+            "friendlyName": "dim_Leverantör",
+            "qualifiedObjectName": "dw.dim_Leverantör"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Leverantör",
+          "columnId": "L0_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Leverantör",
+          "tableType": "Table",
+          "friendlyName": "dim_Leverantör",
+          "qualifiedObjectName": "dw.dim_Leverantör"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Leverantör - L0 Sort",
+          "relatedAttributeName": "Leverantör - L0 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Leverantör - L0 Sort",
+      "name": "Leverantör - L0 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Leverantör",
+            "columnId": "L0_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Leverantör",
+            "tableType": "Table",
+            "friendlyName": "dim_Leverantör",
+            "qualifiedObjectName": "dw.dim_Leverantör"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Leverantör",
+          "columnId": "L0_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Leverantör",
+          "tableType": "Table",
+          "friendlyName": "dim_Leverantör",
+          "qualifiedObjectName": "dw.dim_Leverantör"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Leverantör - L1 ID",
+      "name": "Leverantör - L1 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Leverantör - L1 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Leverantör",
+            "columnId": "L1_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Leverantör",
+            "tableType": "Table",
+            "friendlyName": "dim_Leverantör",
+            "qualifiedObjectName": "dw.dim_Leverantör"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Leverantör",
+          "columnId": "L1_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Leverantör",
+          "tableType": "Table",
+          "friendlyName": "dim_Leverantör",
+          "qualifiedObjectName": "dw.dim_Leverantör"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Leverantör - L0 ID",
+          "relatedAttributeName": "Leverantör - L0 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Leverantör - L1 Sort",
+          "relatedAttributeName": "Leverantör - L1 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Leverantör - L1 Sort",
+      "name": "Leverantör - L1 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Leverantör",
+            "columnId": "L1_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Leverantör",
+            "tableType": "Table",
+            "friendlyName": "dim_Leverantör",
+            "qualifiedObjectName": "dw.dim_Leverantör"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Leverantör",
+          "columnId": "L1_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Leverantör",
+          "tableType": "Table",
+          "friendlyName": "dim_Leverantör",
+          "qualifiedObjectName": "dw.dim_Leverantör"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Leverantör - L2 ID",
+      "name": "Leverantör - L2 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Leverantör - L2 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Leverantör",
+            "columnId": "L2_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Leverantör",
+            "tableType": "Table",
+            "friendlyName": "dim_Leverantör",
+            "qualifiedObjectName": "dw.dim_Leverantör"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Leverantör",
+          "columnId": "L2_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Leverantör",
+          "tableType": "Table",
+          "friendlyName": "dim_Leverantör",
+          "qualifiedObjectName": "dw.dim_Leverantör"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Leverantör - L1 ID",
+          "relatedAttributeName": "Leverantör - L1 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Leverantör - L2 Sort",
+          "relatedAttributeName": "Leverantör - L2 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Leverantör - L2 Sort",
+      "name": "Leverantör - L2 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Leverantör",
+            "columnId": "L2_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Leverantör",
+            "tableType": "Table",
+            "friendlyName": "dim_Leverantör",
+            "qualifiedObjectName": "dw.dim_Leverantör"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Leverantör",
+          "columnId": "L2_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Leverantör",
+          "tableType": "Table",
+          "friendlyName": "dim_Leverantör",
+          "qualifiedObjectName": "dw.dim_Leverantör"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Leverantör - L3 ID",
+      "name": "Leverantör - L3 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Leverantör - L3 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Leverantör",
+            "columnId": "L3_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Leverantör",
+            "tableType": "Table",
+            "friendlyName": "dim_Leverantör",
+            "qualifiedObjectName": "dw.dim_Leverantör"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Leverantör",
+          "columnId": "L3_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Leverantör",
+          "tableType": "Table",
+          "friendlyName": "dim_Leverantör",
+          "qualifiedObjectName": "dw.dim_Leverantör"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Leverantör - L2 ID",
+          "relatedAttributeName": "Leverantör - L2 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Leverantör - L3 Sort",
+          "relatedAttributeName": "Leverantör - L3 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Leverantör - L3 Sort",
+      "name": "Leverantör - L3 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Leverantör",
+            "columnId": "L3_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Leverantör",
+            "tableType": "Table",
+            "friendlyName": "dim_Leverantör",
+            "qualifiedObjectName": "dw.dim_Leverantör"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Leverantör",
+          "columnId": "L3_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Leverantör",
+          "tableType": "Table",
+          "friendlyName": "dim_Leverantör",
+          "qualifiedObjectName": "dw.dim_Leverantör"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Leverantör - L4 ID",
+      "name": "Leverantör - L4 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Leverantör - L4 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Leverantör",
+            "columnId": "L4_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Leverantör",
+            "tableType": "Table",
+            "friendlyName": "dim_Leverantör",
+            "qualifiedObjectName": "dw.dim_Leverantör"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Leverantör",
+          "columnId": "L4_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Leverantör",
+          "tableType": "Table",
+          "friendlyName": "dim_Leverantör",
+          "qualifiedObjectName": "dw.dim_Leverantör"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Leverantör - L3 ID",
+          "relatedAttributeName": "Leverantör - L3 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Leverantör - L4 Sort",
+          "relatedAttributeName": "Leverantör - L4 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Leverantör - L4 Sort",
+      "name": "Leverantör - L4 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Leverantör",
+            "columnId": "L4_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Leverantör",
+            "tableType": "Table",
+            "friendlyName": "dim_Leverantör",
+            "qualifiedObjectName": "dw.dim_Leverantör"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Leverantör",
+          "columnId": "L4_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Leverantör",
+          "tableType": "Table",
+          "friendlyName": "dim_Leverantör",
+          "qualifiedObjectName": "dw.dim_Leverantör"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Leverantör ID",
+      "name": "Leverantör ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Key",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Leverantör Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Leverantör",
+            "columnId": "LeverantörID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Leverantör",
+            "tableType": "Table",
+            "friendlyName": "dim_Leverantör",
+            "qualifiedObjectName": "dw.dim_Leverantör"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Leverantör",
+          "columnId": "Leverantör_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Leverantör",
+          "tableType": "Table",
+          "friendlyName": "dim_Leverantör",
+          "qualifiedObjectName": "dw.dim_Leverantör"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Leverantör - L4 ID",
+          "relatedAttributeName": "Leverantör - L4 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Leverantör Sort",
+          "relatedAttributeName": "Leverantör Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Leverantör Sort",
+      "name": "Leverantör Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "WChar",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Leverantör",
+            "columnId": "Leverantör_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Leverantör",
+            "tableType": "Table",
+            "friendlyName": "dim_Leverantör",
+            "qualifiedObjectName": "dw.dim_Leverantör"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Leverantör",
+          "columnId": "Leverantör_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Leverantör",
+          "tableType": "Table",
+          "friendlyName": "dim_Leverantör",
+          "qualifiedObjectName": "dw.dim_Leverantör"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    }
+  ],
+  "hierarchies": [
+    {
+      "id": "Hierarki",
+      "name": "Hierarki",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Alla Leverantörer",
+      "visible": true,
+      "levels": [
+        {
+          "id": "Nivå 4",
+          "name": "Nivå 4",
+          "ordinal": 0,
+          "sourceAttributeId": "Leverantör - L3 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        },
+        {
+          "id": "Nivå 5",
+          "name": "Nivå 5",
+          "ordinal": 0,
+          "sourceAttributeId": "Leverantör - L4 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        },
+        {
+          "id": "Nivå 3",
+          "name": "Nivå 3",
+          "ordinal": 0,
+          "sourceAttributeId": "Leverantör - L2 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        },
+        {
+          "id": "Nivå 1",
+          "name": "Nivå 1",
+          "ordinal": 0,
+          "sourceAttributeId": "Leverantör - L0 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        },
+        {
+          "id": "Nivå 2",
+          "name": "Nivå 2",
+          "ordinal": 0,
+          "sourceAttributeId": "Leverantör - L1 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        }
+      ]
+    },
+    {
+      "id": "Lista",
+      "name": "Lista",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Alla Leverantörer",
+      "visible": true,
+      "levels": [
+        {
+          "id": "Leverantör",
+          "name": "Leverantör",
+          "ordinal": 0,
+          "sourceAttributeId": "Leverantör ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+[
+  {
+    "ID": 2,
+    "Caption": "CapAdmin",
+    "Icon": "settings",
+    "SortOrder": 1,
+    "ModuleGroupID": 2,
+    "SystemModuleID": 2,
+    "URL": null,
+    "OpenInNewFrame": false,
+    "ProjectPortfolioCategoryID": null
+  },
+  {
+    "ID": 3,
+    "Caption": "CapAnalysis",
+    "Icon": "analysis",
+    "SortOrder": 1,
+    "ModuleGroupID": 3,
+    "SystemModuleID": 3,
+    "URL": null,
+    "OpenInNewFrame": false,
+    "ProjectPortfolioCategoryID": null
+  },
+  {
+    "ID": 5,
+    "Caption": "CapPlanning",
+    "Icon": "planning",
+    "SortOrder": 1,
+    "ModuleGroupID": 5,
+    "SystemModuleID": 4,
+    "URL": null,
+    "OpenInNewFrame": false,
+    "ProjectPortfolioCategoryID": null
+  },
+  {
+    "ID": 6,
+    "Caption": "CapProject",
+    "Icon": "project",
+    "SortOrder": 2,
+    "ModuleGroupID": 6,
+    "SystemModuleID": 4,
+    "URL": null,
+    "OpenInNewFrame": false,
+    "ProjectPortfolioCategoryID": 3
+  },
+  {
+    "ID": 7,
+    "Caption": "CapPlugins",
+    "Icon": "plugins",
+    "SortOrder": 1,
+    "ModuleGroupID": 7,
+    "SystemModuleID": 11,
+    "URL": null,
+    "OpenInNewFrame": false,
+    "ProjectPortfolioCategoryID": null
+  },
+  {
+    "ID": 8,
+    "Caption": "CapHelp",
+    "Icon": "help",
+    "SortOrder": 1,
+    "ModuleGroupID": 8,
+    "SystemModuleID": 10,
+    "URL": null,
+    "OpenInNewFrame": false,
+    "ProjectPortfolioCategoryID": null
+  },
+  {
+    "ID": 9,
+    "Caption": "CapScorecard",
+    "Icon": "scorecard",
+    "SortOrder": 1,
+    "ModuleGroupID": 9,
+    "SystemModuleID": 5,
+    "URL": null,
+    "OpenInNewFrame": false,
+    "ProjectPortfolioCategoryID": null
+  }
+]

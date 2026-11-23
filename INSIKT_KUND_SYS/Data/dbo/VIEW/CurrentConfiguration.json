@@ -1,0 +1,331 @@
+[
+  {
+    "SystemPropertyID": 1206,
+    "Name": "DrillOnLeftMouseButton",
+    "Description": "Activate drill, instead of Show Children on left mouse button. Used for backwards compatibility.",
+    "ValueNumeric": 0,
+    "ValueString": null
+  },
+  {
+    "SystemPropertyID": 1040,
+    "Name": "StartModuleActive",
+    "Description": "Activate the start module, i.e. the welcome page",
+    "ValueNumeric": 1,
+    "ValueString": null
+  },
+  {
+    "SystemPropertyID": 1043,
+    "Name": "DefaultLanguageID",
+    "Description": "The default language in the user interface.",
+    "ValueNumeric": 2,
+    "ValueString": null
+  },
+  {
+    "SystemPropertyID": 1091,
+    "Name": "UserManagementType",
+    "Description": "Vilket typ av användare installationen har.",
+    "ValueNumeric": 1,
+    "ValueString": null
+  },
+  {
+    "SystemPropertyID": 1094,
+    "Name": "SendMailToUserOnUnknownDeviceLogin",
+    "Description": "If this setting is set an email will be sent if a user logs into INSIKT from an unknown device.",
+    "ValueNumeric": 1,
+    "ValueString": null
+  },
+  {
+    "SystemPropertyID": 1092,
+    "Name": "SyncOrganizationalStructure",
+    "Description": "Ifall DirectorySync även ska synka organisationsstruktur.",
+    "ValueNumeric": 1,
+    "ValueString": null
+  },
+  {
+    "SystemPropertyID": 1001,
+    "Name": "MailServer",
+    "Description": "IP or Name of SMTP server to use when sending emails.",
+    "ValueNumeric": null,
+    "ValueString": "localhost"
+  },
+  {
+    "SystemPropertyID": 3015,
+    "Name": "SubscriptionMailFrom",
+    "Description": "Sender name",
+    "ValueNumeric": null,
+    "ValueString": "INSIKT"
+  },
+  {
+    "SystemPropertyID": 3016,
+    "Name": "SubscriptionMailReturnAddress",
+    "Description": "Sender address",
+    "ValueNumeric": null,
+    "ValueString": "INSIKT@insikt.se"
+  },
+  {
+    "SystemPropertyID": 9119,
+    "Name": "ServiceDeadLineInitialNotificationTime",
+    "Description": "Number of days before task end date service will start sending daily notification mails also user responsible for tasks which are already delayed will receive notifications",
+    "ValueNumeric": null,
+    "ValueString": "0"
+  },
+  {
+    "SystemPropertyID": 9104,
+    "Name": "IsDirectorySyncEnabled",
+    "Description": "Aktiverar AD-synkroniseringar.",
+    "ValueNumeric": 1,
+    "ValueString": null
+  },
+  {
+    "SystemPropertyID": 9105,
+    "Name": "DirectorySyncInterval",
+    "Description": " Tidsintervall i millisekunder mellan AD-synkroniseringar eller 0 för att stänga av (900000 = 15 min).",
+    "ValueNumeric": 900000,
+    "ValueString": null
+  },
+  {
+    "SystemPropertyID": 9107,
+    "Name": "IsWarmUpEnabled",
+    "Description": "Aktiverar funktionen för att värma upp INSIKT.",
+    "ValueNumeric": 1,
+    "ValueString": null
+  },
+  {
+    "SystemPropertyID": 9108,
+    "Name": "WarmUpInterval",
+    "Description": "Hur ofta i sekunder som tjänsten ska kontakta INSIKT för att hålla igång applikationen.",
+    "ValueNumeric": 1800,
+    "ValueString": null
+  },
+  {
+    "SystemPropertyID": 9110,
+    "Name": "IsSubscriptionServiceEnabled",
+    "Description": "Aktiverar prenumerationstjänsten.",
+    "ValueNumeric": 1,
+    "ValueString": null
+  },
+  {
+    "SystemPropertyID": 9111,
+    "Name": "IsBatchCommitEnabled",
+    "Description": "Aktiverar funktionen för batch-skrivning till kub.",
+    "ValueNumeric": 0,
+    "ValueString": null
+  },
+  {
+    "SystemPropertyID": 9112,
+    "Name": "BatchCommitIntervalSec",
+    "Description": "Tidintervall i sekunder mellan batch-skrivningar till kub.",
+    "ValueNumeric": 1600,
+    "ValueString": null
+  },
+  {
+    "SystemPropertyID": 9118,
+    "Name": "ImpersonateForReportSnapshot",
+    "Description": "Säger om INSIKT Service ska logga in som (impersonate) användaren som skapade snapshot-schemat när datan läses upp från kuben",
+    "ValueNumeric": 0,
+    "ValueString": null
+  },
+  {
+    "SystemPropertyID": 9131,
+    "Name": "ServiceName",
+    "Description": "The service name used for the Windows service. If there are multiple instances of the service running on the same machine, they must have different names.",
+    "ValueNumeric": null,
+    "ValueString": "INSIKT Service KUND"
+  },
+  {
+    "SystemPropertyID": 9132,
+    "Name": "IsIndexMaintenanceEnabled",
+    "Description": "If the index maintenance task should be executed",
+    "ValueNumeric": 1,
+    "ValueString": null
+  },
+  {
+    "SystemPropertyID": 9133,
+    "Name": "IndexMaintenanceDatabase",
+    "Description": "Database on which to perform index maintenance task",
+    "ValueNumeric": null,
+    "ValueString": "INSIKT_KUND_SYS"
+  },
+  {
+    "SystemPropertyID": 9135,
+    "Name": "ReportErrors",
+    "Description": "If INSIKTService should report a summary of errors on the installation to VersionTracker every day",
+    "ValueNumeric": 1,
+    "ValueString": null
+  },
+  {
+    "SystemPropertyID": 1087,
+    "Name": "LicenseServerUser",
+    "Description": "The user name of a user with access to the license server",
+    "ValueNumeric": null,
+    "ValueString": "versiontracker"
+  },
+  {
+    "SystemPropertyID": 1090,
+    "Name": "LicenseServerUrl",
+    "Description": "The url to the license server",
+    "ValueNumeric": null,
+    "ValueString": "https://license.insikt.se"
+  },
+  {
+    "SystemPropertyID": 9127,
+    "Name": "IsUpdateLicenseServiceEnabled",
+    "Description": "Om InsiktService ska uppdatera licensen",
+    "ValueNumeric": 1,
+    "ValueString": null
+  },
+  {
+    "SystemPropertyID": 9128,
+    "Name": "UpdateLicenseServiceHour",
+    "Description": "Vilken timme på dygnet InsiktService ska uppdatera licensen",
+    "ValueNumeric": 2,
+    "ValueString": null
+  },
+  {
+    "SystemPropertyID": 9129,
+    "Name": "IsReportMetaDataServiceEnabled",
+    "Description": "Om InsikService ska rapportera hem metadata",
+    "ValueNumeric": 1,
+    "ValueString": null
+  },
+  {
+    "SystemPropertyID": 9130,
+    "Name": "ReportMetaDataServiceHour",
+    "Description": "Vilken timme på dygnet InsiktService ska rapportera hem metadata",
+    "ValueNumeric": 2,
+    "ValueString": null
+  },
+  {
+    "SystemPropertyID": 9125,
+    "Name": "IsAutomaticUpgradeServiceEnabled",
+    "Description": "A service the upgrades INSIKT to the latest patch when avilable",
+    "ValueNumeric": 0,
+    "ValueString": null
+  },
+  {
+    "SystemPropertyID": 9126,
+    "Name": "AutomaticUpgradeServiceHour",
+    "Description": "Time of day that INSIKT should schedule automatic upgrades",
+    "ValueNumeric": 3,
+    "ValueString": null
+  },
+  {
+    "SystemPropertyID": 9001,
+    "Name": "EnableDatabaseBackupPath",
+    "Description": "Bestämmer om INSIKTConfig tar automatiskt backup vid uppgradering.",
+    "ValueNumeric": 1,
+    "ValueString": null
+  },
+  {
+    "SystemPropertyID": 9002,
+    "Name": "DatabaseBackupPath",
+    "Description": "Lokal sökväg på SQL-servern som används när INSIKTConfig tar automatiskt backup.",
+    "ValueNumeric": null,
+    "ValueString": "C:\\Program Files\\Microsoft SQL Server\\MSSQL17.MSSQLSERVER\\MSSQL\\Backup"
+  },
+  {
+    "SystemPropertyID": 1095,
+    "Name": "TwoFactorAuthenticationConfigurationType",
+    "Description": "A value of 1 means it is mandatory, all users will have to set it up on login. A value of 2 means it is completely optional. A value of 3 means it is optional but the user will be suggested to set it up.",
+    "ValueNumeric": 2,
+    "ValueString": null
+  },
+  {
+    "SystemPropertyID": 3024,
+    "Name": "EnableDescendantSelections",
+    "Description": "Enable or disable the new report selection method for descendant selections (on level).",
+    "ValueNumeric": 1,
+    "ValueString": null
+  },
+  {
+    "SystemPropertyID": 9136,
+    "Name": "InstallerCertificateSubject",
+    "Description": "The expected certificate subject for installer files.",
+    "ValueNumeric": null,
+    "ValueString": "O=twoday INSIKT AB, C=SE"
+  },
+  {
+    "SystemPropertyID": 1116,
+    "Name": "RefreshSessionAutomatically",
+    "Description": "Refreshes the user session automatically so that the user isnt logged out after staying inactive for 20 minutes. Note that the user will still be logged out during the night.",
+    "ValueNumeric": 1,
+    "ValueString": null
+  },
+  {
+    "SystemPropertyID": 1211,
+    "Name": "UseInteractiveLogon",
+    "Description": "If set, INSIKT will use LOGON32_LOGON_INTERACTIVE as logon type. Otherwise default is to use LOGON32_LOGON_NETWORK. Note that setting this as true may affect API call performance.",
+    "ValueNumeric": 0,
+    "ValueString": null
+  },
+  {
+    "SystemPropertyID": 1069,
+    "Name": "ApplicationURL",
+    "Description": "The URL to INSIKT. It will be used when generating links to include in emails, for example. This setting only needs to be set when INSIKT itself cannot determine the correct URL. ",
+    "ValueNumeric": null,
+    "ValueString": "http://localhost"
+  },
+  {
+    "SystemPropertyID": 1210,
+    "Name": "EnableGridTooltipIndicator",
+    "Description": "Activate the Excel style tooltip indicator in the grid.",
+    "ValueNumeric": 1,
+    "ValueString": null
+  },
+  {
+    "SystemPropertyID": 9133,
+    "Name": "IndexMaintenanceDatabase",
+    "Description": "Database on which to perform index maintenance task",
+    "ValueNumeric": null,
+    "ValueString": "INSIKT_KUND_DW"
+  },
+  {
+    "SystemPropertyID": 9133,
+    "Name": "IndexMaintenanceDatabase",
+    "Description": "Database on which to perform index maintenance task",
+    "ValueNumeric": null,
+    "ValueString": "INSIKT_KUND_SA"
+  },
+  {
+    "SystemPropertyID": 2011,
+    "Name": "ManageFCVersionsActive",
+    "Description": "",
+    "ValueNumeric": 1,
+    "ValueString": null
+  },
+  {
+    "SystemPropertyID": 1076,
+    "Name": "LicenseGraceDate",
+    "Description": "Start date of license grace period",
+    "ValueNumeric": null,
+    "ValueString": ""
+  },
+  {
+    "SystemPropertyID": 1077,
+    "Name": "ASAdminUser",
+    "Description": "Användarnamn till adminanvändare för AS",
+    "ValueNumeric": null,
+    "ValueString": "base-template\\ins_svc_insikt"
+  },
+  {
+    "SystemPropertyID": 1530,
+    "Name": "AzureMapsTenantID",
+    "Description": "The tenant ID of the azure account",
+    "ValueNumeric": null,
+    "ValueString": "a4a49d07-85b8-4d07-99e9-a01b6318ceef"
+  },
+  {
+    "SystemPropertyID": 1531,
+    "Name": "AzureMapsApplicationClientID",
+    "Description": "The Azure Maps application client ID",
+    "ValueNumeric": null,
+    "ValueString": "fa14b250-ad8b-4107-9763-e85cc3db80fc"
+  },
+  {
+    "SystemPropertyID": 1532,
+    "Name": "AzureMapsAccountClientID",
+    "Description": "The Azure Maps account client ID",
+    "ValueNumeric": null,
+    "ValueString": "4adc951e-6318-4a09-9013-47b31f757594"
+  }
+]

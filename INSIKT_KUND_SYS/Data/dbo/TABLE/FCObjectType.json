@@ -1,0 +1,21 @@
+[
+  {
+    "ID": 1,
+    "Name": "FCVersion Properties",
+    "IsStandAlone": true,
+    "IsHidden": true,
+    "IsDeleted": false,
+    "SystemDescription": null,
+    "ScopeToFCVersion": false,
+    "ParentID": null,
+    "EnableCommentsAndDocuments": true,
+    "TabName": null,
+    "DWDatabase": null,
+    "DWSchema": null,
+    "DWTable": null,
+    "Compact": false,
+    "SmartColumnWidths": false,
+    "UseCreateDialog": false,
+    "CanAddObjectsSQL": null
+  }
+]

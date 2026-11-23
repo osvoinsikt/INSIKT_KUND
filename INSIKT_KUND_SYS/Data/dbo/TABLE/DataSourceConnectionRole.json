@@ -1,0 +1,12 @@
+[
+  {
+    "ID": 1,
+    "DataSourceConnectionID": 2,
+    "RoleName": "INSIKT Administrator"
+  },
+  {
+    "ID": 2,
+    "DataSourceConnectionID": 1,
+    "RoleName": "INSIKT Administrator"
+  }
+]

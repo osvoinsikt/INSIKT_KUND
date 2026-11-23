@@ -1,0 +1,20 @@
+[
+  {
+    "ID": 1,
+    "FCProjectCalcTriggerActionTypeID": 2,
+    "FCProjectPropertyID": null,
+    "FCProjectPropertyValueString": null,
+    "FCProjectPropertyValueNumeric": null,
+    "FCProjectPropertyPredefinedValueID": null,
+    "SQLScript": "exec [INSIKT_KUND_DW].[dbo].[ETL_InitVersion] @Type = 'Projekt'\r\n        , @ParamList = null\r\n        , @ParentEventID = null\r\n        , @FCVersionID = @versionId\r\n        , @FCProjectID = @projectId",
+    "MailRecipient": null,
+    "MailSubject": null,
+    "MailBody": null,
+    "Description": "Initiera version - Kopiera från fg version - Siffror, kommentarer, dokument osv",
+    "FCTypeID": 2,
+    "Enabled": true,
+    "MailRecipientFCRoleID": null,
+    "SendNotification": false,
+    "SendMail": false
+  }
+]

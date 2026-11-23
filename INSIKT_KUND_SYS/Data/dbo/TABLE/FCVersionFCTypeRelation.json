@@ -1,0 +1,37 @@
+[
+  {
+    "ID": 1,
+    "FCVersionID": 1,
+    "FCTypeID": 1
+  },
+  {
+    "ID": 8,
+    "FCVersionID": 1001,
+    "FCTypeID": 2
+  },
+  {
+    "ID": 9,
+    "FCVersionID": 2001,
+    "FCTypeID": 2
+  },
+  {
+    "ID": 10,
+    "FCVersionID": 3001,
+    "FCTypeID": 2
+  },
+  {
+    "ID": 11,
+    "FCVersionID": 3002,
+    "FCTypeID": 2
+  },
+  {
+    "ID": 12,
+    "FCVersionID": 3003,
+    "FCTypeID": 2
+  },
+  {
+    "ID": 13,
+    "FCVersionID": 3004,
+    "FCTypeID": 2
+  }
+]

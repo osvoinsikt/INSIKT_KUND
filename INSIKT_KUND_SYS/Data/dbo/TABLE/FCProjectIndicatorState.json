@@ -1,0 +1,83 @@
+[
+  {
+    "ID": 1,
+    "FCProjectIndicatorID": 1,
+    "Color": "#dd787b",
+    "Caption": "Oacceptabel",
+    "Description": "Projektets kvalitet är oacceptabel",
+    "SortOrder": 1,
+    "IsDeleted": false
+  },
+  {
+    "ID": 2,
+    "FCProjectIndicatorID": 1,
+    "Color": "#f7c34f",
+    "Caption": "Kvalitetsrisk",
+    "Description": "Risk för undermålig kvalitet",
+    "SortOrder": 2,
+    "IsDeleted": false
+  },
+  {
+    "ID": 3,
+    "FCProjectIndicatorID": 1,
+    "Color": "#7fd58d",
+    "Caption": "Acceptabel",
+    "Description": "Projektets kvalitet är acceptabel",
+    "SortOrder": 3,
+    "IsDeleted": false
+  },
+  {
+    "ID": 4,
+    "FCProjectIndicatorID": 2,
+    "Color": "#dd787b",
+    "Caption": "Försenad",
+    "Description": "Projektet är försenat",
+    "SortOrder": 1,
+    "IsDeleted": false
+  },
+  {
+    "ID": 5,
+    "FCProjectIndicatorID": 2,
+    "Color": "#f7c34f",
+    "Caption": "Risk för försening",
+    "Description": "Projektet är i riskzonen för att bli försenat",
+    "SortOrder": 2,
+    "IsDeleted": false
+  },
+  {
+    "ID": 6,
+    "FCProjectIndicatorID": 2,
+    "Color": "#7fd58d",
+    "Caption": "OK",
+    "Description": "Projektet är enligt tidplanen",
+    "SortOrder": 3,
+    "IsDeleted": false
+  },
+  {
+    "ID": 7,
+    "FCProjectIndicatorID": 3,
+    "Color": "#dd787b",
+    "Caption": "Hög risk",
+    "Description": "Hög risk att projektet inte går att slutföras enligt projektets ramar på grund av risker beskrivna i riskanalysen.",
+    "SortOrder": 1,
+    "IsDeleted": false
+  },
+  {
+    "ID": 8,
+    "FCProjectIndicatorID": 3,
+    "Color": "#f7c34f",
+    "Caption": "Viss risk",
+    "Description": "Finns viss risk att projektet inte går att slutföras enligt projektets ramar på grund av risker beskrivna i riskanalysen.",
+    "SortOrder": 2,
+    "IsDeleted": false
+  },
+  {
+    "ID": 9,
+    "FCProjectIndicatorID": 3,
+    "Color": "#7fd58d",
+    "Caption": "Låg risk",
+    "Description": "Låg risk att risker beskrivna i riskanalysen kommer att inträffa.",
+    "SortOrder": 3,
+    "IsDeleted": false
+  }
+]

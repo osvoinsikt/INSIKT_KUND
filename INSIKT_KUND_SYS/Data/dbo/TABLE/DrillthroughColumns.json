@@ -1,0 +1,641 @@
+[
+  {
+    "ID": 1,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 1,
+    "UniqueName": "KEY([$Resultatkonto].[Konto ID], 0)",
+    "Caption": "Resultatkonto_KontoID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 2,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 1,
+    "UniqueName": "KEY([$Transaktionstyp].[GLTransactionType ID], 0)",
+    "Caption": "Transaktionstyp_GLTransactionTypeID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 3,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 1,
+    "UniqueName": "KEY([$Verifikationstyp].[Verifikationstyp ID], 0)",
+    "Caption": "Verifikationstyp_VerifikationstypID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 4,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 1,
+    "UniqueName": "KEY([$Leverantör].[Leverantör ID], 0)",
+    "Caption": "Leverantör_LeverantörID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 5,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 1,
+    "UniqueName": "KEY([$Anläggning].[Anläggning ID], 0)",
+    "Caption": "Anläggning_AnläggningID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 6,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 1,
+    "UniqueName": "KEY([$Kund].[Kund ID], 0)",
+    "Caption": "Kund_KundID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 7,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 1,
+    "UniqueName": "KEY([$Anställd].[Anställd ID], 0)",
+    "Caption": "Anställd_AnställdID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 8,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 1,
+    "UniqueName": "KEY([$Kampanj].[Kampanj ID], 0)",
+    "Caption": "Kampanj_KampanjID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 9,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 1,
+    "UniqueName": "KEY([$Varugrupp].[Varugrupp ID], 0)",
+    "Caption": "Varugrupp_VarugruppID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 10,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 1,
+    "UniqueName": "KEY([$Kassa].[Kassa ID], 0)",
+    "Caption": "Kassa_KassaID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 11,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 1,
+    "UniqueName": "KEY([$Projekt].[Projekt ID], 0)",
+    "Caption": "Projekt_ProjektID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 12,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 1,
+    "UniqueName": "KEY([$Avdelning].[Avdelning ID], 0)",
+    "Caption": "Avdelning_AvdelningID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 13,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 1,
+    "UniqueName": "KEY([$Datum].[DateID], 0)",
+    "Caption": "Datum_DateID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 14,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 1,
+    "UniqueName": "KEY([$Organisation].[Organisation Leaf ID], 0)",
+    "Caption": "Organisation_Organisation_LeafID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 15,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 3,
+    "UniqueName": "KEY([$Resultatkonto].[Konto ID], 0)",
+    "Caption": "Resultatkonto_KontoID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 16,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 3,
+    "UniqueName": "KEY([$Planeringsversion].[PlanningVersionID], 0)",
+    "Caption": "Planeringsversion_PlanningVersionID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 17,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 3,
+    "UniqueName": "KEY([$Kampanj].[Kampanj ID], 0)",
+    "Caption": "Kampanj_KampanjID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 18,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 3,
+    "UniqueName": "KEY([$Projekt].[Projekt ID], 0)",
+    "Caption": "Projekt_ProjektID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 19,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 3,
+    "UniqueName": "KEY([$Varugrupp].[Varugrupp ID], 0)",
+    "Caption": "Varugrupp_VarugruppID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 20,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 3,
+    "UniqueName": "KEY([$Avdelning].[Avdelning ID], 0)",
+    "Caption": "Avdelning_AvdelningID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 21,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 3,
+    "UniqueName": "KEY([$Datum].[DateID], 0)",
+    "Caption": "Datum_DateID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 22,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 3,
+    "UniqueName": "KEY([$Organisation].[Organisation Leaf ID], 0)",
+    "Caption": "Organisation_Organisation_LeafID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 23,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 4,
+    "UniqueName": "KEY([$Balanskonto].[Konto ID], 0)",
+    "Caption": "Balanskonto_KontoID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 24,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 4,
+    "UniqueName": "KEY([$Transaktionstyp].[GLTransactionType ID], 0)",
+    "Caption": "Transaktionstyp_GLTransactionTypeID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 25,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 4,
+    "UniqueName": "KEY([$Verifikationstyp].[Verifikationstyp ID], 0)",
+    "Caption": "Verifikationstyp_VerifikationstypID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 26,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 4,
+    "UniqueName": "KEY([$Leverantör].[Leverantör ID], 0)",
+    "Caption": "Leverantör_LeverantörID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 27,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 4,
+    "UniqueName": "KEY([$Anläggning].[Anläggning ID], 0)",
+    "Caption": "Anläggning_AnläggningID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 28,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 4,
+    "UniqueName": "KEY([$Kund].[Kund ID], 0)",
+    "Caption": "Kund_KundID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 29,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 4,
+    "UniqueName": "KEY([$Anställd].[Anställd ID], 0)",
+    "Caption": "Anställd_AnställdID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 30,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 4,
+    "UniqueName": "KEY([$Kampanj].[Kampanj ID], 0)",
+    "Caption": "Kampanj_KampanjID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 31,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 4,
+    "UniqueName": "KEY([$Varugrupp].[Varugrupp ID], 0)",
+    "Caption": "Varugrupp_VarugruppID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 32,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 4,
+    "UniqueName": "KEY([$Kassa].[Kassa ID], 0)",
+    "Caption": "Kassa_KassaID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 33,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 4,
+    "UniqueName": "KEY([$Projekt].[Projekt ID], 0)",
+    "Caption": "Projekt_ProjektID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 34,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 4,
+    "UniqueName": "KEY([$Avdelning].[Avdelning ID], 0)",
+    "Caption": "Avdelning_AvdelningID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 35,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 4,
+    "UniqueName": "KEY([$Datum].[DateID], 0)",
+    "Caption": "Datum_DateID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 36,
+    "DataSourceID": 1,
+    "DataSourcesMeasureGroupID": 4,
+    "UniqueName": "KEY([$Organisation].[Organisation Leaf ID], 0)",
+    "Caption": "Organisation_Organisation_LeafID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 37,
+    "DataSourceID": 2,
+    "DataSourcesMeasureGroupID": 6,
+    "UniqueName": "KEY([$Lager].[Lager ID], 0)",
+    "Caption": "Lager_LagerID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 38,
+    "DataSourceID": 2,
+    "DataSourcesMeasureGroupID": 6,
+    "UniqueName": "KEY([$Leverantör].[Leverantör ID], 0)",
+    "Caption": "Leverantör_LeverantörID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 39,
+    "DataSourceID": 2,
+    "DataSourcesMeasureGroupID": 6,
+    "UniqueName": "KEY([$Transaktionstyp].[Transaktionstyp ID], 0)",
+    "Caption": "Transaktionstyp_TransaktionstypID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 40,
+    "DataSourceID": 2,
+    "DataSourcesMeasureGroupID": 6,
+    "UniqueName": "KEY([$Anläggning].[Anläggning ID], 0)",
+    "Caption": "Anläggning_AnläggningID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 41,
+    "DataSourceID": 2,
+    "DataSourcesMeasureGroupID": 6,
+    "UniqueName": "KEY([$Kund].[Kund ID], 0)",
+    "Caption": "Kund_KundID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 42,
+    "DataSourceID": 2,
+    "DataSourcesMeasureGroupID": 6,
+    "UniqueName": "KEY([$Faktureras_Kund].[Kund ID], 0)",
+    "Caption": "Faktureras_Kund_KundID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 43,
+    "DataSourceID": 2,
+    "DataSourcesMeasureGroupID": 6,
+    "UniqueName": "KEY([$Sälj_Inköp_Anställd].[Anställd ID], 0)",
+    "Caption": "Sälj_Inköp_Anställd_AnställdID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 44,
+    "DataSourceID": 2,
+    "DataSourcesMeasureGroupID": 6,
+    "UniqueName": "KEY([$Anställd].[Anställd ID], 0)",
+    "Caption": "Anställd_AnställdID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 45,
+    "DataSourceID": 2,
+    "DataSourcesMeasureGroupID": 6,
+    "UniqueName": "KEY([$Kampanj].[Kampanj ID], 0)",
+    "Caption": "Kampanj_KampanjID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 46,
+    "DataSourceID": 2,
+    "DataSourcesMeasureGroupID": 6,
+    "UniqueName": "KEY([$Varugrupp].[Varugrupp ID], 0)",
+    "Caption": "Varugrupp_VarugruppID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 47,
+    "DataSourceID": 2,
+    "DataSourcesMeasureGroupID": 6,
+    "UniqueName": "KEY([$Kassa].[Kassa ID], 0)",
+    "Caption": "Kassa_KassaID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 48,
+    "DataSourceID": 2,
+    "DataSourcesMeasureGroupID": 6,
+    "UniqueName": "KEY([$Projekt].[Projekt ID], 0)",
+    "Caption": "Projekt_ProjektID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 49,
+    "DataSourceID": 2,
+    "DataSourcesMeasureGroupID": 6,
+    "UniqueName": "KEY([$Avdelning].[Avdelning ID], 0)",
+    "Caption": "Avdelning_AvdelningID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 50,
+    "DataSourceID": 2,
+    "DataSourcesMeasureGroupID": 6,
+    "UniqueName": "KEY([$Produkt].[Produkt ID], 0)",
+    "Caption": "Produkt_ProduktID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 51,
+    "DataSourceID": 2,
+    "DataSourcesMeasureGroupID": 6,
+    "UniqueName": "KEY([$Transaktionsdatum].[DateID], 0)",
+    "Caption": "Transaktionsdatum_DateID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 52,
+    "DataSourceID": 2,
+    "DataSourcesMeasureGroupID": 6,
+    "UniqueName": "KEY([$Orderdatum].[DateID], 0)",
+    "Caption": "Orderdatum_DateID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 53,
+    "DataSourceID": 2,
+    "DataSourcesMeasureGroupID": 7,
+    "UniqueName": "KEY([$Lager].[Lager ID], 0)",
+    "Caption": "Lager_LagerID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 54,
+    "DataSourceID": 2,
+    "DataSourcesMeasureGroupID": 7,
+    "UniqueName": "KEY([$Leverantör].[Leverantör ID], 0)",
+    "Caption": "Leverantör_LeverantörID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 55,
+    "DataSourceID": 2,
+    "DataSourcesMeasureGroupID": 7,
+    "UniqueName": "KEY([$Transaktionstyp].[Transaktionstyp ID], 0)",
+    "Caption": "Transaktionstyp_TransaktionstypID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 56,
+    "DataSourceID": 2,
+    "DataSourcesMeasureGroupID": 7,
+    "UniqueName": "KEY([$Anläggning].[Anläggning ID], 0)",
+    "Caption": "Anläggning_AnläggningID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 57,
+    "DataSourceID": 2,
+    "DataSourcesMeasureGroupID": 7,
+    "UniqueName": "KEY([$Kund].[Kund ID], 0)",
+    "Caption": "Kund_KundID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 58,
+    "DataSourceID": 2,
+    "DataSourcesMeasureGroupID": 7,
+    "UniqueName": "KEY([$Faktureras_Kund].[Kund ID], 0)",
+    "Caption": "Faktureras_Kund_KundID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 59,
+    "DataSourceID": 2,
+    "DataSourcesMeasureGroupID": 7,
+    "UniqueName": "KEY([$Sälj_Inköp_Anställd].[Anställd ID], 0)",
+    "Caption": "Sälj_Inköp_Anställd_AnställdID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 60,
+    "DataSourceID": 2,
+    "DataSourcesMeasureGroupID": 7,
+    "UniqueName": "KEY([$Anställd].[Anställd ID], 0)",
+    "Caption": "Anställd_AnställdID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 61,
+    "DataSourceID": 2,
+    "DataSourcesMeasureGroupID": 7,
+    "UniqueName": "KEY([$Kampanj].[Kampanj ID], 0)",
+    "Caption": "Kampanj_KampanjID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 62,
+    "DataSourceID": 2,
+    "DataSourcesMeasureGroupID": 7,
+    "UniqueName": "KEY([$Varugrupp].[Varugrupp ID], 0)",
+    "Caption": "Varugrupp_VarugruppID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 63,
+    "DataSourceID": 2,
+    "DataSourcesMeasureGroupID": 7,
+    "UniqueName": "KEY([$Kassa].[Kassa ID], 0)",
+    "Caption": "Kassa_KassaID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 64,
+    "DataSourceID": 2,
+    "DataSourcesMeasureGroupID": 7,
+    "UniqueName": "KEY([$Projekt].[Projekt ID], 0)",
+    "Caption": "Projekt_ProjektID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 65,
+    "DataSourceID": 2,
+    "DataSourcesMeasureGroupID": 7,
+    "UniqueName": "KEY([$Avdelning].[Avdelning ID], 0)",
+    "Caption": "Avdelning_AvdelningID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 66,
+    "DataSourceID": 2,
+    "DataSourcesMeasureGroupID": 7,
+    "UniqueName": "KEY([$Produkt].[Produkt ID], 0)",
+    "Caption": "Produkt_ProduktID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 67,
+    "DataSourceID": 2,
+    "DataSourcesMeasureGroupID": 7,
+    "UniqueName": "KEY([$Transaktionsdatum].[DateID], 0)",
+    "Caption": "Transaktionsdatum_DateID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 68,
+    "DataSourceID": 2,
+    "DataSourcesMeasureGroupID": 7,
+    "UniqueName": "KEY([$Faktureringsdatum].[DateID], 0)",
+    "Caption": "Faktureringsdatum_DateID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 69,
+    "DataSourceID": 4,
+    "DataSourcesMeasureGroupID": 8,
+    "UniqueName": "KEY([$INSIKT Projekt].[FCProjectID], 0)",
+    "Caption": "INSIKT Projekt_FCProjectID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 70,
+    "DataSourceID": 4,
+    "DataSourcesMeasureGroupID": 8,
+    "UniqueName": "KEY([$Datum].[DateID], 0)",
+    "Caption": "Datum_DateID",
+    "Order": null,
+    "DataType": "int"
+  },
+  {
+    "ID": 71,
+    "DataSourceID": 4,
+    "DataSourcesMeasureGroupID": 8,
+    "UniqueName": "KEY([$Konto].[KontoID], 0)",
+    "Caption": "Konto_KontoID",
+    "Order": null,
+    "DataType": "int"
+  }
+]

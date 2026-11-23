@@ -1,0 +1,302 @@
+[
+  {
+    "measureGroupId": "Balans",
+    "measureGroupName": "Balans",
+    "dimensions": [
+      {
+        "id": "Kassa",
+        "name": "Kassa",
+        "type": "Regular",
+        "granularity": "Kassa - L0 ID"
+      },
+      {
+        "id": "Varugrupp",
+        "name": "Varugrupp",
+        "type": "Regular",
+        "granularity": "Varugrupp - L0 ID"
+      },
+      {
+        "id": "Kampanj",
+        "name": "Kampanj",
+        "type": "Regular",
+        "granularity": "Kampanj - L0 ID"
+      },
+      {
+        "id": "Projekt",
+        "name": "Projekt",
+        "type": "Regular",
+        "granularity": "Projekt - L0 ID"
+      },
+      {
+        "id": "Organisation",
+        "name": "Organisation",
+        "type": "Regular",
+        "granularity": "Organisation - L0 ID"
+      },
+      {
+        "id": "Datum",
+        "name": "Datum",
+        "type": "Regular",
+        "granularity": "DateID"
+      },
+      {
+        "id": "Avdelning",
+        "name": "Avdelning",
+        "type": "Regular",
+        "granularity": "Avdelning - L0 ID"
+      },
+      {
+        "id": "Verifikationstyp",
+        "name": "Verifikationstyp",
+        "type": "Regular",
+        "granularity": "Verifikationstyp - L0 ID"
+      },
+      {
+        "id": "Transaktionstyp",
+        "name": "Transaktionstyp",
+        "type": "Regular",
+        "granularity": "GLTransactionType ID"
+      },
+      {
+        "id": "Balanskonto",
+        "name": "Balanskonto",
+        "type": "Regular",
+        "granularity": "Balanskonto - L0 ID"
+      },
+      {
+        "id": "Leverantör",
+        "name": "Leverantör",
+        "type": "Regular",
+        "granularity": "Leverantör - L0 ID"
+      },
+      {
+        "id": "Anställd",
+        "name": "Anställd",
+        "type": "Regular",
+        "granularity": "Anställd - L0 ID"
+      },
+      {
+        "id": "Kund",
+        "name": "Kund",
+        "type": "Regular",
+        "granularity": "Kund - L0 ID"
+      },
+      {
+        "id": "Anläggning",
+        "name": "Anläggning",
+        "type": "Regular",
+        "granularity": "Anläggning - L0 ID"
+      }
+    ]
+  },
+  {
+    "measureGroupId": "Resultat",
+    "measureGroupName": "Resultat",
+    "dimensions": [
+      {
+        "id": "Kassa",
+        "name": "Kassa",
+        "type": "Regular",
+        "granularity": "Kassa - L0 ID"
+      },
+      {
+        "id": "Varugrupp",
+        "name": "Varugrupp",
+        "type": "Regular",
+        "granularity": "Varugrupp - L0 ID"
+      },
+      {
+        "id": "Kampanj",
+        "name": "Kampanj",
+        "type": "Regular",
+        "granularity": "Kampanj - L0 ID"
+      },
+      {
+        "id": "Projekt",
+        "name": "Projekt",
+        "type": "Regular",
+        "granularity": "Projekt - L0 ID"
+      },
+      {
+        "id": "Organisation",
+        "name": "Organisation",
+        "type": "Regular",
+        "granularity": "Organisation - L0 ID"
+      },
+      {
+        "id": "Datum",
+        "name": "Datum",
+        "type": "Regular",
+        "granularity": "DateID"
+      },
+      {
+        "id": "Avdelning",
+        "name": "Avdelning",
+        "type": "Regular",
+        "granularity": "Avdelning - L0 ID"
+      },
+      {
+        "id": "Verifikationstyp",
+        "name": "Verifikationstyp",
+        "type": "Regular",
+        "granularity": "Verifikationstyp - L0 ID"
+      },
+      {
+        "id": "Transaktionstyp",
+        "name": "Transaktionstyp",
+        "type": "Regular",
+        "granularity": "GLTransactionType ID"
+      },
+      {
+        "id": "Resultatkonto",
+        "name": "Resultatkonto",
+        "type": "Regular",
+        "granularity": "Resultatkonto - L0 ID"
+      },
+      {
+        "id": "Leverantör",
+        "name": "Leverantör",
+        "type": "Regular",
+        "granularity": "Leverantör - L0 ID"
+      },
+      {
+        "id": "Anställd",
+        "name": "Anställd",
+        "type": "Regular",
+        "granularity": "Anställd - L0 ID"
+      },
+      {
+        "id": "Kund",
+        "name": "Kund",
+        "type": "Regular",
+        "granularity": "Kund - L0 ID"
+      },
+      {
+        "id": "Anläggning",
+        "name": "Anläggning",
+        "type": "Regular",
+        "granularity": "Anläggning - L0 ID"
+      }
+    ]
+  },
+  {
+    "measureGroupId": "Resultat - Planering",
+    "measureGroupName": "Resultat - Planering",
+    "dimensions": [
+      {
+        "id": "Avdelning",
+        "name": "Avdelning",
+        "type": "Regular",
+        "granularity": "Avdelning - L0 ID"
+      },
+      {
+        "id": "Varugrupp",
+        "name": "Varugrupp",
+        "type": "Regular",
+        "granularity": "Varugrupp - L0 ID"
+      },
+      {
+        "id": "Organisation",
+        "name": "Organisation",
+        "type": "Regular",
+        "granularity": "Organisation - L0 ID"
+      },
+      {
+        "id": "Datum",
+        "name": "Datum",
+        "type": "Regular",
+        "granularity": "DateID"
+      },
+      {
+        "id": "Planeringsversion",
+        "name": "Planeringsversion",
+        "type": "Regular",
+        "granularity": "PlanningVersionID"
+      },
+      {
+        "id": "Resultatkonto",
+        "name": "Resultatkonto",
+        "type": "Regular",
+        "granularity": "Resultatkonto - L0 ID"
+      },
+      {
+        "id": "Projekt",
+        "name": "Projekt",
+        "type": "Regular",
+        "granularity": "Projekt - L0 ID"
+      },
+      {
+        "id": "Kampanj",
+        "name": "Kampanj",
+        "type": "Regular",
+        "granularity": "Kampanj - L0 ID"
+      }
+    ]
+  },
+  {
+    "measureGroupId": "Resultat - Planering - INSIKT",
+    "measureGroupName": "Resultat - Planering - INSIKT",
+    "dimensions": [
+      {
+        "id": "Varugrupp",
+        "name": "Varugrupp",
+        "type": "Regular",
+        "granularity": "Varugrupp - L0 ID"
+      },
+      {
+        "id": "Datum",
+        "name": "Datum",
+        "type": "Regular",
+        "granularity": "DateID"
+      },
+      {
+        "id": "Organisation",
+        "name": "Organisation",
+        "type": "Regular",
+        "granularity": "Organisation - L0 ID"
+      },
+      {
+        "id": "Projekt",
+        "name": "Projekt",
+        "type": "Regular",
+        "granularity": "Projekt - L0 ID"
+      },
+      {
+        "id": "Resultatkonto",
+        "name": "Resultatkonto",
+        "type": "Regular",
+        "granularity": "Resultatkonto - L0 ID"
+      },
+      {
+        "id": "Planeringsversion",
+        "name": "Planeringsversion",
+        "type": "Regular",
+        "granularity": "PlanningVersionID"
+      },
+      {
+        "id": "Kampanj",
+        "name": "Kampanj",
+        "type": "Regular",
+        "granularity": "Kampanj - L0 ID"
+      }
+    ]
+  },
+  {
+    "measureGroupId": "SecurityMemberAccess_Organisation",
+    "measureGroupName": "SecurityMemberAccess_Organisation",
+    "dimensions": [
+      {
+        "id": "Organisation",
+        "name": "Organisation",
+        "type": "Regular",
+        "granularity": "Organisation - L0 ID"
+      },
+      {
+        "id": "Security Member Access Users",
+        "name": "Security Member Access Users",
+        "type": "Regular",
+        "granularity": "User Name"
+      }
+    ]
+  }
+]

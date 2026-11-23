@@ -1,0 +1,1233 @@
+/*
+The CALCULATE command controls the aggregation of leaf cells in the cube.
+If the CALCULATE command is deleted or modified, the data within the cube is affected.
+You should edit this command only if you manually specify how the cube is aggregated.
+*/
+
+CALCULATE;
+
+--#########################################################################################################
+-- Generella tidsberäkningar
+--#########################################################################################################
+--
+-- Hel månad trots val på lägre nivå (full Month)
+--
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[Month]
+ AS 
+   null;  
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[Month DTDAction]
+ AS 
+   null;  
+
+--
+-- Hel månad föregående år trots val på lägre nivå (full Month Previous Year)
+--
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[Month PY]
+ AS 
+   null;  
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[Month PY DTDAction]
+ AS 
+   null;  
+
+
+--
+-- Motsvarande period föregående år (Previous Year)
+--
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[PY]
+ AS 
+   null;  
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[PY DTDAction]
+ AS 
+   null;  
+
+
+--
+-- Motsvarande period för två år sedan (Previous Previous Year)
+--
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[PPY]
+ AS 
+   null;  
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[PPY DTDAction]
+ AS 
+   null;  
+
+
+--
+-- Motsvarande period nästa år (Next Year)
+--
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[NY]
+ AS 
+   null;  
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[NY DTDAction]
+ AS 
+   null;  
+
+
+
+
+
+--
+-- Hela året trots val på lägre nivå (Full Year)
+--
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[FY]
+ AS 
+   null;  
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[FY DTDAction]
+ AS 
+   null;  
+
+
+
+
+--
+-- Hela föregående året trots val på lägre nivå (Full Year Previous Year)
+--
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[FY PY]
+ AS 
+   null;  
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[FY PY DTDAction]
+ AS 
+   null;  
+
+
+--
+-- Hela året två år sedan trots val på lägre nivå (Full Year Previous Previous Year)
+--
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[FY PPY]
+ AS 
+   null;  
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[FY PPY DTDAction]
+ AS 
+   null;  
+
+
+
+
+
+--
+-- Ack till och med vald period (Year To Date)
+--
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[YTD]
+ AS 
+   null;  
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[YTD DTDAction]
+ AS 
+   null;  
+
+
+
+
+--
+-- Ack till och med motsvarande period föregående år (Year To Date Previous Year)
+--
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[YTD PY]
+ AS 
+   null;  
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[YTD PY DTDAction]
+ AS 
+   null;  
+
+
+
+--
+-- Föregående period (Previous Period)
+--
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[PP]
+ AS 
+   null;  
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[PP DTDAction]
+ AS 
+   null;  
+
+
+--
+-- Ack från tidernas begynnelse (Null To Date)
+--
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[NTD]
+ AS 
+   null;  
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[NTD DTDAction]
+ AS 
+   null;  
+
+
+
+
+--
+-- Ack
+--
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[PV YTD]
+ AS 
+sum
+(
+    PeriodsToDate
+    (
+        [Datum].[Redovisningsår-Period].[Redovisningsår]
+        ,
+        StrToMember
+        (
+            "[Datum].[Redovisningsår-Period].[Period].&["
+            + [Planeringsversion].[Lista].properties("Period Month")
+            + ']'
+        )        
+    )  
+    ,
+    [Datum Calc].[Date Calc].[All]
+)       
+;  
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[PV YTD DTDAction]
+ AS 
+   null;
+
+--
+-- R12
+--
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[PV R12]
+AS 
+sum
+(
+    PARALLELPERIOD(
+        [Datum].[Redovisningsår-Period].[Redovisningsår], 1, 
+        StrToMember
+        (
+            "[Datum].[Redovisningsår-Period].[Period].&["
+            + [Planeringsversion].[Lista].properties("Period Month")
+            + ']'
+        ).Lead(1)
+    )
+    :
+       StrToMember
+       (
+            "[Datum].[Redovisningsår-Period].[Period].&["
+            + [Planeringsversion].[Lista].properties("Period Month")
+            + ']'
+       )        
+    ,
+    [Datum Calc].[Date Calc].[All]
+)       
+; 
+
+--
+-- Omvänd Ack. Helår - Ack
+--
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[PV Rev YTD]
+ AS 
+sum
+(
+    {
+        StrToMember
+        (
+            "[Datum].[Redovisningsår-Period].[Period].&["
+            + [Planeringsversion].[Lista].properties("Period Month")
+            + ']'
+        ).nextmember
+        :      
+        StrToMember
+        (
+            "[Datum].[Redovisningsår-Period].[Period].&["
+            + [Planeringsversion].[Lista].properties("Period Month")
+            + ']'
+        ).lastsibling
+    }
+    ,
+    [Datum Calc].[Date Calc].[All]
+)
+;  
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[PV Rev YTD DTDAction]
+ AS 
+   null;  
+
+
+
+--
+-- Scope som träffar om val gjorts på någon av nivåerna År, Halvår, Kvartal, Månad eller Dag.
+--
+scope(descendants([Datum].[År-Halvår-Kvartal-Månad].[Alla datum],[Datum].[År-Halvår-Kvartal-Månad].[År], SELF_AND_AFTER));  
+
+
+
+    --
+    -- Hel månad trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[Month]);  
+        this = 
+            (                    
+                ancestor([Datum].[År-Halvår-Kvartal-Månad].currentmember, [Datum].[År-Halvår-Kvartal-Månad].[Månad])                
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[Month DTDAction]);  
+        this = "Datum:" +  settostr({ancestor([Datum].[År-Halvår-Kvartal-Månad].currentmember, [Datum].[År-Halvår-Kvartal-Månad].[Månad])});  
+    end scope;  
+
+
+    --
+    -- Hel månad föregående år trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[Month PY]);  
+        this = 
+            (                                
+                ancestor(PARALLELPERIOD( [Datum].[År-Halvår-Kvartal-Månad].[År], 1 ), [Datum].[År-Halvår-Kvartal-Månad].[Månad])
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[Month PY DTDAction]);  
+        this = "Datum:" +  settostr({ancestor(PARALLELPERIOD( [Datum].[År-Halvår-Kvartal-Månad].[År], 1 ), [Datum].[År-Halvår-Kvartal-Månad].[Månad])});  
+    end scope;  
+
+
+    --
+    -- Motsvarande period föregående år
+    --
+    scope ([Datum Calc].[Date Calc].[PY]);  
+        this = 
+            (
+                PARALLELPERIOD( [Datum].[År-Halvår-Kvartal-Månad].[År], 1 )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[PY DTDAction]);  
+        this = "Datum:" +  settostr({PARALLELPERIOD( [Datum].[År-Halvår-Kvartal-Månad].[År], 1 )});  
+    end scope;  
+
+
+    --
+    -- Motsvarande period för två år sedan
+    --
+    scope ([Datum Calc].[Date Calc].[PPY]);  
+        this = 
+            (
+                PARALLELPERIOD( [Datum].[År-Halvår-Kvartal-Månad].[År], 2 )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[PPY DTDAction]);  
+        this = "Datum:" +  settostr({PARALLELPERIOD( [Datum].[År-Halvår-Kvartal-Månad].[År], 2 )});  
+    end scope;  
+
+
+    --
+    -- Motsvarande period nästa år
+    --
+    scope ([Datum Calc].[Date Calc].[NY]);  
+        this = 
+            (
+                PARALLELPERIOD( [Datum].[År-Halvår-Kvartal-Månad].[År], -1 )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[NY DTDAction]);  
+        this = "Datum:" +  settostr({PARALLELPERIOD( [Datum].[År-Halvår-Kvartal-Månad].[År], -1 )});  
+    end scope;  
+
+
+
+
+    --
+    -- Hela året trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[FY]);  
+        this = 
+            (                    
+                ancestor([Datum].[År-Halvår-Kvartal-Månad].currentmember, [Datum].[År-Halvår-Kvartal-Månad].[År])
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[FY DTDAction]);  
+        this = "Datum:" +  settostr({ancestor([Datum].[År-Halvår-Kvartal-Månad].currentmember, [Datum].[År-Halvår-Kvartal-Månad].[År])});  
+    end scope;  
+
+
+    --
+    -- Hela föregående året trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[FY PY]);  
+        this = 
+            (                                
+                ancestor(PARALLELPERIOD( [Datum].[År-Halvår-Kvartal-Månad].[År], 1 ), [Datum].[År-Halvår-Kvartal-Månad].[År])
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[FY PY DTDAction]);  
+        this = "Datum:" +  settostr({ancestor(PARALLELPERIOD( [Datum].[År-Halvår-Kvartal-Månad].[År], 1 ), [Datum].[År-Halvår-Kvartal-Månad].[År])});  
+    end scope;  
+
+
+    --
+    -- Hela året två år sedan trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[FY PPY]);  
+        this = 
+            (                                
+                ancestor(PARALLELPERIOD( [Datum].[År-Halvår-Kvartal-Månad].[År], 2 ), [Datum].[År-Halvår-Kvartal-Månad].[År])
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[FY PPY DTDAction]);  
+        this = "Datum:" +  settostr({ancestor(PARALLELPERIOD( [Datum].[År-Halvår-Kvartal-Månad].[År], 2 ), [Datum].[År-Halvår-Kvartal-Månad].[År])});  
+    end scope;  
+
+
+    --
+    -- Ack till och med vald period
+    --
+    scope ([Datum Calc].[Date Calc].[YTD]);  
+        this = 
+            sum
+            (
+                YTD( [Datum].[År-Halvår-Kvartal-Månad].currentmember )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[YTD DTDAction]);  
+        this = "Datum:" +  settostr({YTD( [Datum].[År-Halvår-Kvartal-Månad].currentmember )});  
+    end scope;  
+
+
+
+    --
+    -- Ack till och med motsvarande period föregående år
+    --
+    scope ([Datum Calc].[Date Calc].[YTD PY]);  
+        this = 
+            sum
+            (
+                YTD( PARALLELPERIOD( [Datum].[År-Halvår-Kvartal-Månad].[År], 1) )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[YTD PY DTDAction]);  
+        this = "Datum:" +  settostr({YTD( PARALLELPERIOD( [Datum].[År-Halvår-Kvartal-Månad].[År], 1))});  
+    end scope;  
+
+    
+    --
+    --Föregående period
+    --
+    scope ([Datum Calc].[Date Calc].[PP]);  
+        this = 
+            (
+                [Datum].[År-Halvår-Kvartal-Månad].currentmember.PrevMember
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[PP DTDAction]);  
+        this = "Datum:" +  settostr({[Datum].[År-Halvår-Kvartal-Månad].currentmember.PrevMember});  
+    end scope;  
+
+
+    
+    --
+    -- Ack från tidernas begynnelse (Null To Date)
+    --
+    scope ([Datum Calc].[Date Calc].[NTD]);  
+        this =
+            sum
+            (
+                {null:[Datum].[År-Halvår-Kvartal-Månad].currentmember}
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[NTD DTDAction]);  
+        this = "Datum:" +  settostr({null:[Datum].[År-Halvår-Kvartal-Månad].currentmember});  
+    end scope;  
+end scope;  
+
+
+
+--
+-- Scope som träffar om val gjorts på nivå tertial
+--
+scope([Datum].[År-Tertial-Månad].[Tertial]);  
+    --
+    -- Motsvarande period föregående år
+    --
+    scope ([Datum Calc].[Date Calc].[PY]);  
+        this = 
+            (
+                PARALLELPERIOD( [Datum].[År-Tertial-Månad].[År], 1 )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[PY DTDAction]);  
+        this = "Datum:" +  settostr({PARALLELPERIOD( [Datum].[År-Tertial-Månad].[År], 1 )});  
+    end scope;  
+
+
+    --
+    -- Motsvarande period för två år sedan
+    --
+    scope ([Datum Calc].[Date Calc].[PPY]);  
+        this = 
+            (
+                PARALLELPERIOD( [Datum].[År-Tertial-Månad].[År], 2 )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[PPY DTDAction]);  
+        this = "Datum:" +  settostr({PARALLELPERIOD( [Datum].[År-Tertial-Månad].[År], 2 )});  
+    end scope;  
+
+
+    --
+    -- Motsvarande period nästa år
+    --
+    scope ([Datum Calc].[Date Calc].[NY]);  
+        this = 
+            (
+                PARALLELPERIOD( [Datum].[År-Tertial-Månad].[År], -1 )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[NY DTDAction]);  
+        this = "Datum:" +  settostr({PARALLELPERIOD( [Datum].[År-Tertial-Månad].[År], -1 )});  
+    end scope;  
+
+
+
+
+    --
+    -- Hela året trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[FY]);  
+        this = 
+            (                    
+                ancestor([Datum].[År-Tertial-Månad].currentmember, [Datum].[År-Tertial-Månad].[År])
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[FY DTDAction]);  
+        this = "Datum:" +  settostr({ancestor([Datum].[År-Tertial-Månad].currentmember, [Datum].[År-Tertial-Månad].[År])});  
+    end scope;  
+
+
+    --
+    -- Hela föregående året trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[FY PY]);  
+        this = 
+            (                                
+                ancestor(PARALLELPERIOD( [Datum].[År-Tertial-Månad].[År], 1 ), [Datum].[År-Tertial-Månad].[År])
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[FY PY DTDAction]);  
+        this = "Datum:" +  settostr({ancestor(PARALLELPERIOD( [Datum].[År-Tertial-Månad].[År], 1 ), [Datum].[År-Tertial-Månad].[År])});  
+    end scope;  
+
+
+	--
+    -- Hela året två år sedan trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[FY PPY]);  
+        this = 
+            (                                
+                ancestor(PARALLELPERIOD( [Datum].[År-Tertial-Månad].[År], 2 ), [Datum].[År-Tertial-Månad].[År])
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[FY PPY DTDAction]);  
+        this = "Datum:" +  settostr({ancestor(PARALLELPERIOD( [Datum].[År-Tertial-Månad].[År], 2 ), [Datum].[År-Tertial-Månad].[År])});  
+    end scope;  
+
+
+    --
+    -- Ack till och med vald period
+    --
+    scope ([Datum Calc].[Date Calc].[YTD]);  
+        this = 
+            sum
+            (
+                YTD( [Datum].[År-Tertial-Månad].currentmember )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[YTD DTDAction]);  
+        this = "Datum:" +  settostr({YTD( [Datum].[År-Tertial-Månad].currentmember )});  
+    end scope;  
+
+
+
+    --
+    -- Ack till och med motsvarande period föregående år
+    --
+    scope ([Datum Calc].[Date Calc].[YTD PY]);  
+        this = 
+            sum
+            (
+                YTD( PARALLELPERIOD( [Datum].[År-Tertial-Månad].[År], 1) )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[YTD PY DTDAction]);  
+        this = "Datum:" +  settostr({YTD( PARALLELPERIOD( [Datum].[År-Tertial-Månad].[År], 1))});  
+    end scope;  
+
+    
+    --
+    --Föregående period
+    --
+    scope ([Datum Calc].[Date Calc].[PP]);  
+        this = 
+            (
+                [Datum].[År-Tertial-Månad].currentmember.PrevMember
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[PP DTDAction]);  
+        this = "Datum:" +  settostr({[Datum].[År-Tertial-Månad].currentmember.PrevMember});  
+    end scope;  
+
+
+    
+    --
+    -- Ack från tidernas begynnelse (Null To Date)
+    --
+    scope ([Datum Calc].[Date Calc].[NTD]);  
+        this =
+            sum
+            (
+                {null:[Datum].[År-Tertial-Månad].currentmember}
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[NTD DTDAction]);  
+        this = "Datum:" +  settostr({null:[Datum].[År-Tertial-Månad].currentmember});  
+    end scope;  
+end scope;  
+
+
+
+--
+-- Scope som träffar om val gjorts på någon av nivåerna År för vecka, vecka, Dag för vecka.
+--
+scope(descendants([Datum].[År-Vecka].[Alla datum],[Datum].[År-Vecka].[År], SELF_AND_AFTER));  
+
+    --
+    -- Motsvarande period föregående år
+    --
+    scope ([Datum Calc].[Date Calc].[PY]);  
+        this = 
+            (
+                PARALLELPERIOD( [Datum].[År-Vecka].[År], 1 )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[PY DTDAction]);  
+        this = "Datum:" +  settostr({PARALLELPERIOD( [Datum].[År-Vecka].[År], 1 )});  
+    end scope;  
+
+
+    --
+    -- Motsvarande period för två år sedan
+    --
+    scope ([Datum Calc].[Date Calc].[PPY]);  
+        this = 
+            (
+                PARALLELPERIOD( [Datum].[År-Vecka].[År], 2 )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[PPY DTDAction]);  
+        this = "Datum:" +  settostr({PARALLELPERIOD( [Datum].[År-Vecka].[År], 2 )});  
+    end scope;  
+
+
+    --
+    -- Motsvarande period nästa år
+    --
+    scope ([Datum Calc].[Date Calc].[NY]);  
+        this = 
+            (
+                PARALLELPERIOD( [Datum].[År-Vecka].[År], -1 )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[NY DTDAction]);  
+        this = "Datum:" +  settostr({PARALLELPERIOD( [Datum].[År-Vecka].[År], -1 )});  
+    end scope;  
+
+
+
+
+    --
+    -- Hela året trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[FY]);  
+        this = 
+            (                    
+                ancestor([Datum].[År-Vecka].currentmember, [Datum].[År-Vecka].[År])
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[FY DTDAction]);  
+        this = "Datum:" +  settostr({ancestor([Datum].[År-Vecka].currentmember, [Datum].[År-Vecka].[År])});  
+    end scope;  
+
+
+    --
+    -- Hela föregående året trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[FY PY]);  
+        this = 
+            (                                
+                ancestor(PARALLELPERIOD( [Datum].[År-Vecka].[År], 1 ), [Datum].[År-Vecka].[År])
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[FY PY DTDAction]);  
+        this = "Datum:" +  settostr({ancestor(PARALLELPERIOD( [Datum].[År-Vecka].[År], 1 ), [Datum].[År-Vecka].[År])});  
+    end scope;  
+
+
+	--
+    -- Hela året två år sedan trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[FY PPY]);  
+        this = 
+            (                                
+                ancestor(PARALLELPERIOD( [Datum].[År-Vecka].[År], 2 ), [Datum].[År-Vecka].[År])
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[FY PPY DTDAction]);  
+        this = "Datum:" +  settostr({ancestor(PARALLELPERIOD( [Datum].[År-Vecka].[År], 2 ), [Datum].[År-Vecka].[År])});  
+    end scope;  
+
+
+    --
+    -- Ack till och med vald period
+    --
+    scope ([Datum Calc].[Date Calc].[YTD]);  
+        this = 
+            sum
+            (
+                YTD( [Datum].[År-Vecka].currentmember )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[YTD DTDAction]);  
+        this = "Datum:" +  settostr({YTD( [Datum].[År-Vecka].currentmember )});  
+    end scope;  
+
+
+
+    --
+    -- Ack till och med motsvarande period föregående år
+    --
+    scope ([Datum Calc].[Date Calc].[YTD PY]);  
+        this = 
+            sum
+            (
+                YTD( PARALLELPERIOD( [Datum].[År-Vecka].[År], 1) )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[YTD PY DTDAction]);  
+        this = "Datum:" +  settostr({YTD( PARALLELPERIOD( [Datum].[År-Vecka].[År], 1))});  
+    end scope;  
+
+
+    --
+    --Föregående period
+    --
+    scope ([Datum Calc].[Date Calc].[PP]);  
+        this = 
+            (
+                [Datum].[År-Vecka].currentmember.PrevMember
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[PP DTDAction]);  
+        this = "Datum:" +  settostr({[Datum].[År-Vecka].currentmember.PrevMember});  
+    end scope;  
+
+    --
+    -- Ack från tidernas begynnelse (Null To Date)
+    --
+    scope ([Datum Calc].[Date Calc].[NTD]);  
+        this =
+            sum
+            (
+                {null:[Datum].[År-Vecka].currentmember}
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[NTD DTDAction]);  
+        this = "Datum:" +  settostr({null:[Datum].[År-Vecka].currentmember});  
+    end scope;  
+end scope;  
+
+
+
+--#########################################################################################################
+-- Datumberäkningar för val i bokföringshierarkier.
+--#########################################################################################################
+--
+-- Scope som träffar om val gjorts på någon av nivåerna Redovisningsår, Kvartal, Period eller Dag.
+--
+scope(descendants([Datum].[Redovisningsår-Kvartal-Period].[Alla datum],[Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår], SELF_AND_AFTER)); 
+
+
+
+    --
+    -- Hel månad trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[Month]);  
+        this = 
+            (                    
+                ancestor([Datum].[Redovisningsår-Kvartal-Period].currentmember, [Datum].[Redovisningsår-Kvartal-Period].[Period])                
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[Month DTDAction]);  
+        this = "Datum:" +  settostr({ancestor([Datum].[Redovisningsår-Kvartal-Period].currentmember, [Datum].[Redovisningsår-Kvartal-Period].[Period])});  
+    end scope;  
+
+
+    --
+    -- Hel månad föregående år trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[Month PY]);  
+        this = 
+            (                                
+                ancestor(PARALLELPERIOD( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår], 1 ), [Datum].[Redovisningsår-Kvartal-Period].[Period])
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[Month PY DTDAction]);  
+        this = "Datum:" +  settostr({ancestor(PARALLELPERIOD( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår], 1 ), [Datum].[Redovisningsår-Kvartal-Period].[Period])});  
+    end scope;  
+
+
+    --
+    -- Motsvarande period föregående år
+    --
+    scope ([Datum Calc].[Date Calc].[PY]);  
+        this = 
+            (
+                PARALLELPERIOD( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår], 1 )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[PY DTDAction]);  
+        this = "Datum:" +  settostr({PARALLELPERIOD( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår], 1 )});  
+    end scope;  
+
+
+    --
+    -- Motsvarande period för två år sedan
+    --
+    scope ([Datum Calc].[Date Calc].[PPY]);  
+        this = 
+            (
+                PARALLELPERIOD( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår], 2 )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[PPY DTDAction]);  
+        this = "Datum:" +  settostr({PARALLELPERIOD( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår], 2 )});  
+    end scope;  
+
+
+    --
+    -- Motsvarande period nästa år
+    --
+    scope ([Datum Calc].[Date Calc].[NY]);  
+        this = 
+            (
+                PARALLELPERIOD( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår], -1 )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[NY DTDAction]);  
+        this = "Datum:" +  settostr({PARALLELPERIOD( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår], -1 )});  
+    end scope;  
+
+
+
+
+    --
+    -- Hela året trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[FY]);  
+        this = 
+            (                    
+                ancestor([Datum].[Redovisningsår-Kvartal-Period].currentmember, [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår])
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[FY DTDAction]);  
+        this = "Datum:" +  settostr({ancestor([Datum].[Redovisningsår-Kvartal-Period].currentmember, [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår])});  
+    end scope;  
+
+
+    --
+    -- Hela föregående året trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[FY PY]);  
+        this = 
+            (                                
+                ancestor(PARALLELPERIOD( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår], 1 ), [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår])
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[FY PY DTDAction]);  
+        this = "Datum:" +  settostr({ancestor(PARALLELPERIOD( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår], 1 ), [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår])});  
+    end scope;  
+
+
+    --
+    -- Hela året två år sedan trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[FY PPY]);  
+        this = 
+            (                                
+                ancestor(PARALLELPERIOD( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår], 2 ), [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår])
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[FY PPY DTDAction]);  
+        this = "Datum:" +  settostr({ancestor(PARALLELPERIOD( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår], 2 ), [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår])});  
+    end scope;  
+
+
+    --
+    -- Ack till och med vald period
+    --
+    scope ([Datum Calc].[Date Calc].[YTD]);  
+        this = 
+            sum
+            (
+                PeriodsToDate( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår], [Datum].[Redovisningsår-Kvartal-Period].currentmember )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[YTD DTDAction]);  
+        this = "Datum:" +  settostr({PeriodsToDate( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår], [Datum].[Redovisningsår-Kvartal-Period].currentmember )});  
+    end scope;  
+
+
+
+    --
+    -- Ack till och med motsvarande period föregående år
+    --
+    scope ([Datum Calc].[Date Calc].[YTD PY]);  
+        this = 
+            sum
+            (
+                PeriodsToDate( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår],  PARALLELPERIOD( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår], 1) )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[YTD PY DTDAction]);  
+        this = "Datum:" +  settostr({PeriodsToDate( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår],  PARALLELPERIOD( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår], 1))});  
+    end scope;  
+
+    
+    --
+    --Föregående period
+    --
+    scope ([Datum Calc].[Date Calc].[PP]);  
+        this = 
+            (
+                [Datum].[Redovisningsår-Kvartal-Period].currentmember.PrevMember
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[PP DTDAction]);  
+        this = "Datum:" +  settostr({[Datum].[Redovisningsår-Kvartal-Period].currentmember.PrevMember});  
+    end scope;  
+
+
+    
+    --
+    -- Ack från tidernas begynnelse (Null To Date)
+    --
+    scope ([Datum Calc].[Date Calc].[NTD]);  
+        this =
+            sum
+            (
+                {null:[Datum].[Redovisningsår-Kvartal-Period].currentmember}
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[NTD DTDAction]);  
+        this = "Datum:" +  settostr({null:[Datum].[Redovisningsår-Kvartal-Period].currentmember});  
+    end scope;  
+end scope;  
+
+
+
+--
+-- Scope som träffar om val gjorts på nivå tertial
+--
+scope([Datum].[Redovisningsår-Tertial-Period].[Tertial]);  
+    --
+    -- Motsvarande period föregående år
+    --
+    scope ([Datum Calc].[Date Calc].[PY]);  
+        this = 
+            (
+                PARALLELPERIOD( [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår], 1 )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[PY DTDAction]);  
+        this = "Datum:" +  settostr({PARALLELPERIOD( [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår], 1 )});  
+    end scope;  
+
+
+    --
+    -- Motsvarande period för två år sedan
+    --
+    scope ([Datum Calc].[Date Calc].[PPY]);  
+        this = 
+            (
+                PARALLELPERIOD( [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår], 2 )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[PPY DTDAction]);  
+        this = "Datum:" +  settostr({PARALLELPERIOD( [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår], 2 )});  
+    end scope;  
+
+
+    --
+    -- Motsvarande period nästa år
+    --
+    scope ([Datum Calc].[Date Calc].[NY]);  
+        this = 
+            (
+                PARALLELPERIOD( [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår], -1 )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[NY DTDAction]);  
+        this = "Datum:" +  settostr({PARALLELPERIOD( [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår], -1 )});  
+    end scope;  
+
+
+
+
+    --
+    -- Hela året trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[FY]);  
+        this = 
+            (                    
+                ancestor([Datum].[Redovisningsår-Tertial-Period].currentmember, [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår])
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[FY DTDAction]);  
+        this = "Datum:" +  settostr({ancestor([Datum].[Redovisningsår-Tertial-Period].currentmember, [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår])});  
+    end scope;  
+
+
+    --
+    -- Hela föregående året trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[FY PY]);  
+        this = 
+            (                                
+                ancestor(PARALLELPERIOD( [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår], 1 ), [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår])
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[FY PY DTDAction]);  
+        this = "Datum:" +  settostr({ancestor(PARALLELPERIOD( [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår], 1 ), [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår])});  
+    end scope;  
+	
+
+    --
+    -- Hela två år sedan trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[FY PPY]);  
+        this = 
+            (                                
+                ancestor(PARALLELPERIOD( [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår], 2 ), [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår])
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[FY PPY DTDAction]);  
+        this = "Datum:" +  settostr({ancestor(PARALLELPERIOD( [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår], 2 ), [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår])});  
+    end scope;  
+
+
+    --
+    -- Ack till och med vald period
+    --
+    scope ([Datum Calc].[Date Calc].[YTD]);  
+        this = 
+            sum
+            (
+                PeriodsToDate([Datum].[Redovisningsår-Tertial-Period].[Redovisningsår],  [Datum].[Redovisningsår-Tertial-Period].currentmember )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[YTD DTDAction]);  
+        this = "Datum:" +  settostr({PeriodsToDate([Datum].[Redovisningsår-Tertial-Period].[Redovisningsår],  [Datum].[Redovisningsår-Tertial-Period].currentmember )});  
+    end scope;  
+
+
+
+    --
+    -- Ack till och med motsvarande period föregående år
+    --
+    scope ([Datum Calc].[Date Calc].[YTD PY]);  
+        this = 
+            sum
+            (
+                PeriodsToDate([Datum].[Redovisningsår-Tertial-Period].[Redovisningsår],  PARALLELPERIOD( [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår], 1) )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[YTD PY DTDAction]);  
+        this = "Datum:" +  settostr({PeriodsToDate([Datum].[Redovisningsår-Tertial-Period].[Redovisningsår],  PARALLELPERIOD( [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår], 1))});  
+    end scope;  
+
+    
+    --
+    --Föregående period
+    --
+    scope ([Datum Calc].[Date Calc].[PP]);  
+        this = 
+            (
+                [Datum].[Redovisningsår-Tertial-Period].currentmember.PrevMember
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[PP DTDAction]);  
+        this = "Datum:" +  settostr({[Datum].[Redovisningsår-Tertial-Period].currentmember.PrevMember});  
+    end scope;  
+
+--#########################################################################################################
+-- Utfall
+--#########################################################################################################
+    
+----
+--Ack Utfall NTD
+----
+
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall Ack NTD] AS
+(
+[Datum Calc].[Date Calc].[NTD], [Measures].[Utfall]
+),
+FORMAT_STRING = "#,#",
+DISPLAY_FOLDER = 'Utfall',
+VISIBLE = 0;
+
+----
+--Ack Utfall trimmad 
+----
+
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall (ack)] AS
+iif
+(
+	
+	head(DESCENDANTS( [Datum].[År - Kvartal - Månad].currentmember, [Datum].[År - Kvartal - Månad].[Dag]), 1).item(0).item(0).properties('key0', typed)
+    <=
+    ([Datum].[År - Månad].[Alla datum],[Measures].[MaxUtfallDateID])
+	,[Measures].[Utfall Ack NTD]
+	,null
+ 
+),
+FORMAT_STRING = "#,#",
+DISPLAY_FOLDER = 'Utfall',
+VISIBLE = 1;
+
+--#########################################################################################################
+-- Uppföljning
+--#########################################################################################################
+
+CREATE MEMBER CURRENTCUBE.[Measures].[Aktuell Kalkyl NTD] AS
+(
+[Datum Calc].[Date Calc].[NTD], [Measures].[Aktuell kalkyl]
+),
+FORMAT_STRING = "#,#",
+DISPLAY_FOLDER = 'Uppföljning',
+VISIBLE = 0;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[Budget NTD] AS
+(
+[Datum Calc].[Date Calc].[NTD], [Measures].[Budget]
+),
+FORMAT_STRING = "#,#",
+DISPLAY_FOLDER = 'Uppföljning',
+VISIBLE = 0;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[Prognos NTD] AS
+(
+[Datum Calc].[Date Calc].[NTD], [Measures].[Prognos]
+),
+FORMAT_STRING = "#,#",
+DISPLAY_FOLDER = 'Uppföljning',
+VISIBLE = 0;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[PrevPrognos NTD] AS
+(
+[Datum Calc].[Date Calc].[NTD], [Measures].[Fg prognos]
+),
+FORMAT_STRING = "#,#",
+DISPLAY_FOLDER = 'Uppföljning',
+VISIBLE = 0;
+
+----
+-- null på tid utanför projektet
+----
+CREATE MEMBER CURRENTCUBE.[Measures].[Aktuell kalkyl (ack)] AS
+iif
+(
+	head(DESCENDANTS( [Datum].[År - Kvartal - Månad].currentmember, [Datum].[År - Kvartal - Månad].[Dag]), 1).item(0).item(0).properties('key0', typed)
+    <=
+    ([Datum].[År - Månad].[Alla datum],[Measures].[MaxUppföljningDateID])
+	,[Measures].[Aktuell Kalkyl NTD]
+	,null
+ 
+),
+FORMAT_STRING = "#,#",
+DISPLAY_FOLDER = 'Uppföljning',
+VISIBLE = 1;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[Budget (ack)] AS
+iif
+(
+	head(DESCENDANTS( [Datum].[År - Kvartal - Månad].currentmember, [Datum].[År - Kvartal - Månad].[Dag]), 1).item(0).item(0).properties('key0', typed)
+    <=
+    ([Datum].[År - Månad].[Alla datum],[Measures].[MaxUppföljningDateID])
+	,[Measures].[Budget NTD]
+	,null
+ 
+),
+FORMAT_STRING = "#,#",
+DISPLAY_FOLDER = 'Uppföljning',
+VISIBLE = 1;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[Prognos (ack)] AS
+iif
+(
+	head(DESCENDANTS( [Datum].[År - Kvartal - Månad].currentmember, [Datum].[År - Kvartal - Månad].[Dag]), 1).item(0).item(0).properties('key0', typed)
+    <=
+    ([Datum].[År - Månad].[Alla datum],[Measures].[MaxUppföljningDateID])
+	,[Measures].[Prognos NTD]
+	,null
+ 
+),
+FORMAT_STRING = "#,#",
+DISPLAY_FOLDER = 'Uppföljning',
+VISIBLE = 1;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[Fg prognos (ack)] AS
+iif
+(
+	head(DESCENDANTS( [Datum].[År - Kvartal - Månad].currentmember, [Datum].[År - Kvartal - Månad].[Dag]), 1).item(0).item(0).properties('key0', typed)
+    <=
+    ([Datum].[År - Månad].[Alla datum],[Measures].[MaxUppföljningDateID])
+	,[Measures].[PrevPrognos NTD]
+	,null
+ 
+),
+FORMAT_STRING = "#,#",
+DISPLAY_FOLDER = 'Uppföljning',
+VISIBLE = 1;

@@ -1,0 +1,154 @@
+[
+  {
+    "DimensionPartTypeID": 1,
+    "Name": "Konto",
+    "Description": "",
+    "IDColumnName": "[KontoID]",
+    "AddNullMembers": false,
+    "TableName": "[dw].[base_Konto]"
+  },
+  {
+    "DimensionPartTypeID": 2,
+    "Name": "GLTransactionType",
+    "Description": "",
+    "IDColumnName": "[GLTransactionTypeID]",
+    "AddNullMembers": false,
+    "TableName": "[dw].[base_GLTransactionType]"
+  },
+  {
+    "DimensionPartTypeID": 3,
+    "Name": "Verifikationstyp",
+    "Description": "",
+    "IDColumnName": "[VerifikationstypID]",
+    "AddNullMembers": true,
+    "TableName": "[dw].[base_Verifikationstyp]"
+  },
+  {
+    "DimensionPartTypeID": 4,
+    "Name": "Lager",
+    "Description": "",
+    "IDColumnName": "[LagerID]",
+    "AddNullMembers": true,
+    "TableName": "[dw].[base_Lager]"
+  },
+  {
+    "DimensionPartTypeID": 5,
+    "Name": "Leverantör",
+    "Description": "",
+    "IDColumnName": "[LeverantörID]",
+    "AddNullMembers": true,
+    "TableName": "[dw].[base_Leverantör]"
+  },
+  {
+    "DimensionPartTypeID": 6,
+    "Name": "Transaktionstyp",
+    "Description": "",
+    "IDColumnName": "[TransaktionstypID]",
+    "AddNullMembers": true,
+    "TableName": "[dw].[base_Transaktionstyp]"
+  },
+  {
+    "DimensionPartTypeID": 7,
+    "Name": "Anläggning",
+    "Description": "",
+    "IDColumnName": "[AnläggningID]",
+    "AddNullMembers": true,
+    "TableName": "[dw].[base_Anläggning]"
+  },
+  {
+    "DimensionPartTypeID": 8,
+    "Name": "Grp_Produkttyp_2",
+    "Description": "",
+    "IDColumnName": "[Grp_Produkttyp_2ID]",
+    "AddNullMembers": true,
+    "TableName": "[dw].[base_Grp_Produkttyp_2]"
+  },
+  {
+    "DimensionPartTypeID": 9,
+    "Name": "Grp_Produkttyp_1",
+    "Description": "",
+    "IDColumnName": "[Grp_Produkttyp_1ID]",
+    "AddNullMembers": true,
+    "TableName": "[dw].[base_Grp_Produkttyp_1]"
+  },
+  {
+    "DimensionPartTypeID": 10,
+    "Name": "Anställd",
+    "Description": "",
+    "IDColumnName": "[AnställdID]",
+    "AddNullMembers": true,
+    "TableName": "[dw].[base_Anställd]"
+  },
+  {
+    "DimensionPartTypeID": 11,
+    "Name": "Grp Kundprisgrupp 1",
+    "Description": "",
+    "IDColumnName": "[Grp Kundprisgrupp 1ID]",
+    "AddNullMembers": true,
+    "TableName": "[dw].[base_Grp Kundprisgrupp 1]"
+  },
+  {
+    "DimensionPartTypeID": 12,
+    "Name": "Kampanj",
+    "Description": "",
+    "IDColumnName": "[KampanjID]",
+    "AddNullMembers": true,
+    "TableName": "[dw].[base_Kampanj]"
+  },
+  {
+    "DimensionPartTypeID": 13,
+    "Name": "Varugrupp",
+    "Description": "",
+    "IDColumnName": "[VarugruppID]",
+    "AddNullMembers": true,
+    "TableName": "[dw].[base_Varugrupp]"
+  },
+  {
+    "DimensionPartTypeID": 14,
+    "Name": "Kassa",
+    "Description": "",
+    "IDColumnName": "[KassaID]",
+    "AddNullMembers": true,
+    "TableName": "[dw].[base_Kassa]"
+  },
+  {
+    "DimensionPartTypeID": 15,
+    "Name": "Projekt",
+    "Description": "",
+    "IDColumnName": "[ProjektID]",
+    "AddNullMembers": true,
+    "TableName": "[dw].[base_Projekt]"
+  },
+  {
+    "DimensionPartTypeID": 16,
+    "Name": "Avdelning",
+    "Description": "",
+    "IDColumnName": "[AvdelningID]",
+    "AddNullMembers": true,
+    "TableName": "[dw].[base_Avdelning]"
+  },
+  {
+    "DimensionPartTypeID": 17,
+    "Name": "Grp Produktprisgrupp 1",
+    "Description": "",
+    "IDColumnName": "[Grp Produktprisgrupp 1ID]",
+    "AddNullMembers": true,
+    "TableName": "[dw].[base_Grp Produktprisgrupp 1]"
+  },
+  {
+    "DimensionPartTypeID": 18,
+    "Name": "Produkt",
+    "Description": "",
+    "IDColumnName": "[ProduktID]",
+    "AddNullMembers": true,
+    "TableName": "[dw].[base_Produkt]"
+  },
+  {
+    "DimensionPartTypeID": 19,
+    "Name": "Kund",
+    "Description": "",
+    "IDColumnName": "[KundID]",
+    "AddNullMembers": true,
+    "TableName": "[dw].[base_Kund]"
+  }
+]

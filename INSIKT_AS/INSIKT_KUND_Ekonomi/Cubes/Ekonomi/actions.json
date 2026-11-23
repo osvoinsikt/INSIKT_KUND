@@ -1,0 +1,86 @@
+[
+  {
+    "id": "CustomDrillthrough-Årets förändring-YTD",
+    "name": "CustomDrillthrough-Årets förändring-YTD",
+    "type": "Proprietary",
+    "targetType": "Cells",
+    "target": "",
+    "caption": "",
+    "condition": "[Measures].CurrentMember is [Measures].[Årets förändring (ack)]",
+    "expression": "str(([Datum Calc].[Date Calc].[YTD DTDAction], [Measures].[Periodens förändring])) + \";Measures:[Measures].[Periodens förändring]\"",
+    "invocation": "Interactive",
+    "visible": true
+  },
+  {
+    "id": "CustomDrillthrough-Resultat-FY",
+    "name": "CustomDrillthrough-Resultat-FY",
+    "type": "Proprietary",
+    "targetType": "Cells",
+    "target": "",
+    "caption": "",
+    "condition": "[Measures].CurrentMember is [Measures].[Utfall (helår)]\nor [Measures].CurrentMember is [Measures].[Antal (helår)]",
+    "expression": "str(([Datum Calc].[Date Calc].[FY DTDAction], [Measures].[Utfall])) + \";Measures:[Measures].[Utfall]\"",
+    "invocation": "Interactive",
+    "visible": true
+  },
+  {
+    "id": "CustomDrillthrough-Resultat-FY PY",
+    "name": "CustomDrillthrough-Resultat-FY PY",
+    "type": "Proprietary",
+    "targetType": "Cells",
+    "target": "",
+    "caption": "",
+    "condition": "[Measures].CurrentMember is [Measures].[Utfall (fg helår)]\nor [Measures].CurrentMember is [Measures].[Antal (fg helår)]",
+    "expression": "str(([Datum Calc].[Date Calc].[FY PY DTDAction], [Measures].[Utfall])) + \";Measures:[Measures].[Utfall]\"",
+    "invocation": "Interactive",
+    "visible": true
+  },
+  {
+    "id": "CustomDrillthrough-Resultat-PP",
+    "name": "CustomDrillthrough-Resultat-PP",
+    "type": "Proprietary",
+    "targetType": "Cells",
+    "target": "",
+    "caption": "",
+    "condition": "[Measures].CurrentMember is [Measures].[Utfall (fg period)]\nor [Measures].CurrentMember is [Measures].[Antal (fg period)]",
+    "expression": "str(([Datum Calc].[Date Calc].[PP DTDAction], [Measures].[Utfall])) + \";Measures:[Measures].[Utfall]\"",
+    "invocation": "Interactive",
+    "visible": true
+  },
+  {
+    "id": "CustomDrillthrough-Resultat-PY",
+    "name": "CustomDrillthrough-Resultat-PY",
+    "type": "Proprietary",
+    "targetType": "Cells",
+    "target": "",
+    "caption": "",
+    "condition": "[Measures].CurrentMember is [Measures].[Utfall (fg år)]\nor [Measures].CurrentMember is [Measures].[Antal (fg år)]",
+    "expression": "str(([Datum Calc].[Date Calc].[PY DTDAction], [Measures].[Utfall])) + \";Measures:[Measures].[Utfall]\"",
+    "invocation": "Interactive",
+    "visible": true
+  },
+  {
+    "id": "CustomDrillthrough-Resultat-YTD",
+    "name": "CustomDrillthrough-Resultat-YTD",
+    "type": "Proprietary",
+    "targetType": "Cells",
+    "target": "",
+    "caption": "",
+    "condition": "[Measures].CurrentMember is [Measures].[Utfall (ack)]\nor [Measures].CurrentMember is [Measures].[Antal (ack)]",
+    "expression": "str(([Datum Calc].[Date Calc].[YTD DTDAction], [Measures].[Utfall])) + \";Measures:[Measures].[Utfall]\"",
+    "invocation": "Interactive",
+    "visible": true
+  },
+  {
+    "id": "CustomDrillthrough-Resultat-YTD PY",
+    "name": "CustomDrillthrough-Resultat-YTD PY",
+    "type": "Proprietary",
+    "targetType": "Cells",
+    "target": "",
+    "caption": "",
+    "condition": "[Measures].CurrentMember is [Measures].[Utfall (ack fg år)]\nor [Measures].CurrentMember is [Measures].[Antal (ack fg år)]",
+    "expression": "str(([Datum Calc].[Date Calc].[YTD PY DTDAction], [Measures].[Utfall])) + \";Measures:[Measures].[Utfall]\"",
+    "invocation": "Interactive",
+    "visible": true
+  }
+]

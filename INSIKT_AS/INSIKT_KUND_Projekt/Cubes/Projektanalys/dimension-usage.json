@@ -1,0 +1,50 @@
+[
+  {
+    "measureGroupId": "Fact Projekt Analysis",
+    "measureGroupName": "Uppföljning",
+    "dimensions": [
+      {
+        "id": "Konto",
+        "name": "Konto",
+        "type": "Regular",
+        "granularity": "KontoID"
+      },
+      {
+        "id": "Datum",
+        "name": "Datum",
+        "type": "Regular",
+        "granularity": "DateID"
+      },
+      {
+        "id": "INSIKT Projekt",
+        "name": "INSIKT Projekt",
+        "type": "Regular",
+        "granularity": "FCProjectID"
+      }
+    ]
+  },
+  {
+    "measureGroupId": "Fact Projekt Utfall Analysis",
+    "measureGroupName": "Utfall",
+    "dimensions": [
+      {
+        "id": "Konto",
+        "name": "Konto",
+        "type": "Regular",
+        "granularity": "KontoID"
+      },
+      {
+        "id": "Datum",
+        "name": "Datum",
+        "type": "Regular",
+        "granularity": "DateID"
+      },
+      {
+        "id": "INSIKT Projekt",
+        "name": "INSIKT Projekt",
+        "type": "Regular",
+        "granularity": "FCProjectID"
+      }
+    ]
+  }
+]

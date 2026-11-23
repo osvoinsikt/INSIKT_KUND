@@ -1,0 +1,83 @@
+{
+  "id": "Planeringsversion",
+  "name": "Planeringsversion",
+  "description": "",
+  "type": "Regular",
+  "storageMode": "Molap",
+  "unknownMember": "None",
+  "unknownMemberName": "Unknown",
+  "attributes": [
+    {
+      "id": "FCVersionID",
+      "name": "FCVersionID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Key",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_PlanningVersion_Projekt",
+            "columnId": "FCVersionID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_PlanningVersion_Projekt",
+            "tableType": "Table",
+            "friendlyName": "dim_PlanningVersion_Projekt",
+            "qualifiedObjectName": "dw.dim_PlanningVersion_Projekt"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_PlanningVersion_Projekt",
+          "columnId": "Name",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_PlanningVersion_Projekt",
+          "tableType": "Table",
+          "friendlyName": "dim_PlanningVersion_Projekt",
+          "qualifiedObjectName": "dw.dim_PlanningVersion_Projekt"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    }
+  ],
+  "hierarchies": [
+    {
+      "id": "Hierarchy",
+      "name": "Lista",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Alla versioner",
+      "visible": true,
+      "levels": [
+        {
+          "id": "FCVersionID",
+          "name": "Version",
+          "ordinal": 0,
+          "sourceAttributeId": "FCVersionID",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        }
+      ]
+    }
+  ]
+}

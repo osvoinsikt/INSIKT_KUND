@@ -1,0 +1,29 @@
+[
+  {
+    "ID": 1,
+    "Caption": "Kvalitet",
+    "Description": "Projektets kvalitet",
+    "SortOrder": 1,
+    "FCTypeID": 2,
+    "CompanyID": 1,
+    "IsDeleted": false
+  },
+  {
+    "ID": 2,
+    "Caption": "Tid",
+    "Description": "Hur projektet ligger till i tid",
+    "SortOrder": 2,
+    "FCTypeID": 2,
+    "CompanyID": 1,
+    "IsDeleted": false
+  },
+  {
+    "ID": 3,
+    "Caption": "Risk",
+    "Description": "Vilken risknivå projektet ligger på",
+    "SortOrder": 3,
+    "FCTypeID": 2,
+    "CompanyID": 1,
+    "IsDeleted": false
+  }
+]

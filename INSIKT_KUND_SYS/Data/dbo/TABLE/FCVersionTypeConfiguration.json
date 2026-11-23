@@ -1,0 +1,72 @@
+[
+  {
+    "ID": 1,
+    "FCVersionTypeID": 1,
+    "FCVersionFieldID": 1,
+    "IsVisible": false,
+    "ReadOnly": false
+  },
+  {
+    "ID": 2,
+    "FCVersionTypeID": 1,
+    "FCVersionFieldID": 2,
+    "IsVisible": true,
+    "ReadOnly": false
+  },
+  {
+    "ID": 3,
+    "FCVersionTypeID": 1,
+    "FCVersionFieldID": 3,
+    "IsVisible": true,
+    "ReadOnly": false
+  },
+  {
+    "ID": 4,
+    "FCVersionTypeID": 1,
+    "FCVersionFieldID": 4,
+    "IsVisible": true,
+    "ReadOnly": false
+  },
+  {
+    "ID": 5,
+    "FCVersionTypeID": 1,
+    "FCVersionFieldID": 5,
+    "IsVisible": true,
+    "ReadOnly": false
+  },
+  {
+    "ID": 6,
+    "FCVersionTypeID": 2,
+    "FCVersionFieldID": 1,
+    "IsVisible": true,
+    "ReadOnly": false
+  },
+  {
+    "ID": 7,
+    "FCVersionTypeID": 2,
+    "FCVersionFieldID": 2,
+    "IsVisible": true,
+    "ReadOnly": false
+  },
+  {
+    "ID": 8,
+    "FCVersionTypeID": 2,
+    "FCVersionFieldID": 3,
+    "IsVisible": true,
+    "ReadOnly": false
+  },
+  {
+    "ID": 9,
+    "FCVersionTypeID": 2,
+    "FCVersionFieldID": 4,
+    "IsVisible": true,
+    "ReadOnly": false
+  },
+  {
+    "ID": 10,
+    "FCVersionTypeID": 2,
+    "FCVersionFieldID": 5,
+    "IsVisible": true,
+    "ReadOnly": false
+  }
+]

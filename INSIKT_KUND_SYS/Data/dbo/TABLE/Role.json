@@ -1,0 +1,142 @@
+[
+  {
+    "ID": 1,
+    "Caption": "ProjectUser",
+    "Name": "System_project_user",
+    "SystemModuleID": 7,
+    "IsModulePrimary": true,
+    "IsSystemRole": true,
+    "Description": null,
+    "SortOrder": 1
+  },
+  {
+    "ID": 2,
+    "Caption": "ProjectManager",
+    "Name": "System_project_manager",
+    "SystemModuleID": 7,
+    "IsModulePrimary": false,
+    "IsSystemRole": true,
+    "Description": null,
+    "SortOrder": 2
+  },
+  {
+    "ID": 3,
+    "Caption": "ProjectLeader",
+    "Name": "System_project_leader",
+    "SystemModuleID": 7,
+    "IsModulePrimary": false,
+    "IsSystemRole": true,
+    "Description": null,
+    "SortOrder": 3
+  },
+  {
+    "ID": 7,
+    "Caption": "Admin",
+    "Name": "System_Admin",
+    "SystemModuleID": 2,
+    "IsModulePrimary": true,
+    "IsSystemRole": true,
+    "Description": null,
+    "SortOrder": 1
+  },
+  {
+    "ID": 8,
+    "Caption": "AdminALL",
+    "Name": "System_Admin_All",
+    "SystemModuleID": 2,
+    "IsModulePrimary": false,
+    "IsSystemRole": true,
+    "Description": null,
+    "SortOrder": 2
+  },
+  {
+    "ID": 9,
+    "Caption": "PluginUser",
+    "Name": "System_plugin_user",
+    "SystemModuleID": 11,
+    "IsModulePrimary": true,
+    "IsSystemRole": true,
+    "Description": null,
+    "SortOrder": 1
+  },
+  {
+    "ID": 10,
+    "Caption": "DimEditorUser",
+    "Name": "System_dimeditor_user",
+    "SystemModuleID": 2,
+    "IsModulePrimary": false,
+    "IsSystemRole": true,
+    "Description": null,
+    "SortOrder": 3
+  },
+  {
+    "ID": 12,
+    "Caption": "BudgetUser",
+    "Name": "System_budget_user",
+    "SystemModuleID": 4,
+    "IsModulePrimary": true,
+    "IsSystemRole": true,
+    "Description": null,
+    "SortOrder": 1
+  },
+  {
+    "ID": 13,
+    "Caption": "BudgetPrivileged",
+    "Name": "System_budget_privileged",
+    "SystemModuleID": 4,
+    "IsModulePrimary": false,
+    "IsSystemRole": true,
+    "Description": null,
+    "SortOrder": 2
+  },
+  {
+    "ID": 20,
+    "Caption": "AnalysisUser",
+    "Name": "System_Analysis_User",
+    "SystemModuleID": 3,
+    "IsModulePrimary": true,
+    "IsSystemRole": true,
+    "Description": null,
+    "SortOrder": 1
+  },
+  {
+    "ID": 21,
+    "Caption": "AnalysisManager",
+    "Name": "System_Analysis_Manager",
+    "SystemModuleID": 3,
+    "IsModulePrimary": false,
+    "IsSystemRole": true,
+    "Description": null,
+    "SortOrder": 2
+  },
+  {
+    "ID": 22,
+    "Caption": "AnalysisPrivileged",
+    "Name": "System_Analysis_Privileged",
+    "SystemModuleID": 3,
+    "IsModulePrimary": false,
+    "IsSystemRole": true,
+    "Description": null,
+    "SortOrder": 3
+  },
+  {
+    "ID": 30,
+    "Caption": "ScorecardUser",
+    "Name": "System_Scorecard_User",
+    "SystemModuleID": 5,
+    "IsModulePrimary": true,
+    "IsSystemRole": true,
+    "Description": null,
+    "SortOrder": 1
+  },
+  {
+    "ID": 31,
+    "Caption": "ScorecardIndicatorAdministrator",
+    "Name": "System_Scorecard_Indicator_Administrator",
+    "SystemModuleID": 5,
+    "IsModulePrimary": false,
+    "IsSystemRole": true,
+    "Description": null,
+    "SortOrder": 2
+  }
+]

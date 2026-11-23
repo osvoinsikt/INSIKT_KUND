@@ -1,0 +1,22 @@
+[
+  {
+    "SA_SourceSystemID": -1,
+    "Description": "Insikt Studio - SourceSystem Config table",
+    "LinkedServer": ".",
+    "Database": "F2222",
+    "TablePrefix": null,
+    "TargetSchema": "insiktStudio",
+    "CompanyCode": null,
+    "SourceSystemProviderID": 1
+  },
+  {
+    "SA_SourceSystemID": 1,
+    "Description": "Visma Business",
+    "LinkedServer": ".",
+    "Database": "F2222",
+    "TablePrefix": null,
+    "TargetSchema": "visma",
+    "CompanyCode": "1",
+    "SourceSystemProviderID": 1
+  }
+]

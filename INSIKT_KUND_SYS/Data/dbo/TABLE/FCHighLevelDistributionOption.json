@@ -1,0 +1,46 @@
+[
+  {
+    "ID": 1,
+    "Caption": "Utfall fg år",
+    "UnitName": null,
+    "UniqueName": "[Measures].[INSIKTPlanering Utfall (1-2 år sedan)]",
+    "FCHighLevelDistributionTypeID": 1,
+    "FCTypeID": 1,
+    "CompanyID": 1,
+    "MethodID": 1,
+    "IgnoreOptionalHideEmpty": false
+  },
+  {
+    "ID": 2,
+    "Caption": "utfall fg år",
+    "UnitName": "kr",
+    "UniqueName": "[Measures].[INSIKTPlanering Utfall (1-2 år sedan)]",
+    "FCHighLevelDistributionTypeID": 2,
+    "FCTypeID": 1,
+    "CompanyID": 1,
+    "MethodID": 1,
+    "IgnoreOptionalHideEmpty": false
+  },
+  {
+    "ID": 3,
+    "Caption": "Jämnt",
+    "UnitName": null,
+    "UniqueName": "[Measures].[Ett]",
+    "FCHighLevelDistributionTypeID": 1,
+    "FCTypeID": 1,
+    "CompanyID": 1,
+    "MethodID": 1,
+    "IgnoreOptionalHideEmpty": false
+  },
+  {
+    "ID": 4,
+    "Caption": "jämnt",
+    "UnitName": "kr",
+    "UniqueName": "[Measures].[Ett]",
+    "FCHighLevelDistributionTypeID": 2,
+    "FCTypeID": 1,
+    "CompanyID": 1,
+    "MethodID": 1,
+    "IgnoreOptionalHideEmpty": false
+  }
+]

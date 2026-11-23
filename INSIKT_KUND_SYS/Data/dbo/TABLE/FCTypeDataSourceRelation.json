@@ -1,0 +1,26 @@
+[
+  {
+    "ID": 1,
+    "FCTypeID": 1,
+    "CompanyID": 1,
+    "DataSourceID": 1
+  },
+  {
+    "ID": 6,
+    "FCTypeID": 2,
+    "CompanyID": 1,
+    "DataSourceID": 3
+  },
+  {
+    "ID": 7,
+    "FCTypeID": 3,
+    "CompanyID": 1,
+    "DataSourceID": 3
+  },
+  {
+    "ID": 8,
+    "FCTypeID": 4,
+    "CompanyID": 1,
+    "DataSourceID": 3
+  }
+]

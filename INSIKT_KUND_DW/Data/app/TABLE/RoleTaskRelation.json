@@ -1,0 +1,110 @@
+[
+  {
+    "ID": 1,
+    "RoleID": 1,
+    "TaskID": 1,
+    "HierarchyID": null
+  },
+  {
+    "ID": 2,
+    "RoleID": 1,
+    "TaskID": 2,
+    "HierarchyID": null
+  },
+  {
+    "ID": 3,
+    "RoleID": 10,
+    "TaskID": 1,
+    "HierarchyID": 1
+  },
+  {
+    "ID": 4,
+    "RoleID": 10,
+    "TaskID": 1,
+    "HierarchyID": 2
+  },
+  {
+    "ID": 5,
+    "RoleID": 10,
+    "TaskID": 1,
+    "HierarchyID": 3
+  },
+  {
+    "ID": 6,
+    "RoleID": 10,
+    "TaskID": 1,
+    "HierarchyID": 4
+  },
+  {
+    "ID": 7,
+    "RoleID": 10,
+    "TaskID": 1,
+    "HierarchyID": 5
+  },
+  {
+    "ID": 8,
+    "RoleID": 10,
+    "TaskID": 1,
+    "HierarchyID": 6
+  },
+  {
+    "ID": 9,
+    "RoleID": 10,
+    "TaskID": 1,
+    "HierarchyID": 7
+  },
+  {
+    "ID": 10,
+    "RoleID": 10,
+    "TaskID": 1,
+    "HierarchyID": 8
+  },
+  {
+    "ID": 11,
+    "RoleID": 10,
+    "TaskID": 1,
+    "HierarchyID": 10
+  },
+  {
+    "ID": 12,
+    "RoleID": 10,
+    "TaskID": 1,
+    "HierarchyID": 11
+  },
+  {
+    "ID": 13,
+    "RoleID": 10,
+    "TaskID": 1,
+    "HierarchyID": 12
+  },
+  {
+    "ID": 14,
+    "RoleID": 10,
+    "TaskID": 1,
+    "HierarchyID": 13
+  },
+  {
+    "ID": 15,
+    "RoleID": 10,
+    "TaskID": 1,
+    "HierarchyID": 14
+  },
+  {
+    "ID": 16,
+    "RoleID": 10,
+    "TaskID": 1,
+    "HierarchyID": 15
+  },
+  {
+    "ID": 17,
+    "RoleID": 10,
+    "TaskID": 1,
+    "HierarchyID": 16
+  },
+  {
+    "ID": 18,
+    "RoleID": 10,
+    "TaskID": 1,
+    "HierarchyID": 20
+  }
+]

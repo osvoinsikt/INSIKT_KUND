@@ -1,0 +1,154 @@
+[
+  {
+    "id": "Anläggning",
+    "name": "Anläggning",
+    "sourceDimensionId": "Anläggning",
+    "sourceDimensionName": "Anläggning",
+    "visible": true,
+    "description": ""
+  },
+  {
+    "id": "Anställd",
+    "name": "Anställd",
+    "sourceDimensionId": "Anställd",
+    "sourceDimensionName": "Anställd",
+    "visible": true,
+    "description": ""
+  },
+  {
+    "id": "Avdelning",
+    "name": "Avdelning",
+    "sourceDimensionId": "Avdelning",
+    "sourceDimensionName": "Avdelning",
+    "visible": true,
+    "description": ""
+  },
+  {
+    "id": "Datum Calc",
+    "name": "Datum Calc",
+    "sourceDimensionId": "Datum Calc",
+    "sourceDimensionName": "Datum Calc",
+    "visible": false,
+    "description": ""
+  },
+  {
+    "id": "Faktureras_Kund",
+    "name": "Faktureras_Kund",
+    "sourceDimensionId": "Kund",
+    "sourceDimensionName": "Kund",
+    "visible": true,
+    "description": ""
+  },
+  {
+    "id": "Faktureringsdatum",
+    "name": "Faktureringsdatum",
+    "sourceDimensionId": "Datum",
+    "sourceDimensionName": "Datum",
+    "visible": true,
+    "description": ""
+  },
+  {
+    "id": "Kampanj",
+    "name": "Kampanj",
+    "sourceDimensionId": "Kampanj",
+    "sourceDimensionName": "Kampanj",
+    "visible": true,
+    "description": ""
+  },
+  {
+    "id": "Kassa",
+    "name": "Kassa",
+    "sourceDimensionId": "Kassa",
+    "sourceDimensionName": "Kassa",
+    "visible": true,
+    "description": ""
+  },
+  {
+    "id": "Kund",
+    "name": "Kund",
+    "sourceDimensionId": "Kund",
+    "sourceDimensionName": "Kund",
+    "visible": true,
+    "description": ""
+  },
+  {
+    "id": "Lager",
+    "name": "Lager",
+    "sourceDimensionId": "Lager",
+    "sourceDimensionName": "Lager",
+    "visible": true,
+    "description": ""
+  },
+  {
+    "id": "Leverantör",
+    "name": "Leverantör",
+    "sourceDimensionId": "Leverantör",
+    "sourceDimensionName": "Leverantör",
+    "visible": true,
+    "description": ""
+  },
+  {
+    "id": "Orderdatum",
+    "name": "Orderdatum",
+    "sourceDimensionId": "Datum",
+    "sourceDimensionName": "Datum",
+    "visible": true,
+    "description": ""
+  },
+  {
+    "id": "Planeringsversion Calc",
+    "name": "Planeringsversion Calc",
+    "sourceDimensionId": "Planeringsversion Calc",
+    "sourceDimensionName": "Planeringsversion Calc",
+    "visible": false,
+    "description": ""
+  },
+  {
+    "id": "Produkt",
+    "name": "Produkt",
+    "sourceDimensionId": "Produkt",
+    "sourceDimensionName": "Produkt",
+    "visible": true,
+    "description": ""
+  },
+  {
+    "id": "Projekt",
+    "name": "Projekt",
+    "sourceDimensionId": "Projekt",
+    "sourceDimensionName": "Projekt",
+    "visible": true,
+    "description": ""
+  },
+  {
+    "id": "Sälj_Inköp_Anställd",
+    "name": "Sälj_Inköp_Anställd",
+    "sourceDimensionId": "Anställd",
+    "sourceDimensionName": "Anställd",
+    "visible": true,
+    "description": ""
+  },
+  {
+    "id": "Transaktionsdatum",
+    "name": "Transaktionsdatum",
+    "sourceDimensionId": "Datum",
+    "sourceDimensionName": "Datum",
+    "visible": true,
+    "description": ""
+  },
+  {
+    "id": "Transaktionstyp",
+    "name": "Transaktionstyp",
+    "sourceDimensionId": "Transaktionstyp",
+    "sourceDimensionName": "Transaktionstyp",
+    "visible": true,
+    "description": ""
+  },
+  {
+    "id": "Varugrupp",
+    "name": "Varugrupp",
+    "sourceDimensionId": "Varugrupp",
+    "sourceDimensionName": "Varugrupp",
+    "visible": true,
+    "description": ""
+  }
+]

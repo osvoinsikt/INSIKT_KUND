@@ -1,0 +1,1556 @@
+{
+  "id": "Produkt",
+  "name": "Produkt",
+  "description": "",
+  "type": "Regular",
+  "storageMode": "Molap",
+  "unknownMember": "None",
+  "unknownMemberName": "Unknown",
+  "attributes": [
+    {
+      "id": "Grp_Produkttyp_1 - L0 ID",
+      "name": "Grp_Produkttyp_1 - L0 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Grp_Produkttyp_1 - L0 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Produkt - Grp_Produkttyp_1",
+            "columnId": "L0_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Produkt - Grp_Produkttyp_1",
+            "tableType": "Table",
+            "friendlyName": "dim_Produkt - Grp_Produkttyp_1",
+            "qualifiedObjectName": "dw.dim_Produkt - Grp_Produkttyp_1"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Produkt - Grp_Produkttyp_1",
+          "columnId": "L0_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Produkt - Grp_Produkttyp_1",
+          "tableType": "Table",
+          "friendlyName": "dim_Produkt - Grp_Produkttyp_1",
+          "qualifiedObjectName": "dw.dim_Produkt - Grp_Produkttyp_1"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Grp_Produkttyp_1 - L0 Sort",
+          "relatedAttributeName": "Grp_Produkttyp_1 - L0 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Grp_Produkttyp_1 - L0 Sort",
+      "name": "Grp_Produkttyp_1 - L0 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Produkt - Grp_Produkttyp_1",
+            "columnId": "L0_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Produkt - Grp_Produkttyp_1",
+            "tableType": "Table",
+            "friendlyName": "dim_Produkt - Grp_Produkttyp_1",
+            "qualifiedObjectName": "dw.dim_Produkt - Grp_Produkttyp_1"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Produkt - Grp_Produkttyp_1",
+          "columnId": "L0_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Produkt - Grp_Produkttyp_1",
+          "tableType": "Table",
+          "friendlyName": "dim_Produkt - Grp_Produkttyp_1",
+          "qualifiedObjectName": "dw.dim_Produkt - Grp_Produkttyp_1"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Grp_Produkttyp_1 - L1 ID",
+      "name": "Grp_Produkttyp_1 - L1 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Grp_Produkttyp_1 - L1 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Produkt - Grp_Produkttyp_1",
+            "columnId": "L1_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Produkt - Grp_Produkttyp_1",
+            "tableType": "Table",
+            "friendlyName": "dim_Produkt - Grp_Produkttyp_1",
+            "qualifiedObjectName": "dw.dim_Produkt - Grp_Produkttyp_1"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Produkt - Grp_Produkttyp_1",
+          "columnId": "L1_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Produkt - Grp_Produkttyp_1",
+          "tableType": "Table",
+          "friendlyName": "dim_Produkt - Grp_Produkttyp_1",
+          "qualifiedObjectName": "dw.dim_Produkt - Grp_Produkttyp_1"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Grp_Produkttyp_1 - L0 ID",
+          "relatedAttributeName": "Grp_Produkttyp_1 - L0 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Grp_Produkttyp_1 - L1 Sort",
+          "relatedAttributeName": "Grp_Produkttyp_1 - L1 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Grp_Produkttyp_1 - L1 Sort",
+      "name": "Grp_Produkttyp_1 - L1 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Produkt - Grp_Produkttyp_1",
+            "columnId": "L1_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Produkt - Grp_Produkttyp_1",
+            "tableType": "Table",
+            "friendlyName": "dim_Produkt - Grp_Produkttyp_1",
+            "qualifiedObjectName": "dw.dim_Produkt - Grp_Produkttyp_1"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Produkt - Grp_Produkttyp_1",
+          "columnId": "L1_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Produkt - Grp_Produkttyp_1",
+          "tableType": "Table",
+          "friendlyName": "dim_Produkt - Grp_Produkttyp_1",
+          "qualifiedObjectName": "dw.dim_Produkt - Grp_Produkttyp_1"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Grp_Produkttyp_2 - L0 ID",
+      "name": "Grp_Produkttyp_2 - L0 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Grp_Produkttyp_2 - L0 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Produkt - Grp_Produkttyp_2",
+            "columnId": "L0_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Produkt - Grp_Produkttyp_2",
+            "tableType": "Table",
+            "friendlyName": "dim_Produkt - Grp_Produkttyp_2",
+            "qualifiedObjectName": "dw.dim_Produkt - Grp_Produkttyp_2"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Produkt - Grp_Produkttyp_2",
+          "columnId": "L0_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Produkt - Grp_Produkttyp_2",
+          "tableType": "Table",
+          "friendlyName": "dim_Produkt - Grp_Produkttyp_2",
+          "qualifiedObjectName": "dw.dim_Produkt - Grp_Produkttyp_2"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Grp_Produkttyp_2 - L0 Sort",
+          "relatedAttributeName": "Grp_Produkttyp_2 - L0 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Grp_Produkttyp_2 - L0 Sort",
+      "name": "Grp_Produkttyp_2 - L0 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Produkt - Grp_Produkttyp_2",
+            "columnId": "L0_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Produkt - Grp_Produkttyp_2",
+            "tableType": "Table",
+            "friendlyName": "dim_Produkt - Grp_Produkttyp_2",
+            "qualifiedObjectName": "dw.dim_Produkt - Grp_Produkttyp_2"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Produkt - Grp_Produkttyp_2",
+          "columnId": "L0_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Produkt - Grp_Produkttyp_2",
+          "tableType": "Table",
+          "friendlyName": "dim_Produkt - Grp_Produkttyp_2",
+          "qualifiedObjectName": "dw.dim_Produkt - Grp_Produkttyp_2"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Grp_Produkttyp_2 - L1 ID",
+      "name": "Grp_Produkttyp_2 - L1 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Grp_Produkttyp_2 - L1 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Produkt - Grp_Produkttyp_2",
+            "columnId": "L1_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Produkt - Grp_Produkttyp_2",
+            "tableType": "Table",
+            "friendlyName": "dim_Produkt - Grp_Produkttyp_2",
+            "qualifiedObjectName": "dw.dim_Produkt - Grp_Produkttyp_2"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Produkt - Grp_Produkttyp_2",
+          "columnId": "L1_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Produkt - Grp_Produkttyp_2",
+          "tableType": "Table",
+          "friendlyName": "dim_Produkt - Grp_Produkttyp_2",
+          "qualifiedObjectName": "dw.dim_Produkt - Grp_Produkttyp_2"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Grp_Produkttyp_2 - L0 ID",
+          "relatedAttributeName": "Grp_Produkttyp_2 - L0 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Grp_Produkttyp_2 - L1 Sort",
+          "relatedAttributeName": "Grp_Produkttyp_2 - L1 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Grp_Produkttyp_2 - L1 Sort",
+      "name": "Grp_Produkttyp_2 - L1 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Produkt - Grp_Produkttyp_2",
+            "columnId": "L1_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Produkt - Grp_Produkttyp_2",
+            "tableType": "Table",
+            "friendlyName": "dim_Produkt - Grp_Produkttyp_2",
+            "qualifiedObjectName": "dw.dim_Produkt - Grp_Produkttyp_2"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Produkt - Grp_Produkttyp_2",
+          "columnId": "L1_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Produkt - Grp_Produkttyp_2",
+          "tableType": "Table",
+          "friendlyName": "dim_Produkt - Grp_Produkttyp_2",
+          "qualifiedObjectName": "dw.dim_Produkt - Grp_Produkttyp_2"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Per Produktprisgrupp 1 - L0 ID",
+      "name": "Per Produktprisgrupp 1 - L0 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Per Produktprisgrupp 1 - L0 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Produkt - Grp Produktprisgrupp 1",
+            "columnId": "L0_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Produkt - Grp Produktprisgrupp 1",
+            "tableType": "Table",
+            "friendlyName": "dim_Produkt - Grp Produktprisgrupp 1",
+            "qualifiedObjectName": "dw.dim_Produkt - Grp Produktprisgrupp 1"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Produkt - Grp Produktprisgrupp 1",
+          "columnId": "L0_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Produkt - Grp Produktprisgrupp 1",
+          "tableType": "Table",
+          "friendlyName": "dim_Produkt - Grp Produktprisgrupp 1",
+          "qualifiedObjectName": "dw.dim_Produkt - Grp Produktprisgrupp 1"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Per Produktprisgrupp 1 - L0 Sort",
+          "relatedAttributeName": "Per Produktprisgrupp 1 - L0 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Per Produktprisgrupp 1 - L0 Sort",
+      "name": "Per Produktprisgrupp 1 - L0 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Produkt - Grp Produktprisgrupp 1",
+            "columnId": "L0_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Produkt - Grp Produktprisgrupp 1",
+            "tableType": "Table",
+            "friendlyName": "dim_Produkt - Grp Produktprisgrupp 1",
+            "qualifiedObjectName": "dw.dim_Produkt - Grp Produktprisgrupp 1"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Produkt - Grp Produktprisgrupp 1",
+          "columnId": "L0_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Produkt - Grp Produktprisgrupp 1",
+          "tableType": "Table",
+          "friendlyName": "dim_Produkt - Grp Produktprisgrupp 1",
+          "qualifiedObjectName": "dw.dim_Produkt - Grp Produktprisgrupp 1"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Per Produktprisgrupp 1 - L1 ID",
+      "name": "Per Produktprisgrupp 1 - L1 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Per Produktprisgrupp 1 - L1 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Produkt - Grp Produktprisgrupp 1",
+            "columnId": "L1_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Produkt - Grp Produktprisgrupp 1",
+            "tableType": "Table",
+            "friendlyName": "dim_Produkt - Grp Produktprisgrupp 1",
+            "qualifiedObjectName": "dw.dim_Produkt - Grp Produktprisgrupp 1"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Produkt - Grp Produktprisgrupp 1",
+          "columnId": "L1_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Produkt - Grp Produktprisgrupp 1",
+          "tableType": "Table",
+          "friendlyName": "dim_Produkt - Grp Produktprisgrupp 1",
+          "qualifiedObjectName": "dw.dim_Produkt - Grp Produktprisgrupp 1"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Per Produktprisgrupp 1 - L0 ID",
+          "relatedAttributeName": "Per Produktprisgrupp 1 - L0 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Per Produktprisgrupp 1 - L1 Sort",
+          "relatedAttributeName": "Per Produktprisgrupp 1 - L1 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Per Produktprisgrupp 1 - L1 Sort",
+      "name": "Per Produktprisgrupp 1 - L1 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Produkt - Grp Produktprisgrupp 1",
+            "columnId": "L1_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Produkt - Grp Produktprisgrupp 1",
+            "tableType": "Table",
+            "friendlyName": "dim_Produkt - Grp Produktprisgrupp 1",
+            "qualifiedObjectName": "dw.dim_Produkt - Grp Produktprisgrupp 1"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Produkt - Grp Produktprisgrupp 1",
+          "columnId": "L1_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Produkt - Grp Produktprisgrupp 1",
+          "tableType": "Table",
+          "friendlyName": "dim_Produkt - Grp Produktprisgrupp 1",
+          "qualifiedObjectName": "dw.dim_Produkt - Grp Produktprisgrupp 1"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Produkt - L0 ID",
+      "name": "Produkt - L0 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Produkt - L0 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Produkt",
+            "columnId": "L0_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Produkt",
+            "tableType": "Table",
+            "friendlyName": "dim_Produkt",
+            "qualifiedObjectName": "dw.dim_Produkt"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Produkt",
+          "columnId": "L0_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Produkt",
+          "tableType": "Table",
+          "friendlyName": "dim_Produkt",
+          "qualifiedObjectName": "dw.dim_Produkt"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Produkt - L0 Sort",
+          "relatedAttributeName": "Produkt - L0 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Produkt - L0 Sort",
+      "name": "Produkt - L0 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Produkt",
+            "columnId": "L0_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Produkt",
+            "tableType": "Table",
+            "friendlyName": "dim_Produkt",
+            "qualifiedObjectName": "dw.dim_Produkt"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Produkt",
+          "columnId": "L0_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Produkt",
+          "tableType": "Table",
+          "friendlyName": "dim_Produkt",
+          "qualifiedObjectName": "dw.dim_Produkt"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Produkt - L1 ID",
+      "name": "Produkt - L1 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Produkt - L1 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Produkt",
+            "columnId": "L1_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Produkt",
+            "tableType": "Table",
+            "friendlyName": "dim_Produkt",
+            "qualifiedObjectName": "dw.dim_Produkt"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Produkt",
+          "columnId": "L1_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Produkt",
+          "tableType": "Table",
+          "friendlyName": "dim_Produkt",
+          "qualifiedObjectName": "dw.dim_Produkt"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Produkt - L0 ID",
+          "relatedAttributeName": "Produkt - L0 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Produkt - L1 Sort",
+          "relatedAttributeName": "Produkt - L1 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Produkt - L1 Sort",
+      "name": "Produkt - L1 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Produkt",
+            "columnId": "L1_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Produkt",
+            "tableType": "Table",
+            "friendlyName": "dim_Produkt",
+            "qualifiedObjectName": "dw.dim_Produkt"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Produkt",
+          "columnId": "L1_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Produkt",
+          "tableType": "Table",
+          "friendlyName": "dim_Produkt",
+          "qualifiedObjectName": "dw.dim_Produkt"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Produkt - L2 ID",
+      "name": "Produkt - L2 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Produkt - L2 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Produkt",
+            "columnId": "L2_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Produkt",
+            "tableType": "Table",
+            "friendlyName": "dim_Produkt",
+            "qualifiedObjectName": "dw.dim_Produkt"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Produkt",
+          "columnId": "L2_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Produkt",
+          "tableType": "Table",
+          "friendlyName": "dim_Produkt",
+          "qualifiedObjectName": "dw.dim_Produkt"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Produkt - L1 ID",
+          "relatedAttributeName": "Produkt - L1 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Produkt - L2 Sort",
+          "relatedAttributeName": "Produkt - L2 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Produkt - L2 Sort",
+      "name": "Produkt - L2 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Produkt",
+            "columnId": "L2_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Produkt",
+            "tableType": "Table",
+            "friendlyName": "dim_Produkt",
+            "qualifiedObjectName": "dw.dim_Produkt"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Produkt",
+          "columnId": "L2_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Produkt",
+          "tableType": "Table",
+          "friendlyName": "dim_Produkt",
+          "qualifiedObjectName": "dw.dim_Produkt"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Produkt - L3 ID",
+      "name": "Produkt - L3 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Produkt - L3 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Produkt",
+            "columnId": "L3_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Produkt",
+            "tableType": "Table",
+            "friendlyName": "dim_Produkt",
+            "qualifiedObjectName": "dw.dim_Produkt"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Produkt",
+          "columnId": "L3_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Produkt",
+          "tableType": "Table",
+          "friendlyName": "dim_Produkt",
+          "qualifiedObjectName": "dw.dim_Produkt"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Produkt - L2 ID",
+          "relatedAttributeName": "Produkt - L2 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Produkt - L3 Sort",
+          "relatedAttributeName": "Produkt - L3 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Produkt - L3 Sort",
+      "name": "Produkt - L3 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Produkt",
+            "columnId": "L3_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Produkt",
+            "tableType": "Table",
+            "friendlyName": "dim_Produkt",
+            "qualifiedObjectName": "dw.dim_Produkt"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Produkt",
+          "columnId": "L3_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Produkt",
+          "tableType": "Table",
+          "friendlyName": "dim_Produkt",
+          "qualifiedObjectName": "dw.dim_Produkt"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Produkt - L4 ID",
+      "name": "Produkt - L4 ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Produkt - L4 Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Produkt",
+            "columnId": "L4_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Produkt",
+            "tableType": "Table",
+            "friendlyName": "dim_Produkt",
+            "qualifiedObjectName": "dw.dim_Produkt"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Produkt",
+          "columnId": "L4_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Produkt",
+          "tableType": "Table",
+          "friendlyName": "dim_Produkt",
+          "qualifiedObjectName": "dw.dim_Produkt"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Produkt - L3 ID",
+          "relatedAttributeName": "Produkt - L3 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Produkt - L4 Sort",
+          "relatedAttributeName": "Produkt - L4 Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Produkt - L4 Sort",
+      "name": "Produkt - L4 Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "BigInt",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Produkt",
+            "columnId": "L4_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Produkt",
+            "tableType": "Table",
+            "friendlyName": "dim_Produkt",
+            "qualifiedObjectName": "dw.dim_Produkt"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Produkt",
+          "columnId": "L4_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Produkt",
+          "tableType": "Table",
+          "friendlyName": "dim_Produkt",
+          "qualifiedObjectName": "dw.dim_Produkt"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Produkt ID",
+      "name": "Produkt ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Key",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "AttributeKey",
+      "orderByAttributeId": "Produkt Sort",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Produkt",
+            "columnId": "ProduktID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Produkt",
+            "tableType": "Table",
+            "friendlyName": "dim_Produkt",
+            "qualifiedObjectName": "dw.dim_Produkt"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Produkt",
+          "columnId": "Produkt_DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Produkt",
+          "tableType": "Table",
+          "friendlyName": "dim_Produkt",
+          "qualifiedObjectName": "dw.dim_Produkt"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Grp_Produkttyp_1 - L1 ID",
+          "relatedAttributeName": "Grp_Produkttyp_1 - L1 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Per Produktprisgrupp 1 - L1 ID",
+          "relatedAttributeName": "Per Produktprisgrupp 1 - L1 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Grp_Produkttyp_2 - L1 ID",
+          "relatedAttributeName": "Grp_Produkttyp_2 - L1 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Produkt Sort",
+          "relatedAttributeName": "Produkt Sort",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Produkt - L4 ID",
+          "relatedAttributeName": "Produkt - L4 ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Produkt Sort",
+      "name": "Produkt Sort",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": false,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "WChar",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Produkt",
+            "columnId": "Produkt_Sort",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Produkt",
+            "tableType": "Table",
+            "friendlyName": "dim_Produkt",
+            "qualifiedObjectName": "dw.dim_Produkt"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Produkt",
+          "columnId": "Produkt_Sort",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Produkt",
+          "tableType": "Table",
+          "friendlyName": "dim_Produkt",
+          "qualifiedObjectName": "dw.dim_Produkt"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    }
+  ],
+  "hierarchies": [
+    {
+      "id": "Hierarki",
+      "name": "Hierarki",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Alla Produkter",
+      "visible": true,
+      "levels": [
+        {
+          "id": "Nivå 4",
+          "name": "Nivå 4",
+          "ordinal": 0,
+          "sourceAttributeId": "Produkt - L3 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        },
+        {
+          "id": "Nivå 5",
+          "name": "Nivå 5",
+          "ordinal": 0,
+          "sourceAttributeId": "Produkt - L4 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        },
+        {
+          "id": "Nivå 3",
+          "name": "Nivå 3",
+          "ordinal": 0,
+          "sourceAttributeId": "Produkt - L2 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        },
+        {
+          "id": "Nivå 1",
+          "name": "Nivå 1",
+          "ordinal": 0,
+          "sourceAttributeId": "Produkt - L0 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        },
+        {
+          "id": "Nivå 2",
+          "name": "Nivå 2",
+          "ordinal": 0,
+          "sourceAttributeId": "Produkt - L1 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        }
+      ]
+    },
+    {
+      "id": "Lista",
+      "name": "Lista",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Alla Produkter",
+      "visible": true,
+      "levels": [
+        {
+          "id": "Produkt",
+          "name": "Produkt",
+          "ordinal": 0,
+          "sourceAttributeId": "Produkt ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        }
+      ]
+    },
+    {
+      "id": "Per Grp_Produkttyp_1",
+      "name": "Per Grp_Produkttyp_1",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Alla Produkter",
+      "visible": true,
+      "levels": [
+        {
+          "id": "Produkt",
+          "name": "Produkt",
+          "ordinal": 0,
+          "sourceAttributeId": "Grp_Produkttyp_1 - L1 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        },
+        {
+          "id": "Grp_Produkttyp_1",
+          "name": "Grp_Produkttyp_1",
+          "ordinal": 0,
+          "sourceAttributeId": "Grp_Produkttyp_1 - L0 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        }
+      ]
+    },
+    {
+      "id": "Per Grp_Produkttyp_2",
+      "name": "Per Grp_Produkttyp_2",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Alla Produkter",
+      "visible": true,
+      "levels": [
+        {
+          "id": "Produkt",
+          "name": "Produkt",
+          "ordinal": 0,
+          "sourceAttributeId": "Grp_Produkttyp_2 - L1 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        },
+        {
+          "id": "Grp_Produkttyp_2",
+          "name": "Grp_Produkttyp_2",
+          "ordinal": 0,
+          "sourceAttributeId": "Grp_Produkttyp_2 - L0 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        }
+      ]
+    },
+    {
+      "id": "Per Produktprisgrupp 1",
+      "name": "Per Produktprisgrupp 1",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Alla Produkter",
+      "visible": true,
+      "levels": [
+        {
+          "id": "Produkt",
+          "name": "Produkt",
+          "ordinal": 0,
+          "sourceAttributeId": "Per Produktprisgrupp 1 - L1 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        },
+        {
+          "id": "Produktprisgrupp 1",
+          "name": "Produktprisgrupp 1",
+          "ordinal": 0,
+          "sourceAttributeId": "Per Produktprisgrupp 1 - L0 ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        }
+      ]
+    }
+  ]
+}

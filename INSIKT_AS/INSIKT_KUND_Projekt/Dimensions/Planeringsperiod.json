@@ -1,0 +1,149 @@
+{
+  "id": "Planeringsperiod",
+  "name": "Planeringsperiod",
+  "description": "",
+  "type": "Time",
+  "storageMode": "Molap",
+  "unknownMember": "None",
+  "unknownMemberName": "Unknown",
+  "attributes": [
+    {
+      "id": "Month ID",
+      "name": "MonthID",
+      "description": "",
+      "type": "Months",
+      "usage": "Key",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dw_dim_Planeringsperiod_Projekt",
+            "columnId": "MonthID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Planeringsperiod_Projekt",
+            "tableType": "View",
+            "friendlyName": "dim_Planeringsperiod_Projekt",
+            "qualifiedObjectName": "dw.dim_Planeringsperiod_Projekt"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dw_dim_Planeringsperiod_Projekt",
+          "columnId": "MonthNameWithYear",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Planeringsperiod_Projekt",
+          "tableType": "View",
+          "friendlyName": "dim_Planeringsperiod_Projekt",
+          "qualifiedObjectName": "dw.dim_Planeringsperiod_Projekt"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Year",
+          "relatedAttributeName": "Year",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Year",
+      "name": "Year",
+      "description": "",
+      "type": "Years",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dw_dim_Planeringsperiod_Projekt",
+            "columnId": "Year",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Planeringsperiod_Projekt",
+            "tableType": "View",
+            "friendlyName": "dim_Planeringsperiod_Projekt",
+            "qualifiedObjectName": "dw.dim_Planeringsperiod_Projekt"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dw_dim_Planeringsperiod_Projekt",
+          "columnId": "Year",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Planeringsperiod_Projekt",
+          "tableType": "View",
+          "friendlyName": "dim_Planeringsperiod_Projekt",
+          "qualifiedObjectName": "dw.dim_Planeringsperiod_Projekt"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    }
+  ],
+  "hierarchies": [
+    {
+      "id": "Hierarchy",
+      "name": "År - Månad",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Total",
+      "visible": true,
+      "levels": [
+        {
+          "id": "MonthID",
+          "name": "Månad",
+          "ordinal": 0,
+          "sourceAttributeId": "Month ID",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        },
+        {
+          "id": "Year",
+          "name": "År",
+          "ordinal": 0,
+          "sourceAttributeId": "Year",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        }
+      ]
+    }
+  ]
+}

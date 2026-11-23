@@ -1,0 +1,67 @@
+[
+  {
+    "FirstDataSourceDimensionID": 2,
+    "SecondDataSourceDimensionID": 20,
+    "Identical": true
+  },
+  {
+    "FirstDataSourceDimensionID": 4,
+    "SecondDataSourceDimensionID": 19,
+    "Identical": true
+  },
+  {
+    "FirstDataSourceDimensionID": 5,
+    "SecondDataSourceDimensionID": 21,
+    "Identical": true
+  },
+  {
+    "FirstDataSourceDimensionID": 6,
+    "SecondDataSourceDimensionID": 22,
+    "Identical": true
+  },
+  {
+    "FirstDataSourceDimensionID": 7,
+    "SecondDataSourceDimensionID": 25,
+    "Identical": true
+  },
+  {
+    "FirstDataSourceDimensionID": 8,
+    "SecondDataSourceDimensionID": 26,
+    "Identical": true
+  },
+  {
+    "FirstDataSourceDimensionID": 9,
+    "SecondDataSourceDimensionID": 27,
+    "Identical": true
+  },
+  {
+    "FirstDataSourceDimensionID": 10,
+    "SecondDataSourceDimensionID": 28,
+    "Identical": true
+  },
+  {
+    "FirstDataSourceDimensionID": 11,
+    "SecondDataSourceDimensionID": 29,
+    "Identical": true
+  },
+  {
+    "FirstDataSourceDimensionID": 12,
+    "SecondDataSourceDimensionID": 30,
+    "Identical": true
+  },
+  {
+    "FirstDataSourceDimensionID": 13,
+    "SecondDataSourceDimensionID": 32,
+    "Identical": true
+  },
+  {
+    "FirstDataSourceDimensionID": 13,
+    "SecondDataSourceDimensionID": 33,
+    "Identical": true
+  },
+  {
+    "FirstDataSourceDimensionID": 13,
+    "SecondDataSourceDimensionID": 34,
+    "Identical": true
+  }
+]

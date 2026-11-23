@@ -1,0 +1,37 @@
+[
+  {
+    "ID": 1,
+    "Name": "Budget",
+    "Description": null,
+    "SortOrder": 0,
+    "HideInVersionAdmin": false
+  },
+  {
+    "ID": 2,
+    "Name": "Prognos",
+    "Description": null,
+    "SortOrder": 0,
+    "HideInVersionAdmin": false
+  },
+  {
+    "ID": 1000,
+    "Name": "Förkalkyl",
+    "Description": "Projektversioner",
+    "SortOrder": 1000,
+    "HideInVersionAdmin": true
+  },
+  {
+    "ID": 2000,
+    "Name": "Projektbudget",
+    "Description": "Projektversioner",
+    "SortOrder": 2000,
+    "HideInVersionAdmin": true
+  },
+  {
+    "ID": 3000,
+    "Name": "Projektprognos",
+    "Description": "Projektversioner",
+    "SortOrder": 3000,
+    "HideInVersionAdmin": true
+  }
+]

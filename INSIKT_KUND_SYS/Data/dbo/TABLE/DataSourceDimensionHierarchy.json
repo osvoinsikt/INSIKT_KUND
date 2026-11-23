@@ -1,0 +1,114 @@
+[
+  {
+    "ID": 1,
+    "DataSourceDimensionID": 13,
+    "Name": "År - Månad",
+    "FiscalMonthOffset": null,
+    "SortOrder": 1,
+    "IsDefault": true
+  },
+  {
+    "ID": 2,
+    "DataSourceDimensionID": 32,
+    "Name": "År - Månad",
+    "FiscalMonthOffset": null,
+    "SortOrder": 1,
+    "IsDefault": true
+  },
+  {
+    "ID": 3,
+    "DataSourceDimensionID": 33,
+    "Name": "År - Månad",
+    "FiscalMonthOffset": null,
+    "SortOrder": 1,
+    "IsDefault": true
+  },
+  {
+    "ID": 4,
+    "DataSourceDimensionID": 34,
+    "Name": "År - Månad",
+    "FiscalMonthOffset": null,
+    "SortOrder": 1,
+    "IsDefault": true
+  },
+  {
+    "ID": 5,
+    "DataSourceDimensionID": 35,
+    "Name": "År - Månad",
+    "FiscalMonthOffset": null,
+    "SortOrder": null,
+    "IsDefault": true
+  },
+  {
+    "ID": 6,
+    "DataSourceDimensionID": 36,
+    "Name": "FCProjectID",
+    "FiscalMonthOffset": null,
+    "SortOrder": null,
+    "IsDefault": true
+  },
+  {
+    "ID": 7,
+    "DataSourceDimensionID": 36,
+    "Name": "Lista",
+    "FiscalMonthOffset": null,
+    "SortOrder": null,
+    "IsDefault": false
+  },
+  {
+    "ID": 8,
+    "DataSourceDimensionID": 37,
+    "Name": "Hierarki",
+    "FiscalMonthOffset": null,
+    "SortOrder": null,
+    "IsDefault": true
+  },
+  {
+    "ID": 9,
+    "DataSourceDimensionID": 38,
+    "Name": "År - Månad",
+    "FiscalMonthOffset": null,
+    "SortOrder": null,
+    "IsDefault": true
+  },
+  {
+    "ID": 10,
+    "DataSourceDimensionID": 39,
+    "Name": "Lista",
+    "FiscalMonthOffset": null,
+    "SortOrder": null,
+    "IsDefault": true
+  },
+  {
+    "ID": 11,
+    "DataSourceDimensionID": 40,
+    "Name": "År - Månad",
+    "FiscalMonthOffset": null,
+    "SortOrder": null,
+    "IsDefault": true
+  },
+  {
+    "ID": 12,
+    "DataSourceDimensionID": 41,
+    "Name": "Projekt",
+    "FiscalMonthOffset": null,
+    "SortOrder": null,
+    "IsDefault": true
+  },
+  {
+    "ID": 13,
+    "DataSourceDimensionID": 42,
+    "Name": "Hierarki",
+    "FiscalMonthOffset": null,
+    "SortOrder": null,
+    "IsDefault": true
+  },
+  {
+    "ID": 14,
+    "DataSourceDimensionID": 43,
+    "Name": "Lista",
+    "FiscalMonthOffset": null,
+    "SortOrder": null,
+    "IsDefault": true
+  }
+]

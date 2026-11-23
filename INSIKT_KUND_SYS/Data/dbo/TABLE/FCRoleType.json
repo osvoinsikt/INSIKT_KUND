@@ -1,0 +1,27 @@
+[
+  {
+    "ID": 1,
+    "Name": "Planner",
+    "Description": "canForecast, Responsible"
+  },
+  {
+    "ID": 2,
+    "Name": "Approver",
+    "Description": "firstApprover, secondApprover"
+  },
+  {
+    "ID": 4,
+    "Name": "PlanningAnalyzer",
+    "Description": "Kan granska utan att ändra någonting och inte heller godkänna"
+  },
+  {
+    "ID": 5,
+    "Name": "Custom",
+    "Description": "Rollen ger inga automatiska rättigheter, men kan användas för att definiera rättigheter i RoleTaskRelation."
+  },
+  {
+    "ID": 6,
+    "Name": "Analyzer",
+    "Description": "Does not give any permissions automatically, but can be used to define custom permissions."
+  }
+]

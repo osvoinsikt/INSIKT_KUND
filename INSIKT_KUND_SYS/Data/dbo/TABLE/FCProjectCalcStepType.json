@@ -1,0 +1,35 @@
+[
+  {
+    "ID": 1,
+    "Name": "Klarmarkering",
+    "ActionName": "Klarmarkering",
+    "StatusName": "Öppen",
+    "ProcessIsWriteEnabled": true,
+    "FCTypeID": 2,
+    "CompanyID": 1,
+    "FinishConfirmText": null,
+    "Description": null
+  },
+  {
+    "ID": 2,
+    "Name": "Godkännande",
+    "ActionName": "Godkänn",
+    "StatusName": "Inväntar godkännande",
+    "ProcessIsWriteEnabled": false,
+    "FCTypeID": 2,
+    "CompanyID": 1,
+    "FinishConfirmText": null,
+    "Description": null
+  },
+  {
+    "ID": 3,
+    "Name": "Andragodkännande",
+    "ActionName": "Godkänn",
+    "StatusName": "Inväntar andragodkännande",
+    "ProcessIsWriteEnabled": false,
+    "FCTypeID": 2,
+    "CompanyID": 1,
+    "FinishConfirmText": null,
+    "Description": null
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "ID": 4,
+    "GroupID": 1,
+    "FCTypeID": 2,
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ID": 5,
+    "GroupID": 1,
+    "FCTypeID": 3,
+    "SortOrder": 2,
+    "IsPrimary": false
+  },
+  {
+    "ID": 6,
+    "GroupID": 1,
+    "FCTypeID": 4,
+    "SortOrder": 3,
+    "IsPrimary": false
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "ID": 1,
+    "DomainName": "base-template",
+    "FullyQualifiedDomainName": null,
+    "ProtocolTypeID": 2,
+    "DomainServer": null,
+    "SearchRoot": null,
+    "IsConfigurable": false,
+    "SyncEnabled": true,
+    "SearchEnabled": false,
+    "IsDeleted": false,
+    "IsSecureLDAP": false,
+    "LastSuccessfulSync": null
+  }
+]

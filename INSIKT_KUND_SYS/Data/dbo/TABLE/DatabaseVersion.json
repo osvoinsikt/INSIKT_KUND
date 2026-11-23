@@ -1,0 +1,22 @@
+[
+  {
+    "Version": "13.3.15.release.8d3bc593b",
+    "InstalledDate": "2026-05-08T12:36:49.000",
+    "IsCurrent": false
+  },
+  {
+    "Version": "13.3.21.release",
+    "InstalledDate": "2026-08-05T08:27:32.690",
+    "IsCurrent": false
+  },
+  {
+    "Version": "13.3.25.release.0295468a2ce",
+    "InstalledDate": "2026-09-15T08:49:42.000",
+    "IsCurrent": false
+  },
+  {
+    "Version": "14.0.16.release.a5e7b26680e",
+    "InstalledDate": "2026-11-23T07:54:32.297",
+    "IsCurrent": true
+  }
+]

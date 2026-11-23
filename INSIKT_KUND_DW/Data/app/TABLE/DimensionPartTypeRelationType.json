@@ -1,0 +1,10 @@
+[
+  {
+    "DimensionPartTypeRelationTypeID": "GRP",
+    "Description": "Grupperingsrelation. Ex. Kundgrupp -> kund, en ändrad kundgrupp ska inte leda till nytt id på kunden."
+  },
+  {
+    "DimensionPartTypeRelationTypeID": "KEY",
+    "Description": "Detta innbär en relation som krävs för att posten ska kunna identifieras unikt. Ex. Bolag -> Konto"
+  }
+]

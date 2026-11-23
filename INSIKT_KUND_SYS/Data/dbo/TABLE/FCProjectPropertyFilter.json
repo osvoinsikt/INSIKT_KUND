@@ -1,0 +1,14 @@
+[
+  {
+    "ID": 4,
+    "Caption": "Nybyggnation",
+    "Description": "Filter för projekttypen Nybyggnation",
+    "CreatedBy": -1,
+    "CreatedDate": "2026-02-06T00:00:00.000",
+    "ModifiedBy": null,
+    "ModifiedDate": null,
+    "IsAvailableInProjectList": true,
+    "FCTypeID": 2,
+    "CompanyID": 1
+  }
+]

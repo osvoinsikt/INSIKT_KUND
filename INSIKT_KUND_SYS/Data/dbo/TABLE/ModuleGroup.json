@@ -1,0 +1,58 @@
+[
+  {
+    "ID": 2,
+    "Caption": "CapAdmin",
+    "SortOrder": 12,
+    "Icon": "settings",
+    "ShowIconOnly": true,
+    "Description": "txtAdminDescription"
+  },
+  {
+    "ID": 3,
+    "Caption": "CapAnalysis",
+    "SortOrder": 3,
+    "Icon": "analysis",
+    "ShowIconOnly": false,
+    "Description": "txtAnalysisDescription"
+  },
+  {
+    "ID": 5,
+    "Caption": "CapPlanning",
+    "SortOrder": 4,
+    "Icon": "planning",
+    "ShowIconOnly": false,
+    "Description": "txtPrognosisDescription"
+  },
+  {
+    "ID": 6,
+    "Caption": "CapProject",
+    "SortOrder": 5,
+    "Icon": "project",
+    "ShowIconOnly": false,
+    "Description": "txtProjectDescription"
+  },
+  {
+    "ID": 7,
+    "Caption": "CapPlugins",
+    "SortOrder": 11,
+    "Icon": "plugins",
+    "ShowIconOnly": false,
+    "Description": "txtPluginsDescription"
+  },
+  {
+    "ID": 8,
+    "Caption": "CapHelp",
+    "SortOrder": 13,
+    "Icon": "help",
+    "ShowIconOnly": true,
+    "Description": "txtHelpDescription"
+  },
+  {
+    "ID": 9,
+    "Caption": "CapScorecard",
+    "SortOrder": 6,
+    "Icon": "scorecard",
+    "ShowIconOnly": false,
+    "Description": "txtScorecardDescription"
+  }
+]

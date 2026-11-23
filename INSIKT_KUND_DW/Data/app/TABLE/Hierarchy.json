@@ -1,0 +1,128 @@
+[
+  {
+    "HierarchyID": 1,
+    "Name": "Balanskonto",
+    "Caption": "Balanskonto",
+    "Description": "Konto - Lista och hierarki"
+  },
+  {
+    "HierarchyID": 2,
+    "Name": "Resultatkonto",
+    "Caption": "Resultatkonto",
+    "Description": "Konto - Lista och hierarki"
+  },
+  {
+    "HierarchyID": 3,
+    "Name": "Verifikationstyp",
+    "Caption": "Verifikationstyp",
+    "Description": "Verifikationstyp - Lista och hierarki"
+  },
+  {
+    "HierarchyID": 4,
+    "Name": "Lager",
+    "Caption": "Lager",
+    "Description": "Lager - Lista och hierarki"
+  },
+  {
+    "HierarchyID": 5,
+    "Name": "Leverantör",
+    "Caption": "Leverantör",
+    "Description": "Leverantör - Lista och hierarki"
+  },
+  {
+    "HierarchyID": 6,
+    "Name": "Transaktionstyp",
+    "Caption": "Transaktionstyp",
+    "Description": "Transaktionstyp - Lista och hierarki"
+  },
+  {
+    "HierarchyID": 7,
+    "Name": "Anläggning",
+    "Caption": "Anläggning",
+    "Description": "Anläggning - Lista och hierarki"
+  },
+  {
+    "HierarchyID": 8,
+    "Name": "Kund",
+    "Caption": "Kund",
+    "Description": "Kund - Lista och hierarki"
+  },
+  {
+    "HierarchyID": 9,
+    "Name": "Kund - Grp Kundprisgrupp 1",
+    "Caption": "Kund - Grp Kundprisgrupp 1",
+    "Description": "Kund - Grp Kundprisgrupp 1"
+  },
+  {
+    "HierarchyID": 10,
+    "Name": "Anställd",
+    "Caption": "Anställd",
+    "Description": "Anställd - Lista och hierarki"
+  },
+  {
+    "HierarchyID": 11,
+    "Name": "Kampanj",
+    "Caption": "Kampanj",
+    "Description": "Kampanj - Lista och hierarki"
+  },
+  {
+    "HierarchyID": 12,
+    "Name": "Varugrupp",
+    "Caption": "Varugrupp",
+    "Description": "Varugrupp - Lista och hierarki"
+  },
+  {
+    "HierarchyID": 13,
+    "Name": "Kassa",
+    "Caption": "Kassa",
+    "Description": "Kassa - Lista och hierarki"
+  },
+  {
+    "HierarchyID": 14,
+    "Name": "Projekt",
+    "Caption": "Projekt",
+    "Description": "Projekt - Lista och hierarki"
+  },
+  {
+    "HierarchyID": 15,
+    "Name": "Avdelning",
+    "Caption": "Avdelning",
+    "Description": "Avdelning - Lista och hierarki"
+  },
+  {
+    "HierarchyID": 16,
+    "Name": "Produkt",
+    "Caption": "Produkt",
+    "Description": "Produkt - Lista och hierarki"
+  },
+  {
+    "HierarchyID": 17,
+    "Name": "Produkt - Grp_Produkttyp_2",
+    "Caption": "Produkt - Grp_Produkttyp_2",
+    "Description": "Produkt - Grp_Produkttyp_2"
+  },
+  {
+    "HierarchyID": 18,
+    "Name": "Produkt - Grp_Produkttyp_1",
+    "Caption": "Produkt - Grp_Produkttyp_1",
+    "Description": "Produkt - Grp_Produkttyp_1"
+  },
+  {
+    "HierarchyID": 19,
+    "Name": "Produkt - Grp Produktprisgrupp 1",
+    "Caption": "Produkt - Grp Produktprisgrupp 1",
+    "Description": "Produkt - Grp Produktprisgrupp 1"
+  },
+  {
+    "HierarchyID": 20,
+    "Name": "Organisation",
+    "Caption": "Organisation",
+    "Description": "Organisation"
+  },
+  {
+    "HierarchyID": 21,
+    "Name": "Konto_Projekt",
+    "Caption": "Konto_Projekt",
+    "Description": ""
+  }
+]

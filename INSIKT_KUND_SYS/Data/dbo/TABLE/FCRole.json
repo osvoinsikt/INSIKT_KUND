@@ -1,0 +1,42 @@
+[
+  {
+    "ID": 1,
+    "RoleTypeID": 1,
+    "Name": "Budgetläggare",
+    "Description": null,
+    "Order": 1,
+    "SortOrder": 1
+  },
+  {
+    "ID": 2,
+    "RoleTypeID": 2,
+    "Name": "Första godkännare",
+    "Description": null,
+    "Order": 1,
+    "SortOrder": 2
+  },
+  {
+    "ID": 3,
+    "RoleTypeID": 2,
+    "Name": "Andra godkännare",
+    "Description": null,
+    "Order": 2,
+    "SortOrder": 3
+  },
+  {
+    "ID": 4,
+    "RoleTypeID": 6,
+    "Name": "Analys",
+    "Description": "Ger endast analysbehörigheter.",
+    "Order": 1,
+    "SortOrder": 4
+  },
+  {
+    "ID": 5,
+    "RoleTypeID": 5,
+    "Name": "Projektledare",
+    "Description": null,
+    "Order": 1,
+    "SortOrder": 1
+  }
+]

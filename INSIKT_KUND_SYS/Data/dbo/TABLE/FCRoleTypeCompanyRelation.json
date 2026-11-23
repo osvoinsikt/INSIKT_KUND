@@ -1,0 +1,32 @@
+[
+  {
+    "ID": 1,
+    "FCRoleID": 1,
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 2,
+    "FCRoleID": 2,
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 3,
+    "FCRoleID": 3,
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 4,
+    "FCRoleID": 4,
+    "FCTypeID": 1,
+    "CompanyID": 1
+  },
+  {
+    "ID": 5,
+    "FCRoleID": 5,
+    "FCTypeID": 2,
+    "CompanyID": 1
+  }
+]

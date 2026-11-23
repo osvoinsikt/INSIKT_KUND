@@ -1,0 +1,676 @@
+{
+  "cubeId": "Logistik",
+  "cubeName": "Logistik",
+  "measureGroups": [
+    {
+      "id": "Fakturerat",
+      "name": "Fakturerat",
+      "description": "",
+      "storageMode": "Molap",
+      "processingMode": "LazyAggregations",
+      "ignoreUnrelatedDimensions": true,
+      "sourceReference": [
+        {
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dsvId": "",
+          "sourceType": "TableBinding",
+          "tableId": "",
+          "schemaName": "",
+          "queryHash": null,
+          "dbSchemaName": "dw",
+          "dbTableName": "fact_ProductTransaction_WithOrg",
+          "qualifiedObjectName": "dw.fact_ProductTransaction_WithOrg",
+          "sourceObjectType": "Table"
+        }
+      ],
+      "partitions": [
+        {
+          "id": "fact_ProductTransaction_WithOrg",
+          "name": "fact_ProductTransaction_WithOrg",
+          "storageMode": "Molap",
+          "processingMode": "Regular",
+          "source": {
+            "sourceType": "TableBinding",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "fact_ProductTransaction_WithOrg",
+            "qualifiedObjectName": "dw.fact_ProductTransaction_WithOrg"
+          }
+        }
+      ],
+      "measures": [
+        {
+          "id": "Faktura Antal",
+          "name": "Faktura Antal",
+          "uniqueName": "[Measures].[Faktura Antal]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Fakturerat",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_ProductTransaction_WithOrg",
+              "columnId": "FakturaAntal",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_ProductTransaction_WithOrg",
+              "tableType": "Table",
+              "friendlyName": "fact_ProductTransaction_WithOrg",
+              "qualifiedObjectName": "dw.fact_ProductTransaction_WithOrg"
+            }
+          }
+        },
+        {
+          "id": "Faktura Belopp",
+          "name": "Faktura Belopp",
+          "uniqueName": "[Measures].[Faktura Belopp]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Fakturerat",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_ProductTransaction_WithOrg",
+              "columnId": "FakturaBelopp",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_ProductTransaction_WithOrg",
+              "tableType": "Table",
+              "friendlyName": "fact_ProductTransaction_WithOrg",
+              "qualifiedObjectName": "dw.fact_ProductTransaction_WithOrg"
+            }
+          }
+        },
+        {
+          "id": "Faktura Emballagevikt",
+          "name": "Faktura Emballagevikt",
+          "uniqueName": "[Measures].[Faktura Emballagevikt]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Fakturerat",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_ProductTransaction_WithOrg",
+              "columnId": "FakturaEmballagevikt",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_ProductTransaction_WithOrg",
+              "tableType": "Table",
+              "friendlyName": "fact_ProductTransaction_WithOrg",
+              "qualifiedObjectName": "dw.fact_ProductTransaction_WithOrg"
+            }
+          }
+        },
+        {
+          "id": "Faktura Kostnad",
+          "name": "Faktura Kostnad",
+          "uniqueName": "[Measures].[Faktura Kostnad]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Fakturerat",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_ProductTransaction_WithOrg",
+              "columnId": "FakturaKostnad",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_ProductTransaction_WithOrg",
+              "tableType": "Table",
+              "friendlyName": "fact_ProductTransaction_WithOrg",
+              "qualifiedObjectName": "dw.fact_ProductTransaction_WithOrg"
+            }
+          }
+        },
+        {
+          "id": "Faktura Nettovikt",
+          "name": "Faktura Nettovikt",
+          "uniqueName": "[Measures].[Faktura Nettovikt]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Fakturerat",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_ProductTransaction_WithOrg",
+              "columnId": "FakturaNettovikt",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_ProductTransaction_WithOrg",
+              "tableType": "Table",
+              "friendlyName": "fact_ProductTransaction_WithOrg",
+              "qualifiedObjectName": "dw.fact_ProductTransaction_WithOrg"
+            }
+          }
+        },
+        {
+          "id": "Faktura Rabatt",
+          "name": "Faktura Rabatt",
+          "uniqueName": "[Measures].[Faktura Rabatt]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Fakturerat",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_ProductTransaction_WithOrg",
+              "columnId": "FakturaRabatt",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_ProductTransaction_WithOrg",
+              "tableType": "Table",
+              "friendlyName": "fact_ProductTransaction_WithOrg",
+              "qualifiedObjectName": "dw.fact_ProductTransaction_WithOrg"
+            }
+          }
+        },
+        {
+          "id": "Faktura Volym",
+          "name": "Faktura Volym",
+          "uniqueName": "[Measures].[Faktura Volym]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Fakturerat",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_ProductTransaction_WithOrg",
+              "columnId": "FakturaVolym",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_ProductTransaction_WithOrg",
+              "tableType": "Table",
+              "friendlyName": "fact_ProductTransaction_WithOrg",
+              "qualifiedObjectName": "dw.fact_ProductTransaction_WithOrg"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "Order",
+      "name": "Order",
+      "description": "",
+      "storageMode": "Molap",
+      "processingMode": "LazyAggregations",
+      "ignoreUnrelatedDimensions": true,
+      "sourceReference": [
+        {
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dsvId": "",
+          "sourceType": "TableBinding",
+          "tableId": "",
+          "schemaName": "",
+          "queryHash": null,
+          "dbSchemaName": "dw",
+          "dbTableName": "fact_Order_WithOrg",
+          "qualifiedObjectName": "dw.fact_Order_WithOrg",
+          "sourceObjectType": "Table"
+        }
+      ],
+      "partitions": [
+        {
+          "id": "fact_Order_WithOrg",
+          "name": "fact_Order_WithOrg",
+          "storageMode": "Molap",
+          "processingMode": "Regular",
+          "source": {
+            "sourceType": "TableBinding",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "fact_Order_WithOrg",
+            "qualifiedObjectName": "dw.fact_Order_WithOrg"
+          }
+        }
+      ],
+      "measures": [
+        {
+          "id": "Öppen Order Antal",
+          "name": "Öppen Order Antal",
+          "uniqueName": "[Measures].[Öppen Order Antal]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Öppen Order",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_Order_WithOrg",
+              "columnId": "ÖppenOrderAntal",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Order_WithOrg",
+              "tableType": "Table",
+              "friendlyName": "fact_Order_WithOrg",
+              "qualifiedObjectName": "dw.fact_Order_WithOrg"
+            }
+          }
+        },
+        {
+          "id": "Öppen Order Belopp",
+          "name": "Öppen Order Belopp",
+          "uniqueName": "[Measures].[Öppen Order Belopp]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Öppen Order",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_Order_WithOrg",
+              "columnId": "ÖppenOrderBelopp",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Order_WithOrg",
+              "tableType": "Table",
+              "friendlyName": "fact_Order_WithOrg",
+              "qualifiedObjectName": "dw.fact_Order_WithOrg"
+            }
+          }
+        },
+        {
+          "id": "Öppen Order Emballagevikt",
+          "name": "Öppen Order Emballagevikt",
+          "uniqueName": "[Measures].[Öppen Order Emballagevikt]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Öppen Order",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_Order_WithOrg",
+              "columnId": "ÖppenOrderEmballagevikt",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Order_WithOrg",
+              "tableType": "Table",
+              "friendlyName": "fact_Order_WithOrg",
+              "qualifiedObjectName": "dw.fact_Order_WithOrg"
+            }
+          }
+        },
+        {
+          "id": "Öppen Order Kostnad",
+          "name": "Öppen Order Kostnad",
+          "uniqueName": "[Measures].[Öppen Order Kostnad]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Öppen Order",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_Order_WithOrg",
+              "columnId": "ÖppenOrderKostnad",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Order_WithOrg",
+              "tableType": "Table",
+              "friendlyName": "fact_Order_WithOrg",
+              "qualifiedObjectName": "dw.fact_Order_WithOrg"
+            }
+          }
+        },
+        {
+          "id": "Öppen Order Nettovikt",
+          "name": "Öppen Order Nettovikt",
+          "uniqueName": "[Measures].[Öppen Order Nettovikt]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Öppen Order",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_Order_WithOrg",
+              "columnId": "ÖppenOrderNettovikt",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Order_WithOrg",
+              "tableType": "Table",
+              "friendlyName": "fact_Order_WithOrg",
+              "qualifiedObjectName": "dw.fact_Order_WithOrg"
+            }
+          }
+        },
+        {
+          "id": "Öppen Order Rabatt",
+          "name": "Öppen Order Rabatt",
+          "uniqueName": "[Measures].[Öppen Order Rabatt]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Öppen Order",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_Order_WithOrg",
+              "columnId": "ÖppenOrderRabatt",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Order_WithOrg",
+              "tableType": "Table",
+              "friendlyName": "fact_Order_WithOrg",
+              "qualifiedObjectName": "dw.fact_Order_WithOrg"
+            }
+          }
+        },
+        {
+          "id": "Öppen Order Volym",
+          "name": "Öppen Order Volym",
+          "uniqueName": "[Measures].[Öppen Order Volym]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Öppen Order",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_Order_WithOrg",
+              "columnId": "ÖppenOrderVolym",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Order_WithOrg",
+              "tableType": "Table",
+              "friendlyName": "fact_Order_WithOrg",
+              "qualifiedObjectName": "dw.fact_Order_WithOrg"
+            }
+          }
+        },
+        {
+          "id": "Order Antal",
+          "name": "Order Antal",
+          "uniqueName": "[Measures].[Order Antal]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Order",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_Order_WithOrg",
+              "columnId": "OrderAntal",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Order_WithOrg",
+              "tableType": "Table",
+              "friendlyName": "fact_Order_WithOrg",
+              "qualifiedObjectName": "dw.fact_Order_WithOrg"
+            }
+          }
+        },
+        {
+          "id": "Order Belopp",
+          "name": "Order Belopp",
+          "uniqueName": "[Measures].[Order Belopp]",
+          "description": "Periodens utfall på huvudbokens balanskonton",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Order",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_Order_WithOrg",
+              "columnId": "OrderBelopp",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Order_WithOrg",
+              "tableType": "Table",
+              "friendlyName": "fact_Order_WithOrg",
+              "qualifiedObjectName": "dw.fact_Order_WithOrg"
+            }
+          }
+        },
+        {
+          "id": "Order Emballagevikt",
+          "name": "Order Emballagevikt",
+          "uniqueName": "[Measures].[Order Emballagevikt]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Order",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_Order_WithOrg",
+              "columnId": "OrderEmballagevikt",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Order_WithOrg",
+              "tableType": "Table",
+              "friendlyName": "fact_Order_WithOrg",
+              "qualifiedObjectName": "dw.fact_Order_WithOrg"
+            }
+          }
+        },
+        {
+          "id": "Order Kostnad",
+          "name": "Order Kostnad",
+          "uniqueName": "[Measures].[Order Kostnad]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Order",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_Order_WithOrg",
+              "columnId": "OrderKostnad",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Order_WithOrg",
+              "tableType": "Table",
+              "friendlyName": "fact_Order_WithOrg",
+              "qualifiedObjectName": "dw.fact_Order_WithOrg"
+            }
+          }
+        },
+        {
+          "id": "Order Nettovikt",
+          "name": "Order Nettovikt",
+          "uniqueName": "[Measures].[Order Nettovikt]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Order",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_Order_WithOrg",
+              "columnId": "OrderNettovikt",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Order_WithOrg",
+              "tableType": "Table",
+              "friendlyName": "fact_Order_WithOrg",
+              "qualifiedObjectName": "dw.fact_Order_WithOrg"
+            }
+          }
+        },
+        {
+          "id": "Order Rabatt",
+          "name": "Order Rabatt",
+          "uniqueName": "[Measures].[Order Rabatt]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Order",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_Order_WithOrg",
+              "columnId": "OrderRabatt",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Order_WithOrg",
+              "tableType": "Table",
+              "friendlyName": "fact_Order_WithOrg",
+              "qualifiedObjectName": "dw.fact_Order_WithOrg"
+            }
+          }
+        },
+        {
+          "id": "Order Volym",
+          "name": "Order Volym",
+          "uniqueName": "[Measures].[Order Volym]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Order",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_Order_WithOrg",
+              "columnId": "OrderVolym",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Order_WithOrg",
+              "tableType": "Table",
+              "friendlyName": "fact_Order_WithOrg",
+              "qualifiedObjectName": "dw.fact_Order_WithOrg"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

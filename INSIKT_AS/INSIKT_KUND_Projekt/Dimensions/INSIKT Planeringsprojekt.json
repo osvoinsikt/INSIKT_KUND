@@ -1,0 +1,83 @@
+{
+  "id": "INSIKT Planeringsprojekt",
+  "name": "INSIKT Planeringsprojekt",
+  "description": "",
+  "type": "Regular",
+  "storageMode": "Molap",
+  "unknownMember": "None",
+  "unknownMemberName": "Unknown",
+  "attributes": [
+    {
+      "id": "FCProjectID",
+      "name": "FCProjectID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Key",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": true,
+      "orderBy": "Name",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dw_dim_INSIKTPlaneringsProjekt",
+            "columnId": "FCProjectID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_INSIKTPlaneringsProjekt",
+            "tableType": "View",
+            "friendlyName": "dim_INSIKTPlaneringsProjekt",
+            "qualifiedObjectName": "dw.dim_INSIKTPlaneringsProjekt"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dw_dim_INSIKTPlaneringsProjekt",
+          "columnId": "Name",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_INSIKTPlaneringsProjekt",
+          "tableType": "View",
+          "friendlyName": "dim_INSIKTPlaneringsProjekt",
+          "qualifiedObjectName": "dw.dim_INSIKTPlaneringsProjekt"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    }
+  ],
+  "hierarchies": [
+    {
+      "id": "Hierarchy",
+      "name": "Lista",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Alla projekt",
+      "visible": true,
+      "levels": [
+        {
+          "id": "FCProjectID",
+          "name": "Projekt",
+          "ordinal": 0,
+          "sourceAttributeId": "FCProjectID",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "id": "INSIKT_DW",
+  "name": "INSIKT_DW",
+  "description": "",
+  "impersonationMode": "ImpersonateAccount",
+  "connectionString": "Provider=SQLOLEDB.1;Data Source=base-template;Integrated Security=SSPI;Initial Catalog=INSIKT_KUND_DW"
+}

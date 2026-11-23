@@ -1,0 +1,959 @@
+{
+  "id": "Planeringsversion",
+  "name": "Planeringsversion",
+  "description": "",
+  "type": "Regular",
+  "storageMode": "Molap",
+  "unknownMember": "None",
+  "unknownMemberName": "Unknown",
+  "attributes": [
+    {
+      "id": "Attribute1",
+      "name": "Attribute1",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "WChar",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_PlanningVersion",
+            "columnId": "Attribute1",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_PlanningVersion",
+            "tableType": "Table",
+            "friendlyName": "dim_PlanningVersion",
+            "qualifiedObjectName": "dw.dim_PlanningVersion"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_PlanningVersion",
+          "columnId": "Attribute1",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_PlanningVersion",
+          "tableType": "Table",
+          "friendlyName": "dim_PlanningVersion",
+          "qualifiedObjectName": "dw.dim_PlanningVersion"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Attribute2",
+      "name": "Attribute2",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "WChar",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_PlanningVersion",
+            "columnId": "Attribute2",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_PlanningVersion",
+            "tableType": "Table",
+            "friendlyName": "dim_PlanningVersion",
+            "qualifiedObjectName": "dw.dim_PlanningVersion"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_PlanningVersion",
+          "columnId": "Attribute2",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_PlanningVersion",
+          "tableType": "Table",
+          "friendlyName": "dim_PlanningVersion",
+          "qualifiedObjectName": "dw.dim_PlanningVersion"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Attribute3",
+      "name": "Attribute3",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "WChar",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_PlanningVersion",
+            "columnId": "Attribute3",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_PlanningVersion",
+            "tableType": "Table",
+            "friendlyName": "dim_PlanningVersion",
+            "qualifiedObjectName": "dw.dim_PlanningVersion"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_PlanningVersion",
+          "columnId": "Attribute3",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_PlanningVersion",
+          "tableType": "Table",
+          "friendlyName": "dim_PlanningVersion",
+          "qualifiedObjectName": "dw.dim_PlanningVersion"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "FC Version Type ID",
+      "name": "FC Version Type ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "WChar",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_PlanningVersion",
+            "columnId": "FCVersionType_Name",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_PlanningVersion",
+            "tableType": "Table",
+            "friendlyName": "dim_PlanningVersion",
+            "qualifiedObjectName": "dw.dim_PlanningVersion"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_PlanningVersion",
+          "columnId": "FCVersionType_Name",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_PlanningVersion",
+          "tableType": "Table",
+          "friendlyName": "dim_PlanningVersion",
+          "qualifiedObjectName": "dw.dim_PlanningVersion"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "FC Version Type ID Filter",
+      "name": "FC Version Type ID Filter",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_PlanningVersion",
+            "columnId": "FCVersionType_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_PlanningVersion",
+            "tableType": "Table",
+            "friendlyName": "dim_PlanningVersion",
+            "qualifiedObjectName": "dw.dim_PlanningVersion"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_PlanningVersion",
+          "columnId": "FCVersionType_ID",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_PlanningVersion",
+          "tableType": "Table",
+          "friendlyName": "dim_PlanningVersion",
+          "qualifiedObjectName": "dw.dim_PlanningVersion"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Fiscal Year",
+      "name": "Fiscal Year",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_PlanningVersion",
+            "columnId": "FiscalYear",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_PlanningVersion",
+            "tableType": "Table",
+            "friendlyName": "dim_PlanningVersion",
+            "qualifiedObjectName": "dw.dim_PlanningVersion"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_PlanningVersion",
+          "columnId": "FiscalYear",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_PlanningVersion",
+          "tableType": "Table",
+          "friendlyName": "dim_PlanningVersion",
+          "qualifiedObjectName": "dw.dim_PlanningVersion"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Insikt Time to Ack Period Offset",
+      "name": "Insikt Time to Ack Period Offset",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_PlanningVersion",
+            "columnId": "InsiktTimeToAckPeriodOffset",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_PlanningVersion",
+            "tableType": "Table",
+            "friendlyName": "dim_PlanningVersion",
+            "qualifiedObjectName": "dw.dim_PlanningVersion"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_PlanningVersion",
+          "columnId": "InsiktTimeToAckPeriodOffset",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_PlanningVersion",
+          "tableType": "Table",
+          "friendlyName": "dim_PlanningVersion",
+          "qualifiedObjectName": "dw.dim_PlanningVersion"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Period Month",
+      "name": "Period Month",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_PlanningVersion",
+            "columnId": "PeriodMonth",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_PlanningVersion",
+            "tableType": "Table",
+            "friendlyName": "dim_PlanningVersion",
+            "qualifiedObjectName": "dw.dim_PlanningVersion"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_PlanningVersion",
+          "columnId": "PeriodMonth",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_PlanningVersion",
+          "tableType": "Table",
+          "friendlyName": "dim_PlanningVersion",
+          "qualifiedObjectName": "dw.dim_PlanningVersion"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Planning Version ID Filter",
+      "name": "Planning Version ID Filter",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_PlanningVersion",
+            "columnId": "FCVersionType_ID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_PlanningVersion",
+            "tableType": "Table",
+            "friendlyName": "dim_PlanningVersion",
+            "qualifiedObjectName": "dw.dim_PlanningVersion"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_PlanningVersion",
+          "columnId": "FCVersionType_Name",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_PlanningVersion",
+          "tableType": "Table",
+          "friendlyName": "dim_PlanningVersion",
+          "qualifiedObjectName": "dw.dim_PlanningVersion"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "FC Version Type ID Filter",
+          "relatedAttributeName": "FC Version Type ID Filter",
+          "relationshipType": "Rigid",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "PlanningVersionID",
+      "name": "PlanningVersionID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Key",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Name",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_PlanningVersion",
+            "columnId": "PlanningVersionID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_PlanningVersion",
+            "tableType": "Table",
+            "friendlyName": "dim_PlanningVersion",
+            "qualifiedObjectName": "dw.dim_PlanningVersion"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_PlanningVersion",
+          "columnId": "Name",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_PlanningVersion",
+          "tableType": "Table",
+          "friendlyName": "dim_PlanningVersion",
+          "qualifiedObjectName": "dw.dim_PlanningVersion"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Previous Budget ID",
+          "relatedAttributeName": "Previous Budget ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Prev Previous Budget ID",
+          "relatedAttributeName": "Prev Previous Budget ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Period Month",
+          "relatedAttributeName": "Period Month",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Previous Prognos To Current Month Diff",
+          "relatedAttributeName": "Previous Prognos To Current Month Diff",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Previous Prognos ID",
+          "relatedAttributeName": "Previous Prognos ID",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Previous Budget To Current Month Diff",
+          "relatedAttributeName": "Previous Budget To Current Month Diff",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Insikt Time to Ack Period Offset",
+          "relatedAttributeName": "Insikt Time to Ack Period Offset",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Attribute1",
+          "relatedAttributeName": "Attribute1",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "FC Version Type ID",
+          "relatedAttributeName": "FC Version Type ID",
+          "relationshipType": "Rigid",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Planning Version ID Filter",
+          "relatedAttributeName": "Planning Version ID Filter",
+          "relationshipType": "Rigid",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Fiscal Year",
+          "relatedAttributeName": "Fiscal Year",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Attribute3",
+          "relatedAttributeName": "Attribute3",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Attribute2",
+          "relatedAttributeName": "Attribute2",
+          "relationshipType": "Flexible",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Prev Previous Budget ID",
+      "name": "Prev Previous Budget ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_PlanningVersion",
+            "columnId": "PrevPreviousBudgetID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_PlanningVersion",
+            "tableType": "Table",
+            "friendlyName": "dim_PlanningVersion",
+            "qualifiedObjectName": "dw.dim_PlanningVersion"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_PlanningVersion",
+          "columnId": "PrevPreviousBudgetID",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_PlanningVersion",
+          "tableType": "Table",
+          "friendlyName": "dim_PlanningVersion",
+          "qualifiedObjectName": "dw.dim_PlanningVersion"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Previous Budget ID",
+      "name": "Previous Budget ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_PlanningVersion",
+            "columnId": "PreviousBudgetID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_PlanningVersion",
+            "tableType": "Table",
+            "friendlyName": "dim_PlanningVersion",
+            "qualifiedObjectName": "dw.dim_PlanningVersion"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_PlanningVersion",
+          "columnId": "PreviousBudgetID",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_PlanningVersion",
+          "tableType": "Table",
+          "friendlyName": "dim_PlanningVersion",
+          "qualifiedObjectName": "dw.dim_PlanningVersion"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Previous Budget To Current Month Diff",
+      "name": "Previous Budget To Current Month Diff",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_PlanningVersion",
+            "columnId": "PreviousBudgetToCurrentMonthDiff",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_PlanningVersion",
+            "tableType": "Table",
+            "friendlyName": "dim_PlanningVersion",
+            "qualifiedObjectName": "dw.dim_PlanningVersion"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_PlanningVersion",
+          "columnId": "PreviousBudgetToCurrentMonthDiff",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_PlanningVersion",
+          "tableType": "Table",
+          "friendlyName": "dim_PlanningVersion",
+          "qualifiedObjectName": "dw.dim_PlanningVersion"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Previous Prognos ID",
+      "name": "Previous Prognos ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_PlanningVersion",
+            "columnId": "PreviousPrognosID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_PlanningVersion",
+            "tableType": "Table",
+            "friendlyName": "dim_PlanningVersion",
+            "qualifiedObjectName": "dw.dim_PlanningVersion"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_PlanningVersion",
+          "columnId": "PreviousPrognosID",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_PlanningVersion",
+          "tableType": "Table",
+          "friendlyName": "dim_PlanningVersion",
+          "qualifiedObjectName": "dw.dim_PlanningVersion"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Previous Prognos To Current Month Diff",
+      "name": "Previous Prognos To Current Month Diff",
+      "description": "",
+      "type": "Regular",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_PlanningVersion",
+            "columnId": "PreviousPrognosToCurrentMonthDiff",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_PlanningVersion",
+            "tableType": "Table",
+            "friendlyName": "dim_PlanningVersion",
+            "qualifiedObjectName": "dw.dim_PlanningVersion"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_PlanningVersion",
+          "columnId": "PreviousPrognosToCurrentMonthDiff",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_PlanningVersion",
+          "tableType": "Table",
+          "friendlyName": "dim_PlanningVersion",
+          "qualifiedObjectName": "dw.dim_PlanningVersion"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    }
+  ],
+  "hierarchies": [
+    {
+      "id": "Filter",
+      "name": "Filter",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Alla",
+      "visible": true,
+      "levels": [
+        {
+          "id": "Planning Version Type ID Filter",
+          "name": "Planning Version Type ID Filter",
+          "ordinal": 0,
+          "sourceAttributeId": "Planning Version ID Filter",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        },
+        {
+          "id": "FC Version Type ID Filter",
+          "name": "FC Version Type ID Filter",
+          "ordinal": 0,
+          "sourceAttributeId": "FC Version Type ID Filter",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        }
+      ]
+    },
+    {
+      "id": "Lista",
+      "name": "Lista",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Alla",
+      "visible": true,
+      "levels": [
+        {
+          "id": "Planeringsversion",
+          "name": "Planeringsversion",
+          "ordinal": 0,
+          "sourceAttributeId": "PlanningVersionID",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        }
+      ]
+    },
+    {
+      "id": "Typ",
+      "name": "Typ",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Alla",
+      "visible": true,
+      "levels": [
+        {
+          "id": "Planningversion",
+          "name": "Planningversion",
+          "ordinal": 0,
+          "sourceAttributeId": "PlanningVersionID",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        },
+        {
+          "id": "Per Typ",
+          "name": "Per Typ",
+          "ordinal": 0,
+          "sourceAttributeId": "FC Version Type ID Filter",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        }
+      ]
+    }
+  ]
+}

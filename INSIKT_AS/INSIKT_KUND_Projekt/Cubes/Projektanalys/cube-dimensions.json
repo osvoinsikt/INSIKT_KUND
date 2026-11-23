@@ -1,0 +1,42 @@
+[
+  {
+    "id": "Datum",
+    "name": "Datum",
+    "sourceDimensionId": "Datum",
+    "sourceDimensionName": "Datum",
+    "visible": true,
+    "description": ""
+  },
+  {
+    "id": "Datum Calc",
+    "name": "Datum Calc",
+    "sourceDimensionId": "Datum Calc",
+    "sourceDimensionName": "Datum Calc",
+    "visible": true,
+    "description": ""
+  },
+  {
+    "id": "INSIKT Projekt",
+    "name": "INSIKT Projekt",
+    "sourceDimensionId": "INSIKT Projekt",
+    "sourceDimensionName": "INSIKT Projekt",
+    "visible": true,
+    "description": ""
+  },
+  {
+    "id": "Konto",
+    "name": "Konto",
+    "sourceDimensionId": "Konto",
+    "sourceDimensionName": "Konto",
+    "visible": true,
+    "description": ""
+  },
+  {
+    "id": "Planeringsversion",
+    "name": "Planeringsversion",
+    "sourceDimensionId": "Planeringsversion",
+    "sourceDimensionName": "Planeringsversion",
+    "visible": true,
+    "description": ""
+  }
+]

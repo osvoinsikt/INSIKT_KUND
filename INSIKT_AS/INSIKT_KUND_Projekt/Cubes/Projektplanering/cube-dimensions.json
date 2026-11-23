@@ -1,0 +1,42 @@
+[
+  {
+    "id": "Datum",
+    "name": "Datum",
+    "sourceDimensionId": "Datum",
+    "sourceDimensionName": "Datum",
+    "visible": true,
+    "description": ""
+  },
+  {
+    "id": "INSIKT Planeringsprojekt",
+    "name": "INSIKT Planeringsprojekt",
+    "sourceDimensionId": "INSIKT Planeringsprojekt",
+    "sourceDimensionName": "INSIKT Planeringsprojekt",
+    "visible": true,
+    "description": ""
+  },
+  {
+    "id": "Konto",
+    "name": "Konto",
+    "sourceDimensionId": "Konto",
+    "sourceDimensionName": "Konto",
+    "visible": true,
+    "description": ""
+  },
+  {
+    "id": "Planeringsperiod",
+    "name": "Planeringsperiod",
+    "sourceDimensionId": "Planeringsperiod",
+    "sourceDimensionName": "Planeringsperiod",
+    "visible": true,
+    "description": ""
+  },
+  {
+    "id": "Planeringsversion",
+    "name": "Planeringsversion",
+    "sourceDimensionId": "Planeringsversion",
+    "sourceDimensionName": "Planeringsversion",
+    "visible": true,
+    "description": ""
+  }
+]

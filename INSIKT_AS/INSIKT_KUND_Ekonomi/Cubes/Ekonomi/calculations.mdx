@@ -1,0 +1,3637 @@
+/*
+The CALCULATE command controls the aggregation of leaf cells in the cube.
+If the CALCULATE command is deleted or modified, the data within the cube is affected.
+You should edit this command only if you manually specify how the cube is aggregated.
+*/
+CALCULATE;
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Generella Planeringsversionsberäkningar
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+--
+-- Föregående budget
+--
+CREATE MEMBER CURRENTCUBE.[Planeringsversion Calc].[Pv Calc].[Prev Budget]
+ AS 
+	case 
+	when [Planeringsversion].[Lista].properties("Previous Budget ID") = "0"
+	then 
+		null
+	else
+	(
+		StrToMember
+		(
+			"[Planeringsversion].[Lista].[Planeringsversion].&["
+			+ [Planeringsversion].[Lista].properties("Previous Budget ID")
+			+ ']'
+		)
+		,[Planeringsversion Calc].[Pv Calc].[All]
+	)
+	end
+;  
+CREATE MEMBER CURRENTCUBE.[Planeringsversion Calc].[Pv Calc].[Prev Budget DTDAction]
+ AS 
+   null;  
+
+
+
+--
+-- Föregående prognos
+--
+CREATE MEMBER CURRENTCUBE.[Planeringsversion Calc].[Pv Calc].[Prev Prognos]
+ AS 
+	case 
+	when [Planeringsversion].[Lista].properties("Previous Prognos ID") = "0"
+	then 
+		null
+	else
+	(
+		StrToMember
+		(
+			"[Planeringsversion].[Lista].[Planeringsversion].&["
+			+ [Planeringsversion].[Lista].properties("Previous Prognos ID")
+			+ ']'
+		)   
+		,[Planeringsversion Calc].[Pv Calc].[All]
+	)
+	end
+;  
+CREATE MEMBER CURRENTCUBE.[Planeringsversion Calc].[Pv Calc].[Prev Prognos DTDAction]
+ AS 
+   null;  
+
+
+create hidden dynamic set CURRENTCUBE.[PlanningVersionYTDMonths] as
+{
+    iif
+    (
+        [Planeringsversion].[Lista].currentmember.level is [Planeringsversion].[Lista].[Planeringsversion]
+        ,
+	    PeriodsToDate([Datum].[Redovisningsår-Period].[Redovisningsår], StrToMember("[Datum].[Redovisningsår-Period].[Period].&[" +  [Planeringsversion].[Lista].currentmember.properties("Period Month") + "]"))
+        ,
+        {}
+    )
+}
+;
+
+--#########################################################################################################
+-- Generella tidsberäkningar
+--#########################################################################################################
+--
+-- Hel månad trots val på lägre nivå (full Month)
+--
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[Month]
+ AS 
+   null;  
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[Month DTDAction]
+ AS 
+   null;  
+
+--
+-- Hel månad föregående år trots val på lägre nivå (full Month Previous Year)
+--
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[Month PY]
+ AS 
+   null;  
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[Month PY DTDAction]
+ AS 
+   null;  
+
+
+--
+-- Motsvarande period föregående år (Previous Year)
+--
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[PY]
+ AS 
+   null;  
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[PY DTDAction]
+ AS 
+   null;  
+
+
+--
+-- Motsvarande period för två år sedan (Previous Previous Year)
+--
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[PPY]
+ AS 
+   null;  
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[PPY DTDAction]
+ AS 
+   null;  
+
+
+--
+-- Motsvarande period nästa år (Next Year)
+--
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[NY]
+ AS 
+   null;  
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[NY DTDAction]
+ AS 
+   null;  
+
+
+
+
+
+--
+-- Hela året trots val på lägre nivå (Full Year)
+--
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[FY]
+ AS 
+   null;  
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[FY DTDAction]
+ AS 
+   null;  
+
+
+
+
+--
+-- Hela föregående året trots val på lägre nivå (Full Year Previous Year)
+--
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[FY PY]
+ AS 
+   null;  
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[FY PY DTDAction]
+ AS 
+   null;  
+
+
+--
+-- Hela året två år sedan trots val på lägre nivå (Full Year Previous Previous Year)
+--
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[FY PPY]
+ AS 
+   null;  
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[FY PPY DTDAction]
+ AS 
+   null;  
+
+
+--
+-- Rullande 12 - RR12
+--
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[RR12]
+AS null;  
+
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[RR12 DTDAction]
+AS null;
+
+
+
+--
+-- Ack till och med vald period (Year To Date)
+--
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[YTD]
+ AS 
+   null;  
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[YTD DTDAction]
+ AS 
+   null;  
+
+
+
+
+--
+-- Ack till och med motsvarande period föregående år (Year To Date Previous Year)
+--
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[YTD PY]
+ AS 
+   null;  
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[YTD PY DTDAction]
+ AS 
+   null;  
+
+
+
+--
+-- Föregående period (Previous Period)
+--
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[PP]
+ AS 
+   null;  
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[PP DTDAction]
+ AS 
+   null;  
+
+
+--
+-- Ack från tidernas begynnelse (Null To Date)
+--
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[NTD]
+ AS 
+   [Datum Calc].[Date Calc].[All];  
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[NTD DTDAction]
+ AS 
+   "Datum:{}";  
+
+
+
+
+--
+-- Ack
+--
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[PV YTD]
+ AS 
+sum
+(
+    PeriodsToDate
+    (
+        [Datum].[Redovisningsår-Period].[Redovisningsår]
+        ,
+        StrToMember
+        (
+            "[Datum].[Redovisningsår-Period].[Period].&["
+            + [Planeringsversion].[Lista].properties("Period Month")
+            + ']'
+        )        
+    )  
+    ,
+    [Datum Calc].[Date Calc].[All]
+)       
+;  
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[PV YTD DTDAction]
+ AS 
+   null;
+
+--
+-- R12
+--
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[PV R12]
+AS 
+sum
+(
+    PARALLELPERIOD(
+        [Datum].[Redovisningsår-Period].[Redovisningsår], 1, 
+        StrToMember
+        (
+            "[Datum].[Redovisningsår-Period].[Period].&["
+            + [Planeringsversion].[Lista].properties("Period Month")
+            + ']'
+        ).Lead(1)
+    )
+    :
+       StrToMember
+       (
+            "[Datum].[Redovisningsår-Period].[Period].&["
+            + [Planeringsversion].[Lista].properties("Period Month")
+            + ']'
+       )        
+    ,
+    [Datum Calc].[Date Calc].[All]
+)       
+; 
+
+--
+-- Omvänd Ack. Helår - Ack
+--
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[PV Rev YTD]
+ AS 
+sum
+(
+    {
+        StrToMember
+        (
+            "[Datum].[Redovisningsår-Period].[Period].&["
+            + [Planeringsversion].[Lista].properties("Period Month")
+            + ']'
+        ).nextmember
+        :      
+        StrToMember
+        (
+            "[Datum].[Redovisningsår-Period].[Period].&["
+            + [Planeringsversion].[Lista].properties("Period Month")
+            + ']'
+        ).lastsibling
+    }
+    ,
+    [Datum Calc].[Date Calc].[All]
+)
+;  
+CREATE MEMBER CURRENTCUBE.[Datum Calc].[Date Calc].[PV Rev YTD DTDAction]
+ AS 
+   null;  
+
+
+
+--
+-- Scope som träffar om val gjorts på någon av nivåerna År, Halvår, Kvartal, Månad eller Dag.
+--
+scope(descendants([Datum].[År-Halvår-Kvartal-Månad].[Alla datum],[Datum].[År-Halvår-Kvartal-Månad].[År], SELF_AND_AFTER));  
+
+
+
+    --
+    -- Hel månad trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[Month]);  
+        this = 
+            (                    
+                ancestor([Datum].[År-Halvår-Kvartal-Månad].currentmember, [Datum].[År-Halvår-Kvartal-Månad].[Månad])                
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[Month DTDAction]);  
+        this = "Datum:" +  settostr({ancestor([Datum].[År-Halvår-Kvartal-Månad].currentmember, [Datum].[År-Halvår-Kvartal-Månad].[Månad])});  
+    end scope;  
+
+
+    --
+    -- Hel månad föregående år trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[Month PY]);  
+        this = 
+            (                                
+                ancestor(PARALLELPERIOD( [Datum].[År-Halvår-Kvartal-Månad].[År], 1 ), [Datum].[År-Halvår-Kvartal-Månad].[Månad])
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[Month PY DTDAction]);  
+        this = "Datum:" +  settostr({ancestor(PARALLELPERIOD( [Datum].[År-Halvår-Kvartal-Månad].[År], 1 ), [Datum].[År-Halvår-Kvartal-Månad].[Månad])});  
+    end scope;  
+
+
+    --
+    -- Motsvarande period föregående år
+    --
+    scope ([Datum Calc].[Date Calc].[PY]);  
+        this = 
+            (
+                PARALLELPERIOD( [Datum].[År-Halvår-Kvartal-Månad].[År], 1 )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[PY DTDAction]);  
+        this = "Datum:" +  settostr({PARALLELPERIOD( [Datum].[År-Halvår-Kvartal-Månad].[År], 1 )});  
+    end scope;  
+
+
+    --
+    -- Motsvarande period för två år sedan
+    --
+    scope ([Datum Calc].[Date Calc].[PPY]);  
+        this = 
+            (
+                PARALLELPERIOD( [Datum].[År-Halvår-Kvartal-Månad].[År], 2 )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[PPY DTDAction]);  
+        this = "Datum:" +  settostr({PARALLELPERIOD( [Datum].[År-Halvår-Kvartal-Månad].[År], 2 )});  
+    end scope;  
+
+
+    --
+    -- Motsvarande period nästa år
+    --
+    scope ([Datum Calc].[Date Calc].[NY]);  
+        this = 
+            (
+                PARALLELPERIOD( [Datum].[År-Halvår-Kvartal-Månad].[År], -1 )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[NY DTDAction]);  
+        this = "Datum:" +  settostr({PARALLELPERIOD( [Datum].[År-Halvår-Kvartal-Månad].[År], -1 )});  
+    end scope;  
+
+
+
+
+    --
+    -- Hela året trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[FY]);  
+        this = 
+            (                    
+                ancestor([Datum].[År-Halvår-Kvartal-Månad].currentmember, [Datum].[År-Halvår-Kvartal-Månad].[År])
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[FY DTDAction]);  
+        this = "Datum:" +  settostr({ancestor([Datum].[År-Halvår-Kvartal-Månad].currentmember, [Datum].[År-Halvår-Kvartal-Månad].[År])});  
+    end scope;  
+
+
+    --
+    -- Hela föregående året trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[FY PY]);  
+        this = 
+            (                                
+                ancestor(PARALLELPERIOD( [Datum].[År-Halvår-Kvartal-Månad].[År], 1 ), [Datum].[År-Halvår-Kvartal-Månad].[År])
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[FY PY DTDAction]);  
+        this = "Datum:" +  settostr({ancestor(PARALLELPERIOD( [Datum].[År-Halvår-Kvartal-Månad].[År], 1 ), [Datum].[År-Halvår-Kvartal-Månad].[År])});  
+    end scope;  
+
+
+    --
+    -- Hela året två år sedan trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[FY PPY]);  
+        this = 
+            (                                
+                ancestor(PARALLELPERIOD( [Datum].[År-Halvår-Kvartal-Månad].[År], 2 ), [Datum].[År-Halvår-Kvartal-Månad].[År])
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[FY PPY DTDAction]);  
+        this = "Datum:" +  settostr({ancestor(PARALLELPERIOD( [Datum].[År-Halvår-Kvartal-Månad].[År], 2 ), [Datum].[År-Halvår-Kvartal-Månad].[År])});  
+    end scope;  
+
+	--
+    -- Rullande 12 månader bakåt
+    --
+    scope ([Datum Calc].[Date Calc].[RR12]);  
+        this = 
+            sum
+            (
+                {
+                    ParallelPeriod([Datum].[År-Halvår-Kvartal-Månad].[Månad], 11, [Datum].[År-Halvår-Kvartal-Månad].currentmember)
+                    :
+                    [Datum].[År-Halvår-Kvartal-Månad].currentmember
+                }
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[RR12 DTDAction]);  
+        this = "Datum:" +  settostr( {
+                    ParallelPeriod([Datum].[År-Halvår-Kvartal-Månad].[Månad], 11, [Datum].[År-Halvår-Kvartal-Månad].currentmember)
+                    :[Datum].[År-Halvår-Kvartal-Månad].currentmember
+                });  
+    end scope;  
+
+    scope ([Datum Calc].[Date Calc].[RR12], [Datum].[År-Halvår-Kvartal-Månad].[År]);  
+        this = 
+            
+            (
+                [Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[RR12 DTDAction], [Datum].[År-Halvår-Kvartal-Månad].[År]);  
+        this = "Datum:" +  settostr( { [Datum].[År-Halvår-Kvartal-Månad].currentmember });  
+    end scope;
+
+    scope ([Datum Calc].[Date Calc].[RR12],[Datum].[År-Halvår-Kvartal-Månad].[Halvår]);  
+        this = 
+            sum
+            (
+                {
+                    ParallelPeriod([Datum].[År-Halvår-Kvartal-Månad].[Halvår], 1, [Datum].[År-Halvår-Kvartal-Månad].currentmember)
+                    --,
+                    :
+                    [Datum].[År-Halvår-Kvartal-Månad].currentmember
+                }
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[RR12 DTDAction], [Datum].[År-Halvår-Kvartal-Månad].[Halvår]);  
+        this = "Datum:" +  settostr( {
+                    ParallelPeriod([Datum].[År-Halvår-Kvartal-Månad].[Halvår], 1, [Datum].[År-Halvår-Kvartal-Månad].currentmember)
+                    :[Datum].[År-Halvår-Kvartal-Månad].currentmember
+                });  
+    end scope; 
+
+    
+    scope ([Datum Calc].[Date Calc].[RR12], [Datum].[År-Halvår-Kvartal-Månad].[Kvartal]);  
+        this = 
+            sum
+            (
+                {
+                    ParallelPeriod([Datum].[År-Halvår-Kvartal-Månad].[Kvartal], 3, [Datum].[År-Halvår-Kvartal-Månad].currentmember)
+                    --,
+                    :
+                    [Datum].[År-Halvår-Kvartal-Månad].currentmember
+                }
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[RR12 DTDAction], [Datum].[År-Halvår-Kvartal-Månad].[Kvartal]);  
+        this = "Datum:" +  settostr( {
+                    ParallelPeriod([Datum].[År-Halvår-Kvartal-Månad].[Kvartal], 3, [Datum].[År-Halvår-Kvartal-Månad].currentmember)
+                    :[Datum].[År-Halvår-Kvartal-Månad].currentmember
+                });  
+    end scope; 
+
+
+    --
+    -- Ack till och med vald period
+    --
+    scope ([Datum Calc].[Date Calc].[YTD]);  
+        this = 
+            sum
+            (
+                YTD( [Datum].[År-Halvår-Kvartal-Månad].currentmember )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[YTD DTDAction]);  
+        this = "Datum:" +  settostr({YTD( [Datum].[År-Halvår-Kvartal-Månad].currentmember )});  
+    end scope;  
+
+
+
+    --
+    -- Ack till och med motsvarande period föregående år
+    --
+    scope ([Datum Calc].[Date Calc].[YTD PY]);  
+        this = 
+            sum
+            (
+                YTD( PARALLELPERIOD( [Datum].[År-Halvår-Kvartal-Månad].[År], 1) )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[YTD PY DTDAction]);  
+        this = "Datum:" +  settostr({YTD( PARALLELPERIOD( [Datum].[År-Halvår-Kvartal-Månad].[År], 1))});  
+    end scope;  
+
+    
+    --
+    --Föregående period
+    --
+    scope ([Datum Calc].[Date Calc].[PP]);  
+        this = 
+            (
+                [Datum].[År-Halvår-Kvartal-Månad].currentmember.PrevMember
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[PP DTDAction]);  
+        this = "Datum:" +  settostr({[Datum].[År-Halvår-Kvartal-Månad].currentmember.PrevMember});  
+    end scope;  
+
+
+    
+    --
+    -- Ack från tidernas begynnelse (Null To Date)
+    --
+    scope ([Datum Calc].[Date Calc].[NTD]);  
+        this =
+            sum
+            (
+                {null:[Datum].[År-Halvår-Kvartal-Månad].currentmember}
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[NTD DTDAction]);  
+        this = "Datum:" +  settostr({null:[Datum].[År-Halvår-Kvartal-Månad].currentmember});  
+    end scope;  
+end scope;  
+
+
+
+--
+-- Scope som träffar om val gjorts på nivå tertial
+--
+scope([Datum].[År-Tertial-Månad].[Tertial]);  
+    --
+    -- Motsvarande period föregående år
+    --
+    scope ([Datum Calc].[Date Calc].[PY]);  
+        this = 
+            (
+                PARALLELPERIOD( [Datum].[År-Tertial-Månad].[År], 1 )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[PY DTDAction]);  
+        this = "Datum:" +  settostr({PARALLELPERIOD( [Datum].[År-Tertial-Månad].[År], 1 )});  
+    end scope;  
+
+
+    --
+    -- Motsvarande period för två år sedan
+    --
+    scope ([Datum Calc].[Date Calc].[PPY]);  
+        this = 
+            (
+                PARALLELPERIOD( [Datum].[År-Tertial-Månad].[År], 2 )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[PPY DTDAction]);  
+        this = "Datum:" +  settostr({PARALLELPERIOD( [Datum].[År-Tertial-Månad].[År], 2 )});  
+    end scope;  
+
+
+    --
+    -- Motsvarande period nästa år
+    --
+    scope ([Datum Calc].[Date Calc].[NY]);  
+        this = 
+            (
+                PARALLELPERIOD( [Datum].[År-Tertial-Månad].[År], -1 )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[NY DTDAction]);  
+        this = "Datum:" +  settostr({PARALLELPERIOD( [Datum].[År-Tertial-Månad].[År], -1 )});  
+    end scope;  
+
+
+
+
+    --
+    -- Hela året trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[FY]);  
+        this = 
+            (                    
+                ancestor([Datum].[År-Tertial-Månad].currentmember, [Datum].[År-Tertial-Månad].[År])
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[FY DTDAction]);  
+        this = "Datum:" +  settostr({ancestor([Datum].[År-Tertial-Månad].currentmember, [Datum].[År-Tertial-Månad].[År])});  
+    end scope;  
+
+
+    --
+    -- Hela föregående året trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[FY PY]);  
+        this = 
+            (                                
+                ancestor(PARALLELPERIOD( [Datum].[År-Tertial-Månad].[År], 1 ), [Datum].[År-Tertial-Månad].[År])
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[FY PY DTDAction]);  
+        this = "Datum:" +  settostr({ancestor(PARALLELPERIOD( [Datum].[År-Tertial-Månad].[År], 1 ), [Datum].[År-Tertial-Månad].[År])});  
+    end scope;  
+
+
+	--
+    -- Hela året två år sedan trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[FY PPY]);  
+        this = 
+            (                                
+                ancestor(PARALLELPERIOD( [Datum].[År-Tertial-Månad].[År], 2 ), [Datum].[År-Tertial-Månad].[År])
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[FY PPY DTDAction]);  
+        this = "Datum:" +  settostr({ancestor(PARALLELPERIOD( [Datum].[År-Tertial-Månad].[År], 2 ), [Datum].[År-Tertial-Månad].[År])});  
+    end scope;  
+
+
+	--
+    -- Rullande 12 månader bakåt
+    --
+    scope ([Datum Calc].[Date Calc].[RR12]);  
+        this = 
+            sum
+            (
+                {
+                    ParallelPeriod([Datum].[År-Tertial-Månad].[Tertial], 2, [Datum].[År-Tertial-Månad].currentmember)
+                    :
+                    [Datum].[År-Tertial-Månad].currentmember
+                }
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[RR12 DTDAction]);  
+        this = "Datum:" +  settostr( {
+                    ParallelPeriod([Datum].[År-Tertial-Månad].[Tertial], 2, [Datum].[År-Tertial-Månad].currentmember)
+                    :
+                    [Datum].[År-Tertial-Månad].currentmember
+                });  
+    end scope;  
+
+    --
+    -- Ack till och med vald period
+    --
+    scope ([Datum Calc].[Date Calc].[YTD]);  
+        this = 
+            sum
+            (
+                YTD( [Datum].[År-Tertial-Månad].currentmember )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[YTD DTDAction]);  
+        this = "Datum:" +  settostr({YTD( [Datum].[År-Tertial-Månad].currentmember )});  
+    end scope;  
+
+
+
+    --
+    -- Ack till och med motsvarande period föregående år
+    --
+    scope ([Datum Calc].[Date Calc].[YTD PY]);  
+        this = 
+            sum
+            (
+                YTD( PARALLELPERIOD( [Datum].[År-Tertial-Månad].[År], 1) )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[YTD PY DTDAction]);  
+        this = "Datum:" +  settostr({YTD( PARALLELPERIOD( [Datum].[År-Tertial-Månad].[År], 1))});  
+    end scope;  
+
+    
+    --
+    --Föregående period
+    --
+    scope ([Datum Calc].[Date Calc].[PP]);  
+        this = 
+            (
+                [Datum].[År-Tertial-Månad].currentmember.PrevMember
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[PP DTDAction]);  
+        this = "Datum:" +  settostr({[Datum].[År-Tertial-Månad].currentmember.PrevMember});  
+    end scope;  
+
+
+    
+    --
+    -- Ack från tidernas begynnelse (Null To Date)
+    --
+    scope ([Datum Calc].[Date Calc].[NTD]);  
+        this =
+            sum
+            (
+                {null:[Datum].[År-Tertial-Månad].currentmember}
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[NTD DTDAction]);  
+        this = "Datum:" +  settostr({null:[Datum].[År-Tertial-Månad].currentmember});  
+    end scope;  
+end scope;  
+
+
+
+--
+-- Scope som träffar om val gjorts på någon av nivåerna År för vecka, vecka, Dag för vecka.
+--
+scope(descendants([Datum].[År-Vecka].[Alla datum],[Datum].[År-Vecka].[År], SELF_AND_AFTER));  
+
+    --
+    -- Motsvarande period föregående år
+    --
+    scope ([Datum Calc].[Date Calc].[PY]);  
+        this = 
+            (
+                PARALLELPERIOD( [Datum].[År-Vecka].[År], 1 )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[PY DTDAction]);  
+        this = "Datum:" +  settostr({PARALLELPERIOD( [Datum].[År-Vecka].[År], 1 )});  
+    end scope;  
+
+
+    --
+    -- Motsvarande period för två år sedan
+    --
+    scope ([Datum Calc].[Date Calc].[PPY]);  
+        this = 
+            (
+                PARALLELPERIOD( [Datum].[År-Vecka].[År], 2 )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[PPY DTDAction]);  
+        this = "Datum:" +  settostr({PARALLELPERIOD( [Datum].[År-Vecka].[År], 2 )});  
+    end scope;  
+
+
+    --
+    -- Motsvarande period nästa år
+    --
+    scope ([Datum Calc].[Date Calc].[NY]);  
+        this = 
+            (
+                PARALLELPERIOD( [Datum].[År-Vecka].[År], -1 )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[NY DTDAction]);  
+        this = "Datum:" +  settostr({PARALLELPERIOD( [Datum].[År-Vecka].[År], -1 )});  
+    end scope;  
+
+
+
+
+    --
+    -- Hela året trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[FY]);  
+        this = 
+            (                    
+                ancestor([Datum].[År-Vecka].currentmember, [Datum].[År-Vecka].[År])
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[FY DTDAction]);  
+        this = "Datum:" +  settostr({ancestor([Datum].[År-Vecka].currentmember, [Datum].[År-Vecka].[År])});  
+    end scope;  
+
+
+    --
+    -- Hela föregående året trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[FY PY]);  
+        this = 
+            (                                
+                ancestor(PARALLELPERIOD( [Datum].[År-Vecka].[År], 1 ), [Datum].[År-Vecka].[År])
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[FY PY DTDAction]);  
+        this = "Datum:" +  settostr({ancestor(PARALLELPERIOD( [Datum].[År-Vecka].[År], 1 ), [Datum].[År-Vecka].[År])});  
+    end scope;  
+
+
+	--
+    -- Hela året två år sedan trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[FY PPY]);  
+        this = 
+            (                                
+                ancestor(PARALLELPERIOD( [Datum].[År-Vecka].[År], 2 ), [Datum].[År-Vecka].[År])
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[FY PPY DTDAction]);  
+        this = "Datum:" +  settostr({ancestor(PARALLELPERIOD( [Datum].[År-Vecka].[År], 2 ), [Datum].[År-Vecka].[År])});  
+    end scope;  
+
+	  --
+    -- Rullande 12 månader bakåt
+    --
+    scope ([Datum Calc].[Date Calc].[RR12]);  
+        this = 
+            sum
+            (
+                {
+                    ParallelPeriod( [Datum].[Redovisningsår-Kvartal-Period].[Period], 11, [Datum].[Redovisningsår-Kvartal-Period].currentmember )
+                    :
+                    [Datum].[Redovisningsår-Kvartal-Period].currentmember
+                }
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[RR12 DTDAction]);  
+        this = "Datum:" +  settostr({
+                    ParallelPeriod( [Datum].[Redovisningsår-Kvartal-Period].[Period], 11, [Datum].[Redovisningsår-Kvartal-Period].currentmember )
+                    :
+                    [Datum].[Redovisningsår-Kvartal-Period].currentmember
+                });  
+    end scope; 
+    scope ([Datum Calc].[Date Calc].[RR12], [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår]);  
+        this =             
+            (
+               [Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[RR12 DTDAction], [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår]);  
+        this = "Datum:" +  settostr({
+                    [Datum].[Redovisningsår-Kvartal-Period].currentmember
+                });  
+    end scope;
+
+    scope ([Datum Calc].[Date Calc].[RR12], [Datum].[Redovisningsår-Kvartal-Period].[Kvartal]);
+        this = 
+            sum
+            (
+                {
+                    ParallelPeriod( [Datum].[Redovisningsår-Kvartal-Period].[Kvartal], 3, [Datum].[Redovisningsår-Kvartal-Period].currentmember )
+                    :
+                    [Datum].[Redovisningsår-Kvartal-Period].currentmember
+                }
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[RR12 DTDAction], [Datum].[Redovisningsår-Kvartal-Period].[Kvartal]);  
+        this = "Datum:" +  settostr({
+                    ParallelPeriod( [Datum].[Redovisningsår-Kvartal-Period].[Kvartal], 3, [Datum].[Redovisningsår-Kvartal-Period].currentmember )
+                    :
+                    [Datum].[Redovisningsår-Kvartal-Period].currentmember
+               });  
+    end scope;
+
+
+    --
+    -- Ack till och med vald period
+    --
+    scope ([Datum Calc].[Date Calc].[YTD]);  
+        this = 
+            sum
+            (
+                YTD( [Datum].[År-Vecka].currentmember )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[YTD DTDAction]);  
+        this = "Datum:" +  settostr({YTD( [Datum].[År-Vecka].currentmember )});  
+    end scope;  
+
+
+
+    --
+    -- Ack till och med motsvarande period föregående år
+    --
+    scope ([Datum Calc].[Date Calc].[YTD PY]);  
+        this = 
+            sum
+            (
+                YTD( PARALLELPERIOD( [Datum].[År-Vecka].[År], 1) )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[YTD PY DTDAction]);  
+        this = "Datum:" +  settostr({YTD( PARALLELPERIOD( [Datum].[År-Vecka].[År], 1))});  
+    end scope;  
+
+
+    --
+    --Föregående period
+    --
+    scope ([Datum Calc].[Date Calc].[PP]);  
+        this = 
+            (
+                [Datum].[År-Vecka].currentmember.PrevMember
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[PP DTDAction]);  
+        this = "Datum:" +  settostr({[Datum].[År-Vecka].currentmember.PrevMember});  
+    end scope;  
+
+    --
+    -- Ack från tidernas begynnelse (Null To Date)
+    --
+    scope ([Datum Calc].[Date Calc].[NTD]);  
+        this =
+            sum
+            (
+                {null:[Datum].[År-Vecka].currentmember}
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[NTD DTDAction]);  
+        this = "Datum:" +  settostr({null:[Datum].[År-Vecka].currentmember});  
+    end scope;  
+end scope;  
+
+
+
+--#########################################################################################################
+-- Datumberäkningar för val i bokföringshierarkier.
+--#########################################################################################################
+--
+-- Scope som träffar om val gjorts på någon av nivåerna Redovisningsår, Kvartal, Period eller Dag.
+--
+scope(descendants([Datum].[Redovisningsår-Kvartal-Period].[Alla datum],[Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår], SELF_AND_AFTER)); 
+
+
+
+    --
+    -- Hel månad trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[Month]);  
+        this = 
+            (                    
+                ancestor([Datum].[Redovisningsår-Kvartal-Period].currentmember, [Datum].[Redovisningsår-Kvartal-Period].[Period])                
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[Month DTDAction]);  
+        this = "Datum:" +  settostr({ancestor([Datum].[Redovisningsår-Kvartal-Period].currentmember, [Datum].[Redovisningsår-Kvartal-Period].[Period])});  
+    end scope;  
+
+
+    --
+    -- Hel månad föregående år trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[Month PY]);  
+        this = 
+            (                                
+                ancestor(PARALLELPERIOD( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår], 1 ), [Datum].[Redovisningsår-Kvartal-Period].[Period])
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[Month PY DTDAction]);  
+        this = "Datum:" +  settostr({ancestor(PARALLELPERIOD( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår], 1 ), [Datum].[Redovisningsår-Kvartal-Period].[Period])});  
+    end scope;  
+
+
+    --
+    -- Motsvarande period föregående år
+    --
+    scope ([Datum Calc].[Date Calc].[PY]);  
+        this = 
+            (
+                PARALLELPERIOD( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår], 1 )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[PY DTDAction]);  
+        this = "Datum:" +  settostr({PARALLELPERIOD( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår], 1 )});  
+    end scope;  
+
+
+    --
+    -- Motsvarande period för två år sedan
+    --
+    scope ([Datum Calc].[Date Calc].[PPY]);  
+        this = 
+            (
+                PARALLELPERIOD( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår], 2 )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[PPY DTDAction]);  
+        this = "Datum:" +  settostr({PARALLELPERIOD( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår], 2 )});  
+    end scope;  
+
+
+    --
+    -- Motsvarande period nästa år
+    --
+    scope ([Datum Calc].[Date Calc].[NY]);  
+        this = 
+            (
+                PARALLELPERIOD( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår], -1 )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[NY DTDAction]);  
+        this = "Datum:" +  settostr({PARALLELPERIOD( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår], -1 )});  
+    end scope;  
+
+
+
+
+    --
+    -- Hela året trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[FY]);  
+        this = 
+            (                    
+                ancestor([Datum].[Redovisningsår-Kvartal-Period].currentmember, [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår])
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[FY DTDAction]);  
+        this = "Datum:" +  settostr({ancestor([Datum].[Redovisningsår-Kvartal-Period].currentmember, [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår])});  
+    end scope;  
+
+
+    --
+    -- Hela föregående året trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[FY PY]);  
+        this = 
+            (                                
+                ancestor(PARALLELPERIOD( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår], 1 ), [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår])
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[FY PY DTDAction]);  
+        this = "Datum:" +  settostr({ancestor(PARALLELPERIOD( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår], 1 ), [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår])});  
+    end scope;  
+
+
+    --
+    -- Hela året två år sedan trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[FY PPY]);  
+        this = 
+            (                                
+                ancestor(PARALLELPERIOD( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår], 2 ), [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår])
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[FY PPY DTDAction]);  
+        this = "Datum:" +  settostr({ancestor(PARALLELPERIOD( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår], 2 ), [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår])});  
+    end scope;  
+
+	--
+    -- Rullande 12 månader bakåt
+    --
+    scope ([Datum Calc].[Date Calc].[RR12]);  
+        this = 
+            sum
+            (
+                {
+                    ParallelPeriod( [Datum].[Redovisningsår-Kvartal-Period].[Period], 11, [Datum].[Redovisningsår-Kvartal-Period].currentmember )
+                    :
+                    [Datum].[Redovisningsår-Kvartal-Period].currentmember
+                }
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[RR12 DTDAction]);  
+        this = "Datum:" +  settostr({
+                    ParallelPeriod( [Datum].[Redovisningsår-Kvartal-Period].[Period], 11, [Datum].[Redovisningsår-Kvartal-Period].currentmember )
+                    :
+                    [Datum].[Redovisningsår-Kvartal-Period].currentmember
+                });  
+    end scope; 
+
+    scope ([Datum Calc].[Date Calc].[RR12], [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår]);  
+        this =             
+            (
+               [Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[RR12 DTDAction], [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår]);  
+        this = "Datum:" +  settostr({
+                    [Datum].[Redovisningsår-Kvartal-Period].currentmember
+                });  
+    end scope;
+
+    scope ([Datum Calc].[Date Calc].[RR12], [Datum].[Redovisningsår-Kvartal-Period].[Kvartal]);
+        this = 
+            sum
+            (
+                {
+                    ParallelPeriod( [Datum].[Redovisningsår-Kvartal-Period].[Kvartal], 3, [Datum].[Redovisningsår-Kvartal-Period].currentmember )
+                    :
+                    [Datum].[Redovisningsår-Kvartal-Period].currentmember
+                }
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[RR12 DTDAction], [Datum].[Redovisningsår-Kvartal-Period].[Kvartal]);  
+        this = "Datum:" +  settostr({
+                    ParallelPeriod( [Datum].[Redovisningsår-Kvartal-Period].[Kvartal], 3, [Datum].[Redovisningsår-Kvartal-Period].currentmember )
+                    :
+                    [Datum].[Redovisningsår-Kvartal-Period].currentmember
+               });  
+    end scope;
+
+    --
+    -- Ack till och med vald period
+    --
+    scope ([Datum Calc].[Date Calc].[YTD]);  
+        this = 
+            sum
+            (
+                PeriodsToDate( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår], [Datum].[Redovisningsår-Kvartal-Period].currentmember )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[YTD DTDAction]);  
+        this = "Datum:" +  settostr({PeriodsToDate( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår], [Datum].[Redovisningsår-Kvartal-Period].currentmember )});  
+    end scope;  
+
+
+
+    --
+    -- Ack till och med motsvarande period föregående år
+    --
+    scope ([Datum Calc].[Date Calc].[YTD PY]);  
+        this = 
+            sum
+            (
+                PeriodsToDate( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår],  PARALLELPERIOD( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår], 1) )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[YTD PY DTDAction]);  
+        this = "Datum:" +  settostr({PeriodsToDate( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår],  PARALLELPERIOD( [Datum].[Redovisningsår-Kvartal-Period].[Redovisningsår], 1))});  
+    end scope;  
+
+    
+    --
+    --Föregående period
+    --
+    scope ([Datum Calc].[Date Calc].[PP]);  
+        this = 
+            (
+                [Datum].[Redovisningsår-Kvartal-Period].currentmember.PrevMember
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[PP DTDAction]);  
+        this = "Datum:" +  settostr({[Datum].[Redovisningsår-Kvartal-Period].currentmember.PrevMember});  
+    end scope;  
+
+
+    
+    --
+    -- Ack från tidernas begynnelse (Null To Date)
+    --
+    scope ([Datum Calc].[Date Calc].[NTD]);  
+        this =
+            sum
+            (
+                {null:[Datum].[Redovisningsår-Kvartal-Period].currentmember}
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[NTD DTDAction]);  
+        this = "Datum:" +  settostr({null:[Datum].[Redovisningsår-Kvartal-Period].currentmember});  
+    end scope;  
+end scope;  
+
+
+
+--
+-- Scope som träffar om val gjorts på nivå tertial
+--
+scope([Datum].[Redovisningsår-Tertial-Period].[Tertial]);  
+    --
+    -- Motsvarande period föregående år
+    --
+    scope ([Datum Calc].[Date Calc].[PY]);  
+        this = 
+            (
+                PARALLELPERIOD( [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår], 1 )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[PY DTDAction]);  
+        this = "Datum:" +  settostr({PARALLELPERIOD( [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår], 1 )});  
+    end scope;  
+
+
+    --
+    -- Motsvarande period för två år sedan
+    --
+    scope ([Datum Calc].[Date Calc].[PPY]);  
+        this = 
+            (
+                PARALLELPERIOD( [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår], 2 )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[PPY DTDAction]);  
+        this = "Datum:" +  settostr({PARALLELPERIOD( [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår], 2 )});  
+    end scope;  
+
+
+    --
+    -- Motsvarande period nästa år
+    --
+    scope ([Datum Calc].[Date Calc].[NY]);  
+        this = 
+            (
+                PARALLELPERIOD( [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår], -1 )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[NY DTDAction]);  
+        this = "Datum:" +  settostr({PARALLELPERIOD( [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår], -1 )});  
+    end scope;  
+
+
+
+
+    --
+    -- Hela året trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[FY]);  
+        this = 
+            (                    
+                ancestor([Datum].[Redovisningsår-Tertial-Period].currentmember, [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår])
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[FY DTDAction]);  
+        this = "Datum:" +  settostr({ancestor([Datum].[Redovisningsår-Tertial-Period].currentmember, [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår])});  
+    end scope;  
+
+
+    --
+    -- Hela föregående året trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[FY PY]);  
+        this = 
+            (                                
+                ancestor(PARALLELPERIOD( [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår], 1 ), [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår])
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[FY PY DTDAction]);  
+        this = "Datum:" +  settostr({ancestor(PARALLELPERIOD( [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår], 1 ), [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår])});  
+    end scope;  
+	
+
+    --
+    -- Hela två år sedan trots val på lägre nivå
+    --
+    scope ([Datum Calc].[Date Calc].[FY PPY]);  
+        this = 
+            (                                
+                ancestor(PARALLELPERIOD( [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår], 2 ), [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår])
+                ,[Datum Calc].[Date Calc].[All]
+            );   
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[FY PPY DTDAction]);  
+        this = "Datum:" +  settostr({ancestor(PARALLELPERIOD( [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår], 2 ), [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår])});  
+    end scope;  
+
+	--
+    -- Rullande 12 månader bakåt
+    --
+    scope ([Datum Calc].[Date Calc].[RR12]);  
+        this = 
+            sum
+            (
+                {
+                    ParallelPeriod([Datum].[Redovisningsår-Tertial-Period].[Tertial], 2,  [Datum].[Redovisningsår-Tertial-Period].currentmember )
+                    :
+                    [Datum].[Redovisningsår-Tertial-Period].currentmember
+                }
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[RR12 DTDAction]);  
+        this = "Datum:" +  settostr({
+                    ParallelPeriod([Datum].[Redovisningsår-Tertial-Period].[Tertial], 2,  [Datum].[Redovisningsår-Tertial-Period].currentmember )
+                    :
+                    [Datum].[Redovisningsår-Tertial-Period].currentmember
+                });  
+    end scope; 
+
+    --
+    -- Ack till och med vald period
+    --
+    scope ([Datum Calc].[Date Calc].[YTD]);  
+        this = 
+            sum
+            (
+                PeriodsToDate([Datum].[Redovisningsår-Tertial-Period].[Redovisningsår],  [Datum].[Redovisningsår-Tertial-Period].currentmember )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[YTD DTDAction]);  
+        this = "Datum:" +  settostr({PeriodsToDate([Datum].[Redovisningsår-Tertial-Period].[Redovisningsår],  [Datum].[Redovisningsår-Tertial-Period].currentmember )});  
+    end scope;  
+
+
+
+    --
+    -- Ack till och med motsvarande period föregående år
+    --
+    scope ([Datum Calc].[Date Calc].[YTD PY]);  
+        this = 
+            sum
+            (
+                PeriodsToDate([Datum].[Redovisningsår-Tertial-Period].[Redovisningsår],  PARALLELPERIOD( [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår], 1) )
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[YTD PY DTDAction]);  
+        this = "Datum:" +  settostr({PeriodsToDate([Datum].[Redovisningsår-Tertial-Period].[Redovisningsår],  PARALLELPERIOD( [Datum].[Redovisningsår-Tertial-Period].[Redovisningsår], 1))});  
+    end scope;  
+
+    
+    --
+    --Föregående period
+    --
+    scope ([Datum Calc].[Date Calc].[PP]);  
+        this = 
+            (
+                [Datum].[Redovisningsår-Tertial-Period].currentmember.PrevMember
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[PP DTDAction]);  
+        this = "Datum:" +  settostr({[Datum].[Redovisningsår-Tertial-Period].currentmember.PrevMember});  
+    end scope;  
+
+
+    
+    --
+    -- Ack från tidernas begynnelse (Null To Date)
+    --
+    scope ([Datum Calc].[Date Calc].[NTD]);  
+        this =
+            sum
+            (
+                {null:[Datum].[Redovisningsår-Tertial-Period].currentmember}
+                ,[Datum Calc].[Date Calc].[All]
+            );  
+    end scope;  
+    scope ([Datum Calc].[Date Calc].[NTD DTDAction]);  
+        this = "Datum:" +  settostr({null:[Datum].[Redovisningsår-Tertial-Period].currentmember});  
+    end scope;  
+end scope; 
+
+
+	--####################################################################################################################
+--
+-- Resultat
+--
+--####################################################################################################################
+
+--####################################################################################################################
+-- Resultat\Utfall
+--####################################################################################################################
+--
+-- föregående år
+--
+/// Motsvarande period föregående år: Utfall från huvudbok
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall (fg år)]
+AS 
+(
+    [Measures].[Utfall]
+    ,[Datum Calc].[Date Calc].[PY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Resultat\Utfall', ASSOCIATED_MEASURE_GROUP = 'Resultat';
+
+
+--
+-- motsvarande period två år sedan
+--
+/// 2 år sedan: Utfall från huvudbok
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall (2 år sedan)]
+AS 
+(
+    [Measures].[Utfall]
+    ,[Datum Calc].[Date Calc].[PPY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Resultat\Utfall', ASSOCIATED_MEASURE_GROUP = 'Resultat';
+
+--
+-- Ackumulerat R12 
+--
+/// Rullande 12 månader bakåt från vald period: Utfall från huvudbok
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall (R12)]
+AS 
+(
+    [Measures].[Utfall]
+    ,[Datum Calc].[Date Calc].[RR12]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Resultat\Utfall', ASSOCIATED_MEASURE_GROUP = 'Resultat';
+
+--
+-- Ackumulerat utfall 
+--
+/// Ackumulerat till och med vald period: Utfall från huvudbok
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall (ack)]
+AS 
+(
+    [Measures].[Utfall]
+    ,[Datum Calc].[Date Calc].[YTD]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Resultat\Utfall', ASSOCIATED_MEASURE_GROUP = 'Resultat';
+
+
+--
+-- Ackumulerat utfall föregående år
+--
+/// Ackumulerat till och med vald period föregående år: Utfall från huvudbok
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall (ack fg år)]
+AS 
+(
+    [Measures].[Utfall]
+    ,[Datum Calc].[Date Calc].[YTD PY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Resultat\Utfall', ASSOCIATED_MEASURE_GROUP = 'Resultat';
+
+
+--
+-- Hela årets utfall
+--
+/// Helårsbelopp för det år vald period tillhör: Utfall från huvudbok
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall (helår)]
+AS 
+(
+    [Measures].[Utfall]
+    ,[Datum Calc].[Date Calc].[FY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Resultat\Utfall', ASSOCIATED_MEASURE_GROUP = 'Resultat';
+
+
+--
+-- Föregående års hela utfall
+--
+/// Föregående års helårsbelopp för det år vald period tillhör: Utfall från huvudbok
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall (fg helår)]
+AS 
+(
+    [Measures].[Utfall]
+    ,[Datum Calc].[Date Calc].[FY PY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Resultat\Utfall', ASSOCIATED_MEASURE_GROUP = 'Resultat';
+
+
+--
+-- Två år sedan helårsutfall
+--
+/// Två år sedan helårsbelopp för det år vald period tillhör: Utfall från huvudbok
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall (två år sedan helår)]
+AS 
+(
+    [Measures].[Utfall]
+    ,[Datum Calc].[Date Calc].[FY PPY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Resultat\Utfall', ASSOCIATED_MEASURE_GROUP = 'Resultat';
+
+--
+-- Föregående periods utfall
+--
+/// Föregående period (om månad är valt visas föregående månad, om kvartal är valt visas föregående kvartal, osv.): Utfall från huvudbok
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall (fg period)]
+AS 
+(
+    [Measures].[Utfall]
+    ,[Datum Calc].[Date Calc].[PP]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Resultat\Utfall', ASSOCIATED_MEASURE_GROUP = 'Resultat';
+
+
+
+
+
+--####################################################################################################################
+-- Resultat\Antal
+--####################################################################################################################
+/// Motsvarande period föregående år: Antal från huvudbok
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal (fg år)]
+AS 
+(
+    [Measures].[Antal]
+    ,[Datum Calc].[Date Calc].[PY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Resultat\Antal', ASSOCIATED_MEASURE_GROUP = 'Resultat';
+
+--
+-- Motsvarande period två år sedan
+--
+/// 2 år sedan: Antal från huvudbok
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal (2 år sedan)]
+AS 
+(
+    [Measures].[Antal]
+    ,[Datum Calc].[Date Calc].[PPY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Resultat\Antal', ASSOCIATED_MEASURE_GROUP = 'Resultat';
+
+/// Ackumulerat till och med vald period: Antal från huvudbok
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal (ack)]
+AS 
+(
+    [Measures].[Antal]
+    ,[Datum Calc].[Date Calc].[YTD]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Resultat\Antal', ASSOCIATED_MEASURE_GROUP = 'Resultat';
+
+/// Ackumulerat till och med vald period föregående år: Antal från huvudbok
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal (ack fg år)]
+AS 
+(
+    [Measures].[Antal]
+    ,[Datum Calc].[Date Calc].[YTD PY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Resultat\Antal', ASSOCIATED_MEASURE_GROUP = 'Resultat';
+
+/// Helårsbelopp för det år vald period tillhör: Antal från huvudbok
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal (helår)]
+AS 
+(
+    [Measures].[Antal]
+    ,[Datum Calc].[Date Calc].[FY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Resultat\Antal', ASSOCIATED_MEASURE_GROUP = 'Resultat';
+
+/// Föregående års helårsbelopp för det år vald period tillhör: Antal från huvudbok
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal (fg helår)]
+AS 
+(
+    [Measures].[Antal]
+    ,[Datum Calc].[Date Calc].[FY PY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Resultat\Antal', ASSOCIATED_MEASURE_GROUP = 'Resultat';
+
+/// Två år sedan helårsbelopp för det år vald period tillhör: Antal från huvudbok
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal (två år sedan helår)]
+AS 
+(
+    [Measures].[Antal]
+    ,[Datum Calc].[Date Calc].[FY PPY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Resultat\Antal', ASSOCIATED_MEASURE_GROUP = 'Resultat';
+
+
+
+/// Föregående period (om månad är valt visas föregående månad, om kvartal är valt visas föregående kvartal, osv.): Antal från huvudbok
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal (fg period)]
+AS 
+(
+    [Measures].[Antal]
+    ,[Datum Calc].[Date Calc].[PP]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Resultat\Antal', ASSOCIATED_MEASURE_GROUP = 'Resultat';
+
+
+
+--####################################################################################################################
+--
+-- Balans
+--
+--####################################################################################################################
+
+--
+-- Årets IB
+--
+/// Årets ingående balans
+CREATE MEMBER CURRENTCUBE.[Measures].[Årets IB]
+ AS 
+[Measures].[Periodens UB]
+-
+(
+    [Measures].[Periodens förändring]
+    ,[Datum Calc].[Date Calc].[YTD]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Balans',  ASSOCIATED_MEASURE_GROUP = 'Balans';
+
+--
+-- Periodens IB
+--
+/// Periodens ingående balans
+CREATE MEMBER CURRENTCUBE.[Measures].[Periodens IB]
+ AS [Measures].[Periodens UB] - [Measures].[Periodens förändring], 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Balans',  ASSOCIATED_MEASURE_GROUP = 'Balans';
+
+--
+-- Årets förändring (ack)
+--
+/// Periodens förändring ackumulerat året till och med vald period
+CREATE MEMBER CURRENTCUBE.[Measures].[Årets förändring (ack)]
+ AS 
+(
+    [Measures].[Periodens förändring]
+    ,[Datum Calc].[Date Calc].[YTD]
+)
+ , 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Balans',  ASSOCIATED_MEASURE_GROUP = 'Balans';
+
+--
+-- Periodens UB
+--
+/// Periodens utgående balans
+CREATE MEMBER CURRENTCUBE.[Measures].[Periodens UB]
+ AS 
+iif
+(
+    abs
+    (
+        (
+            [Measures].[Årets ingående balans]
+            ,[Transaktionstyp].[Lista].[Alla transaktionstyper]
+            ,[Datum Calc].[Date Calc].[YTD]
+        )
+        +
+        (
+            [Measures].[Periodens förändring]    
+            ,[Datum Calc].[Date Calc].[YTD]
+        )
+    )
+    < 0.00001
+    ,
+    null
+    ,
+    (
+        [Measures].[Årets ingående balans]
+        ,[Transaktionstyp].[Lista].[Alla transaktionstyper]
+        ,[Datum Calc].[Date Calc].[YTD]
+    )
+    +
+    (
+        [Measures].[Periodens förändring]    
+        ,[Datum Calc].[Date Calc].[YTD]
+    )
+)
+, 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Balans',  ASSOCIATED_MEASURE_GROUP = 'Balans'  ; 
+
+
+
+--####################################################################################################################
+-- Planering\Planeringsversion
+--####################################################################################################################
+--
+-- föregående budget
+--
+/// 
+CREATE MEMBER CURRENTCUBE.[Measures].[Planering (fg budget helår)]
+AS 
+(
+    [Measures].[Planering]
+    ,[Planeringsversion Calc].[Pv Calc].[Prev Budget]
+    ,[Datum].[Redovisningsår-Period].[Alla datum]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 0, DISPLAY_FOLDER = 'Planering\Planeringsversion\Planering', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Ack budget föregående budget
+--
+CREATE MEMBER CURRENTCUBE.[Measures].[Planering (fg budget ack)]
+AS 
+(
+    [Measures].[Planering]
+    ,[Planeringsversion Calc].[Pv Calc].[Prev Budget]
+    ,[Datum Calc].[Date Calc].[PV YTD]
+    --,[Datum].[År-Månad].[År].&amp;[2015]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 0, DISPLAY_FOLDER = 'Planering\Planeringsversion\Planering', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+
+--
+-- föregående prognos
+--
+CREATE MEMBER CURRENTCUBE.[Measures].[Planering (fg prognos helår)]
+AS 
+(
+    [Measures].[Planering]
+    ,[Planeringsversion Calc].[Pv Calc].[Prev Prognos]
+    ,[Datum].[Redovisningsår-Period].[Alla datum]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 0, DISPLAY_FOLDER = 'Planering\Planeringsversion\Planering', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+
+
+--
+-- Ack Planering föregående prognos
+--
+CREATE MEMBER CURRENTCUBE.[Measures].[Planering (fg prognos ack)]
+AS 
+(
+    [Measures].[Planering]
+    ,[Planeringsversion Calc].[Pv Calc].[Prev Prognos]
+    ,[Datum Calc].[Date Calc].[PV YTD]
+    --,[Datum].[År-Månad].[År].&amp;[2015]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 0, DISPLAY_FOLDER = 'Planering\Planeringsversion\Planering', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+
+
+
+--
+-- Utfallsprognos helår, ack utfall + föregående budget
+--
+CREATE MEMBER CURRENTCUBE.[Measures].[Planering Utfall (ack utfall + budget)]
+AS 
+(    
+    [Measures].[Utfall]
+    ,[Datum Calc].[Date Calc].[PV YTD]
+)
++
+(    
+    [Measures].[Planering]
+    ,[Planeringsversion Calc].[Pv Calc].[Prev Budget]
+    ,[Datum Calc].[Date Calc].[PV Rev YTD]
+)
+, 
+FORMAT_STRING = "#,#", 
+VISIBLE = 0, DISPLAY_FOLDER = 'Planering\Planeringsversion\Utfall', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+
+--
+-- Utfallsprognos helår, ack utfall + föregående prognos
+--
+CREATE MEMBER CURRENTCUBE.[Measures].[Planering Utfall (ack utfall + prognos)]
+AS 
+(    
+    [Measures].[Utfall]
+    ,[Datum Calc].[Date Calc].[PV YTD]
+)
++
+(    
+    [Measures].[Planering]
+    ,[Planeringsversion Calc].[Pv Calc].[Prev Prognos]
+    ,[Datum Calc].[Date Calc].[PV Rev YTD]
+)
+, 
+FORMAT_STRING = "#,#", 
+VISIBLE = 0, DISPLAY_FOLDER = 'Planering\Planeringsversion\Utfall', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+
+
+--
+-- Ack utfall enligt planeringsversion
+--
+CREATE MEMBER CURRENTCUBE.[Measures].[Planering Utfall (ack)]
+AS 
+(    
+    [Measures].[Utfall]
+    ,[Datum Calc].[Date Calc].[PV YTD]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 0, DISPLAY_FOLDER = 'Planering\Planeringsversion\Utfall', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--####################################################################################################################
+-- Planering\Planeringsversion
+--####################################################################################################################
+--
+-- föregående budget
+--
+CREATE MEMBER CURRENTCUBE.[Measures].[Planering Antal (fg budget helår)]
+AS 
+(
+    [Measures].[Planering Antal]
+    ,[Planeringsversion Calc].[Pv Calc].[Prev Budget]
+    ,[Datum].[Redovisningsår-Period].[Alla datum]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 0, DISPLAY_FOLDER = 'Planering\Planeringsversion\Planering', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- föregående prognos
+--
+CREATE MEMBER CURRENTCUBE.[Measures].[Planering Antal (fg prognos helår)]
+AS 
+(
+    [Measures].[Planering Antal]
+    ,[Planeringsversion Calc].[Pv Calc].[Prev Prognos]
+    ,[Datum].[Redovisningsår-Period].[Alla datum]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 0, DISPLAY_FOLDER = 'Planering\Planeringsversion\Planering', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Ack Planering föregående prognos
+--
+CREATE MEMBER CURRENTCUBE.[Measures].[Planering Antal (fg prognos ack)]
+AS 
+(
+    [Measures].[Planering Antal]
+    ,[Planeringsversion Calc].[Pv Calc].[Prev Prognos]
+    ,[Datum Calc].[Date Calc].[PV YTD]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 0, DISPLAY_FOLDER = 'Planering\Planeringsversion\Planering', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+
+--
+-- Utfallsprognos helår, ack utfall + föregående budget
+--
+CREATE MEMBER CURRENTCUBE.[Measures].[Planering Utfall Antal (ack utfall + budget)]
+AS 
+(    
+    [Measures].[Antal]
+    ,[Datum Calc].[Date Calc].[PV YTD]
+)
++
+(    
+    [Measures].[Planering Antal]
+    ,[Planeringsversion Calc].[Pv Calc].[Prev Budget]
+    ,[Datum Calc].[Date Calc].[PV Rev YTD]
+)
+, 
+FORMAT_STRING = "#,#", 
+VISIBLE = 0, DISPLAY_FOLDER = 'Planering\Planeringsversion\Utfall', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Utfallsprognos helår, ack utfall + föregående prognos
+--
+CREATE MEMBER CURRENTCUBE.[Measures].[Planering Utfall Antal (ack utfall + prognos)]
+AS 
+(    
+    [Measures].[Antal]
+    ,[Datum Calc].[Date Calc].[PV YTD]
+)
++
+(    
+    [Measures].[Planering Antal]
+    ,[Planeringsversion Calc].[Pv Calc].[Prev Prognos]
+    ,[Datum Calc].[Date Calc].[PV Rev YTD]
+)
+, 
+FORMAT_STRING = "#,#", 
+VISIBLE = 0, DISPLAY_FOLDER = 'Planering\Planeringsversion\Utfall', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+
+--
+-- Ack utfall enligt planeringsversion
+--
+CREATE MEMBER CURRENTCUBE.[Measures].[Planering Utfall Antal (ack)]
+AS 
+(    
+    [Measures].[Antal]
+    ,[Datum Calc].[Date Calc].[PV YTD]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 0, DISPLAY_FOLDER = 'Planering\Planeringsversion\Utfall', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+
+
+--####################################################################################################################
+-- Planering\Budget
+--####################################################################################################################
+--
+-- föregående år
+--
+/// Motsvarande period föregående år: Budgeterat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Budget (fg år)]
+AS 
+(
+    [Measures].[Budget]
+    ,[Datum Calc].[Date Calc].[PY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Budget', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Ackumulerat Budget 
+--
+/// Ackumulerat till och med vald period: Budgeterat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Budget (ack)]
+AS 
+(
+    [Measures].[Budget]
+    ,[Datum Calc].[Date Calc].[YTD]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Budget', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Ackumulerat Budget föregående år
+--
+/// Ackumulerat till och med vald period föregående år: Budgeterat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Budget (ack fg år)]
+AS 
+(
+    [Measures].[Budget]
+    ,[Datum Calc].[Date Calc].[YTD PY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Budget', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Hela årets Budget
+--
+/// Helårsbelopp för det år vald period tillhör: Budgeterat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Budget (helår)]
+AS 
+(
+    [Measures].[Budget]
+    ,[Datum Calc].[Date Calc].[FY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Budget', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Föregående års hela Budget
+--
+/// Föregående års helårsbelopp för det år vald period tillhör: Budgeterat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Budget (fg helår)]
+AS 
+(
+    [Measures].[Budget]
+    ,[Datum Calc].[Date Calc].[FY PY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Budget', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Föregående periods Budget
+--
+/// Föregående period (om månad är valt visas föregående månad, om kvartal är valt visas föregående kvartal, osv.): Budgeterat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Budget (fg period)]
+AS 
+(
+    [Measures].[Budget]
+    ,[Datum Calc].[Date Calc].[PP]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Budget', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+
+
+
+
+
+--
+-- Utfall-Budget
+-- 
+/// Utfall från huvudbok - Budgeterat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall-Budget]
+AS 
+[Measures].[Utfall] - [Measures].[Budget]
+, 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Utfall-Budget', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+
+--
+-- föregående år
+--
+/// Motsvarande period föregående år: Utfall från huvudbok - Budgeterat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall-Budget (fg år)]
+AS 
+(
+    [Measures].[Utfall-Budget]
+    ,[Datum Calc].[Date Calc].[PY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Utfall-Budget', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Ackumulerat Budget 
+--
+/// Ackumulerat till och med vald period: Utfall från huvudbok - Budgeterat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall-Budget (ack)]
+AS 
+(
+    [Measures].[Utfall-Budget]
+    ,[Datum Calc].[Date Calc].[YTD]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Utfall-Budget', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Ackumulerat Budget föregående år
+--
+/// Ackumulerat till och med vald period föregående år: Utfall från huvudbok - Budgeterat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall-Budget (ack fg år)]
+AS 
+(
+    [Measures].[Utfall-Budget]
+    ,[Datum Calc].[Date Calc].[YTD PY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Utfall-Budget', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Hela årets Budget
+--
+/// Helårsbelopp för det år vald period tillhör: Utfall från huvudbok - Budgeterat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall-Budget (helår)]
+AS 
+(
+    [Measures].[Utfall-Budget]
+    ,[Datum Calc].[Date Calc].[FY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Utfall-Budget', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Föregående års hela Budget
+--
+/// Föregående års helårsbelopp för det år vald period tillhör: Utfall från huvudbok - Budgeterat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall-Budget (fg helår)]
+AS 
+(
+    [Measures].[Utfall-Budget]
+    ,[Datum Calc].[Date Calc].[FY PY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Utfall-Budget', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Föregående periods Budget
+--
+/// Föregående period (om månad är valt visas föregående månad, om kvartal är valt visas föregående kvartal, osv.): Utfall från huvudbok - Budgeterat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall-Budget (fg period)]
+AS 
+(
+    [Measures].[Utfall-Budget]
+    ,[Datum Calc].[Date Calc].[PP]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Utfall-Budget', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+
+--
+-- Utfall / Budget
+-- 
+/// Utfall från huvudbok / Budgeterat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall/Budget]
+AS 
+[Measures].[Utfall] / [Measures].[Budget]
+, 
+FORMAT_STRING = "0.0%;;;#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Utfall/Budget', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+
+--
+-- föregående år
+--
+/// Motsvarande period föregående år: Utfall från huvudbok / Budgeterat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall/Budget (fg år)]
+AS 
+(
+    [Measures].[Utfall/Budget]
+    ,[Datum Calc].[Date Calc].[PY]
+), 
+FORMAT_STRING = "0.0%;;;#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Utfall/Budget', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Ackumulerat Budget 
+--
+/// Ackumulerat till och med vald period: Utfall från huvudbok / Budgeterat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall/Budget (ack)]
+AS 
+(
+    [Measures].[Utfall/Budget]
+    ,[Datum Calc].[Date Calc].[YTD]
+), 
+FORMAT_STRING = "0.0%;;;#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Utfall/Budget', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Ackumulerat Budget föregående år
+--
+/// Ackumulerat till och med vald period föregående år: Utfall från huvudbok / Budgeterat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall/Budget (ack fg år)]
+AS 
+(
+    [Measures].[Utfall/Budget]
+    ,[Datum Calc].[Date Calc].[YTD PY]
+), 
+FORMAT_STRING = "0.0%;;;#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Utfall/Budget', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Hela årets Budget
+--
+/// Helårsbelopp för det år vald period tillhör: Utfall från huvudbok / Budgeterat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall/Budget (helår)]
+AS 
+(
+    [Measures].[Utfall/Budget]
+    ,[Datum Calc].[Date Calc].[FY]
+), 
+FORMAT_STRING = "0.0%;;;#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Utfall/Budget', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Föregående års hela Budget
+--
+/// Föregående års helårsbelopp för det år vald period tillhör: Utfall från huvudbok / Budgeterat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall/Budget (fg helår)]
+AS 
+(
+    [Measures].[Utfall/Budget]
+    ,[Datum Calc].[Date Calc].[FY PY]
+), 
+FORMAT_STRING = "0.0%;;;#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Utfall/Budget', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Föregående periods Budget
+--
+/// Föregående period (om månad är valt visas föregående månad, om kvartal är valt visas föregående kvartal, osv.): Utfall från huvudbok / Budgeterat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall/Budget (fg period)]
+AS 
+(
+    [Measures].[Utfall/Budget]
+    ,[Datum Calc].[Date Calc].[PP]
+), 
+FORMAT_STRING = "0.0%;;;#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Utfall/Budget', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+
+--####################################################################################################################
+-- Planering\Budget Antal
+--####################################################################################################################
+
+--
+-- föregående år
+--
+/// Motsvarande period föregående år: Budgeterat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Budget Antal (fg år)]
+AS 
+(
+    [Measures].[Budget Antal]
+    ,[Datum Calc].[Date Calc].[PY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Budget Antal', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Ackumulerat Budget Antal 
+--
+/// Motsvarande period föregående år: Budgeterat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Budget Antal (ack)]
+AS 
+(
+    [Measures].[Budget Antal]
+    ,[Datum Calc].[Date Calc].[YTD]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Budget Antal', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Ackumulerat Budget Antal föregående år
+--
+/// Motsvarande period föregående år: Budgeterat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Budget Antal (ack fg år)]
+AS 
+(
+    [Measures].[Budget Antal]
+    ,[Datum Calc].[Date Calc].[YTD PY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Budget Antal', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Hela årets Budget Antal
+--
+/// Motsvarande period föregående år: Budgeterat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Budget Antal (helår)]
+AS 
+(
+    [Measures].[Budget Antal]
+    ,[Datum Calc].[Date Calc].[FY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Budget Antal', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Föregående års hela Budget Antal
+--
+/// Motsvarande period föregående år: Budgeterat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Budget Antal (fg helår)]
+AS 
+(
+    [Measures].[Budget Antal]
+    ,[Datum Calc].[Date Calc].[FY PY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Budget Antal', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Föregående periods Budget Antal
+--
+/// Motsvarande period föregående år: Budgeterat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Budget Antal (fg period)]
+AS 
+(
+    [Measures].[Budget Antal]
+    ,[Datum Calc].[Date Calc].[PP]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Budget Antal', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+
+
+--
+-- Antal-Budget
+-- 
+/// Antalsutfall från huvudbok - budgeterat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal-Budget]
+AS 
+[Measures].[Antal] - [Measures].[Budget Antal]
+, 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Antal-Budget', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+
+--
+-- föregående år
+--
+/// Motsvarande period föregående år: Antalsutfall från huvudbok - budgeterat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal-Budget (fg år)]
+AS 
+(
+    [Measures].[Antal-Budget]
+    ,[Datum Calc].[Date Calc].[PY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Antal-Budget', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Ackumulerat Budget 
+--
+/// Ackumulerat till och med vald period: Antalsutfall från huvudbok - budgeterat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal-Budget (ack)]
+AS 
+(
+    [Measures].[Antal-Budget]
+    ,[Datum Calc].[Date Calc].[YTD]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Antal-Budget', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Ackumulerat Budget föregående år
+--
+/// Ackumulerat till och med vald period föregående år: Antalsutfall från huvudbok - budgeterat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal-Budget (ack fg år)]
+AS 
+(
+    [Measures].[Antal-Budget]
+    ,[Datum Calc].[Date Calc].[YTD PY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Antal-Budget', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Hela årets Budget
+--
+/// Helårsbelopp för det år vald period tillhör: Antalsutfall från huvudbok - budgeterat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal-Budget (helår)]
+AS 
+(
+    [Measures].[Antal-Budget]
+    ,[Datum Calc].[Date Calc].[FY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Antal-Budget', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Föregående års hela Budget
+--
+/// Föregående års helårsbelopp för det år vald period tillhör: Antalsutfall från huvudbok - budgeterat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal-Budget (fg helår)]
+AS 
+(
+    [Measures].[Antal-Budget]
+    ,[Datum Calc].[Date Calc].[FY PY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Antal-Budget', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Föregående periods Budget
+--
+/// Föregående period (om månad är valt visas föregående månad, om kvartal är valt visas föregående kvartal, osv.): Antalsutfall från huvudbok - budgeterat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal-Budget (fg period)]
+AS 
+(
+    [Measures].[Antal-Budget]
+    ,[Datum Calc].[Date Calc].[PP]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Antal-Budget', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+
+--
+-- Antal / Budget
+-- 
+/// Antalsutfall från huvudbok / Budgeterat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal/Budget]
+AS 
+[Measures].[Antal] / [Measures].[Budget Antal]
+, 
+FORMAT_STRING = "0.0%;;;#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Antal/Budget', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+
+--
+-- föregående år
+--
+/// Motsvarande period föregående år: Antalsutfall från huvudbok / Budgeterat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal/Budget (fg år)]
+AS 
+(
+    [Measures].[Antal/Budget]
+    ,[Datum Calc].[Date Calc].[PY]
+), 
+FORMAT_STRING = "0.0%;;;#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Antal/Budget', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Ackumulerat Budget 
+--
+/// Ackumulerat till och med vald period: Antalsutfall från huvudbok / Budgeterat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal/Budget (ack)]
+AS 
+(
+    [Measures].[Antal/Budget]
+    ,[Datum Calc].[Date Calc].[YTD]
+), 
+FORMAT_STRING = "0.0%;;;#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Antal/Budget', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Ackumulerat Budget föregående år
+--
+/// Ackumulerat till och med vald period föregående år: Antalsutfall från huvudbok / Budgeterat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal/Budget (ack fg år)]
+AS 
+(
+    [Measures].[Antal/Budget]
+    ,[Datum Calc].[Date Calc].[YTD PY]
+), 
+FORMAT_STRING = "0.0%;;;#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Antal/Budget', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Hela årets Budget
+--
+/// Helårsbelopp för det år vald period tillhör: Antalsutfall från huvudbok / Budgeterat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal/Budget (helår)]
+AS 
+(
+    [Measures].[Antal/Budget]
+    ,[Datum Calc].[Date Calc].[FY]
+), 
+FORMAT_STRING = "0.0%;;;#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Antal/Budget', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Föregående års hela Budget
+--
+/// Föregående års helårsbelopp för det år vald period tillhör: Antalsutfall från huvudbok / Budgeterat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal/Budget (fg helår)]
+AS 
+(
+    [Measures].[Antal/Budget]
+    ,[Datum Calc].[Date Calc].[FY PY]
+), 
+FORMAT_STRING = "0.0%;;;#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Antal/Budget', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Föregående periods Budget
+--
+/// Föregående period (om månad är valt visas föregående månad, om kvartal är valt visas föregående kvartal, osv.): Antalsutfall från huvudbok / Budgeterat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal/Budget (fg period)]
+AS 
+(
+    [Measures].[Antal/Budget]
+    ,[Datum Calc].[Date Calc].[PP]
+), 
+FORMAT_STRING = "0.0%;;;#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Budget\Antal/Budget', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+
+
+
+
+
+--####################################################################################################################
+-- Planering\Prognos
+--####################################################################################################################
+
+--
+-- föregående år
+--
+/// Motsvarande period föregående år: Prognostiserat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Prognos (fg år)]
+AS 
+(
+    [Measures].[Prognos]
+    ,[Datum Calc].[Date Calc].[PY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Prognos', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Ackumulerat Prognos 
+--
+/// Ackumulerat till och med vald period: Prognostiserat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Prognos (ack)]
+AS 
+(
+    [Measures].[Prognos]
+    ,[Datum Calc].[Date Calc].[YTD]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Prognos', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Ackumulerat Prognos föregående år
+--
+/// Ackumulerat till och med vald period föregående år: Prognostiserat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Prognos (ack fg år)]
+AS 
+(
+    [Measures].[Prognos]
+    ,[Datum Calc].[Date Calc].[YTD PY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Prognos', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Hela årets Prognos
+--
+/// Helårsbelopp för det år vald period tillhör: Prognostiserat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Prognos (helår)]
+AS 
+(
+    [Measures].[Prognos]
+    ,[Datum Calc].[Date Calc].[FY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Prognos', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Föregående års hela Prognos
+--
+/// Föregående års helårsbelopp för det år vald period tillhör: Prognostiserat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Prognos (fg helår)]
+AS 
+(
+    [Measures].[Prognos]
+    ,[Datum Calc].[Date Calc].[FY PY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Prognos', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Föregående periods Prognos
+--
+/// Föregående period (om månad är valt visas föregående månad, om kvartal är valt visas föregående kvartal, osv.): Prognostiserat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Prognos (fg period)]
+AS 
+(
+    [Measures].[Prognos]
+    ,[Datum Calc].[Date Calc].[PP]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Prognos', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Utfall-Prognos
+-- 
+/// Utfall från huvudbok - prognostiserat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall-Prognos]
+AS 
+[Measures].[Utfall] - [Measures].[Prognos]
+, 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Utfall-Prognos', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+
+--
+-- föregående år
+--
+/// Motsvarande period föregående år: Utfall från huvudbok - prognostiserat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall-Prognos (fg år)]
+AS 
+(
+    [Measures].[Utfall-Prognos]
+    ,[Datum Calc].[Date Calc].[PY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Utfall-Prognos', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Ackumulerat Prognos 
+--
+/// Ackumulerat till och med vald period: Utfall från huvudbok - prognostiserat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall-Prognos (ack)]
+AS 
+(
+    [Measures].[Utfall-Prognos]
+    ,[Datum Calc].[Date Calc].[YTD]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Utfall-Prognos', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Ackumulerat Prognos föregående år
+--
+/// Ackumulerat till och med vald period föregående år: Utfall från huvudbok - prognostiserat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall-Prognos (ack fg år)]
+AS 
+(
+    [Measures].[Utfall-Prognos]
+    ,[Datum Calc].[Date Calc].[YTD PY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Utfall-Prognos', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Hela årets Prognos
+--
+/// Helårsbelopp för det år vald period tillhör: Utfall från huvudbok - prognostiserat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall-Prognos (helår)]
+AS 
+(
+    [Measures].[Utfall-Prognos]
+    ,[Datum Calc].[Date Calc].[FY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Utfall-Prognos', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Föregående års hela Prognos
+--
+/// Föregående års helårsbelopp för det år vald period tillhör: Utfall från huvudbok - prognostiserat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall-Prognos (fg helår)]
+AS 
+(
+    [Measures].[Utfall-Prognos]
+    ,[Datum Calc].[Date Calc].[FY PY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Utfall-Prognos', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Föregående periods Prognos
+--
+/// Föregående period (om månad är valt visas föregående månad, om kvartal är valt visas föregående kvartal, osv.): Utfall från huvudbok - prognostiserat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall-Prognos (fg period)]
+AS 
+(
+    [Measures].[Utfall-Prognos]
+    ,[Datum Calc].[Date Calc].[PP]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Utfall-Prognos', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+
+--
+-- Utfall / Prognos
+-- 
+/// Utfall från huvudbok / prognostiserat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall/Prognos]
+AS 
+[Measures].[Utfall] / [Measures].[Prognos]
+, 
+FORMAT_STRING = "0.0%;;;#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Utfall/Prognos', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+
+--
+-- föregående år
+--
+/// Motsvarande period föregående år: Utfall från huvudbok / prognostiserat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall/Prognos (fg år)]
+AS 
+(
+    [Measures].[Utfall/Prognos]
+    ,[Datum Calc].[Date Calc].[PY]
+), 
+FORMAT_STRING = "0.0%;;;#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Utfall/Prognos', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Ackumulerat Prognos 
+--
+/// Ackumulerat till och med vald period: Utfall från huvudbok / prognostiserat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall/Prognos (ack)]
+AS 
+(
+    [Measures].[Utfall/Prognos]
+    ,[Datum Calc].[Date Calc].[YTD]
+), 
+FORMAT_STRING = "0.0%;;;#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Utfall/Prognos', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Ackumulerat Prognos föregående år
+--
+/// Ackumulerat till och med vald period föregående år: Utfall från huvudbok / prognostiserat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall/Prognos (ack fg år)]
+AS 
+(
+    [Measures].[Utfall/Prognos]
+    ,[Datum Calc].[Date Calc].[YTD PY]
+), 
+FORMAT_STRING = "0.0%;;;#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Utfall/Prognos', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Hela årets Prognos
+--
+/// Helårsbelopp för det år vald period tillhör: Utfall från huvudbok / prognostiserat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall/Prognos (helår)]
+AS 
+(
+    [Measures].[Utfall/Prognos]
+    ,[Datum Calc].[Date Calc].[FY]
+), 
+FORMAT_STRING = "0.0%;;;#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Utfall/Prognos', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Föregående års hela Prognos
+--
+/// Föregående års helårsbelopp för det år vald period tillhör: Utfall från huvudbok / prognostiserat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall/Prognos (fg helår)]
+AS 
+(
+    [Measures].[Utfall/Prognos]
+    ,[Datum Calc].[Date Calc].[FY PY]
+), 
+FORMAT_STRING = "0.0%;;;#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Utfall/Prognos', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Föregående periods Prognos
+--
+/// Föregående period (om månad är valt visas föregående månad, om kvartal är valt visas föregående kvartal, osv.): Utfall från huvudbok / prognostiserat belopp
+CREATE MEMBER CURRENTCUBE.[Measures].[Utfall/Prognos (fg period)]
+AS 
+(
+    [Measures].[Utfall/Prognos]
+    ,[Datum Calc].[Date Calc].[PP]
+), 
+FORMAT_STRING = "0.0%;;;#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Utfall/Prognos', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--####################################################################################################################
+-- Planering\Prognos Antal
+--####################################################################################################################
+
+--
+-- föregående år
+--
+/// Motsvarande period föregående år: Prognostiserat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Prognos Antal (fg år)]
+AS 
+(
+    [Measures].[Prognos Antal]
+    ,[Datum Calc].[Date Calc].[PY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Prognos Antal', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Ackumulerat Prognos Antal 
+--
+/// Ackumulerat till och med vald period: Prognostiserat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Prognos Antal (ack)]
+AS 
+(
+    [Measures].[Prognos Antal]
+    ,[Datum Calc].[Date Calc].[YTD]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Prognos Antal', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Ackumulerat Prognos Antal föregående år
+--
+/// Ackumulerat till och med vald period föregående år: Prognostiserat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Prognos Antal (ack fg år)]
+AS 
+(
+    [Measures].[Prognos Antal]
+    ,[Datum Calc].[Date Calc].[YTD PY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Prognos Antal', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Hela årets Prognos Antal
+--
+/// Helårsbelopp för det år vald period tillhör: Prognostiserat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Prognos Antal (helår)]
+AS 
+(
+    [Measures].[Prognos Antal]
+    ,[Datum Calc].[Date Calc].[FY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Prognos Antal', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Föregående års hela Prognos Antal
+--
+/// Föregående års helårsbelopp för det år vald period tillhör: Prognostiserat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Prognos Antal (fg helår)]
+AS 
+(
+    [Measures].[Prognos Antal]
+    ,[Datum Calc].[Date Calc].[FY PY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Prognos Antal', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Föregående periods Prognos Antal
+--
+/// Föregående period (om månad är valt visas föregående månad, om kvartal är valt visas föregående kvartal, osv.): Prognostiserat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Prognos Antal (fg period)]
+AS 
+(
+    [Measures].[Prognos Antal]
+    ,[Datum Calc].[Date Calc].[PP]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Prognos Antal', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+
+--
+-- Antal-Prognos
+-- 
+/// Utfall från huvudbok - prognostiserat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal-Prognos]
+AS 
+[Measures].[Antal] - [Measures].[Prognos Antal]
+, 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Antal-Prognos', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+
+--
+-- föregående år
+--
+/// Motsvarande period föregående år: Utfall från huvudbok - prognostiserat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal-Prognos (fg år)]
+AS 
+(
+    [Measures].[Antal-Prognos]
+    ,[Datum Calc].[Date Calc].[PY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Antal-Prognos', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Ackumulerat Prognos 
+--
+/// Ackumulerat till och med vald period: Utfall från huvudbok - prognostiserat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal-Prognos (ack)]
+AS 
+(
+    [Measures].[Antal-Prognos]
+    ,[Datum Calc].[Date Calc].[YTD]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Antal-Prognos', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Ackumulerat Prognos föregående år
+--
+/// Ackumulerat till och med vald period föregående år: Utfall från huvudbok - prognostiserat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal-Prognos (ack fg år)]
+AS 
+(
+    [Measures].[Antal-Prognos]
+    ,[Datum Calc].[Date Calc].[YTD PY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Antal-Prognos', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Hela årets Prognos
+--
+/// Helårsbelopp för det år vald period tillhör: Utfall från huvudbok - prognostiserat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal-Prognos (helår)]
+AS 
+(
+    [Measures].[Antal-Prognos]
+    ,[Datum Calc].[Date Calc].[FY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Antal-Prognos', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Föregående års hela Prognos
+--
+/// Föregående års helårsbelopp för det år vald period tillhör: Utfall från huvudbok - prognostiserat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal-Prognos (fg helår)]
+AS 
+(
+    [Measures].[Antal-Prognos]
+    ,[Datum Calc].[Date Calc].[FY PY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Antal-Prognos', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Föregående periods Prognos
+--
+/// Föregående period (om månad är valt visas föregående månad, om kvartal är valt visas föregående kvartal, osv.): Utfall från huvudbok - prognostiserat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal-Prognos (fg period)]
+AS 
+(
+    [Measures].[Antal-Prognos]
+    ,[Datum Calc].[Date Calc].[PP]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Antal-Prognos', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+
+--
+-- Utfall / Prognos
+-- 
+/// Utfall från huvudbok / prognostiserat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal/Prognos]
+AS 
+[Measures].[Antal] / [Measures].[Prognos Antal]
+, 
+FORMAT_STRING = "0.0%;;;#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Antal/Prognos', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+
+--
+-- föregående år
+--
+/// Motsvarande period föregående år: Utfall från huvudbok / prognostiserat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal/Prognos (fg år)]
+AS 
+(
+    [Measures].[Antal/Prognos]
+    ,[Datum Calc].[Date Calc].[PY]
+), 
+FORMAT_STRING = "0.0%;;;#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Antal/Prognos', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Ackumulerat Prognos 
+--
+/// Ackumulerat till och med vald period: Utfall från huvudbok / prognostiserat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal/Prognos (ack)]
+AS 
+(
+    [Measures].[Antal/Prognos]
+    ,[Datum Calc].[Date Calc].[YTD]
+), 
+FORMAT_STRING = "0.0%;;;#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Antal/Prognos', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Ackumulerat Prognos föregående år
+--
+/// Ackumulerat till och med vald period föregående år: Utfall från huvudbok / prognostiserat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal/Prognos (ack fg år)]
+AS 
+(
+    [Measures].[Antal/Prognos]
+    ,[Datum Calc].[Date Calc].[YTD PY]
+), 
+FORMAT_STRING = "0.0%;;;#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Antal/Prognos', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Hela årets Prognos
+--
+/// Helårsbelopp för det år vald period tillhör: Utfall från huvudbok / prognostiserat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal/Prognos (helår)]
+AS 
+(
+    [Measures].[Antal/Prognos]
+    ,[Datum Calc].[Date Calc].[FY]
+), 
+FORMAT_STRING = "0.0%;;;#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Antal/Prognos', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Föregående års hela Prognos
+--
+/// Föregående års helårsbelopp för det år vald period tillhör: Utfall från huvudbok / prognostiserat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal/Prognos (fg helår)]
+AS 
+(
+    [Measures].[Antal/Prognos]
+    ,[Datum Calc].[Date Calc].[FY PY]
+), 
+FORMAT_STRING = "0.0%;;;#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Antal/Prognos', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Föregående periods Prognos
+--
+/// Föregående period (om månad är valt visas föregående månad, om kvartal är valt visas föregående kvartal, osv.): Utfall från huvudbok / prognostiserat antal
+CREATE MEMBER CURRENTCUBE.[Measures].[Antal/Prognos (fg period)]
+AS 
+(
+    [Measures].[Antal/Prognos]
+    ,[Datum Calc].[Date Calc].[PP]
+), 
+FORMAT_STRING = "0.0%;;;#", 
+VISIBLE = 1, DISPLAY_FOLDER = 'Planering\Prognos\Antal/Prognos', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+
+
+
+
+--####################################################################################################################
+--
+-- Specialanpassade mätvärden för INSIKT Planering
+--
+--####################################################################################################################
+--
+-- Ack utfall enligt planeringsversion
+--
+CREATE MEMBER CURRENTCUBE.[Measures].[INSIKTPlanering Utfall (ack)]
+AS 
+(    
+    [Measures].[Utfall]
+    ,[Datum Calc].[Date Calc].[PV YTD]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 0, DISPLAY_FOLDER = 'Planering\Planeringsversion\Utfall', ASSOCIATED_MEASURE_GROUP = 'Resultat';
+
+
+--
+-- R12 utfall enligt planeringsversion
+--
+CREATE MEMBER CURRENTCUBE.[Measures].[INSIKTPlanering Utfall (R12)]
+AS 
+(    
+    [Measures].[Utfall]
+    ,[Datum Calc].[Date Calc].[PV R12]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 0, DISPLAY_FOLDER = 'Planering\Planeringsversion\Utfall', ASSOCIATED_MEASURE_GROUP = 'Resultat';
+
+
+--
+-- Ack Planering föregående prognos
+--
+CREATE MEMBER CURRENTCUBE.[Measures].[INSIKTPlanering (fg prognos ack)]
+AS 
+(
+    [Measures].[INSIKTPlanering Planering]
+    ,[Planeringsversion Calc].[Pv Calc].[Prev Prognos]
+    ,[Datum Calc].[Date Calc].[PV YTD]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 0, DISPLAY_FOLDER = 'Planering\Planeringsversion\Planering', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- Utfall fg år sedan
+--
+CREATE MEMBER CURRENTCUBE.[Measures].[INSIKTPlanering Utfall (fg år)]
+AS 
+(
+    [Measures].[Utfall]
+    ,PARALLELPERIOD( [Datum].[Redovisningsår-Period].[Redovisningsår], 1 )
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 0, DISPLAY_FOLDER = 'Resultat\Utfall', ASSOCIATED_MEASURE_GROUP = 'Resultat';
+scope ([Measures].[INSIKTPlanering Utfall (fg år)], [Datum].[Redovisningsår-Period].[Dag]);
+    this = 
+        (
+            [Measures].[Utfall]
+            ,PARALLELPERIOD( [Datum].[Redovisningsår-Period].[Redovisningsår], 1).parent
+        );
+end scope;
+
+
+
+--
+-- Ack utfall enligt planeringsversion
+--
+CREATE MEMBER CURRENTCUBE.[Measures].[INSIKTPlanering Utfall Antal (ack)]
+AS 
+(    
+    [Measures].[Antal]
+    ,[Datum Calc].[Date Calc].[PV YTD]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 0, DISPLAY_FOLDER = 'Planering\Planeringsversion\Utfall', ASSOCIATED_MEASURE_GROUP = 'Resultat';
+
+
+CREATE MEMBER CURRENTCUBE.[Measures].[INSIKTPlanering Utfall Antal (fg år)]
+AS 
+(
+    [Measures].[Antal]
+    ,[Datum Calc].[Date Calc].[PY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 0, DISPLAY_FOLDER = 'Resultat\Antal', ASSOCIATED_MEASURE_GROUP = 'Resultat';
+scope ([Measures].[INSIKTPlanering Utfall Antal (fg år)], [Datum].[Redovisningsår-Period].[Dag]);
+    this = 
+        (
+            [Measures].[Antal]
+            ,PARALLELPERIOD( [Datum].[Redovisningsår-Period].[Redovisningsår], 1 ).parent
+        );
+end scope;
+
+
+--
+-- Utfall två år sedan
+--
+CREATE MEMBER CURRENTCUBE.[Measures].[INSIKTPlanering Utfall (2 år sedan)]
+AS 
+(
+    [Measures].[Utfall]
+    ,PARALLELPERIOD( [Datum].[Redovisningsår-Period].[Redovisningsår], 2 )
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 0, DISPLAY_FOLDER = 'Resultat\Utfall', ASSOCIATED_MEASURE_GROUP = 'Resultat';
+scope ([Measures].[INSIKTPlanering Utfall (2 år sedan)], [Datum].[Redovisningsår-Period].[Dag]);
+    this = 
+        (
+            [Measures].[Utfall]
+            ,PARALLELPERIOD( [Datum].[Redovisningsår-Period].[Redovisningsår], 2 ).parent
+        );
+end scope;
+
+
+CREATE MEMBER CURRENTCUBE.[Measures].[INSIKTPlanering Utfall Antal (2 år sedan)]
+AS 
+(
+    [Measures].[Antal]
+    ,[Datum Calc].[Date Calc].[PPY]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 0, DISPLAY_FOLDER = 'Resultat\Antal', ASSOCIATED_MEASURE_GROUP = 'Resultat';
+scope ([Measures].[INSIKTPlanering Utfall Antal (2 år sedan)], [Datum].[Redovisningsår-Period].[Dag]);
+    this = 
+        (
+            [Measures].[Antal]
+            ,PARALLELPERIOD( [Datum].[Redovisningsår-Period].[Redovisningsår], 2 ).parent
+        );
+end scope;
+
+--
+-- Utfall fg eller två år sedan beroende på budget eller prognos (används t ex för periodisering enligt fg års utfall)
+-- 
+CREATE MEMBER CURRENTCUBE.[Measures].[INSIKTPlanering Utfall (1-2 år sedan)]
+AS 
+(
+    case when [Planeringsversion].[Lista].properties("FC Version Type ID") = 'Budget' then
+        [Measures].[INSIKTPlanering Utfall (2 år sedan)]
+    else
+        [Measures].[INSIKTPlanering Utfall (fg år)]
+    end
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 0, DISPLAY_FOLDER = 'Resultat\Utfall', ASSOCIATED_MEASURE_GROUP = 'Resultat';
+
+
+--
+-- Ack Planering föregående prognos
+--
+CREATE MEMBER CURRENTCUBE.[Measures].[INSIKTPlanering Antal (fg prognos ack)]
+AS 
+(
+    [Measures].[INSIKTPlanering Planering Antal]
+    ,[Planeringsversion Calc].[Pv Calc].[Prev Prognos]
+    ,[Datum Calc].[Date Calc].[PV YTD]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 0, DISPLAY_FOLDER = 'Planering\Planeringsversion\Planering', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering';
+
+
+--
+-- föregående prognos
+--
+CREATE MEMBER CURRENTCUBE.[Measures].[INSIKTPlanering (fg prognos helår)]
+AS 
+(
+    [Measures].[INSIKTPlanering Planering]
+    ,[Planeringsversion Calc].[Pv Calc].[Prev Prognos]
+    ,[Datum].[Redovisningsår-Period].[Alla datum]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 0, DISPLAY_FOLDER = 'Planering\Planeringsversion\Planering', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering - INSIKT'; 
+
+
+
+
+scope([Measures].[INSIKTPlanering (fg prognos helår)], [Datum].[Redovisningsår-Period].[Dag]);
+    this =
+        case 
+	    when [Planeringsversion].[Lista].properties("Previous Prognos ID") = "0"
+	    then 
+		    null
+	    else
+        (
+            [Measures].[INSIKTPlanering Planering]
+            ,StrToMember
+            (
+                "[Planeringsversion].[Lista].[Planeringsversion].&["
+                + [Planeringsversion].[Lista].properties("Previous Prognos ID")
+                + ']'
+            )
+            ,
+            [Datum].[Redovisningsår-Period].currentmember.parent.lag
+            (
+                [Planeringsversion].[Lista].properties("Previous Prognos To Current Month Diff", typed)
+            )
+        )
+		end
+		;
+end scope;
+
+
+CREATE MEMBER CURRENTCUBE.[Measures].[INSIKTPlanering Antal (fg prognos helår)]
+AS 
+(
+    [Measures].[INSIKTPlanering Planering Antal]
+    ,[Planeringsversion Calc].[Pv Calc].[Prev Prognos]
+    ,[Datum].[Redovisningsår-Period].[Alla datum]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 0, DISPLAY_FOLDER = 'Planering\Planeringsversion\Planering Antal', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering - INSIKT'; 
+
+scope([Measures].[INSIKTPlanering Antal (fg prognos helår)], [Datum].[Redovisningsår-Period].[Dag]);
+    this =
+        case 
+	    when [Planeringsversion].[Lista].properties("Previous Prognos ID") = "0"
+	    then 
+		    null
+	    else
+        (
+            [Measures].[INSIKTPlanering Planering Antal]
+            ,StrToMember
+            (
+                "[Planeringsversion].[Lista].[Planeringsversion].&["
+                + [Planeringsversion].[Lista].properties("Previous Prognos ID")
+                + ']'
+            )
+            ,
+            [Datum].[Redovisningsår-Period].currentmember.parent.lag
+            (
+                [Planeringsversion].[Lista].properties("Previous Prognos To Current Month Diff", typed)
+            )
+        )
+		end
+		;
+end scope;
+
+
+
+
+--
+-- föregående budget
+--
+CREATE MEMBER CURRENTCUBE.[Measures].[INSIKTPlanering (fg budget helår)]
+AS 
+(
+    [Measures].[INSIKTPlanering Planering]
+    ,[Planeringsversion Calc].[Pv Calc].[Prev Budget]
+    ,[Datum].[Redovisningsår-Period].[Alla datum]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 0, DISPLAY_FOLDER = 'Planering\Planeringsversion\Planering', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering - INSIKT'; 
+
+scope([Measures].[INSIKTPlanering (fg budget helår)], [Datum].[Redovisningsår-Period].[Dag]);
+    this =
+		case 
+	    when [Planeringsversion].[Lista].properties("Previous Budget ID") = "0"
+	    then 
+		    null
+	    else
+        (
+            [Measures].[INSIKTPlanering Planering]
+            ,StrToMember
+            (
+                "[Planeringsversion].[Lista].[Planeringsversion].&["
+                + [Planeringsversion].[Lista].properties("Previous Budget ID")
+                + ']'
+            )
+            ,
+            [Datum].[Redovisningsår-Period].currentmember.parent.lag
+            (
+                [Planeringsversion].[Lista].properties("Previous Budget To Current Month Diff", typed)
+            )
+        )
+		end
+		;
+end scope;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[INSIKTPlanering Antal (fg budget helår)]
+AS 
+(
+    [Measures].[INSIKTPlanering Planering Antal]
+    ,[Planeringsversion Calc].[Pv Calc].[Prev Budget]
+    ,[Datum].[Redovisningsår-Period].[Alla datum]
+), 
+FORMAT_STRING = "#,#", 
+VISIBLE = 0, DISPLAY_FOLDER = 'Planering\Planeringsversion\Planering Antal', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering - INSIKT'; 
+
+scope([Measures].[INSIKTPlanering Antal (fg budget helår)], [Datum].[Redovisningsår-Period].[Dag]);
+    this =
+		case 
+	    when [Planeringsversion].[Lista].properties("Previous Budget ID") = "0"
+	    then 
+		    null
+	    else
+        (
+            [Measures].[INSIKTPlanering Planering Antal]
+            ,StrToMember
+            (
+                "[Planeringsversion].[Lista].[Planeringsversion].&["
+                + [Planeringsversion].[Lista].properties("Previous Budget ID")
+                + ']'
+            )
+            ,
+            [Datum].[Redovisningsår-Period].currentmember.parent.lag
+            (
+                [Planeringsversion].[Lista].properties("Previous Budget To Current Month Diff", typed)
+            )
+        )
+		end
+		;
+end scope;
+
+
+
+
+--
+-- Utfallsprognos helår, ack utfall + föregående budget
+--
+CREATE MEMBER CURRENTCUBE.[Measures].[INSIKTPlanering Utfall (ack utfall + fg budget)]
+AS 
+(    
+    [Measures].[Utfall]
+    ,[Datum Calc].[Date Calc].[PV YTD]
+)
++
+(    
+    [Measures].[INSIKTPlanering Planering]
+    ,[Planeringsversion Calc].[Pv Calc].[Prev Budget]
+    ,[Datum Calc].[Date Calc].[PV Rev YTD]
+)
+, 
+FORMAT_STRING = "#,#", 
+VISIBLE = 0, DISPLAY_FOLDER = 'Planering\Planeringsversion\Utfall', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering - INSIKT';
+scope ([Measures].[INSIKTPlanering Utfall (ack utfall + fg budget)], [Datum].[Redovisningsår-Period].[Dag]);
+    this =
+        IIF
+        (
+            RANK
+            (
+                [Datum].[Redovisningsår-Period].currentmember.parent.lag([Planeringsversion].[Lista].properties("Insikt Time To Ack Period Offset", typed))
+                ,[PlanningVersionYTDMonths]
+            )
+            >0
+            ,
+            --
+            -- Utfall
+            --
+            (
+                [Datum].[Redovisningsår-Period].currentmember.parent.lag([Planeringsversion].[Lista].properties("Insikt Time To Ack Period Offset", typed))
+                ,[Measures].[Utfall]
+            )
+            ,
+            --
+            -- Prognos
+            --
+            (
+                [Datum].[Redovisningsår-Period].currentmember.parent.lag([Planeringsversion].[Lista].properties("Insikt Time To Ack Period Offset", typed))
+                ,[Measures].[INSIKTPlanering Planering]
+                ,[Planeringsversion Calc].[Pv Calc].[Prev Budget]
+            )
+        )
+    ;
+end scope;
+
+
+CREATE MEMBER CURRENTCUBE.[Measures].[INSIKTPlanering Utfall Antal (ack utfall + fg budget)]
+AS 
+(    
+    [Measures].[Antal]
+    ,[Datum Calc].[Date Calc].[PV YTD]
+)
++
+(    
+    [Measures].[INSIKTPlanering Planering Antal]
+    ,[Planeringsversion Calc].[Pv Calc].[Prev Budget]
+    ,[Datum Calc].[Date Calc].[PV Rev YTD]
+)
+, 
+FORMAT_STRING = "#,#", 
+VISIBLE = 0, DISPLAY_FOLDER = 'Planering\Planeringsversion\Utfall Antal', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering - INSIKT';
+
+scope ([Measures].[INSIKTPlanering Utfall Antal (ack utfall + fg budget)], [Datum].[Redovisningsår-Period].[Dag]);
+    this =
+        IIF
+        (
+            RANK
+            (
+                [Datum].[Redovisningsår-Period].currentmember.parent.lag([Planeringsversion].[Lista].properties("Insikt Time To Ack Period Offset", typed))
+                ,[PlanningVersionYTDMonths]
+            )
+            >0
+            ,
+            --
+            -- Utfall
+            --
+            (
+                [Datum].[Redovisningsår-Period].currentmember.parent.lag([Planeringsversion].[Lista].properties("Insikt Time To Ack Period Offset", typed))
+                ,[Measures].[Antal]
+            )
+            ,
+            --
+            -- Prognos
+            --
+            (
+                [Datum].[Redovisningsår-Period].currentmember.parent.lag([Planeringsversion].[Lista].properties("Insikt Time To Ack Period Offset", typed))
+                ,[Measures].[INSIKTPlanering Planering Antal]
+                ,[Planeringsversion Calc].[Pv Calc].[Prev Budget]
+            )
+        )
+    ;
+end scope;
+
+
+
+
+
+--
+-- Utfallsprognos helår, ack utfall + föregående prognos
+--
+CREATE MEMBER CURRENTCUBE.[Measures].[INSIKTPlanering Utfall (ack utfall + fg prognos)]
+AS 
+(    
+    [Measures].[Utfall]
+    ,[Datum Calc].[Date Calc].[PV YTD]
+)
++
+(    
+    [Measures].[INSIKTPlanering Planering]
+    ,[Planeringsversion Calc].[Pv Calc].[Prev Prognos]
+    ,[Datum Calc].[Date Calc].[PV Rev YTD]
+)
+, 
+FORMAT_STRING = "#,#", 
+VISIBLE = 0, DISPLAY_FOLDER = 'Planering\Planeringsversion\Utfall', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering - INSIKT';
+scope ([Measures].[INSIKTPlanering Utfall (ack utfall + fg prognos)], [Datum].[Redovisningsår-Period].[Dag]);
+    this =
+        IIF
+        (
+            RANK
+            (
+                [Datum].[Redovisningsår-Period].currentmember.parent.lag([Planeringsversion].[Lista].properties("Insikt Time To Ack Period Offset", typed))
+                ,[PlanningVersionYTDMonths]
+            )
+            >0
+            ,
+            --
+            -- Utfall
+            --
+            (
+                [Datum].[Redovisningsår-Period].currentmember.parent.lag([Planeringsversion].[Lista].properties("Insikt Time To Ack Period Offset", typed))
+                ,[Measures].[Utfall]
+            )
+            ,
+            --
+            -- Prognos
+            --
+            (
+                [Datum].[Redovisningsår-Period].currentmember.parent.lag([Planeringsversion].[Lista].properties("Previous Prognos To Current Month Diff", typed))
+                ,[Measures].[INSIKTPlanering Planering]
+                ,[Planeringsversion Calc].[Pv Calc].[Prev Prognos]
+            )
+        )
+    ;
+end scope;
+
+
+CREATE MEMBER CURRENTCUBE.[Measures].[INSIKTPlanering Utfall Antal (ack utfall + fg prognos)]
+AS 
+(    
+    [Measures].[Antal]
+    ,[Datum Calc].[Date Calc].[PV YTD]
+)
++
+(    
+    [Measures].[INSIKTPlanering Planering Antal]
+    ,[Planeringsversion Calc].[Pv Calc].[Prev Prognos]
+    ,[Datum Calc].[Date Calc].[PV Rev YTD]
+)
+, 
+FORMAT_STRING = "#,#", 
+VISIBLE = 0, DISPLAY_FOLDER = 'Planering\Planeringsversion\Utfall Antal', ASSOCIATED_MEASURE_GROUP = 'Resultat - Planering - INSIKT';
+
+scope ([Measures].[INSIKTPlanering Utfall Antal (ack utfall + fg prognos)], [Datum].[Redovisningsår-Period].[Dag]);
+    this =
+        IIF
+        (
+            RANK
+            (
+                [Datum].[Redovisningsår-Period].currentmember.parent.lag([Planeringsversion].[Lista].properties("Insikt Time To Ack Period Offset", typed))
+                ,[PlanningVersionYTDMonths]
+            )
+            >0
+            ,
+            --
+            -- Utfall
+            --
+            (
+                [Datum].[Redovisningsår-Period].currentmember.parent.lag([Planeringsversion].[Lista].properties("Insikt Time To Ack Period Offset", typed))
+                ,[Measures].[Antal]
+            )
+            ,
+            --
+            -- Prognos
+            --
+            (
+                [Datum].[Redovisningsår-Period].currentmember.parent.lag([Planeringsversion].[Lista].properties("Previous Prognos To Current Month Diff", typed))
+                ,[Measures].[INSIKTPlanering Planering Antal]
+                ,[Planeringsversion Calc].[Pv Calc].[Prev Prognos]
+            )
+        )
+    ;
+end scope;
+
+--
+-- En konstant etta.
+--
+CREATE MEMBER CURRENTCUBE.[Measures].[Ett]
+AS 
+(
+    1
+), 
+VISIBLE = 0;

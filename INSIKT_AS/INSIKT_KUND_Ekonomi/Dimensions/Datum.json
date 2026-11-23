@@ -1,0 +1,1155 @@
+{
+  "id": "Datum",
+  "name": "Datum",
+  "description": "",
+  "type": "Time",
+  "storageMode": "Molap",
+  "unknownMember": "None",
+  "unknownMemberName": "Unknown",
+  "attributes": [
+    {
+      "id": "Date ID For Week",
+      "name": "Date ID For Week",
+      "description": "",
+      "type": "Days",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Time",
+            "columnId": "DateID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Time",
+            "tableType": "Table",
+            "friendlyName": "dim_Time",
+            "qualifiedObjectName": "dw.dim_Time"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Time",
+          "columnId": "DateName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Time",
+          "tableType": "Table",
+          "friendlyName": "dim_Time",
+          "qualifiedObjectName": "dw.dim_Time"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Week ID",
+          "relatedAttributeName": "Week ID",
+          "relationshipType": "Rigid",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "DateID",
+      "name": "DateID",
+      "description": "",
+      "type": "Days",
+      "usage": "Key",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Name",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Time",
+            "columnId": "DateID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Time",
+            "tableType": "Table",
+            "friendlyName": "dim_Time",
+            "qualifiedObjectName": "dw.dim_Time"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Time",
+          "columnId": "DateName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Time",
+          "tableType": "Table",
+          "friendlyName": "dim_Time",
+          "qualifiedObjectName": "dw.dim_Time"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Fiscal Date ID",
+          "relatedAttributeName": "Fiscal Date ID",
+          "relationshipType": "Rigid",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Date ID For Week",
+          "relatedAttributeName": "Date ID For Week",
+          "relationshipType": "Rigid",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Month ID",
+          "relatedAttributeName": "Month ID",
+          "relationshipType": "Rigid",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Fiscal Date ID",
+      "name": "Fiscal Date ID",
+      "description": "",
+      "type": "Days",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Time",
+            "columnId": "FiscalDateID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Time",
+            "tableType": "Table",
+            "friendlyName": "dim_Time",
+            "qualifiedObjectName": "dw.dim_Time"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Time",
+          "columnId": "DateName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Time",
+          "tableType": "Table",
+          "friendlyName": "dim_Time",
+          "qualifiedObjectName": "dw.dim_Time"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Fiscal Period ID",
+          "relatedAttributeName": "Fiscal Period ID",
+          "relationshipType": "Rigid",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Fiscal Period ID",
+      "name": "Fiscal Period ID",
+      "description": "",
+      "type": "Months",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Time",
+            "columnId": "FiscalPeriodID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Time",
+            "tableType": "Table",
+            "friendlyName": "dim_Time",
+            "qualifiedObjectName": "dw.dim_Time"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Time",
+          "columnId": "FiscalPeriodNameWithYear",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Time",
+          "tableType": "Table",
+          "friendlyName": "dim_Time",
+          "qualifiedObjectName": "dw.dim_Time"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Fiscal Quarter ID",
+          "relatedAttributeName": "Fiscal Quarter ID",
+          "relationshipType": "Rigid",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Fiscal Three Part Year ID",
+          "relatedAttributeName": "Fiscal Three Part Year ID",
+          "relationshipType": "Rigid",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Fiscal Quarter ID",
+      "name": "Fiscal Quarter ID",
+      "description": "",
+      "type": "Quarters",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Time",
+            "columnId": "FiscalQuarterID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Time",
+            "tableType": "Table",
+            "friendlyName": "dim_Time",
+            "qualifiedObjectName": "dw.dim_Time"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Time",
+          "columnId": "FiscalQuarterNameWithYear",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Time",
+          "tableType": "Table",
+          "friendlyName": "dim_Time",
+          "qualifiedObjectName": "dw.dim_Time"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Fiscal Year",
+          "relatedAttributeName": "Fiscal Year",
+          "relationshipType": "Rigid",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Fiscal Three Part Year ID",
+      "name": "Fiscal Three Part Year ID",
+      "description": "",
+      "type": "Trimesters",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Time",
+            "columnId": "FiscalThreePartYearID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Time",
+            "tableType": "Table",
+            "friendlyName": "dim_Time",
+            "qualifiedObjectName": "dw.dim_Time"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Time",
+          "columnId": "FiscalThreePartYearNameWithYear",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Time",
+          "tableType": "Table",
+          "friendlyName": "dim_Time",
+          "qualifiedObjectName": "dw.dim_Time"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Fiscal Year",
+          "relatedAttributeName": "Fiscal Year",
+          "relationshipType": "Rigid",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Fiscal Year",
+      "name": "Fiscal Year",
+      "description": "",
+      "type": "Years",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Time",
+            "columnId": "FiscalYear",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Time",
+            "tableType": "Table",
+            "friendlyName": "dim_Time",
+            "qualifiedObjectName": "dw.dim_Time"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Time",
+          "columnId": "FiscalYearName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Time",
+          "tableType": "Table",
+          "friendlyName": "dim_Time",
+          "qualifiedObjectName": "dw.dim_Time"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Halfyear ID",
+      "name": "Halfyear ID",
+      "description": "",
+      "type": "HalfYears",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Time",
+            "columnId": "HalfyearID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Time",
+            "tableType": "Table",
+            "friendlyName": "dim_Time",
+            "qualifiedObjectName": "dw.dim_Time"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Time",
+          "columnId": "HalfyearNameWithYear",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Time",
+          "tableType": "Table",
+          "friendlyName": "dim_Time",
+          "qualifiedObjectName": "dw.dim_Time"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Year",
+          "relatedAttributeName": "Year",
+          "relationshipType": "Rigid",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Month ID",
+      "name": "Month ID",
+      "description": "",
+      "type": "Months",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Time",
+            "columnId": "MonthID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Time",
+            "tableType": "Table",
+            "friendlyName": "dim_Time",
+            "qualifiedObjectName": "dw.dim_Time"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Time",
+          "columnId": "MonthNameWithYear",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Time",
+          "tableType": "Table",
+          "friendlyName": "dim_Time",
+          "qualifiedObjectName": "dw.dim_Time"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Quarter ID",
+          "relatedAttributeName": "Quarter ID",
+          "relationshipType": "Rigid",
+          "cardinality": "Many",
+          "visible": true
+        },
+        {
+          "relatedAttributeId": "Three Part Year ID",
+          "relatedAttributeName": "Three Part Year ID",
+          "relationshipType": "Rigid",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Quarter ID",
+      "name": "Quarter ID",
+      "description": "",
+      "type": "Quarters",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Time",
+            "columnId": "QuarterID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Time",
+            "tableType": "Table",
+            "friendlyName": "dim_Time",
+            "qualifiedObjectName": "dw.dim_Time"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Time",
+          "columnId": "QuarterNameWithYear",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Time",
+          "tableType": "Table",
+          "friendlyName": "dim_Time",
+          "qualifiedObjectName": "dw.dim_Time"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Halfyear ID",
+          "relatedAttributeName": "Halfyear ID",
+          "relationshipType": "Rigid",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Three Part Year ID",
+      "name": "Three Part Year ID",
+      "description": "",
+      "type": "Trimesters",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Time",
+            "columnId": "ThreePartYearID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Time",
+            "tableType": "Table",
+            "friendlyName": "dim_Time",
+            "qualifiedObjectName": "dw.dim_Time"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Time",
+          "columnId": "ThreePartYearNameWithYear",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Time",
+          "tableType": "Table",
+          "friendlyName": "dim_Time",
+          "qualifiedObjectName": "dw.dim_Time"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Year",
+          "relatedAttributeName": "Year",
+          "relationshipType": "Rigid",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Week ID",
+      "name": "Week ID",
+      "description": "",
+      "type": "Weeks",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Time",
+            "columnId": "WeekID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Time",
+            "tableType": "Table",
+            "friendlyName": "dim_Time",
+            "qualifiedObjectName": "dw.dim_Time"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Time",
+          "columnId": "WeekNameWithYear",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Time",
+          "tableType": "Table",
+          "friendlyName": "dim_Time",
+          "qualifiedObjectName": "dw.dim_Time"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        {
+          "relatedAttributeId": "Year For Week",
+          "relatedAttributeName": "Year For Week",
+          "relationshipType": "Rigid",
+          "cardinality": "Many",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "id": "Year",
+      "name": "Year",
+      "description": "",
+      "type": "Years",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Time",
+            "columnId": "Year",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Time",
+            "tableType": "Table",
+            "friendlyName": "dim_Time",
+            "qualifiedObjectName": "dw.dim_Time"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Time",
+          "columnId": "YearName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Time",
+          "tableType": "Table",
+          "friendlyName": "dim_Time",
+          "qualifiedObjectName": "dw.dim_Time"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    },
+    {
+      "id": "Year For Week",
+      "name": "Year For Week",
+      "description": "",
+      "type": "Years",
+      "usage": "Regular",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "dim_Time",
+            "columnId": "YearForWeek",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "dim_Time",
+            "tableType": "Table",
+            "friendlyName": "dim_Time",
+            "qualifiedObjectName": "dw.dim_Time"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "dim_Time",
+          "columnId": "YearForWeekName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "dim_Time",
+          "tableType": "Table",
+          "friendlyName": "dim_Time",
+          "qualifiedObjectName": "dw.dim_Time"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    }
+  ],
+  "hierarchies": [
+    {
+      "id": "År - Kvartal - Månad",
+      "name": "År - Kvartal - Månad",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Alla datum",
+      "visible": true,
+      "levels": [
+        {
+          "id": "Månad",
+          "name": "Månad",
+          "ordinal": 0,
+          "sourceAttributeId": "Month ID",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        },
+        {
+          "id": "Dag",
+          "name": "Dag",
+          "ordinal": 0,
+          "sourceAttributeId": "DateID",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        },
+        {
+          "id": "År",
+          "name": "År",
+          "ordinal": 0,
+          "sourceAttributeId": "Year",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        },
+        {
+          "id": "Kvartal",
+          "name": "Kvartal",
+          "ordinal": 0,
+          "sourceAttributeId": "Quarter ID",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        }
+      ]
+    },
+    {
+      "id": "År - Månad",
+      "name": "År - Månad",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Alla datum",
+      "visible": true,
+      "levels": [
+        {
+          "id": "Dag",
+          "name": "Dag",
+          "ordinal": 0,
+          "sourceAttributeId": "DateID",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        },
+        {
+          "id": "Månad",
+          "name": "Månad",
+          "ordinal": 0,
+          "sourceAttributeId": "Month ID",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        },
+        {
+          "id": "År",
+          "name": "År",
+          "ordinal": 0,
+          "sourceAttributeId": "Year",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        }
+      ]
+    },
+    {
+      "id": "År-Halvår-Kvartal-Månad",
+      "name": "År-Halvår-Kvartal-Månad",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Alla datum",
+      "visible": true,
+      "levels": [
+        {
+          "id": "Månad",
+          "name": "Månad",
+          "ordinal": 0,
+          "sourceAttributeId": "Month ID",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        },
+        {
+          "id": "Dag",
+          "name": "Dag",
+          "ordinal": 0,
+          "sourceAttributeId": "DateID",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        },
+        {
+          "id": "Kvartal",
+          "name": "Kvartal",
+          "ordinal": 0,
+          "sourceAttributeId": "Quarter ID",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        },
+        {
+          "id": "År",
+          "name": "År",
+          "ordinal": 0,
+          "sourceAttributeId": "Year",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        },
+        {
+          "id": "Halvår",
+          "name": "Halvår",
+          "ordinal": 0,
+          "sourceAttributeId": "Halfyear ID",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        }
+      ]
+    },
+    {
+      "id": "År-Tertial-Månad",
+      "name": "År-Tertial-Månad",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Alla datum",
+      "visible": true,
+      "levels": [
+        {
+          "id": "Månad",
+          "name": "Månad",
+          "ordinal": 0,
+          "sourceAttributeId": "Month ID",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        },
+        {
+          "id": "Dag",
+          "name": "Dag",
+          "ordinal": 0,
+          "sourceAttributeId": "DateID",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        },
+        {
+          "id": "År",
+          "name": "År",
+          "ordinal": 0,
+          "sourceAttributeId": "Year",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        },
+        {
+          "id": "Tertial",
+          "name": "Tertial",
+          "ordinal": 0,
+          "sourceAttributeId": "Three Part Year ID",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        }
+      ]
+    },
+    {
+      "id": "År-Vecka",
+      "name": "År-Vecka",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Alla datum",
+      "visible": true,
+      "levels": [
+        {
+          "id": "Dag",
+          "name": "Dag",
+          "ordinal": 0,
+          "sourceAttributeId": "Date ID For Week",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        },
+        {
+          "id": "Vecka",
+          "name": "Vecka",
+          "ordinal": 0,
+          "sourceAttributeId": "Week ID",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        },
+        {
+          "id": "År",
+          "name": "År",
+          "ordinal": 0,
+          "sourceAttributeId": "Year For Week",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        }
+      ]
+    },
+    {
+      "id": "Redovisningsår-Kvartal-Period",
+      "name": "Redovisningsår-Kvartal-Period",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Alla datum",
+      "visible": true,
+      "levels": [
+        {
+          "id": "Period",
+          "name": "Period",
+          "ordinal": 0,
+          "sourceAttributeId": "Fiscal Period ID",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        },
+        {
+          "id": "Dag",
+          "name": "Dag",
+          "ordinal": 0,
+          "sourceAttributeId": "Fiscal Date ID",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        },
+        {
+          "id": "Redovisningsår",
+          "name": "Redovisningsår",
+          "ordinal": 0,
+          "sourceAttributeId": "Fiscal Year",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        },
+        {
+          "id": "Kvartal",
+          "name": "Kvartal",
+          "ordinal": 0,
+          "sourceAttributeId": "Fiscal Quarter ID",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        }
+      ]
+    },
+    {
+      "id": "Redovisningsår-Period",
+      "name": "Redovisningsår-Period",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Alla datum",
+      "visible": true,
+      "levels": [
+        {
+          "id": "Dag",
+          "name": "Dag",
+          "ordinal": 0,
+          "sourceAttributeId": "Fiscal Date ID",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        },
+        {
+          "id": "Period",
+          "name": "Period",
+          "ordinal": 0,
+          "sourceAttributeId": "Fiscal Period ID",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        },
+        {
+          "id": "Redovisningsår",
+          "name": "Redovisningsår",
+          "ordinal": 0,
+          "sourceAttributeId": "Fiscal Year",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        }
+      ]
+    },
+    {
+      "id": "Redovisningsår-Tertial-Period",
+      "name": "Redovisningsår-Tertial-Period",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Alla datum",
+      "visible": true,
+      "levels": [
+        {
+          "id": "Period",
+          "name": "Period",
+          "ordinal": 0,
+          "sourceAttributeId": "Fiscal Period ID",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        },
+        {
+          "id": "Dag",
+          "name": "Dag",
+          "ordinal": 0,
+          "sourceAttributeId": "Fiscal Date ID",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        },
+        {
+          "id": "Redovisningsår",
+          "name": "Redovisningsår",
+          "ordinal": 0,
+          "sourceAttributeId": "Fiscal Year",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        },
+        {
+          "id": "Tertial",
+          "name": "Tertial",
+          "ordinal": 0,
+          "sourceAttributeId": "Fiscal Three Part Year ID",
+          "levelType": null,
+          "hideMemberIf": "Never"
+        }
+      ]
+    }
+  ]
+}

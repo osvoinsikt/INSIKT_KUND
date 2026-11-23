@@ -1,0 +1,58 @@
+[
+  {
+    "ID": 1,
+    "InvoiceLinkTypeID": 3,
+    "PathToInvoiceRoot": "C:\\Integrations\\fakturabilder\\Sivrac\\Fakturor\\F9999\\",
+    "InvoiceFileType": "pdf",
+    "UseImpersonationWhenFetchingInvoice": true,
+    "UserNameToFetchInvoiceWith": "ins_svc_insikt",
+    "DomainToFetchInvoiceWith": "base-template",
+    "PasswordToFetchInvoiceWith": "EF1XW0MpBiQjTxvILIZZF0qxGuFoqa6gNSlbkyMjvH7C4Z367wMgYi8VxEUI1tCvSefJxe3P9TjjJUhB0Bn2IprDIXXTCI1Fs+F814KAL7V7l8Uxf98+WsuYyUdWxtDSMUmP1diu75SCZmgw/Zg2keGne4EaZm/mQDv8OgEgIHXH+gpB4zY+1/4mYChxCI3sQDaYSr38XBbmfaiIwCVA+1jASmlR4VjGVrYh83cJdjsQ+KCLUbuV8YJhUjKP+LgDfsQz4ETmAMUrp5/6ttjjlYg+/W3LnLpXeqSvB09y7WS/GxMeAupaT/96QAKWJZOt+K84Is0df3QueH3d/1urLw==",
+    "UseAsRemoteCredentials": false,
+    "PathToXSLFile": null,
+    "IsDefault": true,
+    "DownloadAllLimit": null
+  },
+  {
+    "ID": 2,
+    "InvoiceLinkTypeID": 3,
+    "PathToInvoiceRoot": "C:\\Integrations\\fakturabilder\\Sivrac\\Fakturor\\F9999\\",
+    "InvoiceFileType": "tif",
+    "UseImpersonationWhenFetchingInvoice": true,
+    "UserNameToFetchInvoiceWith": "ins_svc_insikt",
+    "DomainToFetchInvoiceWith": "base-template",
+    "PasswordToFetchInvoiceWith": "jfKGBBmkh6A8u+G5VfejxrvryPac4o1DhRqQ4q3A7jf9ulojSEbO3F8XzyaWGRvO2walLx97TddZaW06WnDpTK1ZBKPCAPDYgK+RqnDqQXEwf7KcxKJMk4Q40K0v/boBL9mWXmFMxs+GJx/zCUpWC4Std4/zIfIESv/raDjRvM3zW0qRcq2l6Np7yo59KfLy45dGn/c7HEkswArOKPR1i/eqnY/4Ydvr332WCL+hMeAw6I+whiX9oeNT3aJ/0mC9qIT90/e086gB+fIU9DboSpjN50jd6VzagnJ9H5sXFfJa1ss2bPZiDVwDmvQ4yLHm0kc8kOynPOmQS9l6PCm68w==",
+    "UseAsRemoteCredentials": false,
+    "PathToXSLFile": null,
+    "IsDefault": false,
+    "DownloadAllLimit": null
+  },
+  {
+    "ID": 3,
+    "InvoiceLinkTypeID": 1,
+    "PathToInvoiceRoot": null,
+    "InvoiceFileType": null,
+    "UseImpersonationWhenFetchingInvoice": true,
+    "UserNameToFetchInvoiceWith": "ins_svc_insikt",
+    "DomainToFetchInvoiceWith": "base-template",
+    "PasswordToFetchInvoiceWith": null,
+    "UseAsRemoteCredentials": null,
+    "PathToXSLFile": null,
+    "IsDefault": false,
+    "DownloadAllLimit": null
+  },
+  {
+    "ID": 4,
+    "InvoiceLinkTypeID": 3,
+    "PathToInvoiceRoot": "C:\\Integrations\\fakturabilder\\Sivrac\\Fakturor\\F9999\\",
+    "InvoiceFileType": "xml",
+    "UseImpersonationWhenFetchingInvoice": true,
+    "UserNameToFetchInvoiceWith": "ins_svc_insikt",
+    "DomainToFetchInvoiceWith": "base-template",
+    "PasswordToFetchInvoiceWith": null,
+    "UseAsRemoteCredentials": null,
+    "PathToXSLFile": "todo",
+    "IsDefault": false,
+    "DownloadAllLimit": null
+  }
+]

@@ -1,0 +1,11 @@
+[
+  {
+    "ID": 1,
+    "FCViewID": 9,
+    "UniqueName": "[Measures].[PeriodiseringPlaneringsperiodFilter]",
+    "NonEmptyHint": null,
+    "NonZeroLimit": null,
+    "Obligatory": true,
+    "Level": 2
+  }
+]

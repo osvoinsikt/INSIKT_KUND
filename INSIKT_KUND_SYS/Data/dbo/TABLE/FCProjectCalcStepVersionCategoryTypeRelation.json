@@ -1,0 +1,65 @@
+[
+  {
+    "ID": 1,
+    "FCVersionCategoryID": 1000,
+    "FCProjectCalcStepTypeID": 1,
+    "Order": 1,
+    "IsOptional": false
+  },
+  {
+    "ID": 2,
+    "FCVersionCategoryID": 1000,
+    "FCProjectCalcStepTypeID": 2,
+    "Order": 2,
+    "IsOptional": true
+  },
+  {
+    "ID": 3,
+    "FCVersionCategoryID": 1000,
+    "FCProjectCalcStepTypeID": 3,
+    "Order": 3,
+    "IsOptional": true
+  },
+  {
+    "ID": 4,
+    "FCVersionCategoryID": 2000,
+    "FCProjectCalcStepTypeID": 1,
+    "Order": 1,
+    "IsOptional": false
+  },
+  {
+    "ID": 5,
+    "FCVersionCategoryID": 2000,
+    "FCProjectCalcStepTypeID": 2,
+    "Order": 2,
+    "IsOptional": true
+  },
+  {
+    "ID": 6,
+    "FCVersionCategoryID": 2000,
+    "FCProjectCalcStepTypeID": 3,
+    "Order": 3,
+    "IsOptional": true
+  },
+  {
+    "ID": 7,
+    "FCVersionCategoryID": 3000,
+    "FCProjectCalcStepTypeID": 1,
+    "Order": 1,
+    "IsOptional": false
+  },
+  {
+    "ID": 8,
+    "FCVersionCategoryID": 3000,
+    "FCProjectCalcStepTypeID": 2,
+    "Order": 2,
+    "IsOptional": true
+  },
+  {
+    "ID": 9,
+    "FCVersionCategoryID": 3000,
+    "FCProjectCalcStepTypeID": 3,
+    "Order": 3,
+    "IsOptional": true
+  }
+]

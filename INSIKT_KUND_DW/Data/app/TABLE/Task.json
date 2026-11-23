@@ -1,0 +1,14 @@
+[
+  {
+    "ID": 1,
+    "Caption": "Använda dimension",
+    "Name": "DimEditor_UseHierarchy",
+    "Comment": "Ger rollen möjlighet att hantera en hirarki"
+  },
+  {
+    "ID": 2,
+    "Caption": "Visa hirarkitabb",
+    "Name": "DimEditor_EnableHierarchiesTab",
+    "Comment": "Gör tabben hirarkier synlig"
+  }
+]

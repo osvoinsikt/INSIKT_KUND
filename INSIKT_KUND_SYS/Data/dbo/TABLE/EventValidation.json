@@ -1,0 +1,402 @@
+[
+  {
+    "ID": 1,
+    "EventName": "FCObject_Inserting",
+    "SQLQuery": "",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 2,
+    "EventName": "FCObject_Inserted",
+    "SQLQuery": "",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 3,
+    "EventName": "FCObject_Updating",
+    "SQLQuery": "",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 4,
+    "EventName": "FCObject_Updated",
+    "SQLQuery": "",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 5,
+    "EventName": "FCObject_Deleting",
+    "SQLQuery": "",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 6,
+    "EventName": "FCObject_UnDeleting",
+    "SQLQuery": "",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 7,
+    "EventName": "FCObject_Deleted",
+    "SQLQuery": "",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 8,
+    "EventName": "FCObject_UnDeleted",
+    "SQLQuery": "",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 9,
+    "EventName": "FCObject_ProcessAll",
+    "SQLQuery": "",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 10,
+    "EventName": "FCObject_ProcessObject",
+    "SQLQuery": "",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 11,
+    "EventName": "FCProject_Inserting",
+    "SQLQuery": "",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 12,
+    "EventName": "FCProject_Inserted",
+    "SQLQuery": "",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 13,
+    "EventName": "FCProject_Updating",
+    "SQLQuery": "",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 14,
+    "EventName": "FCProject_Updated",
+    "SQLQuery": "",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 15,
+    "EventName": "FCProject_Deleting",
+    "SQLQuery": "",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 16,
+    "EventName": "FCProject_Deleted",
+    "SQLQuery": "",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 17,
+    "EventName": "FCProject_Indicator_Status_Updated",
+    "SQLQuery": "",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 26,
+    "EventName": "FCVersion_Updated_DoProcess",
+    "SQLQuery": "",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 28,
+    "EventName": "FCProcess_CompletingStep",
+    "SQLQuery": "",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 29,
+    "EventName": "FCProcess_CompletedStep",
+    "SQLQuery": "",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 30,
+    "EventName": "FCProcess_UncompletingStep",
+    "SQLQuery": "",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 31,
+    "EventName": "FCProcess_UncompletedStep",
+    "SQLQuery": "",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 32,
+    "EventName": "BudgetComment_Created",
+    "SQLQuery": "",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 33,
+    "EventName": "BudgetComment_Updated",
+    "SQLQuery": "",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 34,
+    "EventName": "BudgetComment_Deleted",
+    "SQLQuery": "",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 35,
+    "EventName": "DynamicFCColumnInserting",
+    "SQLQuery": "",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 36,
+    "EventName": "DynamicFCColumnInserted",
+    "SQLQuery": "",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 37,
+    "EventName": "DynamicFCColumnEditing",
+    "SQLQuery": "",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 38,
+    "EventName": "DynamicFCColumnEdited",
+    "SQLQuery": "",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 39,
+    "EventName": "DynamicFCColumnClosing",
+    "SQLQuery": "",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 40,
+    "EventName": "DynamicFCColumnClosed",
+    "SQLQuery": "",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 41,
+    "EventName": "UserOrganisationRelation_Updated",
+    "SQLQuery": "",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 42,
+    "EventName": "OnCubeUpdated",
+    "SQLQuery": "exec [INSIKT_KUND_DW].[insikt].[OnCubeUpdated_WaitFor_IncUpdate] @EventID = '3,13', @FCTypeID = 4",
+    "FCTypeID": 4,
+    "FCObjectTypeID": null,
+    "Description": ""
+  },
+  {
+    "ID": 43,
+    "EventName": "File_Uploaded",
+    "SQLQuery": "",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 44,
+    "EventName": "FCVersion_Inserting",
+    "SQLQuery": "exec [INSIKT_KUND_DW].insikt.FCVersion_UpdateInserting @CompanyID, @FCVersionID, @FiscalYear, @Type, @OriginVersionID, @PeriodMonth",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 45,
+    "EventName": "FCVersion_Updating",
+    "SQLQuery": "exec [INSIKT_KUND_DW].insikt.FCVersion_UpdateInserting @CompanyID, @FCVersionID, @FiscalYear, @Type, @OriginVersionID, @PeriodMonth",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 46,
+    "EventName": "FCVersion_Inserted",
+    "SQLQuery": "exec [INSIKT_KUND_DW].insikt.FCVersion_Inserted @FCVersionID",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 47,
+    "EventName": "FCVersion_Updated",
+    "SQLQuery": "exec [INSIKT_KUND_DW].insikt.FCVersion_Updated @FCVersionID",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 48,
+    "EventName": "FCVersion_Inserted_DoProcess",
+    "SQLQuery": "exec [INSIKT_KUND_DW].insikt.FCVersion_Process",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 49,
+    "EventName": "FCVersion_Deleting",
+    "SQLQuery": "exec [INSIKT_KUND_DW].insikt.FCVersion_Deleting @FCVersionID",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 50,
+    "EventName": "FCVersion_Deleted",
+    "SQLQuery": "exec [INSIKT_KUND_DW].insikt.FCVersion_Deleted @FCVersionID",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 51,
+    "EventName": "FCVersion_Deleted_DoProcess",
+    "SQLQuery": "exec [INSIKT_KUND_DW].insikt.FCVersion_Process",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 52,
+    "EventName": "FCVersion_OnReload",
+    "SQLQuery": "",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 53,
+    "EventName": "FCProject_Deleted",
+    "SQLQuery": "exec [INSIKT_KUND_DW].[insikt].[FCProject_Deleted] @FCProjectID = @projectID",
+    "FCTypeID": 2,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 54,
+    "EventName": "FCProject_Deleting",
+    "SQLQuery": "exec [INSIKT_KUND_DW].[insikt].[FCProject_Deleting] @FCProjectID = @projectID",
+    "FCTypeID": 2,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 55,
+    "EventName": "FCProject_Inserted",
+    "SQLQuery": "exec [INSIKT_KUND_DW].[insikt].[FCProject_Inserted] @FCProjectID = @projectID, @UserID = @UserID, @parentProjectID = @parentProjectID",
+    "FCTypeID": 2,
+    "FCObjectTypeID": null,
+    "Description": ""
+  },
+  {
+    "ID": 56,
+    "EventName": "FCProject_Inserting",
+    "SQLQuery": "exec [INSIKT_KUND_DW].[insikt].[FCProject_Inserting] @FCProjectID = @projectID",
+    "FCTypeID": 2,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 57,
+    "EventName": "FCProject_Updated",
+    "SQLQuery": "exec [INSIKT_KUND_DW].[insikt].[FCProject_Updated] @FCProjectID = @projectID, @UserID = @UserID, @parentProjectID = @parentProjectID",
+    "FCTypeID": 2,
+    "FCObjectTypeID": null,
+    "Description": ""
+  },
+  {
+    "ID": 58,
+    "EventName": "FCProject_Updating",
+    "SQLQuery": "exec [INSIKT_KUND_DW].[insikt].[FCProject_Updating] @FCProjectID = @projectID",
+    "FCTypeID": 2,
+    "FCObjectTypeID": null,
+    "Description": null
+  },
+  {
+    "ID": 59,
+    "EventName": "GeneralApi_Inserted",
+    "SQLQuery": "",
+    "FCTypeID": null,
+    "FCObjectTypeID": null,
+    "Description": "Runs after data is inserted via the General API POST endpoint. Available variable: @DataEntityId"
+  }
+]

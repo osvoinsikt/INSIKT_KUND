@@ -1,0 +1,85 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [visma].[BgtLn](
+	[BgNo] [int] NOT NULL,
+	[LnNo] [int] NOT NULL,
+	[Dt] [int] NOT NULL,
+	[Yr] [smallint] NOT NULL,
+	[Pr] [smallint] NOT NULL,
+	[OrdNo] [int] NOT NULL,
+	[ProdNo] [varchar](40) NOT NULL,
+	[EmpNo] [int] NOT NULL,
+	[CustNo] [int] NOT NULL,
+	[SupNo] [int] NOT NULL,
+	[AcNo] [int] NOT NULL,
+	[R1] [int] NOT NULL,
+	[R2] [int] NOT NULL,
+	[R3] [int] NOT NULL,
+	[R4] [int] NOT NULL,
+	[R5] [int] NOT NULL,
+	[R6] [int] NOT NULL,
+	[Txt] [varchar](200) NOT NULL,
+	[Un] [int] NOT NULL,
+	[StUnRt] [decimal](28, 6) NOT NULL,
+	[FrNo] [decimal](28, 6) NOT NULL,
+	[ToNo] [decimal](28, 6) NOT NULL,
+	[DbIncNo] [decimal](28, 6) NOT NULL,
+	[WageRtNo] [int] NOT NULL,
+	[Cur] [int] NOT NULL,
+	[ExRt] [decimal](28, 6) NOT NULL,
+	[CstPr] [decimal](28, 6) NOT NULL,
+	[DbCurAm] [decimal](28, 6) NOT NULL,
+	[DbIncCst] [decimal](28, 6) NOT NULL,
+	[CrInvoNo] [decimal](28, 6) NOT NULL,
+	[SalePr] [decimal](28, 6) NOT NULL,
+	[Dc1P] [decimal](28, 6) NOT NULL,
+	[Dc1Am] [decimal](28, 6) NOT NULL,
+	[Dc2P] [decimal](28, 6) NOT NULL,
+	[Dc2Am] [decimal](28, 6) NOT NULL,
+	[CrCurAm] [decimal](28, 6) NOT NULL,
+	[CrInvoAm] [decimal](28, 6) NOT NULL,
+	[Gr] [int] NOT NULL,
+	[EntSt] [int] NOT NULL,
+	[Srt] [int] NOT NULL,
+	[ChDt] [int] NOT NULL,
+	[ChTm] [smallint] NOT NULL,
+	[ChUsr] [varchar](24) NOT NULL,
+	[LckSt] [tinyint] NOT NULL,
+	[ChPrc] [int] NOT NULL,
+	[ChSm] [int] NOT NULL,
+	[PropNo] [int] NOT NULL,
+	[MemoNo] [varchar](260) NOT NULL,
+	[AcGr] [varchar](60) NOT NULL,
+	[Wk] [tinyint] NOT NULL,
+	[DstK] [int] NOT NULL,
+	[PrK] [int] NOT NULL,
+	[R7] [varchar](40) NOT NULL,
+	[R8] [varchar](10) NOT NULL,
+	[R9] [varchar](10) NOT NULL,
+	[R10] [varchar](10) NOT NULL,
+	[R11] [varchar](10) NOT NULL,
+	[R12] [varchar](10) NOT NULL,
+	[AcYrPr] [int] NOT NULL,
+	[Cur2] [int] NOT NULL,
+	[ExRt2] [decimal](28, 6) NOT NULL,
+	[DbCurAm2] [decimal](28, 6) NOT NULL,
+	[CrCurAm2] [decimal](28, 6) NOT NULL,
+	[CreDt] [int] NOT NULL,
+	[CreTm] [smallint] NOT NULL,
+	[CreUsr] [varchar](24) NOT NULL,
+	[SA_SourceSystemID] [int] NOT NULL,
+ CONSTRAINT [PK_visma_BgtLn] PRIMARY KEY CLUSTERED 
+(
+	[SA_SourceSystemID] ASC,
+	[BgNo] ASC,
+	[LnNo] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO

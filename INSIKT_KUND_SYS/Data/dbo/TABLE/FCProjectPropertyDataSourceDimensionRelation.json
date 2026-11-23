@@ -1,0 +1,44 @@
+[
+  {
+    "ID": 1,
+    "ProjectPropertyID": 5,
+    "DataSourceDimensionID": 41,
+    "ShowAsMeasure": true,
+    "ShowInTooltip": false
+  },
+  {
+    "ID": 2,
+    "ProjectPropertyID": 3,
+    "DataSourceDimensionID": 41,
+    "ShowAsMeasure": true,
+    "ShowInTooltip": true
+  },
+  {
+    "ID": 3,
+    "ProjectPropertyID": 4,
+    "DataSourceDimensionID": 41,
+    "ShowAsMeasure": true,
+    "ShowInTooltip": true
+  },
+  {
+    "ID": 4,
+    "ProjectPropertyID": 7,
+    "DataSourceDimensionID": 41,
+    "ShowAsMeasure": true,
+    "ShowInTooltip": true
+  },
+  {
+    "ID": 5,
+    "ProjectPropertyID": 9,
+    "DataSourceDimensionID": 41,
+    "ShowAsMeasure": true,
+    "ShowInTooltip": false
+  },
+  {
+    "ID": 6,
+    "ProjectPropertyID": 6,
+    "DataSourceDimensionID": 41,
+    "ShowAsMeasure": true,
+    "ShowInTooltip": false
+  }
+]

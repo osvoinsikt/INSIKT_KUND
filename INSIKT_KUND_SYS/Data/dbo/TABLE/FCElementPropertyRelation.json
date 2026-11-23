@@ -1,0 +1,65 @@
+[
+  {
+    "ID": 1,
+    "FCTypeID": 1,
+    "CompanyID": 1,
+    "FCElementID": 2,
+    "FCPropertyID": 1
+  },
+  {
+    "ID": 2,
+    "FCTypeID": 1,
+    "CompanyID": 1,
+    "FCElementID": 2,
+    "FCPropertyID": 2
+  },
+  {
+    "ID": 3,
+    "FCTypeID": 1,
+    "CompanyID": 1,
+    "FCElementID": 3,
+    "FCPropertyID": 280
+  },
+  {
+    "ID": 4,
+    "FCTypeID": 1,
+    "CompanyID": 1,
+    "FCElementID": 7,
+    "FCPropertyID": 1
+  },
+  {
+    "ID": 5,
+    "FCTypeID": 1,
+    "CompanyID": 1,
+    "FCElementID": 7,
+    "FCPropertyID": 2
+  },
+  {
+    "ID": 6,
+    "FCTypeID": 1,
+    "CompanyID": 1,
+    "FCElementID": 8,
+    "FCPropertyID": 1
+  },
+  {
+    "ID": 7,
+    "FCTypeID": 1,
+    "CompanyID": 1,
+    "FCElementID": 8,
+    "FCPropertyID": 2
+  },
+  {
+    "ID": 8,
+    "FCTypeID": 1,
+    "CompanyID": 1,
+    "FCElementID": 9,
+    "FCPropertyID": 1
+  },
+  {
+    "ID": 9,
+    "FCTypeID": 1,
+    "CompanyID": 1,
+    "FCElementID": 9,
+    "FCPropertyID": 2
+  }
+]

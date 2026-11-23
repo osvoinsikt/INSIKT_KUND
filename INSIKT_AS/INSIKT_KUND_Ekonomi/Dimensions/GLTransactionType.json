@@ -1,0 +1,83 @@
+{
+  "id": "GLTransactionType",
+  "name": "GLTransactionType",
+  "description": "",
+  "type": "Regular",
+  "storageMode": "Molap",
+  "unknownMember": "None",
+  "unknownMemberName": "Unknown",
+  "attributes": [
+    {
+      "id": "GLTransactionType ID",
+      "name": "GLTransactionType ID",
+      "description": "",
+      "type": "Regular",
+      "usage": "Key",
+      "isKey": false,
+      "isAggregatable": true,
+      "attributeHierarchyEnabled": true,
+      "attributeHierarchyVisible": false,
+      "orderBy": "Key",
+      "orderByAttributeId": "",
+      "nullProcessing": "Automatic",
+      "keyColumns": [
+        {
+          "dataType": "Integer",
+          "nullProcessing": "Automatic",
+          "source": {
+            "sourceType": "ColumnBinding",
+            "tableId": "base_GLTransactionType",
+            "columnId": "GLTransactionTypeID",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "base_GLTransactionType",
+            "tableType": "Table",
+            "friendlyName": "base_GLTransactionType",
+            "qualifiedObjectName": "dw.base_GLTransactionType"
+          }
+        }
+      ],
+      "nameColumn": {
+        "dataType": "WChar",
+        "nullProcessing": "Automatic",
+        "source": {
+          "sourceType": "ColumnBinding",
+          "tableId": "base_GLTransactionType",
+          "columnId": "DisplayName",
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dbSchemaName": "dw",
+          "dbTableName": "base_GLTransactionType",
+          "tableType": "Table",
+          "friendlyName": "base_GLTransactionType",
+          "qualifiedObjectName": "dw.base_GLTransactionType"
+        }
+      },
+      "valueColumn": null,
+      "attributeRelationships": [
+        
+      ]
+    }
+  ],
+  "hierarchies": [
+    {
+      "id": "Lista",
+      "name": "Lista",
+      "displayFolder": "",
+      "hasAll": false,
+      "allMemberName": "Alla transaktionstyper",
+      "visible": true,
+      "levels": [
+        {
+          "id": "GLTransactionType",
+          "name": "GLTransactionType",
+          "ordinal": 0,
+          "sourceAttributeId": "GLTransactionType ID",
+          "levelType": null,
+          "hideMemberIf": "NoName"
+        }
+      ]
+    }
+  ]
+}

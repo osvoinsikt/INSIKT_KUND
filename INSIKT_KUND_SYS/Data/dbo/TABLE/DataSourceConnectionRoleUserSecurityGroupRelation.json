@@ -1,0 +1,12 @@
+[
+  {
+    "ID": 1,
+    "DataSourceConnectionRoleID": 1,
+    "UserSecurityGroupID": 4
+  },
+  {
+    "ID": 2,
+    "DataSourceConnectionRoleID": 2,
+    "UserSecurityGroupID": 4
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "ID": 1,
+    "Server": "base-template",
+    "Database": "INSIKT_KUND_Ekonomi",
+    "IsDeleted": false
+  },
+  {
+    "ID": 2,
+    "Server": "base-template",
+    "Database": "INSIKT_KUND_Projekt",
+    "IsDeleted": false
+  }
+]

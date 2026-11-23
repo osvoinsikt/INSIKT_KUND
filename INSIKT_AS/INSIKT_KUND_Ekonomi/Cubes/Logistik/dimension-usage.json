@@ -1,0 +1,206 @@
+[
+  {
+    "measureGroupId": "Fakturerat",
+    "measureGroupName": "Fakturerat",
+    "dimensions": [
+      {
+        "id": "Kassa",
+        "name": "Kassa",
+        "type": "Regular",
+        "granularity": "Kassa - L0 ID"
+      },
+      {
+        "id": "Projekt",
+        "name": "Projekt",
+        "type": "Regular",
+        "granularity": "Projekt - L0 ID"
+      },
+      {
+        "id": "Kampanj",
+        "name": "Kampanj",
+        "type": "Regular",
+        "granularity": "Kampanj - L0 ID"
+      },
+      {
+        "id": "Varugrupp",
+        "name": "Varugrupp",
+        "type": "Regular",
+        "granularity": "Varugrupp - L0 ID"
+      },
+      {
+        "id": "Transaktionsdatum",
+        "name": "Transaktionsdatum",
+        "type": "Regular",
+        "granularity": "DateID"
+      },
+      {
+        "id": "Faktureringsdatum",
+        "name": "Faktureringsdatum",
+        "type": "Regular",
+        "granularity": "DateID"
+      },
+      {
+        "id": "Avdelning",
+        "name": "Avdelning",
+        "type": "Regular",
+        "granularity": "Avdelning - L0 ID"
+      },
+      {
+        "id": "Produkt",
+        "name": "Produkt",
+        "type": "Regular",
+        "granularity": "Produkt - L0 ID"
+      },
+      {
+        "id": "Transaktionstyp",
+        "name": "Transaktionstyp",
+        "type": "Regular",
+        "granularity": "Transaktionstyp - L0 ID"
+      },
+      {
+        "id": "Anläggning",
+        "name": "Anläggning",
+        "type": "Regular",
+        "granularity": "Anläggning - L0 ID"
+      },
+      {
+        "id": "Lager",
+        "name": "Lager",
+        "type": "Regular",
+        "granularity": "Lager - L0 ID"
+      },
+      {
+        "id": "Leverantör",
+        "name": "Leverantör",
+        "type": "Regular",
+        "granularity": "Leverantör - L0 ID"
+      },
+      {
+        "id": "Sälj_Inköp_Anställd",
+        "name": "Sälj_Inköp_Anställd",
+        "type": "Regular",
+        "granularity": "Anställd - L0 ID"
+      },
+      {
+        "id": "Anställd",
+        "name": "Anställd",
+        "type": "Regular",
+        "granularity": "Anställd - L0 ID"
+      },
+      {
+        "id": "Kund",
+        "name": "Kund",
+        "type": "Regular",
+        "granularity": "Kund - L0 ID"
+      },
+      {
+        "id": "Faktureras_Kund",
+        "name": "Faktureras_Kund",
+        "type": "Regular",
+        "granularity": "Kund - L0 ID"
+      }
+    ]
+  },
+  {
+    "measureGroupId": "Order",
+    "measureGroupName": "Order",
+    "dimensions": [
+      {
+        "id": "Kassa",
+        "name": "Kassa",
+        "type": "Regular",
+        "granularity": "Kassa - L0 ID"
+      },
+      {
+        "id": "Projekt",
+        "name": "Projekt",
+        "type": "Regular",
+        "granularity": "Projekt - L0 ID"
+      },
+      {
+        "id": "Kampanj",
+        "name": "Kampanj",
+        "type": "Regular",
+        "granularity": "Kampanj - L0 ID"
+      },
+      {
+        "id": "Varugrupp",
+        "name": "Varugrupp",
+        "type": "Regular",
+        "granularity": "Varugrupp - L0 ID"
+      },
+      {
+        "id": "Transaktionsdatum",
+        "name": "Transaktionsdatum",
+        "type": "Regular",
+        "granularity": "DateID"
+      },
+      {
+        "id": "Orderdatum",
+        "name": "Orderdatum",
+        "type": "Regular",
+        "granularity": "DateID"
+      },
+      {
+        "id": "Avdelning",
+        "name": "Avdelning",
+        "type": "Regular",
+        "granularity": "Avdelning - L0 ID"
+      },
+      {
+        "id": "Produkt",
+        "name": "Produkt",
+        "type": "Regular",
+        "granularity": "Produkt - L0 ID"
+      },
+      {
+        "id": "Transaktionstyp",
+        "name": "Transaktionstyp",
+        "type": "Regular",
+        "granularity": "Transaktionstyp - L0 ID"
+      },
+      {
+        "id": "Anläggning",
+        "name": "Anläggning",
+        "type": "Regular",
+        "granularity": "Anläggning - L0 ID"
+      },
+      {
+        "id": "Lager",
+        "name": "Lager",
+        "type": "Regular",
+        "granularity": "Lager - L0 ID"
+      },
+      {
+        "id": "Leverantör",
+        "name": "Leverantör",
+        "type": "Regular",
+        "granularity": "Leverantör - L0 ID"
+      },
+      {
+        "id": "Sälj_Inköp_Anställd",
+        "name": "Sälj_Inköp_Anställd",
+        "type": "Regular",
+        "granularity": "Anställd - L0 ID"
+      },
+      {
+        "id": "Anställd",
+        "name": "Anställd",
+        "type": "Regular",
+        "granularity": "Anställd - L0 ID"
+      },
+      {
+        "id": "Kund",
+        "name": "Kund",
+        "type": "Regular",
+        "granularity": "Kund - L0 ID"
+      },
+      {
+        "id": "Faktureras_Kund",
+        "name": "Faktureras_Kund",
+        "type": "Regular",
+        "granularity": "Kund - L0 ID"
+      }
+    ]
+  }
+]

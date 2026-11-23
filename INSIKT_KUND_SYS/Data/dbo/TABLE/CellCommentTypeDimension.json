@@ -1,0 +1,110 @@
+[
+  {
+    "ID": 1,
+    "CellCommentTypeID": 1,
+    "DimensionName": "Avdelning",
+    "HierarchyName": "Lista"
+  },
+  {
+    "ID": 2,
+    "CellCommentTypeID": 1,
+    "DimensionName": "Kampanj",
+    "HierarchyName": "Lista"
+  },
+  {
+    "ID": 3,
+    "CellCommentTypeID": 1,
+    "DimensionName": "Projekt",
+    "HierarchyName": "Lista"
+  },
+  {
+    "ID": 4,
+    "CellCommentTypeID": 1,
+    "DimensionName": "Varugrupp",
+    "HierarchyName": "Lista"
+  },
+  {
+    "ID": 5,
+    "CellCommentTypeID": 1,
+    "DimensionName": "Resultatkonto",
+    "HierarchyName": "Lista"
+  },
+  {
+    "ID": 6,
+    "CellCommentTypeID": 1,
+    "DimensionName": "Datum",
+    "HierarchyName": "År - Månad"
+  },
+  {
+    "ID": 7,
+    "CellCommentTypeID": 2,
+    "DimensionName": "Avdelning",
+    "HierarchyName": "Lista"
+  },
+  {
+    "ID": 8,
+    "CellCommentTypeID": 2,
+    "DimensionName": "Kampanj",
+    "HierarchyName": "Lista"
+  },
+  {
+    "ID": 9,
+    "CellCommentTypeID": 2,
+    "DimensionName": "Projekt",
+    "HierarchyName": "Lista"
+  },
+  {
+    "ID": 10,
+    "CellCommentTypeID": 2,
+    "DimensionName": "Varugrupp",
+    "HierarchyName": "Lista"
+  },
+  {
+    "ID": 11,
+    "CellCommentTypeID": 2,
+    "DimensionName": "Resultatkonto",
+    "HierarchyName": "Lista"
+  },
+  {
+    "ID": 12,
+    "CellCommentTypeID": 2,
+    "DimensionName": "Datum",
+    "HierarchyName": "År - Månad"
+  },
+  {
+    "ID": 13,
+    "CellCommentTypeID": 3,
+    "DimensionName": "Avdelning",
+    "HierarchyName": "Lista"
+  },
+  {
+    "ID": 14,
+    "CellCommentTypeID": 3,
+    "DimensionName": "Kampanj",
+    "HierarchyName": "Lista"
+  },
+  {
+    "ID": 15,
+    "CellCommentTypeID": 3,
+    "DimensionName": "Projekt",
+    "HierarchyName": "Lista"
+  },
+  {
+    "ID": 16,
+    "CellCommentTypeID": 3,
+    "DimensionName": "Varugrupp",
+    "HierarchyName": "Lista"
+  },
+  {
+    "ID": 17,
+    "CellCommentTypeID": 3,
+    "DimensionName": "Resultatkonto",
+    "HierarchyName": "Lista"
+  },
+  {
+    "ID": 18,
+    "CellCommentTypeID": 3,
+    "DimensionName": "Datum",
+    "HierarchyName": "År - Månad"
+  }
+]

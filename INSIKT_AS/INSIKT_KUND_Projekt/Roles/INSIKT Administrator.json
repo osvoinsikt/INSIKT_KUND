@@ -1,0 +1,20 @@
+{
+  "id": "INSIKT Administrator",
+  "name": "INSIKT Administrator",
+  "description": "",
+  "members": [
+    "base-template\\INSIKT Konsult - Kund"
+  ],
+  "externalMembers": [
+    
+  ],
+  "permissions": {
+    "database": {
+      "read": "None",
+      "write": "None",
+      "process": false,
+      "readDefinition": "None",
+      "administer": true
+    }
+  }
+}

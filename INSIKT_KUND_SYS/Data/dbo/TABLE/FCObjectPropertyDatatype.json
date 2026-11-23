@@ -1,0 +1,22 @@
+[
+  {
+    "ID": 1,
+    "Name": "string"
+  },
+  {
+    "ID": 2,
+    "Name": "bit"
+  },
+  {
+    "ID": 3,
+    "Name": "int"
+  },
+  {
+    "ID": 4,
+    "Name": "float"
+  },
+  {
+    "ID": 5,
+    "Name": "datetime"
+  }
+]

@@ -1,0 +1,46 @@
+[
+  {
+    "ID": 1,
+    "ValueNumeric": null,
+    "ValueString": null,
+    "VisibleName": "Nybyggnation",
+    "FCProjectPropertyID": 6,
+    "SortOrder": 0,
+    "isDefault": true,
+    "AllowSelection": true,
+    "IsDeleted": false
+  },
+  {
+    "ID": 2,
+    "ValueNumeric": null,
+    "ValueString": null,
+    "VisibleName": "Förstudie",
+    "FCProjectPropertyID": 5,
+    "SortOrder": 0,
+    "isDefault": true,
+    "AllowSelection": true,
+    "IsDeleted": false
+  },
+  {
+    "ID": 3,
+    "ValueNumeric": null,
+    "ValueString": null,
+    "VisibleName": "Projektplanering",
+    "FCProjectPropertyID": 5,
+    "SortOrder": 1,
+    "isDefault": false,
+    "AllowSelection": true,
+    "IsDeleted": false
+  },
+  {
+    "ID": 4,
+    "ValueNumeric": null,
+    "ValueString": null,
+    "VisibleName": "Produktion",
+    "FCProjectPropertyID": 5,
+    "SortOrder": 2,
+    "isDefault": false,
+    "AllowSelection": true,
+    "IsDeleted": false
+  }
+]

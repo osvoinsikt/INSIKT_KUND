@@ -1,0 +1,602 @@
+{
+  "cubeId": "Projektplanering",
+  "cubeName": "Projektplanering",
+  "measureGroups": [
+    {
+      "id": "Fact Projekt Periodisering Planning",
+      "name": "Periodisering Planning",
+      "description": "",
+      "storageMode": "Molap",
+      "processingMode": "Regular",
+      "ignoreUnrelatedDimensions": true,
+      "sourceReference": [
+        {
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dsvId": "",
+          "sourceType": "TableBinding",
+          "tableId": "",
+          "schemaName": "",
+          "queryHash": null,
+          "dbTableName": "WriteTable_Fact_Projekt_Periodisering_Planning_WithTrigger",
+          "qualifiedObjectName": "WriteTable_Fact_Projekt_Periodisering_Planning_WithTrigger",
+          "sourceObjectType": "Table"
+        },
+        {
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dsvId": "",
+          "sourceType": "TableBinding",
+          "tableId": "",
+          "schemaName": "",
+          "queryHash": null,
+          "dbSchemaName": "dw",
+          "dbTableName": "fact_Projekt_Periodisering_Planning_Partition_Main",
+          "qualifiedObjectName": "dw.fact_Projekt_Periodisering_Planning_Partition_Main",
+          "sourceObjectType": "Table"
+        }
+      ],
+      "partitions": [
+        {
+          "id": "Fact Projekt Periodisering Planning",
+          "name": "Fact Projekt Periodisering Planning",
+          "storageMode": "Molap",
+          "processingMode": "Regular",
+          "source": {
+            "sourceType": "TableBinding",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "fact_Projekt_Periodisering_Planning_Partition_Main",
+            "qualifiedObjectName": "dw.fact_Projekt_Periodisering_Planning_Partition_Main"
+          }
+        },
+        {
+          "id": "WriteTable_Fact_Projekt_Periodisering_Planning_WithTrigger",
+          "name": "WriteTable_Fact_Projekt_Periodisering_Planning_WithTrigger",
+          "storageMode": "Molap",
+          "processingMode": "Regular",
+          "source": {
+            "sourceType": "TableBinding",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbTableName": "WriteTable_Fact_Projekt_Periodisering_Planning_WithTrigger",
+            "qualifiedObjectName": "WriteTable_Fact_Projekt_Periodisering_Planning_WithTrigger"
+          }
+        }
+      ],
+      "measures": [
+        {
+          "id": "Fg Periodiserat Belopp",
+          "name": "Fg Periodiserat Belopp",
+          "uniqueName": "[Measures].[Fg Periodiserat Belopp]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Periodisering",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "dw_fact_Projekt_Periodisering_Planning",
+              "columnId": "FgPeriodiseratBelopp",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Projekt_Periodisering_Planning",
+              "tableType": "Table",
+              "friendlyName": "fact_Projekt_Periodisering_Planning",
+              "qualifiedObjectName": "dw.fact_Projekt_Periodisering_Planning"
+            }
+          }
+        },
+        {
+          "id": "Periodiserat Belopp",
+          "name": "Periodiserat Belopp",
+          "uniqueName": "[Measures].[Periodiserat Belopp]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Periodisering",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "dw_fact_Projekt_Periodisering_Planning",
+              "columnId": "PeriodiseratBelopp",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Projekt_Periodisering_Planning",
+              "tableType": "Table",
+              "friendlyName": "fact_Projekt_Periodisering_Planning",
+              "qualifiedObjectName": "dw.fact_Projekt_Periodisering_Planning"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "Fact Projekt Periodisering Planning Calc",
+      "name": "Periodisering Planning Calc",
+      "description": "",
+      "storageMode": "Molap",
+      "processingMode": "Regular",
+      "ignoreUnrelatedDimensions": true,
+      "sourceReference": [
+        {
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dsvId": "INSIKT_DW",
+          "sourceType": "DsvTableBinding",
+          "tableId": "dw_fact_Projekt_Periodisering_Planning_Calc",
+          "schemaName": "",
+          "queryHash": null,
+          "dbSchemaName": "dw",
+          "dbTableName": "fact_Projekt_Periodisering_Planning_Calc",
+          "qualifiedObjectName": "dw.fact_Projekt_Periodisering_Planning_Calc",
+          "sourceObjectType": "Table",
+          "friendlyName": "fact_Projekt_Periodisering_Planning_Calc"
+        }
+      ],
+      "partitions": [
+        {
+          "id": "Fact Projekt Periodisering Planning Calc",
+          "name": "Fact Projekt Periodisering Planning Calc",
+          "storageMode": "Molap",
+          "processingMode": "Regular",
+          "source": {
+            "sourceType": "DsvTableBinding",
+            "dsvId": "INSIKT_DW",
+            "tableId": "dw_fact_Projekt_Periodisering_Planning_Calc",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "fact_Projekt_Periodisering_Planning_Calc",
+            "tableType": "Table",
+            "friendlyName": "fact_Projekt_Periodisering_Planning_Calc",
+            "qualifiedObjectName": "dw.fact_Projekt_Periodisering_Planning_Calc"
+          }
+        }
+      ],
+      "measures": [
+        {
+          "id": "Beräknat Periodiserat Belopp",
+          "name": "Beräknat Periodiserat Belopp",
+          "uniqueName": "[Measures].[Beräknat Periodiserat Belopp]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Periodisering",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "dw_fact_Projekt_Periodisering_Planning_Calc",
+              "columnId": "BeräknatPeriodiseratBelopp",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Projekt_Periodisering_Planning_Calc",
+              "tableType": "Table",
+              "friendlyName": "fact_Projekt_Periodisering_Planning_Calc",
+              "qualifiedObjectName": "dw.fact_Projekt_Periodisering_Planning_Calc"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "Fact Projekt Planning",
+      "name": "Projektkalkyl",
+      "description": "",
+      "storageMode": "Molap",
+      "processingMode": "Regular",
+      "ignoreUnrelatedDimensions": true,
+      "sourceReference": [
+        {
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dsvId": "",
+          "sourceType": "TableBinding",
+          "tableId": "",
+          "schemaName": "",
+          "queryHash": null,
+          "dbTableName": "WriteTable_Fact_Projekt_Planning_WithTrigger",
+          "qualifiedObjectName": "WriteTable_Fact_Projekt_Planning_WithTrigger",
+          "sourceObjectType": "Table"
+        },
+        {
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dsvId": "",
+          "sourceType": "TableBinding",
+          "tableId": "",
+          "schemaName": "",
+          "queryHash": null,
+          "dbSchemaName": "dw",
+          "dbTableName": "fact_Projekt_Planning_Partition_Main",
+          "qualifiedObjectName": "dw.fact_Projekt_Planning_Partition_Main",
+          "sourceObjectType": "Table"
+        }
+      ],
+      "partitions": [
+        {
+          "id": "Fact Projekt Planning",
+          "name": "Fact Projekt Planning",
+          "storageMode": "Molap",
+          "processingMode": "Regular",
+          "source": {
+            "sourceType": "TableBinding",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "fact_Projekt_Planning_Partition_Main",
+            "qualifiedObjectName": "dw.fact_Projekt_Planning_Partition_Main"
+          }
+        },
+        {
+          "id": "WriteTable_Fact_Projekt_Planning_WithTrigger",
+          "name": "WriteTable_Fact_Projekt_Planning_WithTrigger",
+          "storageMode": "Molap",
+          "processingMode": "Regular",
+          "source": {
+            "sourceType": "TableBinding",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbTableName": "WriteTable_Fact_Projekt_Planning_WithTrigger",
+            "qualifiedObjectName": "WriteTable_Fact_Projekt_Planning_WithTrigger"
+          }
+        }
+      ],
+      "measures": [
+        {
+          "id": "Fg Kalkyl",
+          "name": "FgKalkyl",
+          "uniqueName": "[Measures].[FgKalkyl]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Projektkalkyl",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_Projekt_Planning",
+              "columnId": "FgKalkyl",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Projekt_Planning",
+              "tableType": "Table",
+              "friendlyName": "fact_Projekt_Planning",
+              "qualifiedObjectName": "dw.fact_Projekt_Planning"
+            }
+          }
+        },
+        {
+          "id": "Kalkyl",
+          "name": "Kalkyl",
+          "uniqueName": "[Measures].[Kalkyl]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Projektkalkyl",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "fact_Projekt_Planning",
+              "columnId": "Kalkyl",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Projekt_Planning",
+              "tableType": "Table",
+              "friendlyName": "fact_Projekt_Planning",
+              "qualifiedObjectName": "dw.fact_Projekt_Planning"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "Fact Projekt Utfall",
+      "name": "Utfall",
+      "description": "",
+      "storageMode": "Molap",
+      "processingMode": "Regular",
+      "ignoreUnrelatedDimensions": true,
+      "sourceReference": [
+        {
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dsvId": "INSIKT_DW",
+          "sourceType": "DsvTableBinding",
+          "tableId": "dw_fact_Projekt_Utfall",
+          "schemaName": "",
+          "queryHash": null,
+          "dbSchemaName": "dw",
+          "dbTableName": "fact_Projekt_Utfall",
+          "qualifiedObjectName": "dw.fact_Projekt_Utfall",
+          "sourceObjectType": "Table",
+          "friendlyName": "fact_Projekt_Utfall"
+        }
+      ],
+      "partitions": [
+        {
+          "id": "Fact Projekt Utfall",
+          "name": "Fact Projekt Utfall",
+          "storageMode": "Molap",
+          "processingMode": "Regular",
+          "source": {
+            "sourceType": "DsvTableBinding",
+            "dsvId": "INSIKT_DW",
+            "tableId": "dw_fact_Projekt_Utfall",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "fact_Projekt_Utfall",
+            "tableType": "Table",
+            "friendlyName": "fact_Projekt_Utfall",
+            "qualifiedObjectName": "dw.fact_Projekt_Utfall"
+          }
+        }
+      ],
+      "measures": [
+        {
+          "id": "Amount",
+          "name": "Utfall",
+          "uniqueName": "[Measures].[Utfall]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Utfall",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "dw_fact_Projekt_Utfall",
+              "columnId": "Amount",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Projekt_Utfall",
+              "tableType": "Table",
+              "friendlyName": "fact_Projekt_Utfall",
+              "qualifiedObjectName": "dw.fact_Projekt_Utfall"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "Fact Projekt Utfall Fryst",
+      "name": "Utfall Fryst",
+      "description": "",
+      "storageMode": "Molap",
+      "processingMode": "Regular",
+      "ignoreUnrelatedDimensions": true,
+      "sourceReference": [
+        {
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dsvId": "INSIKT_DW",
+          "sourceType": "DsvTableBinding",
+          "tableId": "dw_fact_Projekt_Utfall_Fryst",
+          "schemaName": "",
+          "queryHash": null,
+          "dbSchemaName": "dw",
+          "dbTableName": "fact_Projekt_Utfall_Fryst",
+          "qualifiedObjectName": "dw.fact_Projekt_Utfall_Fryst",
+          "sourceObjectType": "Table",
+          "friendlyName": "fact_Projekt_Utfall_Fryst"
+        }
+      ],
+      "partitions": [
+        {
+          "id": "Fact Projekt Utfall Fryst",
+          "name": "Fact Projekt Utfall Fryst",
+          "storageMode": "Molap",
+          "processingMode": "Regular",
+          "source": {
+            "sourceType": "DsvTableBinding",
+            "dsvId": "INSIKT_DW",
+            "tableId": "dw_fact_Projekt_Utfall_Fryst",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "fact_Projekt_Utfall_Fryst",
+            "tableType": "Table",
+            "friendlyName": "fact_Projekt_Utfall_Fryst",
+            "qualifiedObjectName": "dw.fact_Projekt_Utfall_Fryst"
+          }
+        }
+      ],
+      "measures": [
+        {
+          "id": "Amount 1",
+          "name": "Utfall fryst",
+          "uniqueName": "[Measures].[Utfall fryst]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "#,#",
+          "visible": true,
+          "displayFolder": "Utfall",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Preserve",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "dw_fact_Projekt_Utfall_Fryst",
+              "columnId": "Amount",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Projekt_Utfall_Fryst",
+              "tableType": "Table",
+              "friendlyName": "fact_Projekt_Utfall_Fryst",
+              "qualifiedObjectName": "dw.fact_Projekt_Utfall_Fryst"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "Fact Projekt Utilities",
+      "name": "Utilities",
+      "description": "",
+      "storageMode": "Molap",
+      "processingMode": "Regular",
+      "ignoreUnrelatedDimensions": true,
+      "sourceReference": [
+        {
+          "dataSourceId": "INSIKT_DW",
+          "dataSourceName": "INSIKT_DW",
+          "dsvId": "INSIKT_DW",
+          "sourceType": "DsvTableBinding",
+          "tableId": "dw_fact_Projekt_Utilities",
+          "schemaName": "",
+          "queryHash": null,
+          "dbSchemaName": "dw",
+          "dbTableName": "fact_Projekt_Utilities",
+          "qualifiedObjectName": "dw.fact_Projekt_Utilities",
+          "sourceObjectType": "Table",
+          "friendlyName": "fact_Projekt_Utilities"
+        }
+      ],
+      "partitions": [
+        {
+          "id": "Fact Projekt Utilities",
+          "name": "Fact Projekt Utilities",
+          "storageMode": "Molap",
+          "processingMode": "Regular",
+          "source": {
+            "sourceType": "DsvTableBinding",
+            "dsvId": "INSIKT_DW",
+            "tableId": "dw_fact_Projekt_Utilities",
+            "dataSourceId": "INSIKT_DW",
+            "dataSourceName": "INSIKT_DW",
+            "dbSchemaName": "dw",
+            "dbTableName": "fact_Projekt_Utilities",
+            "tableType": "Table",
+            "friendlyName": "fact_Projekt_Utilities",
+            "qualifiedObjectName": "dw.fact_Projekt_Utilities"
+          }
+        }
+      ],
+      "measures": [
+        {
+          "id": "FC Project End Month ID",
+          "name": "EndMonthID",
+          "uniqueName": "[Measures].[EndMonthID]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "",
+          "visible": true,
+          "displayFolder": "Utilities",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Automatic",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "dw_fact_Projekt_Utilities",
+              "columnId": "EndMonthID",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Projekt_Utilities",
+              "tableType": "Table",
+              "friendlyName": "fact_Projekt_Utilities",
+              "qualifiedObjectName": "dw.fact_Projekt_Utilities"
+            }
+          }
+        },
+        {
+          "id": "FC Project Start Month ID",
+          "name": "StartMonthID",
+          "uniqueName": "[Measures].[StartMonthID]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "",
+          "visible": true,
+          "displayFolder": "Utilities",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Automatic",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "dw_fact_Projekt_Utilities",
+              "columnId": "StartMonthID",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Projekt_Utilities",
+              "tableType": "Table",
+              "friendlyName": "fact_Projekt_Utilities",
+              "qualifiedObjectName": "dw.fact_Projekt_Utilities"
+            }
+          }
+        },
+        {
+          "id": "FC Project Start Writability Month ID",
+          "name": "StartWritabilityMonthID",
+          "uniqueName": "[Measures].[StartWritabilityMonthID]",
+          "description": "",
+          "dataType": "Double",
+          "aggregateFunction": "Sum",
+          "formatString": "",
+          "visible": true,
+          "displayFolder": "Utilities",
+          "measureExpression": "",
+          "dataItem": {
+            "dataType": "Double",
+            "nullProcessing": "Automatic",
+            "source": {
+              "sourceType": "ColumnBinding",
+              "tableId": "dw_fact_Projekt_Utilities",
+              "columnId": "StartWritabilityMonthID",
+              "dataSourceId": "INSIKT_DW",
+              "dataSourceName": "INSIKT_DW",
+              "dbSchemaName": "dw",
+              "dbTableName": "fact_Projekt_Utilities",
+              "tableType": "Table",
+              "friendlyName": "fact_Projekt_Utilities",
+              "qualifiedObjectName": "dw.fact_Projekt_Utilities"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

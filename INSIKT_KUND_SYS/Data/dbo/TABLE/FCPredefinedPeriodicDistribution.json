@@ -1,0 +1,31 @@
+[
+  {
+    "ID": 1,
+    "Name": "Enligt utfall fg år",
+    "Description": null,
+    "PeriodPercent1": null,
+    "PeriodPercent2": null,
+    "PeriodPercent3": null,
+    "PeriodPercent4": null,
+    "PeriodPercent5": null,
+    "PeriodPercent6": null,
+    "PeriodPercent7": null,
+    "PeriodPercent8": null,
+    "PeriodPercent9": null,
+    "PeriodPercent10": null,
+    "PeriodPercent11": null,
+    "PeriodPercent12": null,
+    "ModifiedBy": null,
+    "ModifiedDate": null,
+    "isReadOnly": true,
+    "CompanyID": 1,
+    "FCVersionID": null,
+    "CreatedBy": -1,
+    "CreatedDate": "2026-05-08T12:42:36.547",
+    "IsCommon": true,
+    "CopyMeasureUniqueName": "[Measures].[INSIKTPlanering Utfall (1-2 år sedan)]",
+    "CategoryID": 1,
+    "IsDeleted": false,
+    "CurrentRevisionID": 1
+  }
+]
